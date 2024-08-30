@@ -1,0 +1,956 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/swiper.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body class="overview">
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div class="intro" id="wrap">
+			<header id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header-content">
+					<h1 class="logo-wrap"><a href="#">도화엔지니어링</a></h1>
+					<div class="gnb-wrap">
+						<ul class="gnb-menu-list">
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">회사소개</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">Overview</a></li>
+									<li class="gnb-sub-item"><a href="#">Vision</a></li>
+									<li class="gnb-sub-item"><a href="#">People</a></li>
+									<li class="gnb-sub-item"><a href="#">History</a></li>
+									<li class="gnb-sub-item"><a href="#">CSR</a></li>
+									<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">사업소개</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">Overview</a></li>
+									<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">투자정보</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+									<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+									<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+									<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">홍보센터</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+									<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+									<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+									<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">채용정보</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+									<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="menu">
+						<span class="down-wrap">
+							<a class="bttn-down-brochure" href="#none">
+								회사소개 브로셔
+								<em class="ico down" aria-hidden="true"></em>
+							</a>
+						</span>
+						<span class="lang-wrap">
+							<button class="bttn-lang-sel" type="button">KOR</button>
+							<!-- 20200804 텍스트 수정 KR => KOR -->
+							<ul class="lang-list">
+								<li>
+									<button class="bttn-lang" type="button">KOR</button>
+									<!-- 20200804 텍스트 수정 KR => KOR -->
+								</li>
+								<li>
+									<button class="bttn-lang" type="button">ENG</button>
+								</li>
+								<li>
+									<button class="bttn-lang" type="button">ESP</button>
+								</li>
+							</ul>
+						</span>
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								MENU
+							</button>
+						</span>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<div id="content" role="main">
+					<div class="page-visual intro01 visual-area">
+						<div class="page-title-sec">
+							<span class="title-main-sub">COMPANY OVERVIEW</span>
+							<h2 class="title-main">
+								도화가 디자인하는 세상,
+								<br />
+								함께 만들어 가는 미래
+							</h2>
+						</div>
+						<!-- 20200813 비디오 태그 추가 Start-->
+						<div class="sub-video">
+							<video autoplay muted loop>
+								<source src="/images/video/visual_overview.mp4" />
+							</video>
+						</div>
+						<!-- 20200813 비디오 태그 추가 End-->
+						<!-- 20200804 스크롤 수정 start-->
+						<div class="noti-scroll">
+							<span class="txt">Scroll</span>
+							<span class="ico01" aria-hidden="true"></span>
+							<span class="ico02" aria-hidden="true"></span>
+						</div>
+						<!-- 20200804 스크롤 수정 end-->
+						<!-- 20200803 그리드 추가 start-->
+						<div class="visual-grid-wrap" aria-hidden="true">
+							<div class="grid-ico-wrap" aria-hidden="true">
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+							</div>
+							<div class="grid-line-wrap">
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+							</div>
+						</div>
+						<!-- 20200803 그리드 추가 end-->
+					</div>
+					<!-- s : 20200812 클래스 및 .contents-wrap 추가-->
+					<div class="contents-wrap" style="position:relative">
+						<div class="page-tab-section">
+							<div class="tab-menu-type01 center">
+								<ul class="tab-list">
+									<li class="active"><a class="item" href="#none" data-id="">Overview</a></li>
+									<li><a class="item" href="#none" data-id="">Vision</a></li>
+									<li><a class="item" href="#none" data-id="">People</a></li>
+									<li><a class="item" href="#none" data-id="">History</a></li>
+									<li><a class="item" href="#none" data-id="">CSR</a></li>
+									<li><a class="item" href="#none" data-id="">Contact us</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="contents no-btm-type full-type clfix">
+							<span class="page-decs page-decs-type02">
+								<strong>01 COMPANY</strong>
+								DOHWA ENGINEERING
+							</span>
+							<div class="section-cont">
+								<div class="intro-wrap">
+									<div class="intro-company ui-section ui-section-01">
+										<div class="content-inner">
+											<div class="intro-msg">
+												<div class="intro-tit">
+													미래를 향해 비상하는
+													<br />
+													명실 상부한 글로벌 기업
+												</div>
+												<div class="intro-subtit ui-content">
+													도화엔지니어링은
+													<br />
+													국내 1위 종합 엔지니어링 컨설팅 기업입니다.
+												</div>
+												<!-- s:20200916 텍스트 띄어쓰기 수정-->
+												<div class="intro-desc ui-content">
+													<p>
+														도화엔지니어링은 상하수도, 수자원개발, 도시계획, 도로교통, 구조, 항만, 철도, 환경 등 엔지니어링 전 분야에서 기획 &middot; 타당성조사 &middot; 설계 &middot; 분석 &middot; 시험 &middot;감리 &middot; 시운전 &middot; 평가 &middot; 자문 및 지도 업무를 수행하는 국내 1위 종합엔지니어링 컨설팅 회사입니다.
+													</p>
+													<p>
+														또한 전통 순수 엔지니어링 사업인 설계 및 감리 용역의 형태에서 벗어나 공사의 설계, 기자재의 공급, 건설공사, 시운전 및 인허가 등 건설에 필요한 모든 업무를책임지는 EPC사업으로 영역을 확대하고 있으며, 국내의 성공을 기반으로 글로벌 기업으로 도약하기 위하여 해외시장 및 플랜트 사업으로 진출하는 현재의 성공에 만족하지 않고, 미래를 향해 비상하는 명실 상부한 최초에서 최고의 글로벌 기업입니다.
+													</p>
+												</div>
+												<!-- e:20200916 텍스트 띄어쓰기 수정-->
+											</div>
+											<div class="intro-img">
+												<div class="intro-img-wrap"><img src="/images/pc/img_overview01.jpg" alt="" /></div>
+											</div>
+										</div>
+									</div>
+									<div class="intro-company full ui-section ui-section-02">
+										<div class="content-inner">
+											<div class="intro-img"><img src="/images/pc/img_overview02.jpg" alt="ceo" /></div>
+											<div class="intro-msg">
+												<div class="intro-tit">CEO Message</div>
+												<!--s : 20200821 추가-->
+												<div class="intro-subtit">최초에서 최고로</div>
+												<!--e : 20200821 추가-->
+												<!--s: 20200914 띄어쓰기 수정-->
+												<div class="intro-desc">
+													<p>
+														도화엔지니어링은 1957년 8월 15일 설립된 대한민국 최초의 종합엔지니어링 회사로서 사업영역 전 분야에서 우수한 인재와 기술력을 바탕으로 놀랄만한 성장을 거듭해 왔으며, 국내뿐 아니라 이란, 베트남, 인도네시아, 페루, 네팔 등 국내외 약 1만건 이상의 기술용역을 성공적으로 수행하여 글로벌 기업으로 성장 기반을 다져 왔습니다. 아울러, 항상 고객에게 신뢰받는 기업, 나아가 고객에게 감동을 주는 기업이되기
+														위하여, 2,000여 명의 전 임직원이 한 마음이 되어 최고의 기술과 품질을 바탕으로 고객에게 정성을 다하는 기업이 될 것을 약속드립니다.
+														<br />
+														감사합니다.
+													</p>
+												</div>
+												<!--e: 20200914 띄어쓰기 수정-->
+												<span class="sign">
+													회장 김영윤
+													<!-- s: 20200812 추가-->
+													<img class="signature" src="/images/pc/txt_signature.png" alt="회장 김영윤 친필서명" />
+													<!-- e: 20200812 추가-->
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="company-status">
+										<div class="content-inner">
+											<h3 class="title-sect">기업 현황</h3>
+											<!-- s: 20200903 텍스트 수정-->
+											<span class="comment">2020 기준</span>
+											<!-- e: 20200903 텍스트 수정-->
+											<ul class="status-list">
+												<li class="name">
+													<span class="lb">회사명</span>
+													<em class="txt">(주)도화엔지니어링</em>
+												</li>
+												<li class="founded">
+													<span class="lb">설립일</span>
+													<em class="txt">1957.8.15</em>
+												</li>
+												<li class="location">
+													<span class="lb">본사</span>
+													<em class="txt">서울시 강남구 삼성로 438</em>
+												</li>
+												<li class="personnel ui-section ui-section-03">
+													<span class="lb">인력현황</span>
+													<em class="txt">2,201명(2020.03)</em>
+												</li>
+												<li class="country">
+													<span class="lb">진출국가</span>
+													<em class="txt">19개국</em>
+												</li>
+												<li class="ceo">
+													<span class="lb">대표이사</span>
+													<em class="txt">김영윤, 노진명, 박승우, 곽준상</em>
+												</li>
+												<li class="capital">
+													<span class="lb">자본금</span>
+													<em class="number">
+														<span class="ani" id="capital">2,525</span>
+														<span>억</span>
+													</em>
+												</li>
+												<li class="revenue">
+													<span class="lb">영업수익금</span>
+													<em class="number">
+														<!-- s : 20200824 태그 삭제-->
+														<span class="ani" id="proceeds">5,161</span>
+														<span>억</span>
+														<!-- e : 20200824 태그 수정-->
+													</em>
+												</li>
+												<li class="credit">
+													<span class="lb">신용등급</span>
+													<em class="number">
+														<span class="ani creditNum">
+															<span>A</span>
+															<span>2</span>
+															<span>+</span>
+														</span>
+													</em>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="award-status">
+										<div class="content-inner">
+											<!-- s: 20200812 마크업 수정-->
+											<div class="section-cont">
+												<h3 class="title-sect">수상 현황</h3>
+												<div class="award-tab">
+													<div class="tab-menu-type03">
+														<ul class="tab-list">
+															<li class="active"><a class="item" href="#none">대통령</a></li>
+															<li><a class="item" href="#none">국무총리 &middot; 장관</a></li>
+														</ul>
+													</div>
+													<div class="inner-tab-cont active">
+														<!-- 탭 활성화 클래스 active -->
+														<ul class="award-list">
+															<!--s :20200909 날짜 기준 슬라이드 순서 변경-->
+															<li class="award-item">
+																<span class="date">1987.12.17</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">동탑 산업훈장 – 건설산업 발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<span class="date">1998.02.19</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">포장 – 용수공급사업에 전력하여 산업발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<span class="date">1998.02.19</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">표창장 – 도로건설기술 개발을 통하여 산업발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<span class="date">1998.06.30</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">포장 – 대구지하철 건설에 전력하여 산업발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<span class="date">2005.07.21</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">표창장 – 광역상수도 사업을 통하여 산업발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<span class="date">2008.12.12</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">표창장 – 건설신기술 개발을 통하여 국가발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<span class="date">2010.03.03</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">표창장 – 용수공급사업에 전력하여 산업발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<span class="date">2016.03.25</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">금탑 산업훈장 – 건설기술진흥을 통하여 국가산업 발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<span class="date">2018.10.18</span>
+																<p class="desc">
+																	<button class="e-slide-li on" type="button"><span class="txt">금탑 산업훈장 – 건설기술진흥을 통하여 국가산업 발전에 기여</span></button>
+																</p>
+															</li>
+															<!--e :20200909 날짜 기준 슬라이드 순서 변경-->
+														</ul>
+														<div class="award-slide tab-slide01">
+															<div class="swiper-container award-container">
+																<div class="swiper-wrapper">
+																	<!--s :20200909 날짜 기준 슬라이드 순서 변경-->
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide103.jpg" alt="1987.12.17 동탑 산업훈장 – 건설산업 발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide105.jpg" alt="1998.02.19 포장 – 용수공급사업에 전력하여 산업발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide108.jpg" alt="1998.02.19 표창장 – 도로건설기술 개발을 통하여 산업발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide104.jpg" alt="1998.06.30 포장 – 대구지하철 건설에 전력하여 산업발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide109.jpg" alt="2005.07.21표창장 – 광역상수도 사업을 통하여 산업발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide107.jpg" alt="2008.12.12 표창장 – 건설신기술 개발을 통하여 국가발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide106.jpg" alt="2010.03.03 표창장 – 용수공급사업에 전력하여 산업발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide102.jpg" alt="2016.03.25 금탑 산업훈장 – 건설기술진흥을 통하여 국가산업 발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide01.jpg" alt="2018.10.18 금탑 산업훈장 – 건설기술진흥을 통하여 국가산업 발전에 기여" /></div>
+																	<!--e :20200909 날짜 기준 슬라이드 순서 변경-->
+																</div>
+																<div class="pager-area">
+																	<button class="btn-prev-small" type="button">
+																		<i class="ico"></i>
+																		<div class="hide-txt">이전</div>
+																	</button>
+																	<button class="btn-next-small" type="button">
+																		<i class="ico"></i>
+																		<div class="hide-txt">다음</div>
+																	</button>
+																	<button class="btn-control" type="button">
+																		<i class="ico"></i>
+																		<span class="hide-txt">정지</span>
+																	</button>
+																	<div class="paging-range">
+																		<span class="paging-bar"><span class="paging-active"></span></span>
+																	</div>
+																	<div class="swiper-pagination"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="inner-tab-cont">
+														<!-- s: 20200814 마크업 수정-->
+														<ul class="award-list">
+															<li class="award-item">
+																<span class="date">2005.06.17</span>
+																<p class="desc">
+																	<button class="e-slide-li on" type="button"><span class="txt">국무총리 표창장 – 건설기술진흥을 통하여 국가산업 발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<span class="date">1998.02.19</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button">
+																		<span class="txt">
+																			국무총리 표창장 – 건설부문에 우수한 기술과 탁월한 방법을
+																			<br />
+																			활용함으로써 건설업발전과 기술향상에 기여
+																		</span>
+																	</button>
+																</p>
+															</li>
+															<li class="award-item">
+																<!-- s: 20200814 추가-->
+																<span class="date">2019.11.27</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">장관 표창장 – 타당성 조사에 전력하여 해외의 산업발전에 기여</span></button>
+																</p>
+															</li>
+															<li class="award-item">
+																<!-- e: 20200814 추가-->
+																<span class="date">2009.03.03</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt">장관 표창장 – 성실한 납세의무 이행으로 국가재정에 기여</span></button>
+																</p>
+															</li>
+															<!-- s: 20200903 삭제-->
+															<!-- li.award-item-->
+															<!-- 	span.date 1998.06.30-->
+															<!-- 	p.desc-->
+															<!-- 		button(type="button").e-slide-li-->
+															<!-- 			span.txt 장관 표창장 – 타당성 조사에 전력하여 해외의 산업발전에 기여-->
+															<!-- e: 20200903 삭제-->
+														</ul>
+														<!-- e: 20200814 마크업 수정-->
+														<div class="award-slide tab-slide02">
+															<div class="swiper-container award-container">
+																<div class="swiper-wrapper">
+																	<!-- s: 20200814 이미지 추가-->
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide201.jpg" alt="2005.06.17 국무총리 표창장 – 건설기술진흥을 통하여 국가산업 발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide202.jpg" alt="1998.02.19 국무총리 표창장 – 건설부문에 우수한 기술과 탁월한 방법을" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide203.jpg" alt="2019.11.27 장관 표창장 – 타당성 조사에 전력하여 해외의 산업발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide204.jpg" alt="2009.03.03 장관 표창장 – 성실한 납세의무 이행으로 국가재정에 기여" /></div>
+																	<!-- s: 20200903 삭제-->
+																	<!-- .swiper-slide-->
+																	<!-- 	img(src="/images/pc/img_award_slide205.jpg", alt="1998.06.30 장관 표창장 – 타당성 조사에 전력하여 해외의 산업발전에 기여")-->
+																	<!-- e: 20200814 이미지 추가-->
+																	<!-- e: 20200903 삭제-->
+																</div>
+																<div class="pager-area">
+																	<button class="btn-prev-small" type="button">
+																		<i class="ico"></i>
+																		<div class="hide-txt">이전</div>
+																	</button>
+																	<button class="btn-next-small" type="button">
+																		<i class="ico"></i>
+																		<div class="hide-txt">다음</div>
+																	</button>
+																	<button class="btn-control" type="button">
+																		<i class="ico"></i>
+																		<span class="hide-txt">정지</span>
+																	</button>
+																	<div class="paging-range">
+																		<span class="paging-bar"><span class="paging-active"></span></span>
+																	</div>
+																	<div class="swiper-pagination"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- e: 20200812 마크업 수정-->
+										</div>
+									</div>
+									<div class="license-status">
+										<div class="content-inner">
+											<h3 class="title-sect">업면허 등록 현황</h3>
+											<div class="license-slide">
+												<div class="swiper-container license-container">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide">
+															<div class="license-list">
+																<a href="#">
+																	<span class="img-box"><img src="/images/pc/img_license_01.jpg" alt="소방시설업" /></span>
+																	<span class="license-name"><span class="line-clamp">소방시설업</span></span>
+																	<span class="hover-txt">
+																		<span class="type">소방시설업</span>
+																		<span class="issued">
+																			<span>서울특별시</span>
+																			<span>2020.05.13</span>
+																		</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+														<div class="swiper-slide">
+															<div class="license-list">
+																<a href="#">
+																	<span class="img-box"><img src="/images/pc/img_license_02.jpg" alt="산림기술용역업" /></span>
+																	<span class="license-name"><span class="line-clamp">산림기술용역업</span></span>
+																	<span class="hover-txt">
+																		<span class="type">산림기술용역업</span>
+																		<span class="issued">
+																			<span>서울특별시</span>
+																			<span>2020.05.13</span>
+																		</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+														<div class="swiper-slide">
+															<div class="license-list">
+																<a href="#">
+																	<span class="img-box"><img src="/images/pc/img_license_03.jpg" alt="연구개발서비스업" /></span>
+																	<span class="license-name"><span class="line-clamp">연구개발서비스업</span></span>
+																	<span class="hover-txt">
+																		<span class="type">연구개발서비스업</span>
+																		<span class="issued">
+																			<span>서울특별시</span>
+																			<span>2020.05.13</span>
+																		</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+														<div class="swiper-slide">
+															<div class="license-list">
+																<a href="#">
+																	<span class="img-box"><img src="/images/pc/img_license_04.jpg" alt="토양정화업" /></span>
+																	<span class="license-name"><span class="line-clamp">토양정화업</span></span>
+																	<span class="hover-txt">
+																		<span class="type">토양정화업</span>
+																		<span class="issued">
+																			<span>서울특별시</span>
+																			<span>2020.05.13</span>
+																		</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+														<div class="swiper-slide">
+															<div class="license-list">
+																<a href="#">
+																	<span class="img-box"><img src="/images/pc/img_license_05.jpg" alt="건설업" /></span>
+																	<span class="license-name"><span class="line-clamp">건설업</span></span>
+																	<span class="hover-txt">
+																		<span class="type">건설업</span>
+																		<span class="issued">
+																			<span>서울특별시</span>
+																			<span>2020.05.13</span>
+																		</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+														<div class="swiper-slide">
+															<div class="license-list">
+																<a href="#">
+																	<span class="img-box"><img src="/images/pc/img_license_06.jpg" alt="자연환경보전사업 대행자" /></span>
+																	<span class="license-name"><span class="line-clamp">자연환경보전사업 대행자</span></span>
+																	<span class="hover-txt">
+																		<span class="type">자연환경보전사업 대행자</span>
+																		<span class="issued">
+																			<span>서울특별시</span>
+																			<span>2020.05.13</span>
+																		</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+														<div class="swiper-slide">
+															<div class="license-list">
+																<a href="#">
+																	<span class="img-box"><img src="/images/pc/img_license_01.jpg" alt="소방시설업" /></span>
+																	<span class="license-name"><span class="line-clamp">소방시설업</span></span>
+																	<span class="hover-txt">
+																		<span class="type">소방시설업</span>
+																		<span class="issued">
+																			<span>서울특별시</span>
+																			<span>2020.05.13</span>
+																		</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+												<button class="btn-prev-mid" type="button">
+													<i class="ico"></i>
+													<div class="hide-txt">이전</div>
+												</button>
+												<button class="btn-next-mid" type="button">
+													<i class="ico"></i>
+													<div class="hide-txt">다음</div>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="btm-full-banner sp-type-02">
+							<div class="intro-link-wrap">
+								<div class="intro-link-box">
+									<a class="intro-link" href="#none">
+										<span class="intro-menu">PEOPLE</span>
+										<strong class="intro-name">임직원 정보</strong>
+										<p>
+											도화엔지니어링을 국내 1위 종합엔지니어링 회사로 이끌어준
+											<br />
+											우수한 기술력을 가진 임직원들을 만나보세요.
+										</p>
+									</a>
+								</div>
+								<div class="intro-link-box">
+									<a class="intro-link" href="#none">
+										<span class="intro-menu">HISTORY</span>
+										<strong class="intro-name">도화역사</strong>
+										<p>
+											1957년부터 끊임없는 성장과 혁신을 거듭해온
+											<br />
+											도화엔지니어링의 역사를 확인해보세요.
+										</p>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="dim-pop-wrap">
+							<!-- popup 제어 클래스 : active -->
+							<div class="dim-pop">
+								<!-- s: 20200901 타이틀 영역 수정-->
+								<div class="dim-header">
+									<h1 class="dim-title">
+										<div class="line-clamp">연구개발서비스업</div>
+									</h1>
+								</div>
+								<!-- e: 20200901 타이틀 영역 수정-->
+								<div class="dim-content">
+									<div class="img-box"><img src="/images/pc/img_license_03.jpg" alt="연구개발서비스업 신고증" /></div>
+								</div>
+								<button class="layer-close" type="button">
+									<i class="ico"></i>
+									<span class="hide-txt">닫기</span>
+								</button>
+							</div>
+						</div>
+						<!-- e : 20200812 클래스 및 .contents-wrap 추가-->
+						<!-- s : 20200813 grid mixin 추가-->
+						<div class="sub-page-grid">
+							<div class="grid-wrap" aria-hidden="true">
+								<div class="grid-ico-wrap" aria-hidden="true">
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+								</div>
+								<div class="grid-line-wrap">
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line" aria-hidden="true"></div>
+								</div>
+							</div>
+						</div>
+						<!-- e : 20200813 grid mixin 추가-->
+					</div>
+				</div>
+			</div>
+			<footer id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">
+								<span class="hide-txt">맨위로가기</span>
+								<em class="ico" aria-hidden="true"></em>
+							</button>
+						</div>
+						<span class="footer-logo">
+							<!--s: 20200831 다국어 로고 이미지 변경-->
+							<!--img(src="/images/common/img_footer_logo_en.png", alt="DOHWA")-->
+							<!--e: 20200831 다국어 로고 이미지 변경-->
+							<img src="/images/common/img_footer_logo.jpg" alt="DOHWA 엔지니어링" />
+						</span>
+
+						<div class="clfix">
+							<div class="footer-left">
+								<ul class="footer-menu">
+									<!--s: 20200914 우편번호 수정-->
+									<li>서울특별시 강남구 삼성로 438 (#06178)</li>
+									<!--e: 20200914 우편번호 수정-->
+									<li>대표전화 02-6323-3000</li>
+									<li>
+										<a href="#none"><strong>개인정보 처리방침</strong></a>
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD. AllRIGHT RESERVED.</address>
+							</div>
+							<div class="footer-right">
+								<span class="footer-sns">
+									<a class="ico-blog" href="#none"><span class="hide-txt">Blog</span></a>
+									<a class="ico-youtube" href="#none"><span class="hide-txt">Youtube</span></a>
+								</span>
+								<!--s: 20200828 디자인셀렉트 박스 교체-->
+								<div class="footer-family">
+									<div class="family-inner">
+										<button class="family-btn" type="button"><span>Employee Site</span></button>
+										<ul class="family-list">
+											<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+											<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+											<li class="family-item">
+												<!--s:20200903 텍스트 수정-->
+												<a href="#none" title="새창열림">CMFG</a>
+												<!--e:20200903 텍스트 수정-->
+											</li>
+											<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+										</ul>
+									</div>
+								</div>
+								<!--e: 20200828 디자인셀렉트 박스 교체-->
+							</div>
+						</div>
+					</div>
+					<!-- s : 20200813 footer grid 추가-->
+					<div class="footer-grid-wrap" aria-hidden="true">
+						<div class="grid-line-wrap" aria-hidden="true">
+							<div class="grid-line" aria-hidden="true"></div>
+							<div class="grid-line" aria-hidden="true"></div>
+						</div>
+					</div>
+					<!-- e : 20200813 footer grid 추가-->
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/jquery.mousewheel.min.js"></script>
+		<script src="/inc/js/ScrollMagic.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/animation.gsap.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/lottie.js"></script>
+		<script src="/inc/js/jquery.scrollbar.min.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common.js"></script>
+		<script>
+			var component = new ComponentUI();
+			component.tabContent(".award-tab .tab-list", ".award-tab .inner-tab-cont");
+
+			var motionFunc = (function() {
+				var sec01, sec02, sec03;
+				var _scrollTop;
+
+				var _countIndex = 0,
+					_timeout;
+
+				(function init() {
+					sec01 = $(".ui-section-01");
+					sec02 = $(".ui-section-02");
+					sec03 = $(".ui-section-03");
+
+					_scrollTop = $(this).scrollTop();
+
+					$(".intro-tit, .intro-subtit, .intro-desc, .intro-img, .sign").css("opacity", 0);
+
+					// 새로고침 후 스크롤이 하단에 위치했을때 모션 실행
+					$(".ui-section").each(function(_i, _target) {
+						var _currentSection = $(_target),
+							_trigger = _currentSection.offset().top - $(window).height() * 0.7;
+
+						if (_scrollTop >= _trigger) {
+							switch (_i) {
+								case 0:
+									section01();
+									break;
+								case 1:
+									section02();
+									break;
+								case 2:
+									section03();
+									break;
+							}
+
+							_currentSection.attr("motion", "active");
+						}
+					});
+
+					// 스크롤이 움직임에 따른 모션 실행
+					$(window).on("scroll", function() {
+						_scrollTop = $(window).scrollTop();
+
+						$(".ui-section").each(function(_i, _target) {
+							var _currentSection = $(_target),
+								_trigger = _currentSection.offset().top - $(window).height() * 0.7;
+
+							if (_scrollTop >= _trigger) {
+								switch (_i) {
+									case 0:
+										section01();
+										break;
+									case 1:
+										section02();
+										break;
+									case 2:
+										section03();
+										break;
+								}
+
+								_currentSection.attr("motion", "active");
+							}
+						});
+					});
+				})();
+
+				function section01() {
+					var _tit, _subTit, _contents, _imgWrap, _img;
+
+					_imgWrap = sec01.find(".intro-img");
+					_img = sec01.find(".intro-img img");
+
+					_tit = sec01.find(".intro-tit");
+					_subTit = sec01.find(".intro-subtit");
+					_contents = sec01.find(".intro-desc");
+
+					if (sec01.attr("motion") == "active") return false;
+
+					// txt
+					TweenMax.fromTo(_tit, 2, { y: 80 }, { y: 0, opacity: 1, ease: Power4.easeOut });
+					TweenMax.fromTo(_subTit, 2, { y: 80 }, { y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.4 });
+					TweenMax.fromTo(_contents, 2, { y: 80 }, { y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.55 });
+
+					// img
+					TweenMax.to(_imgWrap, 4, { opacity: 1, ease: Power4.easeOut });
+					TweenMax.fromTo(_img, 4.5, { scale: 1.2, x: 50 }, { x: 0, ease: Power2.easeOut });
+				}
+
+				function section02() {
+					var _tit, _contents, _sign, _img;
+
+					_imgWrap = sec02.find(".intro-img");
+					_img = sec02.find(".intro-img img");
+
+					_tit = sec02.find(".intro-tit");
+					_subTit = sec02.find(".intro-subtit");
+					_contents = sec02.find(".intro-desc");
+					_sign = sec02.find(".sign");
+
+					if (sec02.attr("motion") == "active") return false;
+
+					// txt
+					TweenMax.fromTo(_tit, 2, { y: 80 }, { y: 0, opacity: 1, ease: Power4.easeOut });
+					TweenMax.fromTo(_subTit, 2, { y: 80 }, { y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.4 });
+					TweenMax.fromTo(_contents, 2, { y: 80 }, { y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.55 });
+					TweenMax.fromTo(_sign, 2, { y: 80 }, { y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.6 });
+
+					// img
+					TweenMax.to(_imgWrap, 4, { opacity: 1, ease: Power4.easeOut });
+					//- TweenMax.fromTo(_img, 4.5, {scale: 1.1}, {scale: 1, ease: Power2.easeOut});
+				}
+
+				function section03() {
+					if (sec03.attr("motion") == "active") return false;
+
+					// count
+					var options = {
+						useEasing: false,
+						easingFn: function(t, b, c, d) {
+							var ts = (t /= d) * t;
+							var tc = ts * t;
+							return b + c * (tc + -3 * ts + 3 * t);
+						},
+						useGrouping: true,
+						separator: ",",
+						decimal: ""
+					};
+
+					new CountUp("capital", 0, 2525 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+					new CountUp("proceeds", 0, 5161 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+
+					$(".ani.creditNum span").css("opacity", "0");
+
+					_countUp($(".ani.creditNum span").eq(0), ["A", "B", "C", "D"]);
+
+					setTimeout(function() {
+						clearTimeout(_timeout);
+						$(".ani.creditNum span")
+							.eq(0)
+							.text("A");
+
+						$(".ani.creditNum span")
+							.eq(1)
+							.fadeIn();
+						_countUp($(".ani.creditNum span").eq(1), ["1", "2", "3", "4", "5", "6", "7", "8", "9"]);
+
+						setTimeout(function() {
+							clearTimeout(_timeout);
+							$(".ani.creditNum span")
+								.eq(1)
+								.text("2");
+						}, 500);
+
+						setTimeout(function() {
+							TweenMax.to($(".ani.creditNum span").eq(2), 0.4, { opacity: 1 });
+						}, 500);
+					}, 500);
+				}
+
+				function _countUp(target, arr, i) {
+					TweenMax.to(target, 0.4, { opacity: 1 });
+
+					if (_countIndex >= arr.length) _countIndex = 0;
+
+					target.text(arr[_countIndex]);
+
+					_countIndex++;
+
+					_timeout = setTimeout(function() {
+						_countUp(target, arr);
+					}, 50);
+				}
+			})();
+		</script>
+	</body>
+</html>

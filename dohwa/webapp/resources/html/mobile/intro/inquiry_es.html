@@ -1,0 +1,511 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common_mobile.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div class="intro contact-us" id="wrap">
+			<header class="header" id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header_content">
+					<!--스크롤 및 햄버거 클릭시 .on 클래스 추가-->
+					<h1 class="logo-wrap">
+						<a href="#"></a>
+						<span class="hide-txt">DOHWA</span>
+					</h1>
+					<div class="header-menu">
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								<span class="hide-txt">Menu</span>
+							</button>
+						</span>
+						<div class="header-all-menu">
+							<!-- .bttn-all-menu 클릭시 .active 추가 (전체메뉴 노출) -->
+							<div class="scroll-wrap">
+								<ul class="all-menu-list">
+									<li class="all-menu-item">
+										<!-- 활성화 클래스 : active -->
+										<a href="#none">
+											회사소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">Vision</a></li>
+											<li class="gnb-sub-item"><a href="#">People</a></li>
+											<li class="gnb-sub-item"><a href="#">History</a></li>
+											<li class="gnb-sub-item"><a href="#">CSR</a></li>
+											<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											사업소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											투자정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+											<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+											<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+											<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											홍보센터
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<!--s: 20200831 메뉴추가-->
+											<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+											<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+											<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+											<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+											<!--e: 20200831 메뉴추가-->
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											채용정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+											<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="lang-list">
+									<li>
+										<button class="bttn-lang on" type="button">
+											KOR
+											<!-- 활성화 클래스 : on -->
+										</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ENG</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ESP</button>
+									</li>
+								</ul>
+							</div>
+							<button class="bttn-menu-close" type="button" title="전체메뉴 닫기"><span class="hide-txt">전체메뉴 닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<div id="content" role="main">
+					<div class="page-visual intro06 visual-area">
+						<div class="page-title-sec">
+							<span class="title-main-sub">COMPANY INFO</span>
+							<h2 class="title-main">회사소개</h2>
+						</div>
+						<div class="visual-grid-wrap" aria-hidden="true">
+							<div class="grid-ico-wrap" aria-hidden="true">
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+							</div>
+							<div class="grid-line-wrap">
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+							</div>
+						</div>
+					</div>
+					<div class="page-tab-section">
+						<div class="tab-menu-type01 center swiper-container">
+							<ul class="tab-list swiper-wrapper">
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">Overview</a></li>
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">Vision</a></li>
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">People</a></li>
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">History</a></li>
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">CSR</a></li>
+								<li class="active swiper-slide"><a class="item" href="#none" data-id="">Contact us</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="contents no-btm-type">
+						<div class="section-cont inquiry-cont">
+							<div class="tab-menu-type02">
+								<ul class="tab-list">
+									<li>
+										<a class="item" href="#none"><span class="txt" data-id="">연락처 &middot; 위치</span></a>
+									</li>
+									<li>
+										<a class="item" href="#none"><span class="txt" data-id="">해외지사</span></a>
+									</li>
+									<li class="active">
+										<a class="item" href="#none"><span class="txt" data-id="">문의사항</span></a>
+									</li>
+								</ul>
+							</div>
+							<div class="inner-tab-cont active">
+								<div class="terms-cont">
+									<h3 class="title-sect">Guía para el Uso y Recolección de Información Personal</h3>
+									<div class="terms-box">
+										<div class="terms-inner">
+											<strong>1. Guía sobre el tratamiento de información personal</strong>
+											<p>01. Disposiciones Generales</p>
+											<p>
+												El término «Información Personal» se refiere a la información que puede usarse para identificar a una persona, incluye los nombres, documento de identidad, y videos (incluyendo videos que no se pueden utilizar para identificar a una persona pero que se pueda utilizar en conjunto con otra información para identificar a dicha persona). El término «Interesado» se refiere a la persona que puede ser
+												identificada a través de la información disponible y que actúa como dueño de dicha información. La empresa se encarga de garantizar que el acceso a la guía sobre el tratamiento de información personal sea fácil de obtener en cualquier momento; ya que se puede ubicar en su página web (http:///www.dohwa.co.kr). En caso de cualquier modificación en la guía, la empresa divulgará dichas modificaciones en
+												las noticias de su página web (o mediante comunicaciones individuales a los usuarios).
+											</p>
+											<p>02. Elementos de información personal procesados y su propósito</p>
+											<p>La empresa no procesa información sensible que pueda vulnerar la privacidad o información personal de una persona, en conformidad con las leyes o regulaciones correspondientes o sin el consentimiento de la persona.</p>
+											<p>
+												A. Elementos procesados
+												<br />
+												Nombre (coreano/chino-coreano/inglés), foto, contraseña, teléfono fijo, dirección, residencia permanente, teléfono celular, correo electrónico, nivel de educación, servicio militar (culminado o no, tiempo de servicio, categoría del servicio, rango), idiomas, concimientos informáticos, calificaciones, estado civil, elegibilidad para beneficios para veteranos, experiencia laboral, relaciones sociales,
+												reconocimientos, experiencia internacional, experiencia de investigación.
+											</p>
+											<p>
+												B. Finalidad de la información procesada
+												<br />
+												- Proceso de selección de personal o comunicaciones con el postulante.
+												<br />
+												- Gestión de recursos humanos, incluyedo el pago de sueldos, beneficios sociales, capacitaciones, aseguramiento, respaldo para el desempeño y evaluación de distintas funciones.
+											</p>
+											<p>03. Procesamiento de información personal y plazo de conservación de la información</p>
+											<p>Una vez cumplido el propósito de la recopilación y el uso de la información personal, la empresa procede a su destrucción inmediata. Sin embargo, la información que se especifica a continuación se conservará durante plazos específicos y, cuando sea necesario, se solicitará el consentimiento del interesado.</p>
+											<p>
+												A. Información personal del contratado
+												<br />
+												- Periodo de Retención: Permanente
+												<br />
+												- Razón para la retención: Gestión de recursos humanos durante el periodo laboral del empleado, beneficios por jubilación, expedición de certificado de trabajo, entre otras.
+												<br />
+												- Información retenida: Nombre (coreano/chino-coreano/inglés), foto, contraseña, teléfono fijo, dirección, residencia permanente, teléfono celular, correo electrónico, nivel de educación, servicio militar (culminado o no, tiempo de servicio, categoría del servicio, rango), idiomas, concimientos informáticos, calificaciones, estado civil, elegibilidad para beneficios para veteranos, experiencia
+												laboral, relaciones sociales, reconocimientos, experiencia internacional, experiencia de investigación.
+											</p>
+											<p>
+												B. Información personal de postulante
+												<br />
+												- Plazo de conservación: 5 años desde la fecha de culminación del proceso de selección de personal.
+												<br />
+												- Propósito de conservación: Gestión de recursos humanos, contratación en el futuro.
+												<br />
+												- Información retenida: Nombre (coreano/chino-coreano/inglés), foto, contraseña, teléfono fijo, dirección, residencia permanente, teléfono celular, correo electrónico, nivel de educación, servicio militar (culminado o no, tiempo de servicio, categoría del servicio, rango), idiomas, conocimientos informáticos, calificaciones, estado civil, elegibilidad para beneficios para veteranos, experiencia
+												laboral, relaciones sociales, reconocimientos, experiencia internacional, experiencia de investigación.
+											</p>
+											<p>04. Eliminación de información personal</p>
+											<p>
+												La información personal almacenada en archivos electrónicos se destruye aplicando un método técnico que impide la recuperación de la misma.
+												<br />
+												La información personal almacenada en archivos físicos se destruye con una trituradora o un incinerador.
+											</p>
+											<p>
+												Fecha de divulgación: 1 de enero de 2012
+												<br />
+												Fecha de implementación: 1 de enero de 2012
+											</p>
+										</div>
+									</div>
+									<div class="agree-area">
+										<span class="input-checkbox right">
+											<input type="checkbox" id="chk01" name="chk01" />
+											<label for="chk01"><span class="txt">Acepto brindar mi información personal.</span></label>
+										</span>
+									</div>
+									<h3 class="title-sect">Guía para Proporcionar Información Personal a Terceros</h3>
+									<div class="terms-box">
+										<div class="terms-inner">
+											<strong>2. Provisión de información personal a terceros</strong>
+											<p>La empresa solo puede utilizar información personal con el propósito de recolección y no puede usarla, brindarla o divulgarla a terceros por ningún motivo. Sin embargo, existen las siguientes excepciones:</p>
+											<p>
+												- Cuando se ha obtenido el concentimiento del propietario de la información.
+												<br />
+												- Cuando se solicite según las diferentes disposiciones legales.
+												<br />
+												- Cuando se considere necesaria para la protección de la vida e intereses de la persona o de un tercero ante a un peligro inminente, en caso el interesado o su representante legal no esté en condiciones de expresar sus intenciones o no pueda brindar su consentimiento previo, entre otros.
+												<br />
+												- Cuando sea necesaria con el fin de recolectar datos estadísticos o investigaciones académicas, pero dicha información se proporcionará de tal manera que no se pueda identificar a la persona.
+											</p>
+											<p>En la actualidad, la empresa proporciona información personal como se detalla a continuación:</p>
+											<p>
+												- Destinatarios de información personal: Engineering Guarantee Insurance, LIG Insurance, Seoul Guarantee Insurance
+												<br />
+												- Información personal proporcionada: Nombre, número de registro de residencia
+												<br />
+												- Propósito de la información personal: Para la suscripción a un seguro de accidentes colectivos o seguro de garantía de identidad para las personas.
+												<br />
+												- Plazo de conservación y uso de la información personal: La información se debe destruir después de su uso.
+											</p>
+										</div>
+									</div>
+									<div class="agree-area">
+										<span class="input-checkbox right">
+											<input type="checkbox" id="chk02" name="chk01" />
+											<label for="chk02"><span class="txt">Acepto brindar mi información personal.</span></label>
+										</span>
+									</div>
+									<div class="bttn-area center">
+										<a class="bttn type01 style01" href="#none" role="button">
+											<span class="txt01">확인</span>
+											<i class="ico01" aria-hidden="true"></i>
+										</a>
+									</div>
+								</div>
+								<h3 class="title-sect">문의하기</h3>
+								<div class="table-wrap-type01">
+									<table class="table-col-type01 table-form-type">
+										<caption>
+											<span class="txt01">문의하기</span>
+											<span class="txt02">:이름</span>
+											<span class="txt03">,이메일</span>
+											<span class="txt04">,연락처</span>
+											<span class="txt05">,제목</span>
+											<span class="txt06">,내용</span>
+											<span class="txt07">,첨부파일</span>
+										</caption>
+										<colgroup>
+											<col style="width:25%" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>이름</th>
+												<td>
+													<span class="input-txt">
+														<input type="text" title="이름" />
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th>이메일</th>
+												<td>
+													<div class="input-group input-email">
+														<span class="input-txt">
+															<input type="text" title="이메일 아이디" />
+														</span>
+														<span class="input-email-at">&#64;</span>
+														<span class="input-txt">
+															<input type="text" title="이메일 도메인" />
+														</span>
+													</div>
+													<div class="input-email-domain">
+														<span class="selectbox">
+															<select title="이메일 도메인">
+																<option value="">직접입력</option>
+																<option value="">naver.com</option>
+																<option value="">gmail.com</option>
+																<option value="">hanmail.net</option>
+															</select>
+														</span>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>연락처</th>
+												<td>
+													<span class="input-txt">
+														<input type="text" title="연락처" />
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th>제목</th>
+												<td>
+													<span class="input-txt">
+														<input type="text" title="제목" />
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th>내용</th>
+												<td>
+													<span class="input-txt">
+														<textarea name="" title="내용"></textarea>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th>첨부파일</th>
+												<td>
+													<div class="input-file">
+														<label class="bttn-file-upload" for="file-upload">
+															파일선택
+															<input class="inp-file-hide" type="file" id="file-upload" />
+														</label>
+														<input class="selected-file" type="text" disabled="true" placeholder="선택된 파일 없음" aria-hidden="true" />
+														<p class="info-txt">
+															* 첨부 파일은 jpg, png, gif, hwp, pdf, ppt, xls, zip 파일에 한해 등록이 가능합니다.
+															<br />
+															/ 최대 용량 : 00MB
+														</p>
+													</div>
+													<div class="file-list">
+														<p class="file-item">
+															도화엔지니어링_Img_20200722.png
+															<button class="btn-delete" type="button">
+																<i class="ico-file-delete" aria-hidden="true"></i>
+																<span class="hide-txt">파일삭제</span>
+															</button>
+														</p>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="table-btn-wrap center">
+										<a class="bttn type01 style01" href="#none" role="button">
+											<span class="txt01">문의하기</span>
+											<em class="ico01" aria-hidden="true"></em>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--s: 20200831 #content 안으로 위치변경-->
+					<div class="btm-full-banner">
+						<div class="intro-link-wrap">
+							<div class="intro-link-box">
+								<a class="intro-link" href="#none">
+									<span class="intro-menu">Career</span>
+									<strong class="intro-name">채용지원</strong>
+								</a>
+							</div>
+							<div class="intro-link-box">
+								<a class="intro-link" href="#none">
+									<span class="intro-menu">Business</span>
+									<strong class="intro-name">사업소개</strong>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!--e: 20200831 #content 안으로 위치변경-->
+				</div>
+			</div>
+			<footer class="footer" id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">TOP</button>
+						</div>
+						<div class="footer-family">
+							<div class="family-inner">
+								<button class="family-btn" type="button"><span>Employee Site</span></button>
+								<ul class="family-list">
+									<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+									<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+									<li class="family-item">
+										<!--s: 20200903 텍스트 수정-->
+										<a href="#none" title="새창열림">CMFG</a>
+										<!--e: 20200903 텍스트 수정-->
+									</li>
+									<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer-inner">
+							<span class="footer-logo"><img src="/images/common_mobile/img_footer_logo.jpg" alt="DOHWA" /></span>
+							<span class="footer-sns">
+								<a class="ico-blog" href="#none" title="새창열림"><span class="hide-txt">Blog</span></a>
+								<a class="ico-youtube" href="#none" title="새창열림"><span class="hide-txt">Youtube</span></a>
+							</span>
+							<div class="footer-info">
+								<!--s :20200914 우편번호 수정-->
+								<p>서울특별시 강남구 삼성로 438 (#06178)</p>
+								<!--s :20200914 우편번호 수정-->
+								<p>대표전화 : 02 - 6323 - 3000</p>
+								<ul class="footer-menu">
+									<li>
+										<!-- s: 20200813 수정 -->
+										<a href="#none"><strong class="nanumB">개인정보처리방침</strong></a>
+										<!-- e: 20200813 수정 -->
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">
+									COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD.
+									<br />
+									AllRIGHT RESERVED.
+								</address>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<div class="cnt-grid-wrap" aria-hidden="true">
+			<div class="grid-ico-wrap" aria-hidden="true">
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+			</div>
+			<div class="grid-line-wrap" aria-hidden="true">
+				<div class="grid-line" aria-hidden="true"></div>
+				<div class="grid-line" aria-hidden="true"></div>
+			</div>
+		</div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/CustomEase.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common_mo.js"></script>
+	</body>
+</html>

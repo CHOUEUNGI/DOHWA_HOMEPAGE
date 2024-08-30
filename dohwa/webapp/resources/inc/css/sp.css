@@ -1,0 +1,7 @@
+html[lang="es"] .header-content.active .logo-wrap a,html[lang="es"] .header-content.on .logo-wrap a{background-image:url(../../images/common/img_header_logo_on_en.png)}
+html[lang="es"] .header-content .logo-wrap a{background:url(../../images/common/img_header_logo_en.png) no-repeat 50% 50%/100% auto}
+html[lang="es"] .header-content .gnb-wrap .gnb-menu-list{width:855px}
+html[lang="es"] .header-content .gnb-wrap .gnb-menu-list .gnb-menu-item{padding-right:45px}
+html[lang="es"] .header-content.active{height:452px}
+html[lang="es"] .footer-content .footer-logo{top:62px}
+/*# sourceMappingURL=../../sass_maps/inc/css/sp.css.map */

@@ -1,0 +1,2994 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common_mobile.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/swiper.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div class="business" id="wrap">
+			<header class="header" id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header_content">
+					<!--스크롤 및 햄버거 클릭시 .on 클래스 추가-->
+					<h1 class="logo-wrap">
+						<a href="#"></a>
+						<span class="hide-txt">DOHWA</span>
+					</h1>
+					<div class="header-menu">
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								<span class="hide-txt">Menu</span>
+							</button>
+						</span>
+						<div class="header-all-menu">
+							<!-- .bttn-all-menu 클릭시 .active 추가 (전체메뉴 노출) -->
+							<div class="scroll-wrap">
+								<ul class="all-menu-list">
+									<li class="all-menu-item">
+										<!-- 활성화 클래스 : active -->
+										<a href="#none">
+											회사소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">Vision</a></li>
+											<li class="gnb-sub-item"><a href="#">People</a></li>
+											<li class="gnb-sub-item"><a href="#">History</a></li>
+											<li class="gnb-sub-item"><a href="#">CSR</a></li>
+											<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											사업소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											투자정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+											<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+											<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+											<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											홍보센터
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<!--s: 20200831 메뉴추가-->
+											<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+											<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+											<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+											<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+											<!--e: 20200831 메뉴추가-->
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											채용정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+											<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="lang-list">
+									<li>
+										<button class="bttn-lang on" type="button">
+											KOR
+											<!-- 활성화 클래스 : on -->
+										</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ENG</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ESP</button>
+									</li>
+								</ul>
+							</div>
+							<button class="bttn-menu-close" type="button" title="전체메뉴 닫기"><span class="hide-txt">전체메뉴 닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<div id="content" role="main">
+					<div class="page-visual business01 visual-area">
+						<div class="page-title-sec">
+							<span class="title-main-sub">BUSINESS</span>
+							<h2 class="title-main">사업소개</h2>
+						</div>
+					</div>
+					<div class="page-tab-section">
+						<div class="tab-menu-type01 center">
+							<ul class="tab-list tab-list-1depth">
+								<li class="active"><a class="item" href="#none" data-id="">Overview</a></li>
+								<li><a class="item" href="#none" data-id="">Project</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="contents full-type business-cont-wrap contents-1depth">
+						<div class="business-tab-area">
+							<ul class="business-tab-list tab-list-2depth">
+								<li><a class="item" href="#none">물</a></li>
+								<li><a class="item" href="#none">도시</a></li>
+								<li><a class="item" href="#none">교통</a></li>
+								<li class="active"><a class="item" href="#none">에너지</a></li>
+							</ul>
+						</div>
+						<div class="business-tab-cont business-water contents-2depth" style="display:none;">
+							<div class="business-summary-wrap water-division">
+								<div class="summary-visual">
+									<h3 class="title-sect">물 사업 부문</h3>
+									<span class="visual-bar"></span>
+								</div>
+								<div class="business-summary-inner">
+									<div class="business-txt-box">
+										도화는 물 공급체계(특히 광역 물공급체계)의 설계 분야에서 선두적인 회사로서 주요 사회 기간 시설인 광역 물 공급 체계(대청댐광역, 전주권광역, 울산권광역, 광영권 고아역공급 체계
+										<br />
+										등) 타당성 조사, 기본설계와 실시설계 등을 성공적으로 수행해 왔습니다. 또한, 하수고도처리 시스템을 포함한 도시
+										<br />
+										하수처리장과 공장 폐수처리장 설계와 감리 분야에 있어서도
+										<br />
+										도화는 선두적인 역할을 하였고, 상&middot;하수도 부문 수주고에서 매년
+										<br />
+										1위를 차지하고 있습니다. 특히, 분리막을 이용한 하수고도 처리공법 시스템(환경신기술 #308호)은 하수 처리수의 재이용을 위한 새로운 지평을 연 순수 국산 신기술이며 진공식 하수관거 수집시스템 (신기술#555)과 네어지가 회수되는 친환경 시스템의
+										<br />
+										하수관거 보수공법(신기술 #636) 등 상하수도 관련 신기술의
+										<br />
+										개발과 설계 적용에 높은 기술력을 보유하고 있습니다.
+									</div>
+								</div>
+							</div>
+							<div class="content-inner ui-selectbox">
+								<div class="menu-selectbox tab-list-3depth">
+									<span class="selectbox">
+										<select title="">
+											<option value="">상수도</option>
+											<option value="">하수도</option>
+											<option value="">하천/수자원개발</option>
+											<option value="">재해/방재/댐/수력발전</option>
+										</select>
+									</span>
+								</div>
+								<div class="inner-tab-cont contents-3depth active">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												도화는 매년 국내 상하수도분야 수주실적 1위를 차지하는 물분야 선도기업입니다. 특히, 광역상수도를 비롯한 상수도 계획 및 설계에 있어서 대표 주자입니다. 광역상수도는 대한민국 내의 급중하는 용수수요에 대처하는 매우 중요한 사회기반시설로서 대청댐, 전주권, 울산권, 광양권 등 광역상수도 시설의 타당성조사, 기본 및 실시설계 등을 성공적으로 수행하고 있습니다. 또한 기후변화에 따른 원수 부족에 대처하기 위해
+												취수원 다변화 설계와 해수담수화을 통한 용수공급에도 많은 경험을 가지고 있습니다.
+												<br />
+												국내에서 축적된 경험 및 기술을 바탕으로 해외 상수도사업에 적극 참여하여 페루, 네팔, 인도네시아, 베트남, 미얀마 등 여러 국가에서 타당성조사, 설계 및 감리를 성공적으로 수행하였습니다.
+											</span>
+										</p>
+										<div class="bttn-area">
+											<button class="bttn-link-bd" type="button">더보기</button>
+										</div>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												도화는 대한민국 하수도분야를 선도하는 기업입니다. 유역하수도 정비계획에서부터 특&middot;광역시, 시&middot;군 하수도정비 기본계획에 이르기까지 대한민국의 하수도 마스터 플랜을 수립하는
+												<br />
+												대표회사입니다. 하수처리장 및 하수관거 설계에 있어서는 기술적, 제도적 요구사항에 충실하고, 나아가 하수처리시설 운영 서비스를 통한 토탈 솔루션 제공자 역할을 담당하고 있습니다.
+												<br />
+												대한민국을 넘어 방글라데시, 네팔, 탄자니아, 캄보디아, 니카라과, 페루, 인도네시아 등에 진출하여 주민 생활환경 개선과 방류수역 수질보전에 기여하고 있습니다.
+											</span>
+										</p>
+										<div class="bttn-area">
+											<button class="bttn-link-bd" type="button">더보기</button>
+										</div>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												수자원본부는 인류의 안전하고 행복한 삶을위해서 수자원 및 방재업무를 담당하고 있다.
+												<br />
+												1961년 “금강수계 옥천지점 수자원기술조사” 업무를 시작으로 국내 다수의 기술용역을 수행하고 있으며, 2000년대에 들어서면서 해외의 하천개발사업, 수력발전사업, 홍수조절통합계획 등
+												<br />
+												수자원사업에 다수 참여하고 있다. 사업분야는 하천 및 하천환경, 댐 및 수력발전, 수자원개발, 재해영향평가, 방재 등으로서 유역종합계획, 하천기본계획, 하천종합개발계획, 홍수위험지도제작,
+												<br />
+												하천재해예방 및 생태하천복원사업, 유역조사, 댐 조사 및 설계, 유지용수확보, 홍수조절지, 배수펌프장, 수력발전사업, 자연재해저감종합계획 및 우수유출저감대책계획, 자연재해위험지구
+												<br />
+												개선정비사업 및 재해영향평가 및 재해복구사업 분석평가, 비상대처계획 등 각분야의 최고의기술력를 갖추어 수자원분야 및 방재분야의 선도적인 역할을 담당하고 있다.
+											</span>
+										</p>
+										<div class="bttn-area">
+											<button class="bttn-link-bd" type="button">더보기</button>
+										</div>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												수자원본부는 인류의 안전하고 행복한 삶을위해서 수자원 및 방재업무를 담당하고 있다.
+												<br />
+												1961년 “금강수계 옥천지점 수자원기술조사” 업무를 시작으로 국내 다수의 기술용역을 수행하고 있으며, 2000년대에 들어서면서 해외의 하천개발사업, 수력발전사업, 홍수조절통합계획 등
+												<br />
+												수자원사업에 다수 참여하고 있다.
+												<br />
+												사업분야는 하천 및 하천환경, 댐 및 수력발전, 수자원개발, 재해영향평가, 방재 등으로서 유역종합계획, 하천기본계획, 하천종합개발계획, 홍수위험지도제작,
+												<br />
+												하천재해예방 및 생태하천복원사업, 유역조사, 댐 조사 및 설계, 유지용수확보, 홍수조절지, 배수펌프장, 수력발전사업, 자연재해저감종합계획 및 우수유출저감대책계획, 자연재해위험지구
+												<br />
+												개선정비사업 및 재해영향평가 및 재해복구사업 분석평가, 비상대처계획 등 각분야의 최고의기술력를 갖추어 수자원분야 및 방재분야의 선도적인 역할을 담당하고 있다.
+											</span>
+										</p>
+										<div class="bttn-area">
+											<button class="bttn-link-bd" type="button">더보기</button>
+										</div>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="business-tab-cont business-city contents-2depth" style="display:none;">
+							<div class="business-summary-wrap city-division">
+								<div class="summary-visual">
+									<h3 class="title-sect">도시 사업 부문</h3>
+									<span class="visual-bar"></span>
+								</div>
+								<div class="business-summary-inner">
+									<div class="business-txt-box">
+										도시단지부는 한정된 국토공간의 효율적 이용 계획 수립과 환경 친화적인 도시계획에 필요한 그간의 축적된 기술과 지속적인 연구개발 노력으로 타사와는 차별화된 기술력을
+										<br />
+										보유하고 있으며, 우리나라 대표적인 주택 및 산업단지를 비롯하여 생태환경 단지에 이르기까지 폭넓은 사업 수행 영역을 확보하고 있습니다.
+										<br />
+										도시기본계획, 도시관리계획(재개발), 택지개발, 산업단지, 유통단지 등의 도시계획과 공간설계를 위한 단지계획, 단지토공, 상·하수도, 하천, 교량, 지반 등의 복합공정을
+										<br />
+										수행하고 있습니다.
+									</div>
+								</div>
+							</div>
+							<div class="content-inner ui-selectbox">
+								<div class="menu-selectbox tab-list2-3depth">
+									<span class="selectbox">
+										<select title="">
+											<option value="">도시개발</option>
+											<option value="">도시계획</option>
+											<option value="">조경레저</option>
+											<option value="">스마트시티</option>
+										</select>
+									</span>
+								</div>
+								<div class="inner-tab-cont contents2-3depth active">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												도시단지부는 한정된 국토공간의 효율적 이용계획 수립과 환경 친화적인 도시계획에 필요한 그간의 축적된 기술과 지속적인 연구개발 노력으로 타사와는 차별화된 기술력을 보유하고 있으며,
+												<br />
+												우리나라 대표적인 주택 및 산업단지를 비롯하여 생태환경단지에 이르기까지 폭 넓은 사업수행영역을 확보하고 있습니다.
+												<br />
+												도시기본계획, 도시관리계획(재개발), 택지개발, 산업단지, 유통단지 등의 도시계획과 공간설계를 위한 단지계획, 단지토공, 상·하수도, 하천, 교량, 지반 등의 복합공정을 수행하고 있습니다.
+												<br />
+												최근에는 동남아, 중동 등의 지역에 신도시 및 주택단지, 산업단지 등 해외도시개발 부문에도 사업수행영역을 확장해 나가고 있습니다.
+												<br />
+												앞으로도 도시단지부는 국내외 도시공간의 효율적인 이용과 환경친화적인 도시계획을 통한 인간의 삶의 질과 생활수준을 향상시키기 위해 연구, 경험, 독창성을 모토로 지속가능한 미래사회의 구현을 위해 노력할 것입니다.
+											</span>
+										</p>
+										<div class="bttn-area">
+											<button class="bttn-link-bd" type="button">더보기</button>
+										</div>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents2-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												도시단지부는 한정된 국토공간의 효율적 이용계획 수립과 환경 친화적인 도시계획에 필요한 그간의 축적된 기술과 지속적인 연구개발 노력으로 타사와는 차별화된 기술력을 보유하고 있으며,
+												<br />
+												우리나라 대표적인 주택 및 산업단지를 비롯하여 생태환경단지에 이르기까지 폭 넓은 사업수행영역을 확보하고 있습니다.
+												<br />
+												도시기본계획, 도시관리계획(재개발), 택지개발, 산업단지, 유통단지 등의 도시계획과 공간설계를 위한 단지계획, 단지토공, 상·하수도, 하천, 교량, 지반 등의 복합공정을 수행하고 있습니다.
+												<br />
+												최근에는 동남아, 중동 등의 지역에 신도시 및 주택단지, 산업단지 등 해외도시개발 부문에도 사업수행영역을 확장해 나가고 있습니다.
+												<br />
+												앞으로도 도시단지부는 국내외 도시공간의 효율적인 이용과 환경친화적인 도시계획을 통한 인간의 삶의 질과 생활수준을 향상시키기 위해 연구, 경험, 독창성을 모토로 지속가능한 미래사회의 구현을 위해 노력할 것입니다.
+											</span>
+										</p>
+										<div class="bttn-area">
+											<button class="bttn-link-bd" type="button">더보기</button>
+										</div>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents2-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												조경&middot;레저부는 국립 중앙 수목원 조성사업 및 새만금 관광용지 개발기본계획 등 대규모 국책사업을 성공적으로 수행하여 업계 최고의 기술력을 인정받고 있습니다. 특히 공원, 관광지, 유원지,
+												<br />
+												자연공원, 골프장 및 체육시설, 생태 및 경관계획 분야 등 다양한 업무를 수행한 경험과 축적된 기술력을 보유하고 있습니다.
+												<br />
+												앞으로도 끊임없는 노력과 지속적인 연구개발을 통해 자연과 인간이 조화될 수 있는 창조적이고 지속가능한 미래지향적 공간창조에 최선의 노력을 다하겠습니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents2-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box"><span class="line-clamp">내용 미수급</span></p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="business-tab-cont business-transportation contents-2depth" style="display:none;">
+							<div class="business-summary-wrap transportation-division">
+								<div class="summary-visual">
+									<h3 class="title-sect">교통 사업 부문</h3>
+									<span class="visual-bar"></span>
+								</div>
+								<div class="business-summary-inner">
+									<div class="business-txt-box">
+										21세기의 새로운 철도교통 문화 창조의 일익을 담당하기 위하여 설립된 도화엔지니어링 철도부는 다년간 축적된 풍부한 경험과 설계능력으로 국내의 철도설계 분야에서 선도적인
+										<br />
+										위치에 우뚝 서 있으며, 철도 및 도시철도 분야의 감리용역에서도 활발한 수주를 통한 완벽한 업무 수행으로 철도건설에 일익을 담당하고 있습니다.
+										<br />
+										업무영역도 단순한 설계 단계에 머무르지 않고 공사를 포함한 디자인 빌드 아이디어 및 자본을 결합한 개발사업까지도 추진하고 있습니다.
+									</div>
+								</div>
+							</div>
+							<div class="content-inner ui-selectbox">
+								<div class="menu-selectbox tab-list3-3depth">
+									<span class="selectbox">
+										<select title="">
+											<option value="">도시</option>
+											<option value="">공항</option>
+											<option value="">철도</option>
+											<option value="">교통계획</option>
+											<option value="">항만</option>
+											<option value="">지반</option>
+										</select>
+									</span>
+								</div>
+								<div class="inner-tab-cont contents3-3depth active">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												도로교통분야는 창립 이래 반세기 동안 국토의 대동맥인 경부고속도로 및 서해안 고속도로를 비롯하여 수많은 고속도로와 국도, 지방도 설계 뿐만 아니라 대중교통 등 교통개선 사업을
+												<br />
+												성공적으로 수행하여 한국의 현대식 도로 건설 및 교통체계개선과 역사를 같이 함으로써 명실공히 경험과 기술력을 인정받았습니다.
+												<br />
+												특히, 고객만족을 최우선으로 하고, 각종 첨단기술 도입 및 활용으로 모든 성과품을 데이터베이스화 함으로써 한국 도로 건설공사 및 교통체계 선진화에 앞장서고 있습니다. 끊임없는 신기술
+												<br />
+												개발과 인재 양성을 토대로 미래형 지식산업의 선두주자로 나아 가고, 21세기에도 도전과 개척의 역사는 계속될 것입니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents3-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												도로교통분야는 창립 이래 반세기 동안 국토의 대동맥인 경부고속도로 및 서해안 고속도로를 비롯하여 수많은 고속도로와 국도, 지방도 설계 뿐만 아니라 대중교통 등 교통개선 사업을
+												<br />
+												성공적으로 수행하여 한국의 현대식 도로 건설 및 교통체계개선과 역사를 같이 함으로써 명실공히 경험과 기술력을 인정받았습니다.
+												<br />
+												특히, 고객만족을 최우선으로 하고, 각종 첨단기술 도입 및 활용으로 모든 성과품을 데이터베이스화 함으로써 한국 도로 건설공사 및 교통체계 선진화에 앞장서고 있습니다. 끊임없는 신기술
+												<br />
+												개발과 인재 양성을 토대로 미래형 지식산업의 선두주자로 나아 가고, 21세기에도 도전과 개척의 역사는 계속될 것입니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents3-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												철도부문은 다년간 축적된 풍부한 경험과 선도적인 기술 노하우로 국내의 철도 및 도시철도 건설에 일익을 담당하고 있으며, 최상의 기술력을 바탕으로 알제리, 방글라데시, 페루, 스리랑카,
+												<br />
+												탄자니아 등 해외시장 개척에 선구자적인 역할을 담당하고 있습니다. 또한, 토목뿐만 아니라 궤도, 기계, 전기, 신호, 통신 등 시스템분야를 총괄하는 한편, 업무영역도 단순한 설계단계에
+												<br />
+												머무르지 않고 공사를 포함한 디자인빌드 아이디어 및 자본을 결합한 민간투자사업까지도 추진하고 있습니다. 우수한 기술진과 설계 노하우를 통해 21세기 종합철도교통체계 제공이 우리
+												<br />
+												부문의 지향 목표이며, 앞으로도 기술력 강화는 물론이며 품질제일주의 목표를 실현하여 수요자를 위한 가치창조와 철도교통 문화창조에 최선을 다할 것입니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents3-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												교통부는 종합교통계획, 대중교통 및 녹색교통, 교통체계개선(TSM), 광역교통, 교통영향평가, 교통안전 등을 비롯한 교통에 관련된 전반적인 업무를 담당하고 있는 부서로서 국내 최고의
+												<br />
+												전문인력으로 최상의 교통체계를 수립하고 있습니다. 기존 교통체계의 문제점 개선 및 안전과 편리성에 기여하는 최상의 교통서비스를 제공하기 위해 지속적인 노력을 다하고 있으며,
+												<br />
+												인간중심의 친환경 대중교통 조성 및 녹색교통체계 구축에 선도적인 역할을 수행하고 있습니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents3-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												도화 항만부는 1975년 「목포항 삼학도 안벽 신축공사 조사설계 용역」을 시작으로 50여년간 항만 및 해안분야의 설계, 감리, 대안/턴키 등의 다양한 프로젝트를 성공적으로 수행하였으며, 특히
+												<br />
+												1970년에 국내 최초로 IRAN 코람샤항, 인도네시아 10만톤급 Loading Pier 설계 등을 수행하여 해외사업 진출의 발판을 마련하였습니다. 최근에는 축적된 설계경험과 기술 KNOW-HOW
+												<br />
+												를 바탕으로 항만시설, 연안보호시설과 같은 정통 항만분야 뿐만 아니라 연료하역부두, 회처리장, 취·배수구조물, 해저케이블 등의 발전분야, 해상풍력 등의 신재생 에너지분야에도 적극
+												<br />
+												참여하고 있습니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents3-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												토목구조분야는 그동안 국내외의 도로 및 철도교량, 지하 공동구, 해상 풍력을 포함한 해상 구조물 기초 등을 포함한 다양한 형식의 구조물 설계를 수행하였으며 이러한 경험을 바탕으로 보다
+												<br />
+												안전하고 공학적인 구조물 계획 및 설계를 수행하고 있습니다. 전세계를 대상으로 각 국가별 설계기준과 각종 시방기준을 바탕으로 가설 지역에 최적화된 구조물 설계를 위해 모든 구성원이
+												<br />
+												노력하고 있으며 특수교량 시공감리, PMC, EPC 등에 대한 사업확장을 추진하고 있습니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents3-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												지반터널부는 하천/댐/도로교통/해양항만/지하공간 등 사회간접자본 시설물이 건설되는 지반에서의 흙과암반의 역학적 거동및 공학적 특성을 분석하고 지반공학 기술에 의한 각 시설물의
+												<br />
+												사용성과 안정성을 향상시키며 청정자원인 지하수 개발 및 보존기술력을 통해 궁극적으로 인간과 환경을 위한 지반관련 최적화 기술을 제공하고 있습니다.
+												<br />
+												최근까지 수행한 사업으로 영암 F1자동차 경기장, 부산 에코델타시티, 인천국제공항 건설공사, 남항대교, 화명대교, 암사대교 건설공사, 새만금-전주간 고속도로, 부산외곽순환 고속도로,
+												<br />
+												안동-임하댐 연결 터널공사, 평화의댐 치수능력 증대사업, 전남신안 해상풍력등이 있습니다. 해외사업으로는 인도네시아 SIBORPA 수력발전 건설사업, 바레인 MUHARRAQ하수처리장,
+												<br />
+												인도네시아 KTH BIOMASS FIRED POWER PLANT등이 있습니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="business-tab-cont business-energy contents-2depth" style="display:block;">
+							<div class="business-summary-wrap energy-division">
+								<div class="summary-visual">
+									<h3 class="title-sect">에너지 사업 부문</h3>
+									<span class="visual-bar"></span>
+								</div>
+								<div class="business-summary-inner">
+									<div class="business-txt-box">
+										풍력, 태양광, 바이오매스, 지열 등의 신재생에너지 종합 솔루션을 제공하며, 신재생에너지 발전의 사업개발 및 투자, 컨설팅, 타당성조사, EPC, O&amp;M까지 전 분야의
+										<br />
+										업무를 수행하고 있습니다. 신재생에너지 분야의 다수 실적을 바탕으로 고도의 축적된 기술, 경험 등을 바탕으로 향후 국내&middot;해외 신재생에너지 발전 시장의 선두주자로 나아갈
+										<br />
+										것입니다.
+									</div>
+								</div>
+							</div>
+							<div class="content-inner ui-selectbox">
+								<div class="menu-selectbox tab-list4-3depth">
+									<span class="selectbox">
+										<select title="">
+											<option value="">태양광</option>
+											<option value="">풍력</option>
+											<option value="">발전</option>
+											<option value="">환경</option>
+										</select>
+									</span>
+								</div>
+								<div class="inner-tab-cont contents4-3depth active">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												온실가스 배출량을 감소시켜 세계 환경을 지키는데 기여하고자 국내 뿐만 아니라 일본, 베트남, 이라크, 에디오피아, 온두라스 등 다수의 해외 시장에서 태양광발전 사업을 추진하여 수행하고
+												<br />
+												있습니다. 특히 열악한 환경의 오지에 태양광발전 사업을 추진하므로서 인류의 편의에 기여하고 있으며, 국내외 다수의 수상, 육상태양광사업의 타당성, 컨설팅, 설계, EPC, 감리 업무 수행의
+												<br />
+												경험을 바탕으로 향후 사업개발 및 투자사업으로의 사업분야 확대를 계획하고 있습니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents4-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												환경에 영향이 없는 친환경에너지를 제공하기 위한 국가 에너지정책 및 전세계 신재생에너지 추진동향에 발맞추기 위해 국내외 다수의 육상, 해상 풍력발전단지의 타당성조사, 설계를
+												<br />
+												수행하고 있으며, 최근에는 국내 풍력발전소 건설사업(EPC)을 성공적으로 수행하였습니다. 향후 풍부한 경험과 기술력을 바탕으로 풍력사업의 선두주자로 나아갈 것입니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents4-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												첨단 기술과 특허권을 통해 에너지 분야의 선두 주자로 석탄화력, 복합화력, 바이오매스 발전에 대한 FS, 엔지니어링, PMC, EPC, O&amp;M 서비스를 수행하며, 탁월한 기술력과 전문인력을
+												<br />
+												확보하고 있어 최고의 전문성을 보유하고 있습니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="inner-tab-cont contents4-3depth">
+									<div class="business-detail-txt">
+										<p class="txt-box">
+											<span class="line-clamp">
+												자연과 사람의 풍요로운 미래를 위해 자원순환을 통한 연료화, 소각에너지, 바이오가스화, 매립가스 플랜트 등 환경기초시설의 타당성조사 및 기본계획, 설계, 감리, EPC사업등의 기술집약형
+												<br />
+												환경기술 서비스를 제공하고 있으며 국내외 환경플랜트분야에서 풍부한 기술경험이 있는 전문인력과 최신의 기술력을 보유하고 있습니다.
+											</span>
+										</p>
+									</div>
+									<div class="section-cont">
+										<h3 class="title-sect">대표 프로젝트</h3>
+										<div class="business-project-wrap">
+											<div class="business-project-slide swiper-container">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+													<div class="swiper-slide slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+															<p class="list-tit">
+																<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																<em class="bg" aria-hidden="true"></em>
+															</p>
+														</a>
+													</div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<a class="bttn-more style01" href="#none">
+												<em class="ico-more" aria-hidden="true"></em>
+												<span class="hide-txt">더보기</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer" id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">TOP</button>
+						</div>
+						<div class="footer-family">
+							<div class="family-inner">
+								<button class="family-btn" type="button"><span>Employee Site</span></button>
+								<ul class="family-list">
+									<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+									<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+									<li class="family-item">
+										<!--s: 20200903 텍스트 수정-->
+										<a href="#none" title="새창열림">CMFG</a>
+										<!--e: 20200903 텍스트 수정-->
+									</li>
+									<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer-inner">
+							<span class="footer-logo"><img src="/images/common_mobile/img_footer_logo.jpg" alt="DOHWA" /></span>
+							<span class="footer-sns">
+								<a class="ico-blog" href="#none" title="새창열림"><span class="hide-txt">Blog</span></a>
+								<a class="ico-youtube" href="#none" title="새창열림"><span class="hide-txt">Youtube</span></a>
+							</span>
+							<div class="footer-info">
+								<!--s :20200914 우편번호 수정-->
+								<p>서울특별시 강남구 삼성로 438 (#06178)</p>
+								<!--s :20200914 우편번호 수정-->
+								<p>대표전화 : 02 - 6323 - 3000</p>
+								<ul class="footer-menu">
+									<li>
+										<!-- s: 20200813 수정 -->
+										<a href="#none"><strong class="nanumB">개인정보처리방침</strong></a>
+										<!-- e: 20200813 수정 -->
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">
+									COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD.
+									<br />
+									AllRIGHT RESERVED.
+								</address>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<div class="cnt-grid-wrap" aria-hidden="true">
+			<div class="grid-ico-wrap" aria-hidden="true">
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+			</div>
+			<div class="grid-line-wrap" aria-hidden="true">
+				<div class="grid-line" aria-hidden="true"></div>
+				<div class="grid-line" aria-hidden="true"></div>
+			</div>
+		</div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/CustomEase.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common_mo.js"></script>
+		<script>
+			component.tabContent(".tab-list-2depth", ".contents-2depth");
+
+			//- overview project 영역 images size
+			$(".business-project-slide .slide").each(function() {
+				var $this = $(this),
+					$box = $this.find(".list-img-wrap"),
+					$img = $this.find(".list-link").find("img"),
+					divAspect = $box.height() / $box.width(),
+					imgAspect = $img.height() / $img.width();
+				if (imgAspect <= divAspect) {
+					//가로가 긴 경우 세로를 박스에 맞추고 가로 크롭
+					$img.addClass("img-w");
+				} else {
+					//세로가 긴 경우 가로를 박스에 맞추고 세로 크롭
+					$img.addClass("img-h");
+				}
+			});
+		</script>
+	</body>
+</html>

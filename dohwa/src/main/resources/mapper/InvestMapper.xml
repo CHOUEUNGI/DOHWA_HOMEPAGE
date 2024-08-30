@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dohwa.mapper.InvestMapper">
+
+	<select id="getFinanceMainList" parameterType="searchVO" resultType="FinanceVO">
+		SELECT
+			YYYY, DISP_YN, SALES_AMT, OPRT_INCM_AMT, NEW_ORDR_AMT, ORDR_BCKL_AMT, ETC_AMT1, ETC_AMT2, ETC_AMT3, REG_ID, REG_DT, UPD_ID, UPD_DT,
+			(CASE WHEN DISP_YN = 'N' THEN '비공개' ELSE '공개' END) AS DISP_YN_NM
+		FROM TB_FINANCE_MAIN
+		WHERE 1=1
+		<if test="searchText != null and searchText != ''">
+			AND YYYY LIKE CONCAT('%',#{searchText},'%')
+		</if>
+		<if test="dispYn != null and dispYn != ''">
+			AND DISP_YN = #{dispYn}
+		</if>
+		<if test="yyyy != null and yyyy != ''">
+			AND YYYY = #{yyyy}
+		</if>
+		ORDER BY YYYY DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+		LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+
+	<select id="getFinanceMainTotCnt" parameterType="searchVO" resultType="Integer">
+		SELECT
+			COUNT(*) TOT_CNT
+		FROM TB_FINANCE_MAIN
+		WHERE 1=1
+		<if test="searchText != null and searchText != ''">
+			AND YYYY LIKE CONCAT('%',#{searchText},'%')
+		</if>
+		<if test="dispYn != null and dispYn != ''">
+			AND DISP_YN = #{dispYn}
+		</if>
+		<if test="yyyy != null and yyyy != ''">
+			AND YYYY = #{yyyy}
+		</if>
+	</select>
+
+	<insert id="insertFinanceMain" parameterType="FinanceVO">
+		INSERT INTO TB_FINANCE_MAIN(YYYY, DISP_YN, SALES_AMT, OPRT_INCM_AMT, NEW_ORDR_AMT, ORDR_BCKL_AMT, ETC_AMT1, ETC_AMT2, ETC_AMT3, REG_ID, REG_DT)
+		VALUES(#{yyyy}, #{dispYn}, #{salesAmt}, #{oprtIncmAmt}, #{newOrdrAmt}, #{ordrBcklAmt}, 0, 0, 0, #{regId}, CURRENT_TIMESTAMP)
+	</insert>
+
+	<update id="updateFinanceMain" parameterType="FinanceVO">
+		UPDATE TB_FINANCE_MAIN SET
+			DISP_YN = #{dispYn},
+			SALES_AMT = #{salesAmt},
+			OPRT_INCM_AMT = #{oprtIncmAmt},
+			NEW_ORDR_AMT = #{newOrdrAmt},
+			ORDR_BCKL_AMT = #{ordrBcklAmt},
+			ETC_AMT1 = #{etcAmt1},
+			ETC_AMT2 = #{etcAmt2},
+			ETC_AMT3 = #{etcAmt3},
+			UPD_ID = #{updId},
+			UPD_DT = CURRENT_TIMESTAMP
+		WHERE YYYY = #{yyyy}
+	</update>
+
+	<delete id="deleteFinanceMain" parameterType="FinanceVO">
+		DELETE FROM TB_FINANCE_MAIN
+		WHERE YYYY = #{yyyy}
+	</delete>
+
+	<select id="getFinanceSummaryList" parameterType="searchVO" resultType="FinanceVO">
+		SELECT
+			YYYY,
+			DISP_YN,
+			(CASE WHEN DISP_YN = 'N' THEN '비공개' ELSE '공개' END) AS DISP_YN_NM,
+			OPRT_RVNS_AMT,
+			OPRT_AMT,
+			OPRT_INCM_AMT,
+			INCM_BFTX_EXPN_AMT,
+			NET_INCM_AMT,
+			CURR_ASST_AMT,
+			NON_CURR_ASST_AMT,
+			TOT_ASST_AMT,
+			CURR_LBLT_AMT,
+			NON_CURR_LBLT_AMT,
+			TOT_LBLT_AMT,
+			TOT_CPTL_AMT,
+			ROE,
+			PER,
+			PBR,
+			OPRT_MRGN,
+			ETC_AMT1,
+			ETC_AMT2,
+			ETC_AMT3,
+			REG_ID,
+			REG_DT,
+			UPD_ID,
+			UPD_DT
+		FROM
+			TB_FINANCE_SUMMARY
+		WHERE 1=1
+		<if test="searchText != null and searchText != ''">
+			AND YYYY LIKE CONCAT('%',#{searchText},'%')
+		</if>
+		<if test="dispYn != null and dispYn != ''">
+			AND DISP_YN = #{dispYn}
+		</if>
+		<if test="yyyy != null and yyyy != ''">
+			AND YYYY = #{yyyy}
+		</if>
+		ORDER BY YYYY DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+		LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+
+	<select id="getFinanceSummaryTotCnt" parameterType="searchVO" resultType="Integer">
+		SELECT
+			COUNT(*) TOT_CNT
+		FROM
+			TB_FINANCE_SUMMARY
+		WHERE 1=1
+		<if test="searchText != null and searchText != ''">
+			AND YYYY LIKE CONCAT('%',#{searchText},'%')
+		</if>
+		<if test="dispYn != null and dispYn != ''">
+			AND DISP_YN = #{dispYn}
+		</if>
+		<if test="yyyy != null and yyyy != ''">
+			AND YYYY = #{yyyy}
+		</if>
+	</select>
+
+	<insert id="insertFinanceSummary" parameterType="FinanceVO">
+		INSERT INTO TB_FINANCE_Summary(
+			YYYY,
+			DISP_YN,
+			OPRT_RVNS_AMT,
+			OPRT_AMT,
+			OPRT_INCM_AMT,
+			INCM_BFTX_EXPN_AMT,
+			NET_INCM_AMT,
+			CURR_ASST_AMT,
+			NON_CURR_ASST_AMT,
+			TOT_ASST_AMT,
+			CURR_LBLT_AMT,
+			NON_CURR_LBLT_AMT,
+			TOT_LBLT_AMT,
+			TOT_CPTL_AMT,
+			ROE,
+			PER,
+			PBR,
+			OPRT_MRGN,
+			ETC_AMT1,
+			ETC_AMT2,
+			ETC_AMT3,
+			REG_ID,
+			REG_DT
+		)
+		VALUES(
+			#{yyyy},
+			#{dispYn},
+			#{oprtRvnsAmt},
+			#{oprtAmt},
+			#{oprtIncmAmt},
+			#{incmBftxExpnAmt},
+			#{netIncmAmt},
+			#{currAsstAmt},
+			#{nonCurrAsstAmt},
+			#{totAsstAmt},
+			#{currLbltAmt},
+			#{nonCurrLbltAmt},
+			#{totLbltAmt},
+			#{totCptlAmt},
+			#{roe},
+			#{per},
+			#{pbr},
+			#{oprtMrgn},
+			0,
+			0,
+			0,
+			#{regId},
+			CURRENT_TIMESTAMP
+		)
+	</insert>
+
+	<update id="updateFinanceSummary" parameterType="FinanceVO">
+		UPDATE TB_FINANCE_SUMMARY SET
+			DISP_YN = #{dispYn},
+			OPRT_RVNS_AMT = #{oprtRvnsAmt},
+			OPRT_AMT = #{oprtAmt},
+			OPRT_INCM_AMT = #{oprtIncmAmt},
+			INCM_BFTX_EXPN_AMT = #{incmBftxExpnAmt},
+			NET_INCM_AMT =  #{netIncmAmt},
+			CURR_ASST_AMT = #{currAsstAmt},
+			NON_CURR_ASST_AMT =  #{nonCurrAsstAmt},
+			TOT_ASST_AMT =  #{totAsstAmt},
+			CURR_LBLT_AMT = #{currLbltAmt},
+			NON_CURR_LBLT_AMT =  #{nonCurrLbltAmt},
+			TOT_LBLT_AMT =  #{totLbltAmt},
+			TOT_CPTL_AMT =  #{totCptlAmt},
+			ROE = #{roe},
+			PER = #{per},
+			PBR = #{pbr},
+			OPRT_MRGN = #{oprtMrgn},
+			ETC_AMT1 =  #{etcAmt1},
+			ETC_AMT2 =  #{etcAmt2},
+			ETC_AMT3 =  #{etcAmt3},
+			UPD_ID = #{updId},
+			UPD_DT = CURRENT_TIMESTAMP
+		WHERE YYYY = #{yyyy}
+	</update>
+
+	<delete id="deleteFinanceSummary" parameterType="FinanceVO">
+		DELETE FROM TB_FINANCE_SUMMARY
+		WHERE YYYY = #{yyyy}
+	</delete>
+
+	<select id="getInvestReferList" parameterType="searchVO" resultType="InvRefVO">
+		SELECT
+			A.SEQ,
+			A.TYPE_CODE,
+			A.LANG,
+			A.YYYY,
+			A.DISP_YN,
+			(CASE WHEN DISP_YN = 'N' THEN '비공개' ELSE '공개' END) AS DISP_YN_NM,
+			A.TITLE,
+			A.REG_ID,
+			A.REG_DT,
+			A.UPD_ID,
+			A.UPD_DT,
+			DATE_FORMAT(A.PBL_DT, '%Y-%m-%d') AS PBL_DT,
+			B.PATH AS FILE_PATH,
+			B.NEW_NAME AS FILE_NEW_NAME,
+			B.ORG_NAME AS FILE_ORG_NAME,
+			B.ALT AS FILE_ALT,
+			B.ID AS FILE_ID
+		FROM
+			TB_INVEST_REFER A
+		LEFT OUTER JOIN TB_FILE B ON
+			A.SEQ = B.ATT_SEQ
+			AND A.TYPE_CODE = B.ATT_TYPE
+		WHERE 1=1
+		<if test="searchText != null and searchText != ''">
+			AND A.TITLE LIKE CONCAT('%',#{searchText},'%')
+		</if>
+		<if test="searchLangType != null and searchLangType != ''">
+			AND A.LANG = #{searchLangType}
+		</if>
+		<if test="typeCode != null and typeCode != ''">
+			AND A.TYPE_CODE = #{typeCode}
+		</if>
+		<if test="dispYn != null and dispYn != ''">
+			AND A.DISP_YN = #{dispYn}
+		</if>
+		<if test="yyyy != null and yyyy != ''">
+			AND A.YYYY = #{yyyy}
+		</if>
+		<if test="seq != null and seq != ''">
+			AND A.SEQ  = #{seq}
+		</if>
+		<if test="typeCode != null and typeCode == 'INV_REF_ANAR'">
+			ORDER BY PBL_DT DESC, SEQ DESC
+		</if>
+		<if test="typeCode != null and typeCode != 'INV_REF_ANAR'">
+			ORDER BY YYYY DESC, SEQ DESC
+		</if>
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+		LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+
+	<select id="getInvestReferTotCnt" parameterType="searchVO" resultType="Integer">
+		SELECT
+			COUNT(*) AS TOT_CNT
+		FROM
+			TB_INVEST_REFER A
+		LEFT OUTER JOIN TB_FILE B ON
+			A.SEQ = B.ATT_SEQ
+			AND A.TYPE_CODE = B.ATT_TYPE
+		WHERE 1=1
+		<if test="searchText != null and searchText != ''">
+			AND A.TITLE LIKE CONCAT('%',#{searchText},'%')
+		</if>
+		<if test="searchLangType != null and searchLangType != ''">
+			AND A.LANG = #{searchLangType}
+		</if>
+		<if test="typeCode != null and typeCode != ''">
+			AND A.TYPE_CODE = #{typeCode}
+		</if>
+		<if test="dispYn != null and dispYn != ''">
+			AND A.DISP_YN = #{dispYn}
+		</if>
+		<if test="yyyy != null and yyyy != ''">
+			AND A.YYYY = #{yyyy}
+		</if>
+		<if test="seq != null and seq != ''">
+			AND A.SEQ  = #{seq}
+		</if>
+	</select>
+
+	<insert id="insertInvestRefer" parameterType="InvRefVO">
+		INSERT INTO TB_INVEST_REFER(
+			TYPE_CODE,
+			LANG,
+			YYYY,
+			DISP_YN,
+			TITLE,
+			PBL_DT,
+			REG_ID,
+			REG_DT
+		)
+		VALUES(
+			#{typeCode},
+			#{lang},
+			#{yyyy},
+			#{dispYn},
+			#{title},
+			DATE_FORMAT(#{pblDt}, '%Y%m%d'),
+			#{regId},
+			CURRENT_TIMESTAMP
+		)
+		<selectKey keyProperty="seq" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<update id="updateInvestRefer" parameterType="InvRefVO">
+		UPDATE TB_INVEST_REFER SET
+			DISP_YN = #{dispYn},
+			LANG = #{lang},
+			YYYY = #{yyyy},
+			TITLE = #{title},
+			UPD_ID = #{updId},
+			PBL_DT = DATE_FORMAT(#{pblDt}, '%Y%m%d'),
+			UPD_DT = CURRENT_TIMESTAMP
+		WHERE SEQ = #{seq}
+	</update>
+
+	<delete id="deleteInvestRefer" parameterType="InvRefVO">
+		DELETE FROM TB_INVEST_REFER
+		WHERE SEQ = #{seq}
+	</delete>
+
+	<delete id="deleteInvestReferFile" parameterType="InvRefVO">
+		DELETE FROM TB_FILE
+		WHERE ATT_SEQ = #{seq}
+		AND ATT_TYPE = #{typeCode}
+	</delete>
+
+	<select id="getStockMastList" parameterType="searchVO" resultType="stockVO">
+		SELECT
+			A.SEQ       ,
+			A.TYPE_CODE ,
+			A.LANG      ,
+			A.YYYY      ,
+			A.DISP_YN   ,
+			A.TITLE     ,
+			A.PVPS_AMT  ,
+			A.NTIC_AMT  ,
+			A.NTPS_AMT  ,
+			A.TCDV_AMT  ,
+			A.CDPO_RATIO,
+			A.CDPO_RATE ,
+			A.CDPS_AMT  ,
+			A.REG_ID    ,
+			A.REG_DT    ,
+			A.UPD_ID    ,
+			A.UPD_DT    ,
+			DATE_FORMAT(A.STD_DATE, '%Y-%m-%d') AS STD_DATE  ,
+			DATE_FORMAT(A.MEET_DATE, '%Y-%m-%d') AS MEET_DATE ,
+			A.MEET_PLACE,
+			A.OTSH_RATIO,
+			A.MJSH_RATIO,
+			A.TRSH_RATIO,
+			A.ORSH_RATIO,
+			A.LGSH_RATIO,
+			DATE_FORMAT(A.OWN_STD_DATE, '%Y-%m-%d') AS OWN_STD_DATE,
+			CASE WHEN A.DISP_YN = 'Y' THEN '공개' ELSE '비공개' END AS DISP_YN_NM,
+			B.ORG_NAME AS FILE_ORG_NAME,
+			B.ID AS FILE_ID
+		FROM
+			TB_STOCK_MAST A LEFT OUTER JOIN  TB_FILE B ON A.TYPE_CODE = B.ATT_TYPE AND A.SEQ = B.ATT_SEQ
+		WHERE 1=1
+		<if test="searchText != null and searchText != ''">
+			<if test="searchType != null and searchType == 'yyyy'">
+				AND A.YYYY LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchType != null and searchType == 'title'">
+				AND A.TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+		</if>
+		<if test="searchLangType != null and searchLangType != ''">
+			AND A.LANG = #{searchLangType}
+		</if>
+		<if test="dispYn != null and dispYn != ''">
+			AND A.DISP_YN = #{dispYn}
+		</if>
+		<if test="yyyy != null and yyyy != ''">
+			AND A.YYYY = #{yyyy}
+		</if>
+		<if test="seq != null and seq != ''">
+			AND A.SEQ = #{seq}
+		</if>
+		<if test="typeCode != null and typeCode != ''">
+			AND A.TYPE_CODE = #{typeCode}
+		</if>
+		ORDER BY YYYY DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+		LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+
+	<select id="getStockMastTotCnt" parameterType="searchVO" resultType="Integer">
+		SELECT
+			COUNT(*) TOT_CNT
+		FROM
+			TB_STOCK_MAST A LEFT OUTER JOIN  TB_FILE B ON A.TYPE_CODE = B.ATT_TYPE AND A.SEQ = B.ATT_SEQ
+		WHERE 1=1
+		<if test="searchText != null and searchText != ''">
+			<if test="searchType != null and searchType == 'yyyy'">
+				AND A.YYYY LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchType != null and searchType == 'title'">
+				AND A.TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+		</if>
+		<if test="searchLangType != null and searchLangType != ''">
+			AND A.LANG = #{searchLangType}
+		</if>
+		<if test="dispYn != null and dispYn != ''">
+			AND A.DISP_YN = #{dispYn}
+		</if>
+		<if test="yyyy != null and yyyy != ''">
+			AND A.YYYY = #{yyyy}
+		</if>
+		<if test="seq != null and seq != ''">
+			AND A.SEQ = #{seq}
+		</if>
+		<if test="typeCode != null and typeCode != ''">
+			AND A.TYPE_CODE = #{typeCode}
+		</if>
+	</select>
+
+	<select id="getStockOwnerList" parameterType="stockOwnerVO" resultType="stockOwnerVO">
+		SELECT
+			SEQ
+			, STOCK_MAST_SEQ
+			, NAME
+			, SHOW_CNT
+			, SHOW_RATIO
+			, REG_ID
+			, REG_DT
+			, UPD_ID
+			, UPD_DT
+			, DISP_ORD
+		FROM TB_STOCK_OWNER
+		WHERE 1=1
+		<if test="stockMastSeq != null and stockMastSeq != ''">
+			AND STOCK_MAST_SEQ = #{stockMastSeq}
+		</if>
+		ORDER BY DISP_ORD ASC
+	</select>
+
+	<select id="getStockMeetList" parameterType="stockMeetVO" resultType="stockMeetVO">
+		SELECT
+			SEQ
+			, STOCK_MAST_SEQ
+			, AGND
+			, RSLT
+			, DISP_ORD
+			, REG_ID
+			, REG_DT
+			, UPD_ID
+			, UPD_DT
+		FROM TB_STOCK_MEET
+		WHERE 1=1
+		<if test="stockMastSeq != null and stockMastSeq != ''">
+			AND STOCK_MAST_SEQ = #{stockMastSeq}
+		</if>
+		ORDER BY DISP_ORD ASC
+	</select>
+
+	<insert id="insertStockMast" parameterType="stockVO">
+		INSERT INTO	TB_STOCK_MAST (
+			TYPE_CODE,
+			LANG,
+			YYYY,
+			DISP_YN,
+			TITLE,
+			PVPS_AMT,
+			NTIC_AMT,
+			NTPS_AMT,
+			TCDV_AMT,
+			CDPO_RATIO,
+			CDPO_RATE,
+			CDPS_AMT,
+			STD_DATE,
+			MEET_DATE,
+			MEET_PLACE,
+			OTSH_RATIO,
+			MJSH_RATIO,
+			TRSH_RATIO,
+			ORSH_RATIO,
+			LGSH_RATIO,
+			OWN_STD_DATE,
+			REG_ID,
+			REG_DT)
+		VALUES(
+			#{typeCode},
+			#{lang},
+			#{yyyy},
+			#{dispYn},
+			#{title},
+			#{pvpsAmt},
+			#{nticAmt},
+			#{ntpsAmt},
+			#{tcdvAmt},
+			#{cdpoRatio},
+			#{cdpoRate},
+			#{cdpsAmt},
+			DATE_FORMAT(#{stdDate}, '%Y%m%d'),
+			DATE_FORMAT(#{meetDate}, '%Y%m%d'),
+			#{meetPlace},
+			#{otshRatio},
+			#{mjshRatio},
+			#{trshRatio},
+			#{orshRatio},
+			#{lgshRatio},
+			DATE_FORMAT(#{ownStdDate}, '%Y%m%d'),
+			#{regId},
+			CURRENT_TIMESTAMP)
+		<selectKey keyProperty="seq" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<update id="updateStockMast" parameterType="stockVO">
+		UPDATE TB_STOCK_MAST SET
+			TYPE_CODE = #{typeCode},
+			LANG = #{lang},			YYYY = #{yyyy},
+			DISP_YN = #{dispYn},
+			TITLE = #{title},
+			PVPS_AMT = #{pvpsAmt},
+			NTIC_AMT = #{nticAmt},
+			NTPS_AMT = #{ntpsAmt},
+			TCDV_AMT = #{tcdvAmt},
+			CDPO_RATIO = #{cdpoRatio},
+			CDPO_RATE = #{cdpoRate},
+			CDPS_AMT = #{cdpsAmt},
+			STD_DATE = DATE_FORMAT(#{stdDate}, '%Y%m%d'),
+			MEET_DATE = DATE_FORMAT(#{meetDate}, '%Y%m%d'),
+			MEET_PLACE = #{meetPlace},
+			OTSH_RATIO = #{otshRatio},
+			MJSH_RATIO = #{mjshRatio},
+			TRSH_RATIO = #{trshRatio},
+			ORSH_RATIO = #{orshRatio},
+			LGSH_RATIO = #{lgshRatio},
+			OWN_STD_DATE = DATE_FORMAT(#{ownStdDate}, '%Y%m%d'),
+			UPD_ID = #{updId},
+			UPD_DT = CURRENT_TIMESTAMP
+		WHERE
+			SEQ = #{seq}
+	</update>
+
+	<delete id="deleteStockMast" parameterType="stockVO">
+		DELETE FROM TB_STOCK_MAST
+		WHERE SEQ = #{seq}
+	</delete>
+
+	<insert id="insertStockOwner" parameterType="stockOwnerVO">
+		INSERT INTO TB_STOCK_OWNER (STOCK_MAST_SEQ, NAME, SHOW_CNT, SHOW_RATIO, DISP_ORD, REG_ID, REG_DT)
+		VALUES(#{stockMastSeq}, #{name}, #{showCnt}, #{showRatio}, #{dispOrd}, #{regId}, CURRENT_TIMESTAMP)
+		<selectKey keyProperty="seq" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<update id="updateStockOwner" parameterType="stockOwnerVO">
+		UPDATE TB_STOCK_OWNER SET
+		 NAME = #{name},
+		 SHOW_CNT = #{showCnt},
+		 SHOW_RATIO = #{showRatio},
+		 DISP_ORD = #{dispOrd},
+		 UPD_ID = #{updId},
+		 UPD_DT = CURRENT_TIMESTAMP
+		WHERE SEQ =  #{seq}
+	</update>
+
+	<delete id="deleteStockOwner" parameterType="stockOwnerVO">
+		DELETE FROM TB_STOCK_OWNER
+		WHERE 1=1
+		<if test="seq > 0">
+		AND SEQ =  #{seq}
+		</if>
+		<if test="stockMastSeq > 0">
+		AND STOCK_MAST_SEQ = #{stockMastSeq}
+		</if>
+	</delete>
+
+	<insert id="insertStockMeet" parameterType="stockMeetVO">
+		INSERT INTO TB_STOCK_MEET (STOCK_MAST_SEQ, AGND, RSLT, DISP_ORD, REG_ID, REG_DT)
+		VALUES(#{stockMastSeq}, #{agnd}, #{rslt}, #{dispOrd}, #{regId}, CURRENT_TIMESTAMP)
+		<selectKey keyProperty="seq" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<update id="updateStockMeet" parameterType="stockMeetVO">
+		UPDATE TB_STOCK_MEET SET
+		 AGND = #{agnd},
+		 RSLT = #{rslt},
+		 DISP_ORD = #{dispOrd},
+		 UPD_ID = #{updId},
+		 UPD_DT = CURRENT_TIMESTAMP
+		WHERE SEQ =  #{seq}
+	</update>
+
+	<delete id="deleteStockMeet" parameterType="stockMeetVO">
+		DELETE FROM TB_STOCK_MEET
+		WHERE 1=1
+		<if test="seq > 0">
+		AND SEQ =  #{seq}
+		</if>
+		<if test="stockMastSeq > 0">
+		AND STOCK_MAST_SEQ = #{stockMastSeq}
+		</if>
+	</delete>
+
+</mapper>
+

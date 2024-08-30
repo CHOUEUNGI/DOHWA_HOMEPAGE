@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dohwa.mapper.AdminUserMapper">
+
+	<select id="findById" parameterType="string" resultType="adminUserVO">
+		SELECT *
+		FROM tb_admin
+		WHERE id = #{id}
+	</select>
+
+	<update id="updateAdminUserInfo" parameterType="adminUserVO">
+		UPDATE tb_admin
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="name != null and !name.equals('')">name = #{name},</if>
+			<if test="pswd != null and !pswd.equals('')">pswd = #{pswd},</if>
+			<if test="email != null and !email.equals('')">email = #{email},</if>
+			<if test="dept != null and !dept.equals('')">dept = #{dept},</if>
+			<if test="pswdFailCount != null and !pswdFailCount.equals('')">pswd_fail_count = #{pswdFailCount},</if>
+			<if test="lockYn != null and !lockYn.equals('')">lock_yn = #{lockYn},</if>
+			<if test="useYn != null and !useYn.equals('')">use_yn = #{useYn},</if>
+			<if test="loginDt != null">login_dt = #{loginDt, jdbcType=TIMESTAMP},</if>
+			<if test="expireDt != null">expire_dt = #{expireDt, jdbcType=TIMESTAMP},</if>
+			<if test="pswdUpdDt != null">pswd_upd_dt = #{pswdUpdDt, jdbcType=TIMESTAMP},</if>
+			<if test="loginIp != null and !loginIp.equals('')">login_ip = #{loginIp},</if>
+			<if test="updDt != null">
+				pswd_upd_dt = #{pswdUpdDt, jdbcType=TIMESTAMP},
+				upd_dt = #{updDt, jdbcType=TIMESTAMP},
+				upd_id = #{updId}
+			</if>
+		</trim>
+		WHERE id = #{id}
+	</update>
+
+	<insert id="insertAdminUser" parameterType="adminUserVO">
+		INSERT INTO 
+		tb_admin(
+			ID
+			,NAME
+			,PSWD
+			,DEPT
+			,LOGIN_DT
+			,EXPIRE_DT
+			,PSWD_UPD_DT
+			,REG_ID
+			,REG_DT
+		)
+		VALUES(
+			#{id}
+			,#{name}
+			,#{pswd}
+			,#{dept}
+			,#{loginDt}
+			,#{expireDt}
+			,#{pswdUpdDt}
+			,#{regId}
+			,NOW()
+		)
+	</insert>
+
+	<insert id="insertAdminUserLog" parameterType="adminUserLogVO">
+		INSERT INTO
+		tb_admin_log(ACTION
+					,MENU_NM
+					,URL
+					,IP
+					,PARAM
+					,REG_ID
+					,REG_DT)
+		VALUES(#{action}
+			,#{menuNm}
+			,#{url}
+			,#{ip}
+			,#{param}
+			,#{regId}
+			,NOW())
+	</insert>
+	
+</mapper>
+

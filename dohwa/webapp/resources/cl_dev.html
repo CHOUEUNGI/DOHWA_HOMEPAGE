@@ -1,0 +1,3526 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title>코딩리스트</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<style>
+			html {
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: 100%;
+				line-height: 1.15;
+			}
+			article,
+			aside,
+			audio,
+			blockquote,
+			body,
+			canvas,
+			code,
+			dd,
+			details,
+			div,
+			dl,
+			dt,
+			fieldset,
+			figcaption,
+			figure,
+			footer,
+			form,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			header,
+			hgroup,
+			input,
+			legend,
+			li,
+			mark,
+			nav,
+			ol,
+			p,
+			pre,
+			section,
+			td,
+			textarea,
+			th,
+			time,
+			ul,
+			video {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				font-family: Dotum, "돋움", Gulim, "굴림", "Helvetica Neue", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+				color: #000;
+				background-color: #fff;
+				font-size: 12px;
+			}
+			img {
+				vertical-align: middle;
+				border: 0;
+			}
+			button,
+			input,
+			optgroup,
+			select,
+			textarea {
+				margin: 0;
+				font-size: 100%;
+				vertical-align: middle;
+				font-family: sans-serif;
+				line-height: 1.15;
+			}
+			button,
+			input {
+				overflow: visible;
+			}
+			button,
+			select {
+				text-transform: none;
+			}
+			[type="reset"],
+			[type="submit"],
+			button,
+			html [type="button"] {
+				-webkit-appearance: button;
+			}
+			[type="button"]::-moz-focus-inner,
+			[type="reset"]::-moz-focus-inner,
+			[type="submit"]::-moz-focus-inner,
+			button::-moz-focus-inner {
+				border-style: none;
+				padding: 0;
+			}
+			[type="button"]:-moz-focusring,
+			[type="reset"]:-moz-focusring,
+			[type="submit"]:-moz-focusring,
+			button:-moz-focusring {
+				outline: 1px dotted ButtonText;
+			}
+			[type="checkbox"],
+			[type="radio"] {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 0;
+			}
+			::-webkit-file-upload-button {
+				-webkit-appearance: button;
+				font: inherit;
+			}
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			fieldset {
+				border: 0;
+			}
+			legend {
+				color: #000;
+			}
+			address,
+			caption,
+			cite,
+			code,
+			dfn,
+			em,
+			strong,
+			th,
+			var {
+				font-style: normal;
+				font-weight: 400;
+			}
+			ol,
+			ul {
+				list-style: none;
+			}
+			caption,
+			th {
+				text-align: left;
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-size: 100%;
+				font-weight: 400;
+				line-height: 1;
+			}
+			caption,
+			hr,
+			legend {
+				width: 0;
+				height: 0;
+				font-size: 1px;
+				text-indent: -9999em;
+				line-height: 0;
+			}
+			a,
+			a:active,
+			a:focus,
+			a:hover,
+			a:link,
+			a:visited {
+				color: #000;
+				font-size: 100%;
+				text-decoration: none;
+			}
+			a {
+				background-color: transparent;
+				-webkit-text-decoration-skip: objects;
+			}
+			abbr[title] {
+				border-bottom: none;
+				text-decoration: underline;
+				-webkit-text-decoration: underline dotted;
+				-moz-text-decoration: underline dotted;
+				text-decoration: underline dotted;
+			}
+			audio,
+			video {
+				display: inline-block;
+			}
+			audio:not([controls]) {
+				display: none;
+				height: 0;
+			}
+			svg:not(:root) {
+				overflow: hidden;
+			}
+
+			.hide-txt {
+				overflow: hidden;
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				font-size: 1px;
+				line-height: 0;
+				clip: rect(0 0 0 0);
+				white-space: nowrap;
+				margin: -1px;
+				padding: 0;
+				border: 0;
+			}
+
+			.cl_info_area {
+				position: relative;
+				width: 100%;
+			}
+			.cl_info_area .project_tit {
+				font-size: 32px;
+				padding: 20px 20px 20px 20px;
+				border-bottom: 2px solid #000;
+			}
+			.cl_link_area {
+				background: #fff;
+				padding: 0;
+				border-bottom: 2px solid #000;
+			}
+			.cl_link_area .cl_link_area,
+			.cl_link_area .link_category,
+			.cl_link_area .link_other {
+				padding: 5px;
+			}
+			.cl_link_area .link_other {
+				text-align: left;
+			}
+			.cl_link_area .link_other > a {
+				display: inline-block;
+				border: 1px solid #000;
+				margin-right: 15px;
+				padding: 10px 20px 10px 20px;
+				background-color: #555;
+				color: #fff;
+			}
+			.cl_link_area .link_other > a:hover {
+				-webkit-box-shadow: 5px 5px 13px #999;
+				box-shadow: 5px 5px 13px #999;
+			}
+			.cl_link_area .link_category {
+				width: 100%;
+				text-align: left;
+			}
+			.cl_link_area .link_category > a {
+				display: inline-block;
+				border: 1px solid #000;
+				margin-right: 15px;
+				padding: 6px 10px 4px 10px;
+			}
+			.cl_link_area .link_category > a:hover {
+				background: #ddd;
+			}
+			.cl_link_area .page_count_area {
+				padding: 10px;
+				border-top: 2px solid #000;
+			}
+			.cl_link_area .page_count_area span {
+				display: inline-blcok;
+				font-weight: 700;
+				margin-right: 20px;
+			}
+			.cl_link_area .page_count_area span span {
+				font-weight: 400;
+				margin-left: 5px;
+				margin-right: 0;
+			}
+			.cl_list_area {
+				position: relative;
+				width: 100%;
+			}
+			.cl_list_area .cl_list_detail {
+				width: 100%;
+				overflow-x: auto;
+			}
+			.cl_list_area .cl_category_tit {
+				padding: 20px 10px 10px 10px;
+				font-weight: 700;
+			}
+			.cl_list_area .page_count_category {
+				display: inline-block;
+			}
+			.cl_list_area .cl_table {
+				width: 100%;
+			}
+			.cl_list_area .cl_table thead th {
+				padding: 10px 5px;
+				border: 1px solid #e2e2e2;
+				text-align: center;
+				background: #cbf2f5;
+			}
+			.cl_list_area .cl_table tbody td {
+				padding: 10px 5px;
+				border: 1px solid #e2e2e2;
+				text-align: center;
+			}
+			.cl_list_area .cl_table tbody tr:nth-child(even) {
+				background: #f1f9f9;
+			}
+			.cl_list_area .cl_table tbody td.p_num {
+				width: 50px;
+				table-layout: fixed;
+			}
+			.cl_list_area .cl_table tbody td.p_depth01 {
+				width: 140px;
+				table-layout: fixed;
+				text-align: left;
+			}
+			.cl_list_area .cl_table tbody td.p_depth02 {
+				width: 140px;
+				table-layout: fixed;
+				text-align: left;
+			}
+			.cl_list_area .cl_table tbody td.p_depth03 {
+				width: 140px;
+				table-layout: fixed;
+				text-align: left;
+			}
+			.cl_list_area .cl_table tbody td.p_depth04 {
+				width: 140px;
+				table-layout: fixed;
+				text-align: left;
+			}
+			.cl_list_area .cl_table tbody td.p_depth05 {
+				width: 140px;
+				table-layout: fixed;
+				text-align: left;
+			}
+			.cl_list_area .cl_table tbody td.p_folder {
+				width: 120px;
+				table-layout: fixed;
+				text-align: left;
+			}
+			.cl_list_area .cl_table tbody td.p_filename {
+				width: 200px;
+				table-layout: fixed;
+				text-align: left;
+			}
+			.cl_list_area .cl_table tbody td.p_type {
+				width: 50px;
+				table-layout: fixed;
+				padding: 0;
+			}
+			.cl_list_area .cl_table tbody td.p_time {
+				width: 50px;
+				table-layout: fixed;
+				padding: 0;
+			}
+			.cl_list_area .cl_table tbody td.p_modify {
+				width: 70px;
+				table-layout: fixed;
+				padding: 0;
+			}
+			.cl_list_area .cl_table tbody td.p_status {
+				width: 50px;
+				table-layout: fixed;
+			}
+			.cl_list_area .cl_table tbody td.p_percent {
+				width: 50px;
+				table-layout: fixed;
+			}
+			.cl_list_area .cl_table tbody td.p_script01 {
+				width: 50px;
+				table-layout: fixed;
+			}
+			.cl_list_area .cl_table tbody td.p_script02 {
+				width: 50px;
+				table-layout: fixed;
+			}
+			.cl_list_area .cl_table tbody td.p_etc {
+				color: red;
+				text-align: left;
+			}
+			.cl_list_area .cl_table tbody td.p_etc .blue {
+				color: blue;
+			}
+			.cl_list_area .cl_table .p_link {
+				text-decoration: underline;
+			}
+			.cl_list_area .cl_table .p_link_open {
+				color: #00f;
+			}
+			.cl_list_area .cl_table .p_link_dev {
+				color: #00f;
+			}
+			.cl_list_area .cl_table .p_time_s {
+				padding: 6px 0 2px 0;
+				border-bottom: 1px solid #e2e2e2;
+			}
+			.cl_list_area .cl_table .p_time_e {
+				padding: 6px 0 2px 0;
+			}
+			.cl_list_area:last-child {
+				margin-bottom: 100px;
+			}
+			.cl_hr {
+				width: 100%;
+				margin: 50px 0;
+				border-bottom: 2px solid #b3b3b3;
+			}
+		</style>
+	</head>
+	<body>
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div id="wrap">
+			<div id="content">
+				<div class="cl_info_area">
+					<h1 class="project_tit">도화 엔지니어링 리뉴얼 코딩리스트</h1>
+				</div>
+				<div class="cl_link_area">
+					<div class="page_count_area">
+						<span class="pc_all">
+							전체
+							<span>0</span>
+						</span>
+						<span class="pc_ing">
+							진행중
+							<span>0</span>
+						</span>
+						<span class="pc_end">
+							완료
+							<span>0</span>
+						</span>
+						<span class="pc_percent">
+							진행률
+							<span>0</span>
+							%
+						</span>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							프로토타입
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">프로토타입</td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder"></td>
+									<td class="p_filename">
+										<a class="p_link" href="./prototype.html">prototype.html</a>
+										<a class="p_link_open" href="./prototype.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/prototype.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">-</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">mixin version</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder"></td>
+									<td class="p_filename">
+										<a class="p_link" href="./prototype_mixin.html">prototype_mixin.html</a>
+										<a class="p_link_open" href="./prototype_mixin.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/prototype_mixin.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">-</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">모바일 프로토타입</td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder"></td>
+									<td class="p_filename">
+										<a class="p_link" href="./prototype_mobile.html">prototype_mobile.html</a>
+										<a class="p_link_open" href="./prototype_mobile.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/prototype_mobile.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">-</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							메인
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">메인</td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/main/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/main/main.html">main.html</a>
+										<a class="p_link_open" href="./html/pc/main/main.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/main/main.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/15</div>
+									</td>
+									<td class="p_status">진행중</td>
+									<td class="p_percent">90%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">50%</td>
+									<td class="p_etc">
+										<div>메인 visual 영역 비디오플레이어 추가, ui 변경 대응 스크립트 예정</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							회사소개
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">회사소개</td>
+									<td class="p_depth02">Overview</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/overview.html">overview.html</a>
+										<a class="p_link_open" href="./html/pc/intro/overview.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/overview.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/31</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc"></td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">Vision</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/vision.html">vision.html</a>
+										<a class="p_link_open" href="./html/pc/intro/vision.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/vision.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/31</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">PEOPLE</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/people.html">people.html</a>
+										<a class="p_link_open" href="./html/pc/intro/people.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/people.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/31</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">x</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">History</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/history.html">history.html</a>
+										<a class="p_link_open" href="./html/pc/intro/history.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/history.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/12</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">CSR</td>
+									<td class="p_depth03">나눔경영</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/csr_pages01.html">csr_pages01.html</a>
+										<a class="p_link_open" href="./html/pc/intro/csr_pages01.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/csr_pages01.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">진행중</td>
+									<td class="p_percent">90%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">안전품질경영</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/csr_pages02.html">csr_pages02.html</a>
+										<a class="p_link_open" href="./html/pc/intro/csr_pages02.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/csr_pages02.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/12</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">윤리준법경영</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/csr_pages03.html">csr_pages03.html</a>
+										<a class="p_link_open" href="./html/pc/intro/csr_pages03.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/csr_pages03.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/10</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">x</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04">윤리경영제보라인</td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/csr_tipline.html">csr_tipline.html</a>
+										<a class="p_link_open" href="./html/pc/intro/csr_tipline.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/csr_tipline.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/7</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">x</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05">결과확인</td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/csr_tipline_view.html">csr_tipline_view.html</a>
+										<a class="p_link_open" href="./html/pc/intro/csr_tipline_view.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/csr_tipline_view.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/7</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">x</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05">실명</td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/csr_tipline_write01.html">csr_tipline_write01.html</a>
+										<a class="p_link_open" href="./html/pc/intro/csr_tipline_write01.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/csr_tipline_write01.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/7</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">x</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05">익명</td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/csr_tipline_write02.html">csr_tipline_write02.html</a>
+										<a class="p_link_open" href="./html/pc/intro/csr_tipline_write02.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/csr_tipline_write02.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/7</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">x</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">Contact US</td>
+									<td class="p_depth03">연락처 · 본사위치</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/contactus.html">contactus.html</a>
+										<a class="p_link_open" href="./html/pc/intro/contactus.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/contactus.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/6</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">x</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">해외지사</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/overseas.html">overseas.html</a>
+										<a class="p_link_open" href="./html/pc/intro/overseas.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/overseas.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/6</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">x</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr></tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">문의사항</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/intro/inquiry.html">inquiry.html</a>
+										<a class="p_link_open" href="./html/pc/intro/inquiry.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/intro/inquiry.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">진행중</td>
+									<td class="p_percent">90%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>7/30 드롭다운 마크업 수정, 디자인스크롤바 스크립트 추가해야 함.</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							사업소개
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">사업소개</td>
+									<td class="p_depth02">Overview</td>
+									<td class="p_depth03">물</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/business/water.html">water.html</a>
+										<a class="p_link_open" href="./html/pc/business/water.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/business/water.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/19</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">도시</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/business/city.html">city.html</a>
+										<a class="p_link_open" href="./html/pc/business/city.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/business/city.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/28</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">교통</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/business/transportation.html">transportation.html</a>
+										<a class="p_link_open" href="./html/pc/business/transportation.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/business/transportation.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/28</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">에너지</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/business/energy.html">energy.html</a>
+										<a class="p_link_open" href="./html/pc/business/energy.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/business/energy.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/28</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">프로젝트</td>
+									<td class="p_depth03">list</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/business/project_list.html">project_list.html</a>
+										<a class="p_link_open" href="./html/pc/business/project_list.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/business/project_list.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/27</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">view</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/business/project_view.html">project_view.html</a>
+										<a class="p_link_open" href="./html/pc/business/project_view.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/business/project_view.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/27</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							투자정보
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">투자정보</td>
+									<td class="p_depth02">재무정보</td>
+									<td class="p_depth03">주요 경영실적</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/management.html">management.html</a>
+										<a class="p_link_open" href="./html/pc/invest/management.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/management.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/12</div>
+									</td>
+									<td class="p_status">100%</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">요약 재무재표</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/financial_statement.html">financial_statement.html</a>
+										<a class="p_link_open" href="./html/pc/invest/financial_statement.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/financial_statement.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/12</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">신용등급</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/credit_rating.html">credit_rating.html</a>
+										<a class="p_link_open" href="./html/pc/invest/credit_rating.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/credit_rating.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">전자공고 및 공사</td>
+									<td class="p_depth03">전자공고</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/announcement.html">announcement.html</a>
+										<a class="p_link_open" href="./html/pc/invest/announcement.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/announcement.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>재무정보 하위 depth3 페이지 취합(3p -> 1p)</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">전자공시</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/disclosure.html">disclosure.html</a>
+										<a class="p_link_open" href="./html/pc/invest/disclosure.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/disclosure.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>iframe 영역</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">주가정보</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/stock_price.html">stock_price.html</a>
+										<a class="p_link_open" href="./html/pc/invest/stock_price.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/stock_price.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>KRX 연동</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">IR 자료실</td>
+									<td class="p_depth03">IR Book</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/ir_book.html">ir_book.html</a>
+										<a class="p_link_open" href="./html/pc/invest/ir_book.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/ir_book.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>depth3 IR Bool/에뉴얼 리포트/리서치 리포트 컨텐츠 통합</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">에뉴얼 리포트</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/annual_report.html">annual_report.html</a>
+										<a class="p_link_open" href="./html/pc/invest/annual_report.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/annual_report.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">리서치 리포트</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/research_report.html">research_report.html</a>
+										<a class="p_link_open" href="./html/pc/invest/research_report.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/research_report.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">주식 및 주주정보</td>
+									<td class="p_depth03">주주구성</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/composition.html">composition.html</a>
+										<a class="p_link_open" href="./html/pc/invest/composition.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/composition.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>
+											depth3 주주구성/주주총회/배당현황 컨텐츠 통합
+											<br />
+											8/11 텝(tab-menu-type02) 스크립트 수정 필요
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">배당현황</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/dividend.html">dividend.html</a>
+										<a class="p_link_open" href="./html/pc/invest/dividend.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/dividend.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">주주총회</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/invest/general_meeting.html">general_meeting.html</a>
+										<a class="p_link_open" href="./html/pc/invest/general_meeting.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/invest/general_meeting.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							홍보센터
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">홍보센터</td>
+									<td class="p_depth02">CI소개</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/pr/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/pr/ci.html">ci.html</a>
+										<a class="p_link_open" href="./html/pc/pr/ci.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/pr/ci.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/10</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">x</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>최신뉴스/기업브로슈어/홍보영상 컨텐츠 통합(CI 제외)</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">최신뉴스</td>
+									<td class="p_depth03">list</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/pr/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/pr/news.html">news.html</a>
+										<a class="p_link_open" href="./html/pc/pr/news.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/pr/news.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/27</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc">
+										<div>디자인 셀렉트 박스 스크립트 완료.</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">view</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/pr/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/pr/news_view.html">news_view.html</a>
+										<a class="p_link_open" href="./html/pc/pr/news_view.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/pr/news_view.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/27</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">기업브로슈어</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/pr/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/pr/brochure.html">brochure.html</a>
+										<a class="p_link_open" href="./html/pc/pr/brochure.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/pr/brochure.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/27</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">홍보영상</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/pr/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/pr/promotional_video.html">promotional_video.html</a>
+										<a class="p_link_open" href="./html/pc/pr/promotional_video.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/pr/promotional_video.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/13</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02">100%</td>
+									<td class="p_etc">
+										<div>비디오 URL 미수급!</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							채용정보
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">채용정보</td>
+									<td class="p_depth02">채용안내</td>
+									<td class="p_depth03">채용절차</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/recruit/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/recruit/procedure.html">procedure.html</a>
+										<a class="p_link_open" href="./html/pc/recruit/procedure.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/recruit/procedure.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/14</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">복리후생</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/recruit/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/recruit/benefit.html">benefit.html</a>
+										<a class="p_link_open" href="./html/pc/recruit/benefit.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/recruit/benefit.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/11</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">채용지원</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/recruit/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/recruit/recruitment.html">recruitment.html</a>
+										<a class="p_link_open" href="./html/pc/recruit/recruitment.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/recruit/recruitment.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">-</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>outLink : 도화 채용사이트로 이동</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							Footer
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">개인정보 처리방침</td>
+									<td class="p_depth02">개인정보 처리방침</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/etc/privacy_policy.html">privacy_policy.html</a>
+										<a class="p_link_open" href="./html/pc/etc/privacy_policy.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/etc/privacy_policy.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/14</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">개인정보 취급방침</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/etc/privacy_policy02.html">privacy_policy02.html</a>
+										<a class="p_link_open" href="./html/pc/etc/privacy_policy02.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/etc/privacy_policy02.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/14</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">영상정보처리기기운영관리방침</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/etc/privacy_policy03.html">privacy_policy03.html</a>
+										<a class="p_link_open" href="./html/pc/etc/privacy_policy03.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/etc/privacy_policy03.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/14</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">ETC</td>
+									<td class="p_depth02">서버점검중</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/etc/error_page01.html">error_page01.html</a>
+										<a class="p_link_open" href="./html/pc/etc/error_page01.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/etc/error_page01.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/18</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">404 Not Found</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/etc/error_page02.html">error_page02.html</a>
+										<a class="p_link_open" href="./html/pc/etc/error_page02.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/etc/error_page02.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/18</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">500 Server</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/pc/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/pc/etc/error_page03.html">error_page03.html</a>
+										<a class="p_link_open" href="./html/pc/etc/error_page03.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/pc/etc/error_page03.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/18</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<hr class="cl_hr" />
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							[Mobile] 메인
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">메인</td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/main/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/main/main.html">main.html</a>
+										<a class="p_link_open" href="./html/mobile/main/main.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/main/main.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/15</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>
+											footer 디자인 반영
+											<br />
+											7/22 gnb 반영, 컨텐츠 수정
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							[Mobile] 회사소개
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">회사소개</td>
+									<td class="p_depth02">Overview</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/overview.html">overview.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/overview.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/overview.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">진행중</td>
+									<td class="p_percent">90%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">Vision</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/vision.html">vision.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/vision.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/vision.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">PEOPLE</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/people.html">people.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/people.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/people.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">History</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/history.html">history.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/history.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/history.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">진행중</td>
+									<td class="p_percent">90%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">CSR</td>
+									<td class="p_depth03">나눔경영</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/csr_pages01.html">csr_pages01.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/csr_pages01.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/csr_pages01.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">진행중</td>
+									<td class="p_percent">90%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>희망나눔기금, 사회공헌주요활동</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">안전품질경영</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/csr_pages02.html">csr_pages02.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/csr_pages02.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/csr_pages02.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">진행중</td>
+									<td class="p_percent">90%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>인증서 팝업</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">윤리준법경영</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/csr_pages03.html">csr_pages03.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/csr_pages03.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/csr_pages03.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04">윤리경영제보라인</td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/csr_tipline.html">csr_tipline.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/csr_tipline.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/csr_tipline.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/19</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05">결과확인</td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/csr_tipline_view.html">csr_tipline_view.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/csr_tipline_view.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/csr_tipline_view.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/19</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05">실명</td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/csr_tipline_write01.html">csr_tipline_write01.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/csr_tipline_write01.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/csr_tipline_write01.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/19</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05">익명</td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/csr_tipline_write02.html">csr_tipline_write02.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/csr_tipline_write02.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/csr_tipline_write02.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/19</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">Contact US</td>
+									<td class="p_depth03">연락처 · 본사위치</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/contactus.html">contactus.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/contactus.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/contactus.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/18</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">해외지사</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/overseas.html">overseas.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/overseas.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/overseas.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/18</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr></tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">문의사항</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/intro/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/intro/inquiry.html">inquiry.html</a>
+										<a class="p_link_open" href="./html/mobile/intro/inquiry.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/intro/inquiry.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/18</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							[Mobile] 사업소개
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">사업소개</td>
+									<td class="p_depth02">Overview</td>
+									<td class="p_depth03">물</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/business/water.html">water.html</a>
+										<a class="p_link_open" href="./html/mobile/business/water.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/business/water.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/30</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>물/도시/교통/에너지 페이지 취합(탭, 슬라이드 스크립트 적용 필요)</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">도시</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/business/city.html">city.html</a>
+										<a class="p_link_open" href="./html/mobile/business/city.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/business/city.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/30</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">교통</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/business/transportation.html">transportation.html</a>
+										<a class="p_link_open" href="./html/mobile/business/transportation.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/business/transportation.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/30</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">에너지</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/business/energy.html">energy.html</a>
+										<a class="p_link_open" href="./html/mobile/business/energy.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/business/energy.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/30</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">프로젝트</td>
+									<td class="p_depth03">list</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/business/project_list.html">project_list.html</a>
+										<a class="p_link_open" href="./html/mobile/business/project_list.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/business/project_list.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/31</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>8/4 필터영역 선택버튼 스크립트 수정 필요</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">view</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/business/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/business/project_view.html">project_view.html</a>
+										<a class="p_link_open" href="./html/mobile/business/project_view.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/business/project_view.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/30</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							[Mobile] 투자정보
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">투자정보</td>
+									<td class="p_depth02">재무정보</td>
+									<td class="p_depth03">주요 경영실적</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/management.html">management.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/management.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/management.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>depth3 주요경영실적/요약 재무제표/신용등급 컨텐츠 통합</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">요약 재무제표</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/financial_statement.html">financial_statement.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/financial_statement.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/financial_statement.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">신용등급</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/credit_rating.html">credit_rating.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/credit_rating.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/credit_rating.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/22</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">전자공고 및 공사</td>
+									<td class="p_depth03">전자공고</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/announcement.html">announcement.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/announcement.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/announcement.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/26</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">전자공시</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/disclosure.html">disclosure.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/disclosure.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/disclosure.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/26</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>iframe 영역 / announcement.html 에서 확인</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">주가정보</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/stock_price.html">stock_price.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/stock_price.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/stock_price.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/26</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>KRX 연동 / announcement.html 에서 확인</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">IR 자료실</td>
+									<td class="p_depth03">IR Book</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/ir_book.html">ir_book.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/ir_book.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/ir_book.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/26</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">에뉴얼 리포트</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/annual_report.html">annual_report.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/annual_report.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/annual_report.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/26</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>ir_book.html 에서 확인</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">리서치 리포트</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/research_report.html">research_report.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/research_report.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/research_report.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/26</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>ir_book.html 에서 확인</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">주식 및 주주정보</td>
+									<td class="p_depth03">주주구성</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/composition.html">composition.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/composition.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/composition.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/28</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">배당현황</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/dividend.html">dividend.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/dividend.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/dividend.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/28</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>composition.html 에서 확인</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">주주총회</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/invest/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/invest/general_meeting.html">general_meeting.html</a>
+										<a class="p_link_open" href="./html/mobile/invest/general_meeting.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/invest/general_meeting.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">7/28</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>composition.html 에서 확인</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							[Mobile] 홍보센터
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">최신뉴스</td>
+									<td class="p_depth03">list</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/pr/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/pr/news.html">news.html</a>
+										<a class="p_link_open" href="./html/mobile/pr/news.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/pr/news.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/13</div>
+									</td>
+									<td class="p_status">진행중</td>
+									<td class="p_percent">90%</td>
+									<td class="p_script01">o</td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>셀렉트 박스</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">view</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/pr/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/pr/news_view.html">news_view.html</a>
+										<a class="p_link_open" href="./html/mobile/pr/news_view.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/pr/news_view.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/13</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							[Mobile] 채용정보
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">채용정보</td>
+									<td class="p_depth02">채용안내</td>
+									<td class="p_depth03">채용절차</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/recruit/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/recruit/procedure.html">procedure.html</a>
+										<a class="p_link_open" href="./html/mobile/recruit/procedure.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/recruit/procedure.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02"></td>
+									<td class="p_depth03">복리후생</td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/recruit/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/recruit/benefit.html">benefit.html</a>
+										<a class="p_link_open" href="./html/mobile/recruit/benefit.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/recruit/benefit.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/18</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">채용지원</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/recruit/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/recruit/"></a>
+										<a class="p_link_open" href="./html/mobile/recruit/" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/recruit/" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">-</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div>outLink : 도화 채용사이트로 이동</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="cl_list_area">
+					<div class="cl_list_detail">
+						<h2 class="cl_category_tit">
+							[Mobile] Footer
+							<span class="page_count_category"></span>
+						</h2>
+						<table class="cl_table">
+							<thead>
+								<tr>
+									<th>no</th>
+									<th>depth 1</th>
+									<th>depth 2</th>
+									<th>depth 3</th>
+									<th>depth 4</th>
+									<th>depth 5</th>
+									<th>folder</th>
+									<th>filename</th>
+									<th>type</th>
+									<th>
+										<div class="p_time_e">완료일</div>
+									</th>
+									<th>진행상태</th>
+									<th>진행률</th>
+									<th>
+										스크립트
+										<br />
+										유무
+									</th>
+									<th>
+										스크립트
+										<br />
+										진행률
+									</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">개인정보 처리방침</td>
+									<td class="p_depth02">개인정보 처리방침</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/etc/privacy_policy01.html">privacy_policy01.html</a>
+										<a class="p_link_open" href="./html/mobile/etc/privacy_policy01.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/etc/privacy_policy01.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">개인정보 취급방침</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/etc/privacy_policy02.html">privacy_policy02.html</a>
+										<a class="p_link_open" href="./html/mobile/etc/privacy_policy02.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/etc/privacy_policy02.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">영상정보처리기기운영관리방침</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/etc/privacy_policy03.html">privacy_policy03.html</a>
+										<a class="p_link_open" href="./html/mobile/etc/privacy_policy03.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/etc/privacy_policy03.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">8/20</div>
+									</td>
+									<td class="p_status">완료</td>
+									<td class="p_percent">100%</td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01">ETC</td>
+									<td class="p_depth02">서버점검중</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/etc/error_page01.html">error_page01.html</a>
+										<a class="p_link_open" href="./html/mobile/etc/error_page01.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/etc/error_page01.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">-</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">404 Not Found</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/etc/error_page02.html">error_page02.html</a>
+										<a class="p_link_open" href="./html/mobile/etc/error_page02.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/etc/error_page02.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">-</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="p_num"></td>
+									<td class="p_depth01"></td>
+									<td class="p_depth02">500 Server</td>
+									<td class="p_depth03"></td>
+									<td class="p_depth04"></td>
+									<td class="p_depth05"></td>
+									<td class="p_folder">html/mobile/etc/</td>
+									<td class="p_filename">
+										<a class="p_link" href="./html/mobile/etc/error_page03.html">error_page03.html</a>
+										<a class="p_link_open" href="./html/mobile/etc/error_page03.html" target="_blank">[새창]</a>
+										<a class="p_link_dev" href="http://uxdev.etribe.co.kr/etribe_ux_automate/html/mobile/etc/error_page03.html" target="_blank">[dev]</a>
+									</td>
+									<td class="p_type">html</td>
+									<td class="p_time">
+										<div class="p_time_e">-</div>
+									</td>
+									<td class="p_status">-</td>
+									<td class="p_percent"></td>
+									<td class="p_script01"></td>
+									<td class="p_script02"></td>
+									<td class="p_etc">
+										<div></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dimm"></div>
+		<script src="inc/js/jquery.js"></script>
+		<script>
+			$(function() {
+				var allCount = $(".p_status:contains()").length;
+				var noCount = $(".p_status:contains(-)").length;
+				var endCount = $(".p_status:contains(완료)").length;
+				var ingCount = $(".p_status:contains(진행중)").length;
+				//- var modifyCount = $('.p_status:contains(수정중)').length;
+				var all_sum_count = allCount - noCount;
+				var all_ing_count = endCount + ingCount - noCount;
+				var eCount = (endCount / all_ing_count) * 100;
+
+				//- console.log(endCount);
+				//- console.log(ingCount);
+				//- console.log(modifyCount);
+				//- console.log(allCount);
+
+				$(".pc_ing>span").text(ingCount);
+				//- $('.pc_modify>span').text(modifyCount);
+				$(".pc_end>span").text(endCount);
+				//- (-) 대쉬로 표시된 파일들은 카운트 하지 않음
+				$(".pc_all>span").text(all_sum_count);
+				$(".pc_percent>span").text(eCount.toFixed(0));
+
+				// page number auto
+				$(".cl_table>tbody").each(function() {
+					$(this)
+						.children()
+						.children("td.p_num")
+						.each(function(index) {
+							//- console.log(index);
+							$(this).text(index + 1);
+						});
+				});
+			});
+		</script>
+		<script>
+			$(function() {
+				$('thead').each(function(){
+					$(this).find('th:last').html('개발진척률<br/> 100 : 개발완료, 90:기능구현완료');
+				});
+				$('td.p_etc').each(function(){
+					$(this).html('');
+					$(this).attr('contentEditable', 'true');
+					var id = $(this).parent().find('td').eq(6).text().trim().replace(/\//gi, '_') + $(this).parent().find('td').eq(7).text().split('[')[0].trim().replace(/\./gi, '_') ;
+					$(this).attr('id', id);
+				});
+				$('td.p_etc').on('blur', function(){
+					var arrVal = [];
+					$('td.p_etc').each(function(){
+						console.log($(this).attr('id'));
+						arrVal.push({id : $(this).attr('id'), value : $(this).text()});
+					});
+					console.log(arrVal.join(','));
+					$.ajax({
+						url : '/test/dev/prgsRateAjax',
+						type : 'post',
+						data : {"prgsRate" : JSON.stringify(arrVal)},
+						dataType: 'json',
+						success : function(data) {
+
+						},
+						error : function(jqXHR) {
+							console.log(jqXHR);
+						}
+					});
+				});
+
+				$.ajax({
+					url : '/test/dev/getPrgsRateAjax',
+					type : 'get',
+					data : {},
+					dataType: 'json',
+					success : function(data) {
+						console.log('data', data.prgsRate);
+						console.log('typeof data.prgsRate', typeof data.prgsRate);
+						if(typeof data.prgsRate === 'string' && data.prgsRate !== ''){
+							let prgsRateJson = JSON.parse(data.prgsRate);
+							console.log('prgsRateJson', prgsRateJson);
+							prgsRateJson.forEach(function(o, i){
+								$('td#'+o.id).html(o.value);
+							})
+						}
+					},
+					error : function(jqXHR) {
+						console.log('error', jqXHR);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+/* Set the size of the div element that contains the map */
+#mapArea {
+	height: 600px; /* The height is 400 pixels */
+	width: 1140px; /* The width is the width of the web page */
+}
+</style>
+</head>
+<body>
+	<h3>My Google Maps Demo</h3>
+	<!--The div element for the map -->
+	<div id="mapArea"></div>
+	<script type="text/javascript" src="/resources/inc/js/jquery.js"></script>
+	<script>
+	
+	function initMap(){
+		var markObj = [
+			{
+				position: new google.maps.LatLng(21.0466225, 105.7930282),
+				map: map,
+				title: "베트남",
+				txt : "베트남"
+			},
+			{
+				position: new google.maps.LatLng(43.2609119, 76.9544649),
+				map: map,
+				title: "카자흐스탄",
+				txt : "카자흐스탄"
+			},
+			{
+				position: new google.maps.LatLng(-6.2236107, 106.804828),
+				map: map,
+				title: "인도네시아",
+				txt : "인도네시아"
+			},
+			{
+				position: new google.maps.LatLng(41.6889163,44.7698291),
+				map: map,
+				title: "조지아",
+				txt : "조지아"
+			},
+			{
+				position: new google.maps.LatLng(33.707763, 73.047834),
+				map: map,
+				title: "파키스탄",
+				txt : "파키스탄"
+			},
+			{
+				position: new google.maps.LatLng(33.4543195, 73.8606763),
+				map: map,
+				title: "파키스탄",
+				txt : "파키스탄"
+			},
+			{
+				position: new google.maps.LatLng(36.7407444, 3.0453775),
+				map: map,
+				title: "알제리",
+				txt : "알제리"
+			},
+			{
+				position: new google.maps.LatLng(42.8769795, 74.5218214),
+				map: map,
+				title: "키르기스스탄",
+				txt : "키르기스스탄"
+			},
+			{
+				position: new google.maps.LatLng(4.6449161, -74.0633935),
+				map: map,
+				title: "콜롬비아",
+				txt : "콜롬비아"
+			},
+			{
+				position: new google.maps.LatLng(-17.8026212, -63.2201125),
+				map: map,
+				title: "볼리비아",
+				txt : "볼리비아"
+			},
+			{
+				position: new google.maps.LatLng(41.8121003, -87.9674989),
+				map: map,
+				title: "미국",
+				txt : "미국"
+			},
+			{
+				position: new google.maps.LatLng(23.5982312, 58.5371176),
+				map: map,
+				title: "오만",
+				txt : "오만"
+			},
+			{
+				position: new google.maps.LatLng(-12.0903613, -77.0148681),
+				map: map,
+				title: "페루",
+				txt : "페루"
+			},
+			{
+				position: new google.maps.LatLng(23.7807777, 90.3492858),
+				map: map,
+				title: "방글라데시",
+				txt : "방글라데시"
+			},
+			{
+				position: new google.maps.LatLng(-25.9750309, 32.583577),
+				map: map,
+				title: "모잠비크",
+				txt : "모잠비크"
+			},
+			{
+				position: new google.maps.LatLng(12.588912, -86.2811995),
+				map: map,
+				title: "니카라과",
+				txt : "니카라과"
+			},
+			{
+				position: new google.maps.LatLng(34.6865712, 136.0832546),
+				map: map,
+				title: "일본",
+				txt : "일본"
+			},
+			{
+				position: new google.maps.LatLng(-1.265912, 36.8065213),
+				map: map,
+				title: "케냐",
+				txt : "케냐"
+			},
+			{
+				position: new google.maps.LatLng(-6.3424386, 30.4942969),
+				map: map,
+				title: "탄자니아",
+				txt : "탄자니아"
+			},
+			{
+				position: new google.maps.LatLng(14.5844848, 121.0012054),
+				map: map,
+				title: "필리핀",
+				txt : "필리핀"
+			},
+		];
+		var zoomLevel = 2;
+		var markerMaxWidth = 350;
+		var markers = [], infowindows = [];
+		function contentString(i){
+			var html = "";
+			html += "<div class='map_txt'>";
+			html += "	<dl>";
+			html += "		<dt>" + markObj[i].title + "</dt>";
+			html += "		<dd class='addr'>" + markObj[i].txt + "</dd>";
+			html += "	</dl>";
+			html += "</div>";
+			return html;
+		};
+		var mapOptions = {
+			zoom: zoomLevel,
+			center: new google.maps.LatLng(19.2899233, 150.6138514),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById('mapArea'), mapOptions);
+		
+		$.each(markObj,function(index,item){
+			markers.push(new google.maps.Marker({
+				position: markObj[index].position,
+				map: map,
+				title: markObj[index].title,
+				icon: {
+					url: "/resources/images/common/map_marker2.png",
+					scaledSize: new google.maps.Size(25, 35)
+				}
+			}));
+			infowindows.push(new google.maps.InfoWindow({
+				content: contentString(index),
+				maxWidth: markerMaxWidth
+			}));
+			markers[index].addListener("mouseover",function(e){
+				infowindows[index].open(map, markers[index]);
+			});
+			markers[index].addListener("mouseout",function(e){
+				infowindows[index].close();
+			});
+		});
+	};
+	
+    </script>
+	<!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+	<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2vgxy-gUfx_XBxO9g6EVTZbevdkuojfQ&callback=initMap">
+    </script>
+</body>
+</html>

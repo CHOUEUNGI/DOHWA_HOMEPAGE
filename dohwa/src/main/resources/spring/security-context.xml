@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- aspectj 적용을 위한 설정 -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<!-- 시큐리티 설정을 위한 등록된 bean을 스캔하는 기본 패키지 설정 -->
+	<context:component-scan base-package="kr.co.dohwa.security" />
+
+	<!-- 시큐리티 기본 설정 -->
+	<security:http auto-config="true" use-expressions="true" create-session="ifRequired" name="">
+		<!-- 보안관련 CSRF 사용여부 설정  -->
+		<security:csrf disabled="true" />
+
+		<!-- 로그인 관련 설정 -->
+		<security:form-login 
+			login-page="/admin/login"
+			authentication-success-handler-ref="loginSuccessHandler"
+			authentication-failure-handler-ref="loginFailureHandler"
+			login-processing-url="/admin/loginProc"
+			username-parameter="id"
+			password-parameter="password" />
+		
+		<!-- 중복로그인 관련 설정 -->
+		<security:session-management session-fixation-protection="none">
+			<!-- 같은 계정에 대해서 세션을 최대 1까지만 생성가능 -->
+			<security:concurrency-control max-sessions="10" expired-url="/admin/login" error-if-maximum-exceeded="true" session-registry-alias="sessionRegistry" />
+		</security:session-management>
+	
+		<!-- 접근거절(권한이 없어서)되면 이동될 페이지 설정 -->
+		<security:access-denied-handler error-page="/admin/login"/>
+	
+		<!-- 로그아웃 관련 설정 -->
+		<security:logout logout-url="/admin/logout" invalidate-session="true" logout-success-url="/admin/login" delete-cookies="JSESSIONID" />
+
+		<security:intercept-url pattern="/admin/css/**" access="permitAll"/>
+		<security:intercept-url pattern="/admin/login" access="permitAll"/>
+		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+
+	</security:http> 
+
+	<!-- secured method -->
+	<security:global-method-security secured-annotations="enabled" />
+
+	<!-- provider -->
+	<security:authentication-manager id="authenticationManager">
+		<security:authentication-provider ref="adminUserAuthProvider" />
+	</security:authentication-manager>
+
+	<!-- 로그인 성공 핸들러 설정  -->
+	<bean id="loginSuccessHandler" class="kr.co.dohwa.security.LoginSuccessHandler">
+		<property name="adminUserService" ref="adminUserService" />
+		<property name="defaultTargetUrl" value="/admin/main/banner" />
+		<property name="alwaysUseDefaultTargetUrl" value="true" />
+	</bean>
+
+	<!-- 로그인 실패 핸들러 설정 -->
+	<bean id="loginFailureHandler" class="kr.co.dohwa.security.LoginFailureHandler">
+		<property name="defaultFailureUrl" value="/admin/login?status=fail" />
+	</bean>
+
+	<!-- 사용자 권한 서비스 bean 등록 -->
+	<bean id="adminUserAuthService" class="kr.co.dohwa.service.AdminUserAuthService" />
+	
+	<!-- 사용자 서비스 bean 등록 -->
+	<bean id="adminUserService" class="kr.co.dohwa.service.AdminUserService" />
+
+	<!-- 사용자 로그인시 비밀번호에 사용할 인코더 설정 -->
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<bean id="passwordEncoder" class="org.springframework.security.crypto.password.DelegatingPasswordEncoder">
+		<constructor-arg type="java.lang.String" value="#{config['security.password.algorithm']}"/>
+		<constructor-arg>
+			<map>
+				<entry key="bcrypt" value-ref="bcryptPasswordEncoder" />
+				<entry key="sha256">
+					<bean class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+						<constructor-arg type="java.lang.CharSequence" value="#{config['security.password.encoder.sha256.secretkey']}" />
+					</bean>
+				</entry>
+			</map>
+		</constructor-arg>
+		<property name="defaultPasswordEncoderForMatches" ref="bcryptPasswordEncoder" />
+	</bean>
+	<!-- <bean id="passwordEncoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder" /> -->
+
+	<!-- 사용자 입증 공급자 bean 등록 -->
+	<bean id="adminUserAuthProvider" class="kr.co.dohwa.security.AdminUserAuthProvider">
+		<property name="userDetailsService" ref="adminUserAuthService" />
+		<property name="passwordEncoder" ref="passwordEncoder" />
+	</bean>
+	
+</beans>

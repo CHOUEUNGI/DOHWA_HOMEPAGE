@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dohwa.mapper.MainMapper">
+
+	<sql id="bannerWhere">
+		<where>
+			<if test="null != searchDispYn and !''.equals(searchDispYn)">
+				TB1.DISP_YN = #{searchDispYn}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="popupWhere">
+		<where>
+			<choose>
+				<when test="null != searchStartDate and !''.equals(searchStartDate)">
+					AND TB1.DISP_ST_DT >= #{searchStartDate}
+				</when>
+				<when test="null != searchEndDate and !''.equals(searchEndDate)">
+					AND TB1.DISP_ED_DT &lt; #{searchStartDate}
+				</when>
+			</choose>
+			<if test="0 lt seq">
+				AND TB1.SEQ = #{seq}
+			</if>
+			<if test="null != searchLangType and !''.equals(searchLangType)">
+				AND TB1.LANG = #{searchLangType}
+			</if>
+			<if test="null != searchDispYn and !''.equals(searchDispYn)">
+				AND TB1.DISP_YN = #{searchDispYn}
+			</if>
+			<if test="searchText != null and searchText != ''">
+				AND TB1.TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+		</where>
+	</sql>
+
+	<select id="getMainBannerAdminList" parameterType="searchVO" resultType="mainBannerVO">
+		SELECT TB1.SEQ
+			,TB1.BANNER_TYPE
+			,TB1.BANNER_ORDER
+			,TB1.TYPE_ORDER
+			,TB3.ATT_ORDER
+			,TB3.ORG_NAME	AS imgName
+			,TB2.WEB_TITLE
+			,TB1.REG_DT
+			,TB1.DISP_YN
+		FROM TB_MAIN_BANNER 		 TB1
+		INNER JOIN TB_MAIN_BANNER_ML TB2 ON TB1.SEQ = TB2.SEQ
+										AND TB2.LANG =  #{searchLangType}
+		LEFT OUTER JOIN TB_FILE		 TB3 ON TB2.SEQ = TB3.ATT_SEQ
+										AND TB3.ATT_TYPE = #{searchBoardType}
+										AND TB3.`TYPE` = #{searchDeviceType}
+										AND TB3.LANG =  #{searchLangType}
+		<include refid="bannerWhere" />
+		ORDER BY BANNER_ORDER, TYPE_ORDER ASC
+	</select>
+
+	<select id="getFrontMainBannerList" parameterType="searchVO" resultType="map">
+		SELECT
+			Z.BANNER_TYPE
+			, MAX(Z.BANNER_ORDER) BANNER_ORDER
+			, MAX(CASE WHEN TYPE_ORDER = 1 THEN CONCAT(`PATH`, '/', NEW_NAME) ELSE '' END)  SUB_IMG1
+			, MAX(CASE WHEN TYPE_ORDER = 2 THEN CONCAT(`PATH`, '/', NEW_NAME) ELSE '' END)  SUB_IMG2
+			, MAX(CASE WHEN TYPE_ORDER = 3 THEN CONCAT(`PATH`, '/', NEW_NAME) ELSE '' END)  SUB_IMG3
+			, MAX(CASE WHEN TYPE_ORDER = 1 THEN WEB_TITLE ELSE '' END)  WEB_TITLE1
+			, MAX(CASE WHEN TYPE_ORDER = 2 THEN WEB_TITLE ELSE '' END)  WEB_TITLE2
+			, MAX(CASE WHEN TYPE_ORDER = 3 THEN WEB_TITLE ELSE '' END)  WEB_TITLE3
+			, MAX(CASE WHEN TYPE_ORDER = 1 THEN WEB_SUB_TITLE ELSE '' END)  WEB_SUB_TITLE1
+			, MAX(CASE WHEN TYPE_ORDER = 2 THEN WEB_SUB_TITLE ELSE '' END)  WEB_SUB_TITLE2
+			, MAX(CASE WHEN TYPE_ORDER = 3 THEN WEB_SUB_TITLE ELSE '' END)  WEB_SUB_TITLE3
+			, MAX(CASE WHEN TYPE_ORDER = 1 THEN MO_TITLE ELSE '' END)  MO_TITLE1
+			, MAX(CASE WHEN TYPE_ORDER = 2 THEN MO_TITLE ELSE '' END)  MO_TITLE2
+			, MAX(CASE WHEN TYPE_ORDER = 3 THEN MO_TITLE ELSE '' END)  MO_TITLE3
+			, MAX(CASE WHEN TYPE_ORDER = 1 THEN MO_SUB_TITLE ELSE '' END)  MO_SUB_TITLE1
+			, MAX(CASE WHEN TYPE_ORDER = 2 THEN MO_SUB_TITLE ELSE '' END)  MO_SUB_TITLE2
+			, MAX(CASE WHEN TYPE_ORDER = 3 THEN MO_SUB_TITLE ELSE '' END)  MO_SUB_TITLE3
+			, MAX(CASE WHEN TYPE_ORDER = 1 THEN LINK_BTN_NAME ELSE '' END)  LINK_BTN_NAME1
+			, MAX(CASE WHEN TYPE_ORDER = 2 THEN LINK_BTN_NAME ELSE '' END)  LINK_BTN_NAME2
+			, MAX(CASE WHEN TYPE_ORDER = 3 THEN LINK_BTN_NAME ELSE '' END)  LINK_BTN_NAME3
+			, MAX(CASE WHEN TYPE_ORDER = 1 THEN WEB_URL ELSE '' END)  WEB_URL1
+			, MAX(CASE WHEN TYPE_ORDER = 2 THEN WEB_URL ELSE '' END)  WEB_URL2
+			, MAX(CASE WHEN TYPE_ORDER = 3 THEN WEB_URL ELSE '' END)  WEB_URL3
+			, MAX(CASE WHEN TYPE_ORDER = 1 THEN MO_URL ELSE '' END)  MO_URL1
+			, MAX(CASE WHEN TYPE_ORDER = 2 THEN MO_URL ELSE '' END)  MO_URL2
+			, MAX(CASE WHEN TYPE_ORDER = 3 THEN MO_URL ELSE '' END)  MO_URL3
+			, (SELECT NEXT.BANNER_TYPE FROM TB_MAIN_BANNER NEXT WHERE NEXT.BANNER_ORDER <![CDATA[>]]> MAX(Z.BANNER_ORDER) AND NEXT.DISP_YN = 'Y' ORDER BY NEXT.BANNER_ORDER LIMIT 1) NEXT_TYPE
+			, (SELECT PREV.BANNER_TYPE FROM TB_MAIN_BANNER PREV WHERE PREV.BANNER_ORDER <![CDATA[<]]> MAX(Z.BANNER_ORDER) AND PREV.DISP_YN = 'Y' ORDER BY PREV.BANNER_ORDER DESC LIMIT 1) PREV_TYPE
+		FROM
+		(
+			SELECT TB1.SEQ
+				,TB1.BANNER_TYPE
+				,TB1.BANNER_ORDER
+				,TB1.TYPE_ORDER
+				,TB3.ATT_ORDER
+				,TB3.ORG_NAME
+				,TB3.NEW_NAME
+				,TB3.`PATH`
+				,TB1.REG_DT
+				,TB1.DISP_YN
+				,TB2.WEB_TITLE
+				,TB2.WEB_SUB_TITLE
+				,TB2.MO_TITLE
+				,TB2.MO_SUB_TITLE
+				,TB2.WEB_URL
+				,TB2.MO_URL
+				,TB2.LINK_BTN_NAME
+			FROM TB_MAIN_BANNER 		 TB1
+			INNER JOIN TB_MAIN_BANNER_ML TB2 ON TB1.SEQ = TB2.SEQ
+											AND TB2.LANG =  #{searchLangType}
+			LEFT OUTER JOIN TB_FILE		 TB3 ON TB2.SEQ = TB3.ATT_SEQ
+											AND TB3.ATT_TYPE = #{searchBoardType}
+											AND TB3.`TYPE` = #{searchDeviceType}
+											AND TB3.LANG =  #{searchLangType}
+			<include refid="bannerWhere" />
+		) Z
+		GROUP BY Z.BANNER_TYPE
+		ORDER BY MAX(Z.BANNER_ORDER) ASC
+	</select>
+
+	<select id="getMainBanner" parameterType="mainBannerVO" resultType="mainBannerVO">
+		SELECT TB1.*
+		FROM TB_MAIN_BANNER TB1
+		WHERE TB1.SEQ = #{seq}
+	</select>
+
+	<select id="getMainBannerMl" parameterType="mainBannerMlVO" resultType="mainBannerMlVO">
+		SELECT TB1.*
+		FROM TB_MAIN_BANNER_ML TB1
+		WHERE TB1.SEQ = #{seq}
+		  <if test="null != lang and !''.equals(lang)">
+				TB1.LANG = #{lang}
+		  </if>
+	</select>
+
+	<select id="getMainBannerTypeList" parameterType="mainBannerVO" resultType="mainBannerVO">
+		SELECT *
+		FROM TB_MAIN_BANNER
+		WHERE BANNER_TYPE = #{bannerType}
+	</select>
+
+	<select id="getMainBannerOrder" resultType="mainBannerVO">
+		SELECT DISTINCT BANNER_ORDER FROM TB_MAIN_BANNER;
+	</select>
+
+	<insert id="insertMainBanner" parameterType="mainBannerVO">
+		INSERT INTO
+		TB_MAIN_BANNER(BANNER_TYPE
+					,BANNER_ORDER
+					,TYPE_ORDER
+					,REG_ID)
+		VALUES(#{bannerType}
+			,#{bannerOrder}
+			,#{typeOrder}
+			,#{regId})
+		<selectKey keyProperty="seq" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<insert id="insertMainBannerMl" parameterType="hashmap">
+		INSERT INTO
+		TB_MAIN_BANNER_ML(SEQ
+					,LANG
+					,WEB_TITLE
+					,WEB_SUB_TITLE
+					,WEB_URL
+					,MO_TITLE
+					,MO_SUB_TITLE
+					,MO_URL
+					,LINK_BTN_NAME)
+		VALUES
+		<foreach collection="list" item="item" separator=",">
+				(#{item.seq}
+				,#{item.lang}
+				,#{item.webTitle}
+				,#{item.webSubTitle}
+				,#{item.webUrl}
+				,#{item.moTitle}
+				,#{item.moSubTitle}
+				,#{item.moUrl}
+				,#{item.linkBtnName})
+		</foreach>
+	</insert>
+
+	<update id="updateMainBanner" parameterType="mainBannerVO">
+		UPDATE TB_MAIN_BANNER
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="null != bannerOrder and !''.equals(bannerOrder)">BANNER_ORDER = #{bannerOrder},</if>
+			<if test="null != typeOrder and !''.equals(typeOrder)">TYPE_ORDER = #{typeOrder},</if>
+			<if test="null != dispYn and !''.equals(dispYn)">DISP_YN = #{dispYn},</if>
+			UPD_ID = #{updId},
+			UPD_DT = NOW()
+		</trim>
+		WHERE SEQ = #{seq}
+	</update>
+
+	<update id="updateMainBannerForeach" parameterType="hashmap">
+		<foreach collection="list" item="item" separator=";">
+			UPDATE TB_MAIN_BANNER SET
+				BANNER_ORDER = #{item.bannerOrder}
+				,TYPE_ORDER = #{item.typeOrder}
+				,UPD_ID = #{updId}
+				,UPD_DT = NOW()
+			WHERE SEQ = #{item.seq}
+		</foreach>
+	</update>
+
+	<delete id="deleteMainBannerForeach" parameterType="java.util.List">
+		DELETE FROM TB_MAIN_BANNER
+		WHERE
+		<foreach collection="list" item="seq" open="SEQ IN (" close=")" separator=",">
+			#{seq}
+		</foreach>
+	</delete>
+
+	<delete id="deleteMainBannerMlForeach" parameterType="java.util.List">
+		DELETE FROM TB_MAIN_BANNER_ML
+		WHERE
+		<foreach collection="list" item="seq" open="SEQ IN (" close=")" separator=",">
+			#{seq}
+		</foreach>
+	</delete>
+
+	<select id="getMainPopupCount" parameterType="searchVO" resultType="int">
+		SELECT COUNT(*) TOT_CNT
+		FROM TB_MAIN_POPUP TB1
+		<include refid="popupWhere" />
+	</select>
+
+	<select id="getMainPopupList" parameterType="searchVO" resultType="mainPopupVO">
+		SELECT TB1.*
+		FROM TB_MAIN_POPUP TB1
+		<include refid="popupWhere" />
+		ORDER BY (CASE DISP_YN
+					WHEN 'Y' THEN 2
+					ELSE 1
+				  END) DESC, DISP_ED_DT DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+		LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+
+	<select id="getMainPopup" parameterType="mainPopupVO" resultType="mainPopupVO">
+		SELECT TB1.*
+		FROM TB_MAIN_POPUP TB1
+		WHERE TB1.SEQ = #{seq}
+	</select>
+
+	<select id="getFrontMainPopupList" parameterType="searchVO" resultType="mainPopupVO">
+		SELECT
+			TMP.SEQ,
+			TMP.LANG,
+			TMP.TITLE,
+			TMP.PC_LINK_URL,
+			TMP.PC_LINK_YN,
+			TMP.MO_LINK_URL,
+			TMP.MO_LINK_YN,
+			TMP.LINK_BTN_NM,
+			TF.ID,
+			TF.NEW_NAME,
+			TF.`PATH`,
+			TF.ORG_NAME
+		FROM TB_MAIN_POPUP TMP
+			INNER JOIN TB_FILE TF
+				ON TMP.SEQ = TF.ATT_SEQ
+		WHERE TF.ATT_TYPE = 'POPUP'
+		AND TF.`TYPE` = #{searchDeviceType}
+		AND TMP.LANG = #{searchLangType}
+		AND TMP.DISP_YN = 'Y'
+		AND DATE_FORMAT(#{searchStartDate}, '%Y-%m-%d %T') BETWEEN TMP.DISP_ST_DT AND TMP.DISP_ED_DT
+		ORDER BY TMP.SEQ ASC, DISP_ST_DT ASC
+	</select>
+
+	<insert id="insertMainPopup" parameterType="mainPopupVO">
+		INSERT INTO
+		TB_MAIN_POPUP(LANG
+					,TITLE
+					,DISP_ST_DT
+					,DISP_ED_DT
+					,DISP_YN
+					,PC_LINK_URL
+					,PC_LINK_YN
+					,MO_LINK_URL
+					,MO_LINK_YN
+					,LINK_BTN_NM
+					,REG_ID
+					,REG_DT)
+		VALUES(#{lang}
+			,#{title}
+			,#{dispStDt}
+			,#{dispEdDt}
+			,#{dispYn}
+			,#{pcLinkUrl}
+			,#{pcLinkYn}
+			,#{moLinkUrl}
+			,#{moLinkYn}
+			,#{linkBtnNm}
+			,#{regId}
+			,NOW())
+		<selectKey keyProperty="seq" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<update id="updateMainPopup" parameterType="mainPopupVO">
+		UPDATE TB_MAIN_POPUP
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="null != title and !''.equals(title)">TITLE = #{title},</if>
+			<if test="null != strDispStDt and !''.equals(strDispStDt)">DISP_ST_DT = #{dispStDt},</if>
+			<if test="null != strDispEdDt and !''.equals(strDispEdDt)">DISP_ED_DT = #{dispEdDt},</if>
+			<if test="null != dispYn and !''.equals(dispYn)">DISP_YN = #{dispYn},</if>
+			<if test="null != linkBtnNm and !''.equals(linkBtnNm)">LINK_BTN_NM = #{linkBtnNm},</if>
+			<if test="null != pcLinkUrl and !''.equals(pcLinkUrl)">PC_LINK_URL = #{pcLinkUrl},</if>
+			<if test="null != pcLinkYn and !''.equals(pcLinkYn)">PC_LINK_YN = #{pcLinkYn},</if>
+			<if test="null != moLinkUrl and !''.equals(moLinkUrl)">MO_LINK_URL = #{moLinkUrl},</if>
+			<if test="null != moLinkYn and !''.equals(moLinkYn)">MO_LINK_YN = #{moLinkYn},</if>
+			UPD_ID = #{updId},
+			UPD_DT = NOW()
+		</trim>
+		WHERE SEQ = #{seq}
+	</update>
+
+	<delete id="deleteMainPopupForeach" parameterType="java.util.List">
+		DELETE FROM TB_MAIN_POPUP
+		WHERE
+		<foreach collection="list" item="seq" open="SEQ IN (" close=")" separator=",">
+			#{seq}
+		</foreach>
+	</delete>
+
+</mapper>

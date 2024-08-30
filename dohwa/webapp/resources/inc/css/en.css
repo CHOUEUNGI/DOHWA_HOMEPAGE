@@ -1,0 +1,35 @@
+html[lang="en"] .header-content.active .logo-wrap a,html[lang="en"] .header-content.on .logo-wrap a{background-image:url(../../images/common/img_header_logo_on_en.png)}
+html[lang="en"] .header-content .logo-wrap a{background:url(../../images/common/img_header_logo_en.png) no-repeat 50% 50%/100% auto}
+html[lang="en"] .header-content.active{height:402px}
+html[lang="en"] .header-content .gnb-wrap .gnb-menu-list .gnb-menu-item{padding-right:56px}
+html[lang="en"] .main-cont-wrap .main-cont-box.carrer .txt-box{line-height:1.2;letter-spacing:-3.9px}
+html[lang="en"] .main-cont-wrap .main-cont-box .box-inner .business-list .tit{font-size:26px}
+html[lang="en"] .main-cont-wrap .main-cont-box .box-inner .business-list .tit .ico-arr{margin-left:11px}
+html[lang="en"] .main-cont-wrap .main-cont-box.company .box-btm .box-btm-inner strong{min-height:92px}
+html[lang="en"] .csr-share .fund-box{background:none}
+html[lang="en"] .best-executives .executives-list li{padding-bottom:236px}
+html[lang="en"] .best-executives .executives-list li .executives-info .department span{display:block;position:relative;padding-left:10px;font-size:17px;line-height:1.3}
+html[lang="en"] .best-executives .executives-list li .executives-info .department .position:before{display:none}
+html[lang="en"] .best-executives .executives-list li .executives-info .department .position:before,html[lang="en"] .best-executives .executives-list li .executives-info .department span:before{content:'';display:block;width:3px;height:3px;background:#2b2f35;position:absolute;left:0;top:10px;border-radius:3px}
+html[lang="en"] .best-executives .executives-list li:hover .executives-info .department .position:before,html[lang="en"] .best-executives .executives-list li:hover .executives-info .department span:before{background:#fff}
+html[lang="en"] .best-executives .executives-list li .executives-info .department .position{position:relative;margin:0;padding:0;padding-left:10px;margin-top:6px}
+html[lang="en"] .best-executives .executives-list li .executives-info .name{margin-top:10px}
+html[lang="en"] .best-executives .executives-list li .hover-box{padding:200px 40px 38px}
+html[lang="en"] .dim-pop-wrap .dim-pop .dim-header .dim-title{font-size:17px}
+html[lang="en"] .subway-wrap .desc{font-size:17px}
+html[lang="en"] .branch-box-subtit,html[lang="en"] .branch-box-tit{font-size:26px}
+html[lang="en"] .business-cont-wrap .business-tab-area li{width:auto;height:auto;margin:0;border-radius:20px}
+html[lang="en"] .business-cont-wrap .business-tab-area li a{line-height:normal;padding:7px 20px}
+html[lang="en"] .credit .table-col-type01 td,html[lang="en"] .credit .table-col-type01 th{line-height:1.5}
+html[lang="en"] .intro-company.full{margin-top:80px}
+html[lang="en"] .intro-company .content-inner .intro-msg{padding-bottom:80px}
+html[lang="en"] .csr-quality .bttn-view{bottom:12px}
+html[lang="en"] .recruit-step .procedure-item{height:580px}
+html[lang="en"] .footer-content{padding:60px 0 0 150px}
+html[lang="en"] .footer-content .footer-logo{top:62px}
+html[lang="en"] .symbol-keyword-item .item-circle:first-child .txt{width:150px}
+html[lang="en"] .symbol-keyword-item .item-circle .txt{width:230px}
+html[lang="en"] .etc-policy-cont > strong{margin:100px 0 25px}
+html[lang="en"] .etc-policy-cont .sub-desc{margin-top:35px;margin-bottom:65px}
+html[lang="en"] .etc-policy-cont ul li{margin-top:0;line-height:1.7}
+/*# sourceMappingURL=../../sass_maps/inc/css/en.css.map */

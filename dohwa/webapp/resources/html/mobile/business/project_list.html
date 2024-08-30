@@ -1,0 +1,1572 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common_mobile.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/swiper.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div class="business" id="wrap">
+			<header class="header" id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header_content">
+					<!--스크롤 및 햄버거 클릭시 .on 클래스 추가-->
+					<h1 class="logo-wrap">
+						<a href="#"></a>
+						<span class="hide-txt">DOHWA</span>
+					</h1>
+					<div class="header-menu">
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								<span class="hide-txt">Menu</span>
+							</button>
+						</span>
+						<div class="header-all-menu">
+							<!-- .bttn-all-menu 클릭시 .active 추가 (전체메뉴 노출) -->
+							<div class="scroll-wrap">
+								<ul class="all-menu-list">
+									<li class="all-menu-item">
+										<!-- 활성화 클래스 : active -->
+										<a href="#none">
+											회사소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">Vision</a></li>
+											<li class="gnb-sub-item"><a href="#">People</a></li>
+											<li class="gnb-sub-item"><a href="#">History</a></li>
+											<li class="gnb-sub-item"><a href="#">CSR</a></li>
+											<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											사업소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											투자정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+											<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+											<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+											<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											홍보센터
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<!--s: 20200831 메뉴추가-->
+											<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+											<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+											<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+											<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+											<!--e: 20200831 메뉴추가-->
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											채용정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+											<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="lang-list">
+									<li>
+										<button class="bttn-lang on" type="button">
+											KOR
+											<!-- 활성화 클래스 : on -->
+										</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ENG</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ESP</button>
+									</li>
+								</ul>
+							</div>
+							<button class="bttn-menu-close" type="button" title="전체메뉴 닫기"><span class="hide-txt">전체메뉴 닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<div id="content" role="main">
+					<div class="page-visual business01 visual-area">
+						<div class="page-title-sec">
+							<span class="title-main-sub">BUSINESS</span>
+							<h2 class="title-main">사업소개</h2>
+						</div>
+						<div class="visual-grid-wrap" aria-hidden="true">
+							<div class="grid-ico-wrap" aria-hidden="true">
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+							</div>
+							<div class="grid-line-wrap">
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+							</div>
+						</div>
+					</div>
+					<div class="page-tab-section">
+						<div class="tab-menu-type01 center">
+							<ul class="tab-list">
+								<li><a class="item" href="#none" data-id="">Overview</a></li>
+								<li class="active"><a class="item" href="#none" data-id="">Project</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="contents full-type business-cont-wrap">
+						<div class="section-cont first-cont">
+							<div class="filter-btn-wrap">
+								<button class="bttn-filter" type="button">
+									<!-- 오픈시 filter-wrap에 class open 추가 -->
+									<span>SMART FILTER</span>
+									<em class="ico ico-filter" aria-hidden="true"></em>
+								</button>
+							</div>
+							<div class="project-list-wrap">
+								<div class="list-type-thumbnail">
+									<ul class="clfix list-thumbnail">
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_01.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_02.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">성서산업단지 재생계획 수립 용역</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_03.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_04.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_05.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_06.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_07.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_08.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_09.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_10.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_11.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="list-item">
+											<a class="list-link" href="#" title="자세히 보기">
+												<div class="list-img-wrap"><img src="/images/pc/@temp_img_project_12.jpg" alt="" /></div>
+												<div class="list-txt"><span class="line-clamp">아리지 컨트리클럽 신재생 에너지 태양광 발전시설 설계 및 감리</span></div>
+											</a>
+										</li>
+										<li class="no-data">
+											<i class="ico-nodata"></i>
+											<span>검색 결과가 없습니다.</span>
+										</li>
+									</ul>
+									<div class="bttn-area center">
+										<a class="bttn type01 style02" href="#none" role="button">
+											<span class="ico more"></span>
+											<span class="txt01">더보기</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="filter-wrap">
+								<div class="filter-inner">
+									<div class="filter-cont-area">
+										<div class="filter-list-cont">
+											<!-- 활성화시 class open 추가 -->
+											<div class="filter-list-tit">
+												<button class="bttn-filter-tit" type="button">Market</button>
+											</div>
+											<div class="filter-list-wrap">
+												<div class="filter-list-box">
+													<ul class="filter-list-depth01">
+														<!-- 20200812 전체 체크박스 depth02로 이동-->
+														<!-- s: 20200818 마크업 수정 input => button-->
+														<li class="filter-depth01-item active">
+															<!-- 20200804 선택 디폴트 .active 추가 -->
+															<button class="filter-btn" type="button">물</button>
+														</li>
+														<li class="filter-depth01-item">
+															<button class="filter-btn" type="button">도시</button>
+														</li>
+														<li class="filter-depth01-item">
+															<button class="filter-btn" type="button">교통</button>
+														</li>
+														<li class="filter-depth01-item">
+															<button class="filter-btn" type="button">에너지</button>
+														</li>
+														<!-- e: 20200818 마크업 수정 input => button-->
+													</ul>
+												</div>
+												<div class="filter-list-box depth-box open">
+													<!-- 20200804 선택 디폴트 .open 추가 -->
+													<ul class="filter-list-depth02 ui-checkbox-ul active">
+														<!-- 20200804 선택 디폴트 .active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-01 chkAll" type="checkbox" name="chk-group21" id="chk-group21_00" />
+																<label class="filter-txt" for="chk-group21_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group21" id="chk-group21_01" />
+																<label class="filter-txt" for="chk-group21_01">상수도</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group21" id="chk-group21_02" />
+																<label class="filter-txt" for="chk-group21_02">하수도</label>
+															</span>
+														</li>
+														<!-- s: 20200804 수정-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group21" id="chk-group21_03" />
+																<label class="filter-txt" for="chk-group21_03">재해/방재/댐/수력발전</label>
+															</span>
+														</li>
+														<!-- e: 20200804 수정-->
+													</ul>
+													<ul class="filter-list-depth02 ui-checkbox-ul">
+														<!-- 활성화시 class active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-01 chkAll" type="checkbox" name="chk-group22" id="chk-group22_00" />
+																<label class="filter-txt" for="chk-group22_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<!-- s: 20200804 수정-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group22" id="chk-group22_01" />
+																<label class="filter-txt" for="chk-group22_01">도시계획&middot;개발</label>
+															</span>
+														</li>
+														<!-- e: 20200804 수정-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group22" id="chk-group22_03" />
+																<label class="filter-txt" for="chk-group22_03">조경레저</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group22" id="chk-group22_04" />
+																<label class="filter-txt" for="chk-group22_04">스마트시티</label>
+															</span>
+														</li>
+													</ul>
+													<ul class="filter-list-depth02 ui-checkbox-ul">
+														<!-- 활성화시 class active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-01 chkAll" type="checkbox" name="chk-group23" id="chk-group23_00" />
+																<label class="filter-txt" for="chk-group23_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<!-- s: 20200804 수정-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group23" id="chk-group23_01" />
+																<label class="filter-txt" for="chk-group23_01">도로/공항</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group23" id="chk-group23_02" />
+																<label class="filter-txt" for="chk-group23_02">교통계획</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group23" id="chk-group23_03" />
+																<label class="filter-txt" for="chk-group23_03">철도</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group23" id="chk-group23_04" />
+																<label class="filter-txt" for="chk-group23_04">교량</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group23" id="chk-group23_05" />
+																<label class="filter-txt" for="chk-group23_05">항만</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group23" id="chk-group23_06" />
+																<label class="filter-txt" for="chk-group23_06">지반터널</label>
+															</span>
+														</li>
+														<!-- e: 20200804 수정-->
+													</ul>
+													<ul class="filter-list-depth02 ui-checkbox-ul">
+														<!-- 활성화시 class active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-01 chkAll" type="checkbox" name="chk-group24" id="chk-group24_00" />
+																<label class="filter-txt" for="chk-group24_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group24" id="chk-group24_01" />
+																<label class="filter-txt" for="chk-group24_01">태양광</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group24" id="chk-group24_02" />
+																<label class="filter-txt" for="chk-group24_02">풍력</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group24" id="chk-group24_03" />
+																<label class="filter-txt" for="chk-group24_03">발전</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-04 chkEtc" type="checkbox" name="chk-group24" id="chk-group24_04" />
+																<label class="filter-txt" for="chk-group24_04">환경</label>
+															</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="filter-list-cont">
+											<!-- 활성화시 class open 추가 -->
+											<div class="filter-list-tit">
+												<button class="bttn-filter-tit" type="button">Service</button>
+											</div>
+											<div class="filter-list-wrap">
+												<div class="filter-list-box full-box">
+													<ul class="filter-list-depth01 ui-checkbox-ul">
+														<li class="filter-depth01-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkAll" type="checkbox" name="chk-group12" id="chk-group12_00" />
+																<label class="filter-txt" for="chk-group12_00">전체</label>
+															</span>
+														</li>
+														<li class="filter-depth01-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-02 chkEtc" type="checkbox" name="chk-group12" id="chk-group12_01" />
+																<label class="filter-txt" for="chk-group12_01">O&amp;M</label>
+															</span>
+														</li>
+														<li class="filter-depth01-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-02 chkEtc" type="checkbox" name="chk-group12" id="chk-group12_03" />
+																<label class="filter-txt" for="chk-group12_03">PMC</label>
+															</span>
+														</li>
+														<li class="filter-depth01-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-02 chkEtc" type="checkbox" name="chk-group12" id="chk-group12_04" />
+																<label class="filter-txt" for="chk-group12_04">설계</label>
+															</span>
+														</li>
+														<li class="filter-depth01-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-02 chkEtc" type="checkbox" name="chk-group12" id="chk-group12_05" />
+																<label class="filter-txt" for="chk-group12_05">EPC</label>
+															</span>
+														</li>
+														<li class="filter-depth01-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-02 chkEtc" type="checkbox" name="chk-group12" id="chk-group12_06" />
+																<label class="filter-txt" for="chk-group12_06">감리</label>
+															</span>
+														</li>
+														<li class="filter-depth01-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-02 chkEtc" type="checkbox" name="chk-group00" id="chk-group12_07" />
+																<label class="filter-txt" for="chk-group12_07">건설</label>
+															</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="filter-list-cont">
+											<!-- 활성화시 class open 추가 -->
+											<div class="filter-list-tit">
+												<button class="bttn-filter-tit" type="button">Region</button>
+											</div>
+											<div class="filter-list-wrap">
+												<div class="filter-list-box">
+													<ul class="filter-list-depth01">
+														<!-- 20200812 전체 체크박스 depth02로 이동-->
+														<!-- s: 20200818 마크업 수정 input => button-->
+														<li class="filter-depth01-item active">
+															<!-- 20200804 선택 디폴트 .active 추가 -->
+															<button class="filter-btn" type="button">국내</button>
+														</li>
+														<li class="filter-depth01-item">
+															<button class="filter-btn" type="button">아시아</button>
+														</li>
+														<li class="filter-depth01-item">
+															<button class="filter-btn" type="button">유럽</button>
+														</li>
+														<li class="filter-depth01-item">
+															<button class="filter-btn" type="button">아프리카</button>
+														</li>
+														<li class="filter-depth01-item">
+															<button class="filter-btn" type="button">북아메리카</button>
+														</li>
+														<li class="filter-depth01-item">
+															<button class="filter-btn" type="button">남아메리카</button>
+														</li>
+														<li class="filter-depth01-item">
+															<button class="filter-btn" type="button">오세아니아</button>
+														</li>
+														<!-- e: 20200818 마크업 수정 input => button-->
+													</ul>
+												</div>
+												<div class="filter-list-box depth-box open">
+													<!-- 20200804 선택 디폴트 .open 추가 -->
+													<ul class="filter-list-depth02 active ui-checkbox-ul">
+														<!-- 20200804 선택 디폴트 .active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-03 chkAll" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_00" />
+																<label class="filter-txt" for="chk-group21_r_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_01" />
+																<label class="filter-txt" for="chk-group21_r_01">서울</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_02" />
+																<label class="filter-txt" for="chk-group21_r_02">부산</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_03" />
+																<label class="filter-txt" for="chk-group21_r_03">대구</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_04" />
+																<label class="filter-txt" for="chk-group21_r_04">인천</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_05" />
+																<label class="filter-txt" for="chk-group21_r_05">광주</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_06" />
+																<label class="filter-txt" for="chk-group21_r_06">대전</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_07" />
+																<label class="filter-txt" for="chk-group21_r_07">울산</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_08" />
+																<label class="filter-txt" for="chk-group21_r_08">경기</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_09" />
+																<label class="filter-txt" for="chk-group21_r_09">충북</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_10" />
+																<label class="filter-txt" for="chk-group21_r_10">충남</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_11" />
+																<label class="filter-txt" for="chk-group21_r_11">경북</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_12" />
+																<label class="filter-txt" for="chk-group21_r_12">경남</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_13" />
+																<label class="filter-txt" for="chk-group21_r_13">제주</label>
+															</span>
+														</li>
+														<!-- s: 20200804 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_1" id="chk-group21_r_14" />
+																<label class="filter-txt" for="chk-group21_r_14">세종</label>
+															</span>
+														</li>
+														<!-- e: 20200804 추가-->
+													</ul>
+													<ul class="filter-list-depth02 ui-checkbox-ul">
+														<!-- 활성화시 class active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-03 chkAll" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_00" />
+																<label class="filter-txt" for="chk-group22_r_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_01" />
+																<label class="filter-txt" for="chk-group22_r_01">라오스</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_02" />
+																<label class="filter-txt" for="chk-group22_r_02">말레이시아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_03" />
+																<label class="filter-txt" for="chk-group22_r_03">미얀마</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_04" />
+																<label class="filter-txt" for="chk-group22_r_04">베트남</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_05" />
+																<label class="filter-txt" for="chk-group22_r_05">싱가포르</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_06" />
+																<label class="filter-txt" for="chk-group22_r_06">인도네시아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_07" />
+																<label class="filter-txt" for="chk-group22_r_07">캄보디아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_08" />
+																<label class="filter-txt" for="chk-group22_r_08">태국</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_09" />
+																<label class="filter-txt" for="chk-group22_r_09">필리핀</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_10" />
+																<label class="filter-txt" for="chk-group22_r_10">네팔</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_11" />
+																<label class="filter-txt" for="chk-group22_r_11">방글라데시</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_12" />
+																<label class="filter-txt" for="chk-group22_r_12">스리랑카</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_13" />
+																<label class="filter-txt" for="chk-group22_r_13">인도</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_14" />
+																<label class="filter-txt" for="chk-group22_r_14">파키스탄</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_15" />
+																<label class="filter-txt" for="chk-group22_r_15">이란</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_16" />
+																<label class="filter-txt" for="chk-group22_r_16">바레인</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_17" />
+																<label class="filter-txt" for="chk-group22_r_17">사우디아라비아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_18" />
+																<label class="filter-txt" for="chk-group22_r_18">아랍에미리트연합</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_19" />
+																<label class="filter-txt" for="chk-group22_r_19">이라크</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_20" />
+																<label class="filter-txt" for="chk-group22_r_20">카타르</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_21" />
+																<label class="filter-txt" for="chk-group22_r_21">쿠웨이트</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_22" />
+																<label class="filter-txt" for="chk-group22_r_22">터키</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_23" />
+																<label class="filter-txt" for="chk-group22_r_23">오만</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_24" />
+																<label class="filter-txt" for="chk-group22_r_24">요르단</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_25" />
+																<label class="filter-txt" for="chk-group22_r_25">우즈베키스탄</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_26" />
+																<label class="filter-txt" for="chk-group22_r_26">카자흐스탄</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_27" />
+																<label class="filter-txt" for="chk-group22_r_27">키르키즈스탄</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_28" />
+																<label class="filter-txt" for="chk-group22_r_28">타지카스탄</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_29" />
+																<label class="filter-txt" for="chk-group22_r_29">몽골</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_30" />
+																<label class="filter-txt" for="chk-group22_r_30">일본</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_31" />
+																<label class="filter-txt" for="chk-group22_r_31">중국</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_2" id="chk-group22_r_32" />
+																<label class="filter-txt" for="chk-group22_r_32">대만</label>
+															</span>
+														</li>
+													</ul>
+													<ul class="filter-list-depth02 ui-checkbox-ul">
+														<!-- 활성화시 class active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-03 chkAll" type="checkbox" name="chk-group21_r_3" id="chk-group31_r_00" />
+																<label class="filter-txt" for="chk-group31_r_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_3" id="chk-group31_r_1" />
+																<label class="filter-txt" for="chk-group31_r_1">루마니아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_3" id="chk-group31_r_2" />
+																<label class="filter-txt" for="chk-group31_r_2">몰도바</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_3" id="chk-group31_r_3" />
+																<label class="filter-txt" for="chk-group31_r_3">아제르아비잔</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_3" id="chk-group31_r_4" />
+																<label class="filter-txt" for="chk-group31_r_4">우크라이나</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_3" id="chk-group31_r_5" />
+																<label class="filter-txt" for="chk-group31_r_5">조지아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_3" id="chk-group31_r_6" />
+																<label class="filter-txt" for="chk-group31_r_6">러시아</label>
+															</span>
+														</li>
+														<!-- s: 20200804 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-05 chkEtc" type="checkbox" name="chk-group21_r_3" id="chk-group31_r_7" />
+																<label class="filter-txt" for="chk-group31_r_7">벨라루스</label>
+															</span>
+														</li>
+														<!-- e: 20200804 추가-->
+													</ul>
+													<ul class="filter-list-depth02 ui-checkbox-ul">
+														<!-- 활성화시 class active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-03 chkAll" type="checkbox" name="chk-group21_r_1" id="chk-group41_r_00" />
+																<label class="filter-txt" for="chk-group41_r_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_1" />
+																<label class="filter-txt" for="chk-group41_r_1">가나</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_2" />
+																<label class="filter-txt" for="chk-group41_r_2">가봉</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_3" />
+																<label class="filter-txt" for="chk-group41_r_3">감비아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_4" />
+																<label class="filter-txt" for="chk-group41_r_4">나이지리아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_5" />
+																<label class="filter-txt" for="chk-group41_r_5">모잠비크</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_6" />
+																<label class="filter-txt" for="chk-group41_r_6">세네갈</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_7" />
+																<label class="filter-txt" for="chk-group41_r_7">세이쉘</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_8" />
+																<label class="filter-txt" for="chk-group41_r_8">알제리</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_9" />
+																<label class="filter-txt" for="chk-group41_r_9">앙골라</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_10" />
+																<label class="filter-txt" for="chk-group41_r_10">이집트</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_11" />
+																<label class="filter-txt" for="chk-group41_r_11">케냐</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_12" />
+																<label class="filter-txt" for="chk-group41_r_12">코트디봐르</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_13" />
+																<label class="filter-txt" for="chk-group41_r_13">콩고</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_14" />
+																<label class="filter-txt" for="chk-group41_r_14">탄자니아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_15" />
+																<label class="filter-txt" for="chk-group41_r_15">우간다</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_16" />
+																<label class="filter-txt" for="chk-group41_r_16">에티오피아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_4" id="chk-group41_r_17" />
+																<label class="filter-txt" for="chk-group41_r_17">카메룬</label>
+															</span>
+														</li>
+													</ul>
+													<ul class="filter-list-depth02 ui-checkbox-ul">
+														<!-- 활성화시 class active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-03 chkAll" type="checkbox" name="chk-group21_r_5" id="chk-group51_r_00" />
+																<label class="filter-txt" for="chk-group51_r_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_5" id="chk-group51_r_1" />
+																<label class="filter-txt" for="chk-group51_r_1">멕시코</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_5" id="chk-group51_r_2" />
+																<label class="filter-txt" for="chk-group51_r_2">도미니카공화국</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_5" id="chk-group51_r_3" />
+																<label class="filter-txt" for="chk-group51_r_3">엘살바도르</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_5" id="chk-group51_r_4" />
+																<label class="filter-txt" for="chk-group51_r_4">온두라스</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_5" id="chk-group51_r_5" />
+																<label class="filter-txt" for="chk-group51_r_5">코스타리카</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_5" id="chk-group51_r_6" />
+																<label class="filter-txt" for="chk-group51_r_6">파라과이</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_5" id="chk-group51_r_7" />
+																<label class="filter-txt" for="chk-group51_r_7">페루</label>
+															</span>
+														</li>
+													</ul>
+													<ul class="filter-list-depth02 ui-checkbox-ul">
+														<!-- 활성화시 class active 추가 -->
+														<!-- s: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-03 chkAll" type="checkbox" name="chk-group21_r_6" id="chk-group61_r_00" />
+																<label class="filter-txt" for="chk-group61_r_00">전체</label>
+															</span>
+														</li>
+														<!-- e: 20200812 전체 체크박스 추가-->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_6" id="chk-group61_r_1" />
+																<label class="filter-txt" for="chk-group61_r_1">볼리비아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_6" id="chk-group61_r_2" />
+																<label class="filter-txt" for="chk-group61_r_2">아르헨티나</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_6" id="chk-group61_r_3" />
+																<label class="filter-txt" for="chk-group61_r_3">에쿠아도르</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_6" id="chk-group61_r_4" />
+																<label class="filter-txt" for="chk-group61_r_4">칠레</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_6" id="chk-group61_r_5" />
+																<label class="filter-txt" for="chk-group61_r_5">콜롬비아</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_6" id="chk-group61_r_6" />
+																<label class="filter-txt" for="chk-group61_r_6">파라과이</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_6" id="chk-group61_r_7" />
+																<label class="filter-txt" for="chk-group61_r_7">페루</label>
+															</span>
+														</li>
+													</ul>
+													<ul class="filter-list-depth02 ui-checkbox-ul">
+														<!-- 활성화시 class active 추가 -->
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel value-03 chkAll" type="checkbox" name="chk-group21_r_7" id="chk-group71_r_00" />
+																<label class="filter-txt" for="chk-group71_r_00">전체</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_7" id="chk-group71_r_1" />
+																<label class="filter-txt" for="chk-group71_r_1">파푸아뉴기니</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_7" id="chk-group71_r_2" />
+																<label class="filter-txt" for="chk-group71_r_2">피지</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_7" id="chk-group71_r_3" />
+																<label class="filter-txt" for="chk-group71_r_3">호주</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_7" id="chk-group71_r_4" />
+																<label class="filter-txt" for="chk-group71_r_4">투발루</label>
+															</span>
+														</li>
+														<li class="filter-depth02-item">
+															<span class="input-checkbox right">
+																<input class="bttn-filter-sel chkEtc" type="checkbox" name="chk-group21_r_7" id="chk-group71_r_5" />
+																<label class="filter-txt" for="chk-group71_r_5">바누아투</label>
+															</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="filter-bttn-area">
+										<button class="bttn-reset" type="button"><span>초기화</span></button>
+										<button class="bttn-search" type="button">
+											<span>선택 값으로 검색</span>
+											<em class="ico ico-search"></em>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer" id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">TOP</button>
+						</div>
+						<div class="footer-family">
+							<div class="family-inner">
+								<button class="family-btn" type="button"><span>Employee Site</span></button>
+								<ul class="family-list">
+									<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+									<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+									<li class="family-item">
+										<!--s: 20200903 텍스트 수정-->
+										<a href="#none" title="새창열림">CMFG</a>
+										<!--e: 20200903 텍스트 수정-->
+									</li>
+									<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer-inner">
+							<span class="footer-logo"><img src="/images/common_mobile/img_footer_logo.jpg" alt="DOHWA" /></span>
+							<span class="footer-sns">
+								<a class="ico-blog" href="#none" title="새창열림"><span class="hide-txt">Blog</span></a>
+								<a class="ico-youtube" href="#none" title="새창열림"><span class="hide-txt">Youtube</span></a>
+							</span>
+							<div class="footer-info">
+								<!--s :20200914 우편번호 수정-->
+								<p>서울특별시 강남구 삼성로 438 (#06178)</p>
+								<!--s :20200914 우편번호 수정-->
+								<p>대표전화 : 02 - 6323 - 3000</p>
+								<ul class="footer-menu">
+									<li>
+										<!-- s: 20200813 수정 -->
+										<a href="#none"><strong class="nanumB">개인정보처리방침</strong></a>
+										<!-- e: 20200813 수정 -->
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">
+									COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD.
+									<br />
+									AllRIGHT RESERVED.
+								</address>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<div class="cnt-grid-wrap" aria-hidden="true">
+			<div class="grid-ico-wrap" aria-hidden="true">
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+			</div>
+			<div class="grid-line-wrap" aria-hidden="true">
+				<div class="grid-line" aria-hidden="true"></div>
+				<div class="grid-line" aria-hidden="true"></div>
+			</div>
+		</div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/CustomEase.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common_mo.js"></script>
+		<script>
+			//- overview project 영역 images size
+			$(".business-project-slide .slide").each(function() {
+				var $this = $(this),
+					$box = $this.find(".list-img-wrap"),
+					$img = $this.find(".list-link").find("img"),
+					divAspect = $box.height() / $box.width(),
+					imgAspect = $img.height() / $img.width();
+				if (imgAspect <= divAspect) {
+					//가로가 긴 경우 세로를 박스에 맞추고 가로 크롭
+					$img.addClass("img-w");
+				} else {
+					//세로가 긴 경우 가로를 박스에 맞추고 세로 크롭
+					$img.addClass("img-h");
+				}
+			});
+			//- project 목록 images size
+			$(".list-type-thumbnail li").each(function() {
+				var $this = $(this),
+					$box = $this.find(".list-img-wrap"),
+					$img = $this.find(".list-link").find("img"),
+					divAspect = $box.height() / $box.width(),
+					imgAspect = $img.height() / $img.width();
+				if (imgAspect <= divAspect) {
+					//가로가 긴 경우 세로를 박스에 맞추고 가로 크롭
+					$img.addClass("img-w");
+				} else {
+					//세로가 긴 경우 가로를 박스에 맞추고 세로 크롭
+					$img.addClass("img-h");
+				}
+			});
+
+			var SmartFilter = function() {
+				var filterBtn, filterWrap, filterList;
+
+				var dimm;
+
+				var valObj;
+
+				var zIndex;
+
+				this.init = function() {
+					filterBtn = $(".bttn-filter");
+					filterWrap = $(".filter-wrap");
+					filterList = filterWrap.find(".filter-list-cont");
+
+					dimm = $(".dimm");
+
+					zIndex = 0;
+
+					setValue();
+
+					// control filter wrap
+					filterBtn.on("click", function() {
+						openWrap();
+					});
+
+					dimm.on("click", function() {
+						closeWrap();
+					});
+
+					// work for each list
+					for (var _i = 0; _i < filterList.length; _i++) {
+						(function(_i) {
+							var currentList = filterList.eq(_i),
+								filterListBtn = currentList.find(".bttn-filter-tit");
+
+							// active current list
+							filterListBtn.on("click", function() {
+								activeList(currentList);
+							});
+
+							// active 1depth, 2depth of current list
+							currentList.find(".filter-depth01-item").on("click", function() {
+								var _thisIndex = $(this).index();
+
+								active1depth(currentList, _thisIndex);
+								active2depth(currentList, _thisIndex);
+							});
+
+							// click check all btn
+							currentList.find(".bttn-filter-sel.chkAll").on("click", function() {
+								checkAllBtn($(this));
+							});
+
+							// click check btn
+							currentList.find(".bttn-filter-sel.chkEtc").on("click", function() {
+								checkBtn($(this));
+							});
+						})(_i);
+					}
+
+					// click init btn
+					$(".bttn-reset").on("click", function() {
+						_reset();
+					});
+
+					// click search btn
+					$(".bttn-search").on("click", function() {
+						getResultValue();
+					});
+				};
+
+				this.reset = function() {
+					_reset();
+				};
+
+				// 활성화할 버튼의 data-index 값을 넣어주세요.
+				// ex) smartFilter.activeBtn('001');
+				this.activeBtn = function(code) {
+					$("[data-index=" + code + "]")
+						.prop("checked", true)
+						.addClass("checked");
+				};
+
+				this.getResultValue = function() {
+					return _getResultValue();
+				};
+
+				function setValue() {
+					filterList = $(".filter-wrap .filter-list-cont");
+
+					filterList.each(function(i) {
+						var _currentList = $(this);
+
+						var _defaultValue = "";
+						_indexValue = i;
+						_btnWrap = _currentList.find(".ui-checkbox-ul");
+
+						_btnWrap.each(function() {
+							// 전체 버튼 인덱스
+							var _thisWrap = $(this),
+								_chkAll = _thisWrap.find(".chkAll"),
+								_chkEtc = _thisWrap.find(".chkEtc");
+
+							var _chkAllValue;
+
+							_defaultValue += "0";
+							_chkAllValue = _defaultValue + (_indexValue + 1);
+
+							_chkAll.attr("data-index", _chkAllValue);
+
+							// 그 이외의 버튼 인덱스
+							_chkEtc.each(function(_btnIndex) {
+								_chkEtcValue = _chkAllValue + (_btnIndex + 1);
+
+								$(this).attr("data-index", _chkEtcValue);
+							});
+						});
+					});
+				}
+
+				function _getResultValue() {
+					valObj = {
+						type01: [],
+						type02: [],
+						type03: [],
+						type04: [],
+						type05: []
+					};
+
+					var activeBtn01 = filterWrap.find(".value-01.checked");
+					for (var _i = 0; _i < activeBtn01.length; _i++) {
+						var activeIndex = activeBtn01.eq(_i).attr("data-index");
+						valObj.type01.push(activeIndex);
+					}
+
+					var activeBtn02 = filterWrap.find(".value-02.checked");
+					for (var _i = 0; _i < activeBtn02.length; _i++) {
+						var activeIndex = activeBtn02.eq(_i).attr("data-index");
+						valObj.type02.push(activeIndex);
+					}
+
+					var activeBtn03 = filterWrap.find(".value-03.checked");
+					for (var _i = 0; _i < activeBtn03.length; _i++) {
+						var activeIndex = activeBtn03.eq(_i).attr("data-index");
+						valObj.type03.push(activeIndex);
+					}
+
+					var activeBtn04 = filterWrap.find(".value-04.checked");
+					for (var _i = 0; _i < activeBtn04.length; _i++) {
+						var activeIndex = activeBtn04.eq(_i).attr("data-index");
+						valObj.type04.push(activeIndex);
+					}
+
+					var activeBtn05 = filterWrap.find(".value-05.checked");
+					for (var _i = 0; _i < activeBtn05.length; _i++) {
+						var activeIndex = activeBtn05.eq(_i).attr("data-index");
+						valObj.type05.push(activeIndex);
+					}
+
+					return valObj;
+				}
+
+				function openWrap() {
+					disabledScroll();
+
+					filterWrap.addClass("open").css("z-index", 101);
+					TweenMax.fromTo(filterWrap, 0.8, { y: filterWrap.height() }, { y: 0, ease: Power4.easeOut });
+
+					TweenMax.fromTo(dimm, 0.8, { opacity: 0, display: "block" }, { opacity: 0.6, ease: Power4.easeOut });
+				}
+
+				function closeWrap() {
+					activeScroll();
+
+					TweenMax.to(filterWrap, 0.8, {
+						y: filterWrap.height(),
+						ease: Power4.easeOut,
+						onComplete: function() {
+							filterWrap.removeClass("open");
+						}
+					});
+
+					TweenMax.to(dimm, 0.8, { opacity: 0, display: "none", ease: Power4.easeOut });
+				}
+
+				function activeList(currentList) {
+					if (!currentList.hasClass("open")) {
+						filterList.removeClass("open");
+						currentList.addClass("open");
+					} else {
+						filterList.removeClass("open");
+					}
+				}
+
+				function active1depth(currentList, i) {
+					var _depth01 = currentList.find(".filter-depth01-item");
+
+					_depth01.removeClass("active");
+					_depth01.eq(i).addClass("active");
+				}
+
+				function active2depth(currentList, i) {
+					var _depth02 = currentList.find(".filter-list-depth02");
+
+					_depth02.css("opacity", 0);
+					_depth02
+						.eq(i)
+						.addClass("active")
+						.css({
+							"z-index": ++zIndex,
+							opacity: 1
+						});
+				}
+
+				function checkAllBtn(_thisAllBtn) {
+					var _chk = _thisAllBtn.is(":checked");
+
+					if (_chk) {
+						_thisAllBtn.addClass("checked");
+						_thisAllBtn
+							.parents(".ui-checkbox-ul")
+							.find(".bttn-filter-sel.chkEtc")
+							.prop("checked", true)
+							.addClass("checked");
+					} else {
+						_thisAllBtn.removeClass("checked");
+						_thisAllBtn
+							.parents(".ui-checkbox-ul")
+							.find(".bttn-filter-sel.chkEtc")
+							.prop("checked", false)
+							.removeClass("checked");
+					}
+				}
+
+				function checkBtn(_thisBtn) {
+					var _chk = _thisBtn.is(":checked");
+					var _length = _thisBtn.parents(".ui-checkbox-ul").find(".bttn-filter-sel.chkEtc").length;
+					var _chkLength;
+
+					if (_chk) {
+						_thisBtn.addClass("checked");
+					} else {
+						_thisBtn.removeClass("checked");
+					}
+
+					// 활성화된 버튼 갯수에 따른 전체 버튼 컨트롤
+					_chkLength = _thisBtn.parents(".ui-checkbox-ul").find(".bttn-filter-sel.chkEtc.checked").length;
+
+					if (_chkLength < _length) {
+						_thisBtn
+							.parents(".ui-checkbox-ul")
+							.find(".bttn-filter-sel.chkAll")
+							.prop("checked", false)
+							.removeClass("checked");
+					} else {
+						_thisBtn
+							.parents(".ui-checkbox-ul")
+							.find(".bttn-filter-sel.chkAll")
+							.prop("checked", true)
+							.addClass("checked");
+					}
+				}
+
+				function _reset() {
+					filterList
+						.find(".bttn-filter-sel")
+						.prop("checked", false)
+						.removeClass("checked");
+				}
+
+				function disabledScroll() {
+					$("html, body").css("overflow", "hidden");
+				}
+
+				function activeScroll() {
+					$("html, body").removeAttr("style");
+				}
+			};
+
+			//- ex) smartFilter
+			//- ex) smartFilter.init(); : 초기화
+			//- ex) smartFilter.reset(); : 선택값 초기화
+			//- ex) smartFilter.getSelectValue(); : 선택된 값 ( submit )
+
+			window.smartFilter = new SmartFilter();
+			smartFilter.init();
+		</script>
+	</body>
+</html>

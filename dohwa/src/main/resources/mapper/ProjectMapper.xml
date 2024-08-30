@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dohwa.mapper.ProjectMapper">
+
+	<resultMap id="resultProjectMlMap" type="projectVO">
+		<result property="projectMlVO.lang" column="lang" />
+		<result property="projectMlVO.title" column="title" />
+		<result property="projectMlVO.subTitle" column="sub_title" />
+		<result property="projectMlVO.cont" column="cont" />
+		<result property="projectMlVO.client" column="client" />
+	</resultMap>
+
+	<sql id="commonWhere">
+		<where>
+			<if test="null != searchType1 and !''.equals(searchType1)">
+				TB1.TYPE_1 = #{searchType1}
+			</if>
+			<if test="null != searchType2 and !''.equals(searchType2)">
+				AND TB1.TYPE_2 = #{searchType2}
+			</if>
+			<if test="null != searchType3 and !''.equals(searchType3)">
+				AND TB1.TYPE_3 = #{searchType3}
+			</if>
+			<if test="null != searchDispYn and !''.equals(searchDispYn)">
+				AND TB1.DISP_YN = #{searchDispYn}
+			</if>
+			<if test="searchText != null and !''.equals(searchText)">
+				<choose>
+					<when test="searchType != null and 'name'.equals(searchType)">
+						AND TB2.TITLE LIKE CONCAT('%',#{searchText},'%')
+					</when>
+					<when test="searchType != null and 'cont'.equals(searchType)">
+						AND TB2.CONT LIKE CONCAT('%',#{searchText},'%')
+					</when>
+					<otherwise>
+						AND (TB2.TITLE LIKE CONCAT('%',#{searchText},'%') OR TB2.CONT LIKE CONCAT('%',#{searchText},'%'))
+					</otherwise>
+				</choose>
+			</if>
+		</where>
+	</sql>
+
+	<select id="getProjectCnt" parameterType="searchVO" resultType="int">
+		SELECT
+			COUNT(*) TOT_CNT
+		FROM TB_PROJECT 		 TB1
+		INNER JOIN TB_PROJECT_ML TB2 ON TB1.SEQ = TB2.SEQ
+									AND TB2.LANG = #{searchLangType}
+		<include refid="commonWhere" />
+	</select>
+
+	<select id="getProjectList" parameterType="searchVO" resultMap="resultProjectMlMap">
+		SELECT
+			 TB1.SEQ
+			,TB1.`YEAR`
+			,TB1.REG_DT
+			,(SELECT KO_TEXT FROM TB_CODE WHERE CODE = TB1.TYPE_1) AS TYPE_1
+			,(SELECT KO_TEXT FROM TB_CODE WHERE CODE = TB1.TYPE_2) AS TYPE_2
+			,(SELECT KO_TEXT FROM TB_CODE WHERE CODE = TB1.TYPE_3) AS TYPE_3
+			,TB1.DISP_YN
+			,TB2.LANG
+			,TB2.TITLE
+			,TB2.SUB_TITLE
+			,TB2.CONT
+			,TB2.CLIENT
+		FROM TB_PROJECT 		 TB1
+		INNER JOIN TB_PROJECT_ML TB2 ON TB1.SEQ = TB2.SEQ
+									AND TB2.LANG = #{searchLangType}
+		<include refid="commonWhere" />
+		ORDER BY TB1.REG_DT DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+		LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+
+	<select id="getProject" parameterType="projectVO" resultType="projectVO">
+		SELECT
+			 TB1.*
+		FROM TB_PROJECT TB1
+		WHERE TB1.SEQ = #{seq}
+		<if test="null != dispYn and !''.equals(dispYn)">
+			AND TB1.DISP_YN = #{dispYn}
+		</if>
+	</select>
+
+	<select id="getProjectMlList" parameterType="projectMlVO" resultType="projectMlVO">
+		SELECT
+			 TB1.*
+		FROM TB_PROJECT_ML TB1
+		WHERE TB1.SEQ = #{seq}
+		ORDER BY SEQ DESC
+	</select>
+
+	<insert id="insertProject" parameterType="projectVO">
+		INSERT INTO
+		TB_PROJECT(TYPE_1
+				,TYPE_2
+				,TYPE_3
+				,TYPE_4
+				,TYPE_5
+				,YEAR
+				,REG_ID)
+		VALUES(#{type1}
+				,#{type2}
+				,#{type3}
+				,#{type4}
+				,#{type5}
+				,#{year}
+				,#{regId})
+		<selectKey keyProperty="seq" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<insert id="insertProjectMl" parameterType="hashmap">
+		INSERT INTO
+		TB_PROJECT_ML(SEQ
+					,LANG
+					,TITLE
+					,SUB_TITLE
+					,CONT
+					,CLIENT)
+		VALUES
+		<foreach collection="list" item="item" separator=",">
+				(#{item.seq}
+				,#{item.lang}
+				,#{item.title}
+				,#{item.subTitle}
+				,#{item.cont}
+				,#{item.client})
+		</foreach>
+	</insert>
+
+	<update id="updateProject" parameterType="projectVO">
+		UPDATE TB_PROJECT
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="null != type1 and !''.equals(type1)">TYPE_1 = #{type1},</if>
+			<if test="null != type2 and !''.equals(type2)">TYPE_2 = #{type2},</if>
+			<if test="null != type3 and !''.equals(type3)">TYPE_3 = #{type3},</if>
+			<if test="null != type4 and !''.equals(type4)">TYPE_4 = #{type4},</if>
+			<if test="null != type5 and !''.equals(type5)">TYPE_5 = #{type5},</if>
+			<if test="null != year and !''.equals(year)">YEAR = #{year},</if>
+			<if test="null != dispYn and !''.equals(dispYn)">DISP_YN = #{dispYn},</if>
+			<if test="null != strRegDt and !''.equals(strRegDt)">REG_DT = #{regDt},</if>
+			UPD_ID = #{updId},
+			UPD_DT = NOW()
+		</trim>
+		WHERE SEQ = #{seq}
+	</update>
+
+	<delete id="deleteProjectMl" parameterType="projectMlVO">
+		DELETE FROM TB_PROJECT_ML WHERE SEQ = #{seq}
+	</delete>
+
+	<delete id="deleteProjectForeach" parameterType="java.util.List">
+		DELETE FROM TB_PROJECT
+		WHERE
+		<foreach collection="list" item="seq" open="SEQ IN (" close=")" separator=",">
+	        #{seq}
+		</foreach>
+	</delete>
+
+	<delete id="deleteProjectMlForeach" parameterType="java.util.List">
+		DELETE FROM TB_PROJECT_ML
+		WHERE
+		<foreach collection="list" item="seq" open="SEQ IN (" close=")" separator=",">
+	        #{seq}
+		</foreach>
+	</delete>
+
+	<select id="getProjectFrontCount" parameterType="searchVO" resultType="int">
+		SELECT COUNT(TB1.SEQ)
+		FROM TB_PROJECT 		 TB1
+		INNER JOIN TB_PROJECT_ML TB2 ON TB1.SEQ = TB2.SEQ
+									AND TB2.LANG = #{searchLangType}
+		INNER JOIN TB_FILE		 TB3 ON TB2.SEQ = TB3.ATT_SEQ
+									AND TB3.ATT_TYPE = 'PROJECT'
+									AND TB3.ATT_ORDER = 1
+									AND TB3.`TYPE` = #{searchDeviceType}
+		<where>
+			TB1.DISP_YN = #{searchDispYn}
+		<if test="(type1 != null and type1.size != 0) or (type2 != null and type2.size != 0) or (type3 != null and type3.size != 0) or (type4 != null and type4.size != 0) or (type5 != null and type5.size != 0)">
+			AND (
+			<trim prefixOverrides="OR">
+				<foreach collection="type1" item="type" open="TB1.TYPE_1 IN (" close=")" separator=",">
+					#{type}
+				</foreach>
+
+				<foreach collection="type2" item="type" open="OR TB1.TYPE_2 IN (" close=")" separator=",">
+					#{type}
+				</foreach>
+
+				<foreach collection="type3" item="type" open="OR TB1.TYPE_3 IN (" close=")" separator=",">
+					#{type}
+				</foreach>
+
+				<foreach collection="type4" item="type" open="OR TB1.TYPE_4 IN (" close=")" separator=",">
+					#{type}
+				</foreach>
+
+				<foreach collection="type5" item="type" open="OR TB1.TYPE_5 IN (" close=")" separator=",">
+					#{type}
+				</foreach>
+			</trim>
+			)
+		</if>
+		</where>
+	</select>
+	
+	<select id="getProjectFrontList" parameterType="searchVO" resultMap="resultProjectMlMap">
+		SELECT
+			 TB1.SEQ
+			,TB1.`YEAR`
+			,TB1.REG_DT
+			,TB1.DISP_YN
+			,TB2.LANG
+			,TB2.TITLE
+			,TB2.SUB_TITLE
+			,TB2.CONT
+			,TB2.CLIENT
+			,CONCAT(TB3.`PATH`, '/', TB3.NEW_NAME) as filePath
+			,(SELECT CONCAT(TF.`PATH`, '/', TF.NEW_NAME) FROM TB_FILE TF WHERE ATT_TYPE = 'PROJECT' AND TF.`TYPE` = 'MAIN' AND TF.ATT_SEQ = TB1.SEQ AND ATT_ORDER = 1 LIMIT 1) AS MAIN_FILE_NAME1
+			,(SELECT CONCAT(TF.`PATH`, '/', TF.NEW_NAME) FROM TB_FILE TF WHERE ATT_TYPE = 'PROJECT' AND TF.`TYPE` = 'MAIN' AND TF.ATT_SEQ = TB1.SEQ AND ATT_ORDER = 2 LIMIT 1) AS MAIN_FILE_NAME2
+		FROM TB_PROJECT 		 TB1
+		INNER JOIN TB_PROJECT_ML TB2 ON TB1.SEQ = TB2.SEQ
+									AND TB2.LANG = #{searchLangType}
+		INNER JOIN TB_FILE		 TB3 ON TB2.SEQ = TB3.ATT_SEQ
+									AND TB3.ATT_TYPE = 'PROJECT'
+									AND TB3.ATT_ORDER = 1
+									AND TB3.`TYPE` = #{searchDeviceType}
+		<where>
+			TB1.DISP_YN = #{searchDispYn}
+		<choose>
+			<!-- MARKET 1뎁스, MARKET 2뎁스 있을때 -->
+			<when test="type1 != null and type1.size != 0">
+				AND (		
+				<foreach collection="type1" item="type" open="TB1.TYPE_1 IN (" close=")" separator=",">
+					#{type}
+				</foreach>
+				<if test="type4 != null and type4.size != 0">
+					<foreach collection="type4" item="type" open="OR TB1.TYPE_4 IN (" close=")" separator=",">
+						#{type}
+					</foreach>
+				</if>
+				)
+			</when>
+			
+			<!-- MARKET 2뎁스 있을때 -->
+			<when test="type1 != null and type1.size == 0 and type4 != null and type4.size != 0">
+				<foreach collection="type4" item="type" open="AND TB1.TYPE_4 IN (" close=")" separator=",">
+					#{type}
+				</foreach>
+			</when>
+			
+		</choose>
+		
+		<!-- SERVICE 1뎁스 있을때 -->
+		<if test="type2 != null and type2.size != 0">
+			<foreach collection="type2" item="type" open="AND TB1.TYPE_2 IN (" close=")" separator=",">
+				#{type}
+			</foreach>
+		</if>
+			
+		<choose>
+			<!-- REGION 1뎁스, REGION 2뎁스 있을때 -->
+			<when test="type3 != null and type3.size != 0">
+				AND (		
+				<foreach collection="type3" item="type" open="TB1.TYPE_3 IN (" close=")" separator=",">
+					#{type}
+				</foreach>
+				<if test="type5 != null and type5.size != 0">
+					<foreach collection="type5" item="type" open="OR TB1.TYPE_5 IN (" close=")" separator=",">
+						#{type}
+					</foreach>
+				</if>
+				)
+			</when>
+			
+			<!-- REGION 2뎁스 있을때 -->
+			<when test="type3 != null and type3.size == 0 and type5 != null and type5.size != 0">
+				<foreach collection="type5" item="type" open="AND TB1.TYPE_5 IN (" close=")" separator=",">
+					#{type}
+				</foreach>
+			</when>
+		</choose>
+		
+		</where>
+		ORDER BY TB1.REG_DT DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+		LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+
+	<select id="getProjectFront" parameterType="searchVO" resultMap="resultProjectMlMap">
+		SELECT
+			 TB1.SEQ
+			,TB1.TYPE_1
+			,TB1.TYPE_2
+			,TB1.TYPE_3
+			,TB1.TYPE_4
+			,TB1.TYPE_5
+			,TB1.REG_DT
+			,TB1.DISP_YN
+			,TB1.YEAR
+			,TB2.LANG
+			,TB2.TITLE
+			,TB2.SUB_TITLE
+			,TB2.CONT
+			,TB2.CLIENT
+		FROM TB_PROJECT 		 TB1
+		INNER JOIN TB_PROJECT_ML TB2 ON TB1.SEQ = TB2.SEQ
+									AND TB2.LANG = #{searchLangType}
+		WHERE TB1.SEQ = #{seq}
+		<if test="null != searchDispYn and !''.equals(searchDispYn)">
+			AND TB1.DISP_YN = #{searchDispYn}
+		</if>
+	</select>
+
+	<select id="getProjectThumList" parameterType="searchVO" resultMap="resultProjectMlMap">
+		SELECT TB1.SEQ
+				,TB2.TITLE
+				,CONCAT(TB3.`PATH`, '/', TB3.NEW_NAME) AS filePath
+			FROM TB_PROJECT 		 TB1
+			INNER JOIN TB_PROJECT_ML TB2 ON TB1.SEQ = TB2.SEQ
+										AND TB2.LANG =  #{searchLangType}
+			INNER JOIN TB_FILE		 TB3 ON TB2.SEQ = TB3.ATT_SEQ
+										AND TB3.ATT_TYPE = 'PROJECT'
+										AND TB3.TYPE = 'MAIN'
+										AND TB3.ATT_ORDER = 2
+			INNER JOIN TB_CODE		 TB4 ON TB1.TYPE_1 = TB4.CODE
+										AND TB4.USE_YN = 'Y'
+			WHERE TB1.TYPE_1 = #{searchType1}
+			  AND TB1.DISP_YN = 'Y'
+			ORDER BY TB1.REG_DT DESC LIMIT 4
+	</select>
+
+</mapper>

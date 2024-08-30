@@ -1,0 +1,791 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/swiper.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div id="wrap">
+			<header id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header-content">
+					<h1 class="logo-wrap"><a href="#">도화엔지니어링</a></h1>
+					<div class="gnb-wrap">
+						<ul class="gnb-menu-list">
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">회사소개</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">Overview</a></li>
+									<li class="gnb-sub-item"><a href="#">Vision</a></li>
+									<li class="gnb-sub-item"><a href="#">People</a></li>
+									<li class="gnb-sub-item"><a href="#">History</a></li>
+									<li class="gnb-sub-item"><a href="#">CSR</a></li>
+									<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">사업소개</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">Overview</a></li>
+									<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">투자정보</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+									<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+									<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+									<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">홍보센터</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+									<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+									<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+									<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">채용정보</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+									<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="menu">
+						<span class="down-wrap">
+							<a class="bttn-down-brochure" href="#none">
+								회사소개 브로셔
+								<em class="ico down" aria-hidden="true"></em>
+							</a>
+						</span>
+						<span class="lang-wrap">
+							<button class="bttn-lang-sel" type="button">KOR</button>
+							<!-- 20200804 텍스트 수정 KR => KOR -->
+							<ul class="lang-list">
+								<li>
+									<button class="bttn-lang" type="button">KOR</button>
+									<!-- 20200804 텍스트 수정 KR => KOR -->
+								</li>
+								<li>
+									<button class="bttn-lang" type="button">ENG</button>
+								</li>
+								<li>
+									<button class="bttn-lang" type="button">ESP</button>
+								</li>
+							</ul>
+						</span>
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								MENU
+							</button>
+						</span>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<div id="content" role="main">
+					<div class="page-visual business01 visual-area">
+						<div class="page-title-sec">
+							<span class="title-main-sub">
+								BUSINESS
+								<!-- 20200811 텍스트 수정 -->
+							</span>
+							<h2 class="title-main">사업소개</h2>
+						</div>
+					</div>
+					<!-- s : 20200812 클래스 및 .contents-wrap 추가-->
+					<div class="contents-wrap" style="position:relative">
+						<div class="page-tab-section">
+							<div class="tab-menu-type01 center">
+								<ul class="tab-list tab-list-1depth">
+									<li class="active"><a class="item" href="#none" data-id="">Overview</a></li>
+									<li><a class="item" href="#none" data-id="">Project</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="contents full-type business-cont-wrap contents-1depth clfix">
+							<span class="page-decs">
+								<strong>
+									02 BUSINESS
+									<!-- 20200811 텍스트 수정 -->
+								</strong>
+								DOHWA ENGINEERING
+							</span>
+							<div class="business-tab-area">
+								<ul class="business-tab-list tab-list-2depth">
+									<li><a class="item" href="#none">물</a></li>
+									<li><a class="item" href="#none">도시</a></li>
+									<li><a class="item" href="#none">교통</a></li>
+									<li class="active"><a class="item" href="#none">에너지</a></li>
+								</ul>
+							</div>
+							<div class="business-tab-cont business-water contents-2depth" style="display:none;">물</div>
+							<div class="business-tab-cont business-city contents-2depth" style="display:none;">도시</div>
+							<div class="business-tab-cont business-transportation contents-2depth" style="display:none;">교통</div>
+							<div class="business-tab-cont business-energy contents-2depth" style="display:block;">
+								<div class="content-inner">
+									<div class="business-summary-wrap energy-division">
+										<div class="business-summary-inner">
+											<p class="business-name-eng">Infrtastructure Division</p>
+											<h3 class="business-name">에너지 사업 부문</h3>
+											<div class="business-txt-box">
+												풍력, 태양광, 바이오매스, 지열 등의 신재생에너지 종합 솔루션을 제공하며, 신재생에너지 발전의 사업개발 및 투자, 컨설팅, 타당성조사, EPC, O&amp;M까지 전 분야의
+												<br />
+												업무를 수행하고 있습니다. 신재생에너지 분야의 다수 실적을 바탕으로 고도의 축적된 기술, 경험 등을 바탕으로 향후 국내&middot;해외 신재생에너지 발전 시장의 선두주자로 나아갈
+												<br />
+												것입니다.
+											</div>
+										</div>
+									</div>
+									<div class="tab-menu-type02">
+										<ul class="tab-list tab-list-3depth">
+											<li class="active">
+												<a class="item" href="#none"><span class="txt" data-id="">태양광</span></a>
+											</li>
+											<li>
+												<a class="item" href="#none"><span class="txt" data-id="">풍력</span></a>
+											</li>
+											<li>
+												<a class="item" href="#none"><span class="txt" data-id="">발전</span></a>
+											</li>
+											<li>
+												<a class="item" href="#none"><span class="txt" data-id="">환경</span></a>
+											</li>
+										</ul>
+									</div>
+									<div class="inner-tab-cont contents-3depth" style="display:block;">
+										<div class="business-detail-txt">
+											<p>
+												<span class="line-clamp">
+													온실가스 배출량을 감소시켜 세계 환경을 지키는데 기여하고자 국내 뿐만 아니라 일본, 베트남, 이라크, 에디오피아, 온두라스 등 다수의 해외 시장에서 태양광발전 사업을 추진하여 수행하고
+													<br />
+													있습니다. 특히 열악한 환경의 오지에 태양광발전 사업을 추진하므로서 인류의 편의에 기여하고 있으며, 국내외 다수의 수상, 육상태양광사업의 타당성, 컨설팅, 설계, EPC, 감리 업무 수행의
+													<br />
+													경험을 바탕으로 향후 사업개발 및 투자사업으로의 사업분야 확대를 계획하고 있습니다.
+												</span>
+											</p>
+										</div>
+										<div class="section-cont">
+											<h3 class="title-sect">대표 프로젝트</h3>
+											<!--s: 20200826 swiper 제거, em.bg 삭제-->
+											<div class="business-project-wrap">
+												<div class="business-project-slide">
+													<div class="slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+															<p class="list-tit"><span class="txt">사천지구(3단계) 하수관로 정비사업 사천지구(3단계) 하수관로 정비사업 사천지구(3단계) 하수관로 정비사업</span></p>
+														</a>
+													</div>
+													<div class="slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+															<p class="list-tit"><span class="txt">수지정수장 환경개선사업 기본 및...</span></p>
+														</a>
+													</div>
+													<div class="slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+															<p class="list-tit"><span class="txt">전주-광양간 고속도로 건설공사</span></p>
+														</a>
+													</div>
+													<div class="slide">
+														<a class="list-link" href="#none">
+															<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+															<p class="list-tit"><span class="txt">안암도유수지(2단계)조성공사 실시 설계 ...</span></p>
+														</a>
+													</div>
+												</div>
+												<!--e: 20200826 swiper 제거-->
+												<!-- 20200804 swiper-pagination 제거-->
+												<a class="bttn-more style01" href="#none">
+													<em class="ico-more" aria-hidden="true"></em>
+													<span class="hide-txt">더보기</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="inner-tab-cont contents-3depth" style="display:none;">
+										<div class="business-detail-txt">
+											<p>
+												<span class="line-clamp">
+													환경에 영향이 없는 친환경에너지를 제공하기 위한 국가 에너지정책 및 전세계 신재생에너지 추진동향에 발맞추기 위해 국내외 다수의 육상, 해상 풍력발전단지의 타당성조사, 설계를
+													<br />
+													수행하고 있으며, 최근에는 국내 풍력발전소 건설사업(EPC)을 성공적으로 수행하였습니다. 향후 풍부한 경험과 기술력을 바탕으로 풍력사업의 선두주자로 나아갈 것입니다.
+												</span>
+											</p>
+										</div>
+										<div class="section-cont">
+											<h3 class="title-sect">대표 프로젝트</h3>
+											<div class="business-project-wrap">
+												<div class="business-project-slide swiper-container">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+													</div>
+													<div class="swiper-pagination"></div>
+												</div>
+												<a class="bttn-more style01" href="#none">
+													<em class="ico-more" aria-hidden="true"></em>
+													<span class="hide-txt">더보기</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="inner-tab-cont contents-3depth" style="display:none;">
+										<div class="business-detail-txt">
+											<p>
+												<span class="line-clamp">
+													첨단 기술과 특허권을 통해 에너지 분야의 선두 주자로 석탄화력, 복합화력, 바이오매스 발전에 대한 FS, 엔지니어링, PMC, EPC, O&amp;M 서비스를 수행하며, 탁월한 기술력과 전문인력을
+													<br />
+													확보하고 있어 최고의 전문성을 보유하고 있습니다.
+												</span>
+											</p>
+										</div>
+										<div class="section-cont">
+											<h3 class="title-sect">대표 프로젝트</h3>
+											<div class="business-project-wrap">
+												<div class="business-project-slide swiper-container">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+													</div>
+													<div class="swiper-pagination"></div>
+												</div>
+												<a class="bttn-more style01" href="#none">
+													<em class="ico-more" aria-hidden="true"></em>
+													<span class="hide-txt">더보기</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="inner-tab-cont contents-3depth" style="display:none;">
+										<div class="business-detail-txt">
+											<p>
+												<span class="line-clamp">
+													자연과 사람의 풍요로운 미래를 위해 자원순환을 통한 연료화, 소각에너지, 바이오가스화, 매립가스 플랜트 등 환경기초시설의 타당성조사 및 기본계획, 설계, 감리, EPC사업등의 기술집약형
+													<br />
+													환경기술 서비스를 제공하고 있으며 국내외 환경플랜트분야에서 풍부한 기술경험이 있는 전문인력과 최신의 기술력을 보유하고 있습니다.
+												</span>
+											</p>
+										</div>
+										<div class="section-cont">
+											<h3 class="title-sect">대표 프로젝트</h3>
+											<div class="business-project-wrap">
+												<div class="business-project-slide swiper-container">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계 ...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_01_v2.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_02.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">수지정수장 환경개선사업 기본 및...</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_03.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">전주-광양간 고속도로 건설공사</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_04.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">안암도유수지(2단계)조성공사 실시 설계</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_05.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+														<div class="swiper-slide slide">
+															<a class="list-link" href="#none">
+																<div class="list-img-wrap"><img src="/images/pc/img_main_project_06.jpg" /></div>
+																<p class="list-tit">
+																	<span class="line-clamp txt">사천지구(3단계) 하수관로 정비사업</span>
+																	<em class="bg" aria-hidden="true"></em>
+																</p>
+															</a>
+														</div>
+													</div>
+													<div class="swiper-pagination"></div>
+												</div>
+												<a class="bttn-more style01" href="#none">
+													<em class="ico-more" aria-hidden="true"></em>
+													<span class="hide-txt">더보기</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- e : 20200812 클래스 및 .contents-wrap 추가-->
+						<!-- s : 20200813 grid mixin 추가-->
+						<div class="sub-page-grid">
+							<div class="grid-wrap" aria-hidden="true">
+								<div class="grid-ico-wrap" aria-hidden="true">
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+								</div>
+								<div class="grid-line-wrap">
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line" aria-hidden="true"></div>
+								</div>
+							</div>
+						</div>
+						<!-- e : 20200813 grid mixin 추가-->
+					</div>
+				</div>
+			</div>
+			<footer id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">
+								<span class="hide-txt">맨위로가기</span>
+								<em class="ico" aria-hidden="true"></em>
+							</button>
+						</div>
+						<span class="footer-logo">
+							<!--s: 20200831 다국어 로고 이미지 변경-->
+							<!--img(src="/images/common/img_footer_logo_en.png", alt="DOHWA")-->
+							<!--e: 20200831 다국어 로고 이미지 변경-->
+							<img src="/images/common/img_footer_logo.jpg" alt="DOHWA 엔지니어링" />
+						</span>
+
+						<div class="clfix">
+							<div class="footer-left">
+								<ul class="footer-menu">
+									<!--s: 20200914 우편번호 수정-->
+									<li>서울특별시 강남구 삼성로 438 (#06178)</li>
+									<!--e: 20200914 우편번호 수정-->
+									<li>대표전화 02-6323-3000</li>
+									<li>
+										<a href="#none"><strong>개인정보 처리방침</strong></a>
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD. AllRIGHT RESERVED.</address>
+							</div>
+							<div class="footer-right">
+								<span class="footer-sns">
+									<a class="ico-blog" href="#none"><span class="hide-txt">Blog</span></a>
+									<a class="ico-youtube" href="#none"><span class="hide-txt">Youtube</span></a>
+								</span>
+								<!--s: 20200828 디자인셀렉트 박스 교체-->
+								<div class="footer-family">
+									<div class="family-inner">
+										<button class="family-btn" type="button"><span>Employee Site</span></button>
+										<ul class="family-list">
+											<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+											<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+											<li class="family-item">
+												<!--s:20200903 텍스트 수정-->
+												<a href="#none" title="새창열림">CMFG</a>
+												<!--e:20200903 텍스트 수정-->
+											</li>
+											<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+										</ul>
+									</div>
+								</div>
+								<!--e: 20200828 디자인셀렉트 박스 교체-->
+							</div>
+						</div>
+					</div>
+					<!-- s : 20200813 footer grid 추가-->
+					<div class="footer-grid-wrap" aria-hidden="true">
+						<div class="grid-line-wrap" aria-hidden="true">
+							<div class="grid-line" aria-hidden="true"></div>
+							<div class="grid-line" aria-hidden="true"></div>
+						</div>
+					</div>
+					<!-- e : 20200813 footer grid 추가-->
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/jquery.mousewheel.min.js"></script>
+		<script src="/inc/js/ScrollMagic.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/animation.gsap.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/lottie.js"></script>
+		<script src="/inc/js/jquery.scrollbar.min.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common.js"></script>
+		<script>
+			var component = new ComponentUI();
+			component.tabContent(".tab-list-1depth", ".contents-1depth");
+			//- component.tabContent('.tab-list-2depth', '.contents-2depth');
+			component.tabContent(".tab-list-3depth", ".contents-3depth");
+
+			component.selectBox(".dropdown-selbox01", 150);
+			component.selectBox(".dropdown-selbox02", 150);
+			component.selectBox(".dropdown-selbox03", 150);
+			component.selectBox(".dropdown-selbox04", 150);
+		</script>
+		<script>
+			var gallerySwiper = new Swiper($(".business-project-slide.swiper-container"), {
+				slidesPerView: 4,
+				slidesPerGroup: 4,
+				pagination: {
+					el: ".swiper-pagination",
+					type: "bullets"
+				}
+			});
+			//- overview project 영역 images size
+			$(".business-project-slide .slide").each(function() {
+				var $this = $(this),
+					$box = $this.find(".list-img-wrap"),
+					$img = $this.find(".list-link").find("img"),
+					divAspect = $box.height() / $box.width(),
+					imgAspect = $img.height() / $img.width();
+				if (imgAspect <= divAspect) {
+					//가로가 긴 경우 세로를 박스에 맞추고 가로 크롭
+					$img.addClass("img-w");
+				} else {
+					//세로가 긴 경우 가로를 박스에 맞추고 세로 크롭
+					$img.addClass("img-h");
+				}
+			});
+		</script>
+	</body>
+</html>

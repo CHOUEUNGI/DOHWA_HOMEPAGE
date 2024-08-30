@@ -1,0 +1,395 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common_mobile.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div class="pr ci-introduce" id="wrap">
+			<header class="header" id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header_content">
+					<!--스크롤 및 햄버거 클릭시 .on 클래스 추가-->
+					<h1 class="logo-wrap">
+						<a href="#"></a>
+						<span class="hide-txt">DOHWA</span>
+					</h1>
+					<div class="header-menu">
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								<span class="hide-txt">Menu</span>
+							</button>
+						</span>
+						<div class="header-all-menu">
+							<!-- .bttn-all-menu 클릭시 .active 추가 (전체메뉴 노출) -->
+							<div class="scroll-wrap">
+								<ul class="all-menu-list">
+									<li class="all-menu-item">
+										<!-- 활성화 클래스 : active -->
+										<a href="#none">
+											회사소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">Vision</a></li>
+											<li class="gnb-sub-item"><a href="#">People</a></li>
+											<li class="gnb-sub-item"><a href="#">History</a></li>
+											<li class="gnb-sub-item"><a href="#">CSR</a></li>
+											<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											사업소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											투자정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+											<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+											<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+											<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											홍보센터
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<!--s: 20200831 메뉴추가-->
+											<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+											<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+											<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+											<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+											<!--e: 20200831 메뉴추가-->
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											채용정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+											<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="lang-list">
+									<li>
+										<button class="bttn-lang on" type="button">
+											KOR
+											<!-- 활성화 클래스 : on -->
+										</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ENG</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ESP</button>
+									</li>
+								</ul>
+							</div>
+							<button class="bttn-menu-close" type="button" title="전체메뉴 닫기"><span class="hide-txt">전체메뉴 닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<div id="content" role="main">
+					<div class="page-visual promotion01 visual-area">
+						<div class="page-title-sec">
+							<span class="title-main-sub">PR ROOM</span>
+							<h2 class="title-main">홍보센터</h2>
+						</div>
+						<!--s: 20200901 noti-scroll 삭제-->
+						<!-- .noti-scroll.none-->
+						<!-- 	span.txt Scroll-->
+						<!-- 	span.ico01(aria-hidden="true")-->
+						<!-- 	span.ico02(aria-hidden="true")-->
+						<!--e: 20200901 noti-scroll 삭제-->
+						<div class="visual-grid-wrap" aria-hidden="true">
+							<div class="grid-ico-wrap" aria-hidden="true">
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+							</div>
+							<div class="grid-line-wrap">
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+							</div>
+						</div>
+					</div>
+					<div class="page-tab-section">
+						<div class="tab-menu-type01 center">
+							<ul class="tab-list">
+								<li class="active"><a class="item" href="#none" data-id="">CI소개</a></li>
+								<li><a class="item" href="#none" data-id="">최신뉴스</a></li>
+								<li><a class="item" href="#none" data-id="">기업브로슈어</a></li>
+								<li><a class="item" href="#none" data-id="">홍보영상</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="symbol-keyword">
+						<div class="inner">
+							<div class="symbol-keyword-desc">
+								<h3 class="desc-tit">심볼 디자인 키워드</h3>
+								<div class="desc-txt">
+									<p>Logotype의 Simple한 형태 San Serif Style을 취한 것은</p>
+									<p>최고의 기술력을 바탕으로 Hi-Technology지향하는</p>
+									<p>기업의 사업 특성에 적합한 탄탄한 구조를 표현하고 있습니다.</p>
+								</div>
+							</div>
+							<div class="symbol-keyword-item">
+								<ul class="clfix">
+									<li class="item-circle"><span class="txt">최고의 기술력</span></li>
+									<li class="item-circle"><span class="txt">전통의 전문성</span></li>
+									<li class="item-circle"><span class="txt">대내외 인화력</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="contents no-btm-type">
+						<div class="section-cont ci">
+							<div class="content-inner">
+								<div class="ci-cont">
+									<h3 class="title-sect">컬러 정의</h3>
+									<div class="color-define-box">
+										<div class="inner-txt">
+											<strong class="color-define-tit">DOHWA BULE</strong>
+											<p class="color-define-txt">
+												<em>RGB Color</em>
+												<span>R0&nbsp;&nbsp;G63&nbsp;&nbsp;B152</span>
+											</p>
+											<p class="color-define-txt">
+												<em>Process Color</em>
+												<span>C100&nbsp;&nbsp;M80&nbsp;&nbsp;Y0&nbsp;&nbsp;K0</span>
+											</p>
+										</div>
+									</div>
+									<p class="cont-desc">도화의 블루 색상은 항상 인간의 바람직한 환경을 위하여 존재하는 기업의 이미지를 표현하고 있습니다.</p>
+								</div>
+								<div class="ci-cont">
+									<h3 class="title-sect">심볼 정의</h3>
+									<div class="cont-box">
+										<span class="img">
+											<!--s: 20200831 다국어 이미지 변경-->
+											<!--img(src="/images/pc/img_ci_symbol_en.jpg", alt="도화 엔지니어링 심볼")-->
+											<!--e: 20200831 다국어 이미지 변경-->
+											<img src="/images/pc/img_ci_symbol.jpg" alt="도화 엔지니어링 심볼" />
+										</span>
+									</div>
+									<p class="cont-desc">원만한 대내외 인화력을 상징하며, 그린 색상의 변화(Gradation)는 오랜 전통을 바탕으로 한 회사의 &lsquo;뫼비우스 띠&rsquo; 처럼 영원 불변하다는 것을 표현하고 있습니다.</p>
+								</div>
+								<div class="ci-cont">
+									<h3 class="title-sect">CI 의미</h3>
+									<div class="cont-box ci-mean-box">
+										<span class="img"><img src="/images/pc/img_ci_logo.jpg" alt="도화 엔지니어링 CI" /></span>
+									</div>
+									<div class="cont-desc">
+										<p>종합 엔지니어링 컨설팅 기업, 도화엔지니어링의 CI(Corporate Identity)는 원칙주의에 입각한 합리적인 경영을 토대로 반세기 동안 우리나라 엔지니어링 컨설팅 업계를 선도해온</p>
+										<p>
+											<em>오랜 전통의 전문성과 최고의 기술력을 보유</em>
+											한 일류회사라는 자부심을 바탕으로 하고, 가족적인 분위기에서 자율적으로 일하는
+											<em>인화단결을</em>
+											회사의 기본적 개념으로 하였습니다.
+										</p>
+									</div>
+								</div>
+								<div class="ci-cont">
+									<h3 class="title-sect">CI 타입</h3>
+									<div class="ci-type-box">
+										<div class="type-kor">
+											<em class="title-sub">국문타입</em>
+											<div class="ci-type-img">
+												<img src="/images/pc/img_ci_type_k01.jpg" alt="국문타입 1" />
+												<img src="/images/pc/img_ci_type_k02.jpg" alt="국문타입 2" />
+											</div>
+										</div>
+										<div class="type-eng">
+											<em class="title-sub">영문타입</em>
+											<div class="ci-type-img">
+												<img src="/images/pc/img_ci_type_e01.jpg" alt="영문타입 1" />
+												<img src="/images/pc/img_ci_type_e02.jpg" alt="영문타입 2" />
+											</div>
+										</div>
+									</div>
+									<div class="bttn-area center clfix">
+										<a class="bttn type01 style01 bttn-download" href="#none" title="C.I PDF 다운로드">
+											<span class="txt01">C.I Download PDF</span>
+											<i class="ico download" aria-hidden="true"></i>
+										</a>
+										<a class="bttn type01 style01 bttn-download" href="#none" title="C.I AI 다운로드">
+											<span class="txt01">C.I Download AI</span>
+											<i class="ico download" aria-hidden="true"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--s: 20200831 #content안으로 위치변경-->
+					<div class="btm-full-banner">
+						<div class="intro-link-wrap">
+							<div class="intro-link-box">
+								<a class="intro-link" href="#none">
+									<span class="intro-menu">People</span>
+									<strong class="intro-name">임직원정보</strong>
+								</a>
+							</div>
+							<div class="intro-link-box">
+								<a class="intro-link" href="#none">
+									<span class="intro-menu">History</span>
+									<strong class="intro-name">도화역사</strong>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!--e: 20200831 #content안으로 위치변경-->
+					<div class="sub-page-grid">
+						<div class="grid-wrap" aria-hidden="true">
+							<div class="grid-ico-wrap" aria-hidden="true">
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+							</div>
+							<div class="grid-line-wrap">
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer" id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">TOP</button>
+						</div>
+						<div class="footer-family">
+							<div class="family-inner">
+								<button class="family-btn" type="button"><span>Employee Site</span></button>
+								<ul class="family-list">
+									<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+									<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+									<li class="family-item">
+										<!--s: 20200903 텍스트 수정-->
+										<a href="#none" title="새창열림">CMFG</a>
+										<!--e: 20200903 텍스트 수정-->
+									</li>
+									<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer-inner">
+							<span class="footer-logo"><img src="/images/common_mobile/img_footer_logo.jpg" alt="DOHWA" /></span>
+							<span class="footer-sns">
+								<a class="ico-blog" href="#none" title="새창열림"><span class="hide-txt">Blog</span></a>
+								<a class="ico-youtube" href="#none" title="새창열림"><span class="hide-txt">Youtube</span></a>
+							</span>
+							<div class="footer-info">
+								<!--s :20200914 우편번호 수정-->
+								<p>서울특별시 강남구 삼성로 438 (#06178)</p>
+								<!--s :20200914 우편번호 수정-->
+								<p>대표전화 : 02 - 6323 - 3000</p>
+								<ul class="footer-menu">
+									<li>
+										<!-- s: 20200813 수정 -->
+										<a href="#none"><strong class="nanumB">개인정보처리방침</strong></a>
+										<!-- e: 20200813 수정 -->
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">
+									COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD.
+									<br />
+									AllRIGHT RESERVED.
+								</address>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<div class="cnt-grid-wrap" aria-hidden="true">
+			<div class="grid-ico-wrap" aria-hidden="true">
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+			</div>
+			<div class="grid-line-wrap" aria-hidden="true">
+				<div class="grid-line" aria-hidden="true"></div>
+				<div class="grid-line" aria-hidden="true"></div>
+			</div>
+		</div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/CustomEase.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common_mo.js"></script>
+	</body>
+</html>

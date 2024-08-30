@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/*! Nanum Barun Gothic (Korean) http://hangeul.naver.com */
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap);
+@font-face{font-family:RobotoL;src:url("../fonts/Roboto-Light.eot");src:local(☺),url("../fonts/Roboto-Light.woff2") format("woff2"),url("../fonts/Roboto-Light.woff") format("woff"),url("../fonts/Roboto-Light.ttf") format("truetype")}
+@font-face{font-family:RobotoR;src:url("../fonts/Roboto-Regular.eot");src:local(☺),url("../fonts/Roboto-Regular.woff2") format("woff2"),url("../fonts/Roboto-Regular.woff") format("woff"),url("../fonts/Roboto-Regular.ttf") format("truetype")}
+@font-face{font-family:RobotoM;src:url("../fonts/Roboto-Medium.eot");src:local(☺),url("../fonts/Roboto-Medium.woff2") format("woff2"),url("../fonts/Roboto-Medium.woff") format("woff"),url("../fonts/Roboto-Medium.ttf") format("truetype")}
+@font-face{font-family:RobotoB;src:url("../fonts/Roboto-Bold.eot");src:local(☺),url("../fonts/Roboto-Bold.woff2") format("woff2"),url("../fonts/Roboto-Bold.woff") format("woff"),url("../fonts/Roboto-Bold.ttf") format("truetype")}
+.fonts-load{visibility:hidden}
+.fonts-loaded .fonts-load{visibility:visible}
+/*# sourceMappingURL=../../sass_maps/inc/css/font.css.map */

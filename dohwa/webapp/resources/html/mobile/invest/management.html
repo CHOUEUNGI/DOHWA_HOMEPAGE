@@ -1,0 +1,999 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common_mobile.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div class="invest" id="wrap">
+			<header class="header" id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header_content">
+					<!--스크롤 및 햄버거 클릭시 .on 클래스 추가-->
+					<h1 class="logo-wrap">
+						<a href="#"></a>
+						<span class="hide-txt">DOHWA</span>
+					</h1>
+					<div class="header-menu">
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								<span class="hide-txt">Menu</span>
+							</button>
+						</span>
+						<div class="header-all-menu">
+							<!-- .bttn-all-menu 클릭시 .active 추가 (전체메뉴 노출) -->
+							<div class="scroll-wrap">
+								<ul class="all-menu-list">
+									<li class="all-menu-item">
+										<!-- 활성화 클래스 : active -->
+										<a href="#none">
+											회사소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">Vision</a></li>
+											<li class="gnb-sub-item"><a href="#">People</a></li>
+											<li class="gnb-sub-item"><a href="#">History</a></li>
+											<li class="gnb-sub-item"><a href="#">CSR</a></li>
+											<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											사업소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											투자정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+											<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+											<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+											<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											홍보센터
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<!--s: 20200831 메뉴추가-->
+											<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+											<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+											<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+											<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+											<!--e: 20200831 메뉴추가-->
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											채용정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+											<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="lang-list">
+									<li>
+										<button class="bttn-lang on" type="button">
+											KOR
+											<!-- 활성화 클래스 : on -->
+										</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ENG</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ESP</button>
+									</li>
+								</ul>
+							</div>
+							<button class="bttn-menu-close" type="button" title="전체메뉴 닫기"><span class="hide-txt">전체메뉴 닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<div id="content" role="main">
+					<div class="page-visual visual-area invest01">
+						<div class="page-title-sec">
+							<span class="title-main-sub">INVESTORS</span>
+							<h2 class="title-main">투자정보</h2>
+							<!-- s: 20200914 삭제-->
+							<!--em.title-depth2 재무정보-->
+							<!-- e: 20200914 삭제-->
+						</div>
+						<div class="visual-grid-wrap" aria-hidden="true">
+							<div class="grid-ico-wrap" aria-hidden="true">
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+							</div>
+							<div class="grid-line-wrap">
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+							</div>
+						</div>
+					</div>
+					<div class="page-tab-section">
+						<div class="tab-menu-type01 center">
+							<!--s: 20200903 depth 메뉴명 변경-->
+							<ul class="tab-list">
+								<li class="active"><a class="item" href="#none" data-id="">재무정보</a></li>
+								<li><a class="item" href="#none" data-id="">전자공고 및 공시</a></li>
+								<li><a class="item" href="#none" data-id="">IR 자료실</a></li>
+								<li><a class="item" href="#none" data-id="">주식 및 주주정보</a></li>
+							</ul>
+							<!--e: 20200903 depth 메뉴명 변경-->
+						</div>
+					</div>
+					<!-- s: 20200903 depth3 탭 추가-->
+					<div class="tab-menu-type02">
+						<ul class="tab-list tab-list-3depth">
+							<li class="active">
+								<a class="item" href="#none"><span class="txt" data-id="">주요 경영실적</span></a>
+							</li>
+							<li>
+								<a class="item" href="#none"><span class="txt" data-id="">요약 재무재표</span></a>
+							</li>
+							<li>
+								<a class="item" href="#none"><span class="txt" data-id="">신용등급</span></a>
+							</li>
+						</ul>
+					</div>
+					<!-- e: 20200903 depth3 탭 추가-->
+					<div class="contents">
+						<!--s: 20200904 수주 및 수주잔고 <> 매출 및 영업이익 위치 변경-->
+						<div class="section-cont">
+							<h3 class="title-sect">수주 및 수주잔고</h3>
+							<div class="chart-box">
+								<div class="tit-area">
+									<strong class="chart-tit">신규수주</strong>
+									<span class="chart-unit">단위 : 억원</span>
+								</div>
+								<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+							</div>
+							<div class="chart-box">
+								<div class="tit-area">
+									<strong class="chart-tit">수주잔고</strong>
+									<span class="chart-unit">단위 : 억원</span>
+								</div>
+								<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+							</div>
+						</div>
+						<div class="section-cont">
+							<h3 class="title-sect">
+								매출 및 영업이익
+								<!--s:20200910 텍스트 수정-->
+								<span class="title-sub">(K-IFRS 연결 기준)</span>
+								<!--e:20200910 텍스트 수정-->
+							</h3>
+							<div class="chart-box">
+								<div class="tit-area">
+									<strong class="chart-tit">매출액</strong>
+									<span class="chart-unit">단위 : 억원</span>
+								</div>
+								<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+							</div>
+							<div class="chart-box">
+								<div class="tit-area">
+									<strong class="chart-tit">영업이익</strong>
+									<span class="chart-unit">단위 : 억원</span>
+								</div>
+								<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+							</div>
+						</div>
+						<!--e: 20200904 수주 및 수주잔고 <> 매출 및 영업이익 위치 변경-->
+					</div>
+					<div class="contents full-type type01">
+						<div class="financial-summary">
+							<div class="summary-inner">
+								<h3 class="title-sect">
+									2019년 요약 재무제표
+									<!--s:20200910 텍스트 수정-->
+									<span class="title-sub type02">(K-IFRS 연결 기준)</span>
+									<!--e:20200910 텍스트 수정-->
+								</h3>
+								<ul class="financial-summary-item clfix">
+									<!-- s: 20200903 .num 클래스에 #id 추가-->
+									<!-- s: 20200909 li 리스트 하위 태그 변경-->
+									<li class="rnd-wh">
+										<span class="inner">
+											<em class="financial-tit">자산</em>
+											<em class="won">KRW</em>
+											<strong class="financial-cont"><span class="num" id="assets">3,759</span></strong>
+											<em class="unit">억</em>
+										</span>
+									</li>
+									<li class="rnd-wh">
+										<span class="inner">
+											<em class="financial-tit">부채</em>
+											<em class="won">KRW</em>
+											<strong class="financial-cont"><span class="num" id="liabilities">1,564</span></strong>
+											<em class="unit">억</em>
+										</span>
+									</li>
+									<li class="rnd-bl">
+										<span class="inner">
+											<em class="financial-tit">자기자본</em>
+											<em class="won">KRW</em>
+											<strong class="financial-cont"><span class="num" id="capital">2,487</span></strong>
+											<em class="unit">억</em>
+										</span>
+									</li>
+									<!-- e: 20200909 li 리스트 하위 태그 변경-->
+									<!-- e: 20200903 .num 클래스에 #id 추가-->
+								</ul>
+							</div>
+						</div>
+						<div class="content-inner">
+							<div class="section-cont">
+								<h3 class="title-sect">
+									손익계산서
+									<!--s:20200910 텍스트 수정-->
+									<span class="title-sub">(K-IFRS 연결 기준)</span>
+									<!--e:20200910 텍스트 수정-->
+								</h3>
+								<div class="chart-box">
+									<div class="tit-area">
+										<strong class="chart-tit">영업수익</strong>
+										<span class="chart-unit">단위 : 억원</span>
+									</div>
+									<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+								</div>
+								<div class="chart-box">
+									<div class="tit-area">
+										<strong class="chart-tit">영업이익</strong>
+										<span class="chart-unit">단위 : 억원</span>
+									</div>
+									<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+								</div>
+								<div class="chart-box">
+									<div class="tit-area">
+										<strong class="chart-tit">당기순이익</strong>
+										<span class="chart-unit">단위 : 억원</span>
+									</div>
+									<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+								</div>
+								<div class="table-box">
+									<p class="table-desc-txt">단위 : 억원</p>
+									<div class="table-wrap-type01">
+										<em class="table-scroll-hint active"></em>
+										<table class="table-col-type01">
+											<caption>
+												<span class="txt01">손익계산서</span>
+												<span class="txt02">:구분</span>
+												<span class="txt03">,2017년</span>
+												<span class="txt04">,2018년</span>
+												<span class="txt05">,2019년</span>
+											</caption>
+											<colgroup>
+												<col style="width:44.5vw" />
+												<col style="width:21.6vw" />
+												<col style="width:21.6vw" />
+												<col style="width:21.6vw" />
+											</colgroup>
+											<thead>
+												<tr>
+													<th>구분</th>
+													<th class="right">2017년</th>
+													<th class="right">2018년</th>
+													<th class="right">2019년</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<td>당기순이익</td>
+													<td class="right">117</td>
+													<td class="right">138</td>
+													<td class="right">174</td>
+												</tr>
+											</tfoot>
+											<tbody>
+												<tr>
+													<td>영업수익</td>
+													<td class="right">3,9905</td>
+													<td class="right">4,025</td>
+													<td class="right">5,151</td>
+												</tr>
+												<tr>
+													<td>영업비용</td>
+													<td class="right">-3,852</td>
+													<td class="right">-3,852</td>
+													<td class="right">-4,890</td>
+												</tr>
+												<tr>
+													<td>영업이익</td>
+													<td class="right">165</td>
+													<td class="right">173</td>
+													<td class="right">271</td>
+												</tr>
+												<tr>
+													<td>법인세비용 차감전순이익</td>
+													<td class="right">154</td>
+													<td class="right">180</td>
+													<td class="right">226</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="section-cont">
+								<h3 class="title-sect">
+									재무상태표
+									<!--s:20200907 추가-->
+									<span class="title-sub">(연결재무제표 기준)</span>
+									<!--e:20200907 추가-->
+								</h3>
+								<div class="chart-box">
+									<div class="tit-area">
+										<strong class="chart-tit">자산총계</strong>
+										<span class="chart-unit">단위 : 억원</span>
+									</div>
+									<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+								</div>
+								<div class="chart-box">
+									<div class="tit-area">
+										<strong class="chart-tit">부채총계</strong>
+										<span class="chart-unit">단위 : 억원</span>
+									</div>
+									<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+								</div>
+								<div class="chart-box">
+									<div class="tit-area">
+										<strong class="chart-tit">자본총계</strong>
+										<span class="chart-unit">단위 : 억원</span>
+									</div>
+									<div class="chart-area"><img src="/images/mobile/@temp_graph01.jpg" alt="@temp" /></div>
+								</div>
+								<div class="table-box">
+									<p class="table-desc-txt">단위 : 억원</p>
+									<div class="table-wrap-type01">
+										<table class="table-col-type01">
+											<caption>
+												<span class="txt01">재무상태표</span>
+												<span class="txt02">:구분</span>
+												<span class="txt03">,2017년</span>
+												<span class="txt04">,2018년</span>
+												<span class="txt05">,2019년</span>
+											</caption>
+											<colgroup>
+												<col style="width:29.1%" />
+												<col />
+												<col />
+												<col />
+											</colgroup>
+											<thead>
+												<tr>
+													<th>구분</th>
+													<th>2017년</th>
+													<th>2018년</th>
+													<th>2019년</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<td>자본총계</td>
+													<td class="right">2,358</td>
+													<td class="right">2,487</td>
+													<td class="right">2,525</td>
+												</tr>
+											</tfoot>
+											<tbody>
+												<tr>
+													<td>유동자산</td>
+													<td class="right">1,127</td>
+													<td class="right">2,487</td>
+													<td class="right">1,755</td>
+												</tr>
+												<tr>
+													<td>비유동자산</td>
+													<td class="right">2,159</td>
+													<td class="right">2.334</td>
+													<td class="right">2,198</td>
+												</tr>
+												<tr class="total-cell">
+													<td>자산총계</td>
+													<td class="right">3,286</td>
+													<td class="right">4.089</td>
+													<td class="right">3,759</td>
+												</tr>
+												<tr>
+													<td>유동부채</td>
+													<td class="right">886</td>
+													<td class="right">1.233</td>
+													<td class="right">1,442</td>
+												</tr>
+												<tr>
+													<td>비유동부채</td>
+													<td class="right">42</td>
+													<td class="right">39</td>
+													<td class="right">122</td>
+												</tr>
+												<tr class="total-cell">
+													<td>부채총계</td>
+													<td class="right">928</td>
+													<td class="right">1,272</td>
+													<td class="right">1,564</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="section-cont">
+								<h3 class="title-sect">주요지표</h3>
+								<div class="chart-box">
+									<div class="tit-area">
+										<strong class="chart-tit">수익성지표</strong>
+										<span class="chart-unit">단위 : %</span>
+									</div>
+									<div class="chart-area"><img src="/images/pc/@temp_graph02.jpg" alt="@temp" /></div>
+								</div>
+								<div class="table-wrap-type01">
+									<table class="table-col-type01">
+										<caption>
+											<span class="txt01">주요지표</span>
+											<span class="txt02">:구분</span>
+											<span class="txt03">,2017년</span>
+											<span class="txt04">,2018년</span>
+											<span class="txt04">,2019년</span>
+										</caption>
+										<colgroup>
+											<col style="width:13.1vw" />
+											<col style="width:21.6vw" />
+											<col style="width:21.6vw" />
+											<col style="width:21.6vw" />
+											<col style="width:21.6vw" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th colspan="2">구분</th>
+												<th>2017년</th>
+												<th>2018년</th>
+												<th>2019년</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td rowspan="4">
+													수
+													<br />
+													익
+													<br />
+													성
+												</td>
+												<td>ROE</td>
+												<td class="right">4.97</td>
+												<td class="right">5.69</td>
+												<td class="right">6.93</td>
+											</tr>
+											<tr>
+												<td>PER</td>
+												<td class="right">14.24</td>
+												<td class="right">21.14</td>
+												<td class="right">17.32</td>
+											</tr>
+											<tr>
+												<td>PBR</td>
+												<td class="right">0.71</td>
+												<td class="right">1.17</td>
+												<td class="right">1.18</td>
+											</tr>
+											<tr class="table-role-sum">
+												<th>
+													영업
+													<br />
+													이익률
+												</th>
+												<td class="right">4.14</td>
+												<td class="right">4.3</td>
+												<td class="right">5.24</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="contents">
+						<div class="section-cont">
+							<h3 class="title-sect">신용평가등급</h3>
+							<div class="table-box credit-rating-table-wrap">
+								<!--s :20200907 수정-->
+								<div class="credit-rating-box clfix">
+									<div class="credit-rating-txt">
+										<span class="year">2020</span>
+										<sapn class="grade">A2+</sapn>
+										<span class="txt">NICE신용평가㈜(D~A1)</span>
+									</div>
+									<div class="credit-rating-txt">
+										<span class="year">2020</span>
+										<sapn class="grade">AA+</sapn>
+										<span class="txt">㈜나이스디앤비(AAA~NG)</span>
+									</div>
+								</div>
+								<!--e :20200907 수정-->
+								<div class="table-wrap-type01">
+									<em class="table-scroll-hint active"><!-- 20200729 위치 변경, 클래스 right 추가 --></em>
+									<table class="table-col-type01 border-top-style02">
+										<caption>
+											<span class="txt01">감사위원회 활동 내역</span>
+											<span class="txt02">:평가일</span>
+											<span class="txt03">,평가대상 증권등</span>
+											<span class="txt04">,평가대상증권의 신용등급</span>
+											<span class="txt04">,평가회사(신용평가등급범위)</span>
+											<span class="txt04">,평가구분</span>
+										</caption>
+										<colgroup>
+											<col style="width:21.5vw" />
+											<col style="width:33.8vw" />
+											<col style="width:45vw" />
+											<col style="width:47vw" />
+											<col style="width:25vw" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th>평가일</th>
+												<th>평가대상 증권등</th>
+												<th>평가대상증권의 신용등급</th>
+												<th>평가회사(신용평가등급범위)</th>
+												<th>평가구분</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!--s: 20200907 텍스트 수정-->
+											<tr>
+												<td>2020.06</td>
+												<td>기업어음</td>
+												<td><span class="color-point">A2+</span></td>
+												<td>NICE신용평가㈜(D~A1)</td>
+												<td>본평가</td>
+											</tr>
+											<tr>
+												<td>2020.04</td>
+												<td>기업신용등급</td>
+												<td><span class="color-point">AA+</span></td>
+												<td>㈜나이스디앤비(AAA~NG)</td>
+												<td>공공기관 제출용</td>
+											</tr>
+											<tr>
+												<td>2019.12</td>
+												<td>기업어음</td>
+												<td><span class="color-point">A2+</span></td>
+												<td>NICE신용평가㈜(D~A1)</td>
+												<td>정기평가</td>
+											</tr>
+											<tr>
+												<td>2019.06</td>
+												<td>기업어음</td>
+												<td><span class="color-point">A2+</span></td>
+												<td>NICE신용평가㈜(D~A1)</td>
+												<td>본평가</td>
+											</tr>
+											<tr>
+												<td>2019.04</td>
+												<td>기업신용등급</td>
+												<td><span class="color-point">AA+</span></td>
+												<td>㈜나이스디앤비(AAA~NG)</td>
+												<td>공공기관 제출용</td>
+											</tr>
+											<tr>
+												<td>2018.12</td>
+												<td>기업어음</td>
+												<td><span class="color-point">A2+</span></td>
+												<td>NICE신용평가㈜(D~A1)</td>
+												<td>정기평가</td>
+											</tr>
+											<tr>
+												<td>2018.06</td>
+												<td>기업어음</td>
+												<td><span class="color-point">A2+</span></td>
+												<td>NICE신용평가㈜(D~A1)</td>
+												<td>본평가</td>
+											</tr>
+											<tr>
+												<td>2018.04</td>
+												<td>기업신용등급</td>
+												<td><span class="color-point">AA+</span></td>
+												<td>㈜나이스디앤비(AAA~NG)</td>
+												<td>공공기관 제출용</td>
+											</tr>
+											<tr>
+												<td>2017.12</td>
+												<td>기업어음</td>
+												<td><span class="color-point">A2+</span></td>
+												<td>NICE신용평가㈜(D~A1)</td>
+												<td>정기평가</td>
+											</tr>
+											<tr>
+												<td>2017.06</td>
+												<td>기업어음</td>
+												<td><span class="color-point">A2+</span></td>
+												<td>NICE신용평가㈜(D~A1)</td>
+												<td>본평가</td>
+											</tr>
+											<tr>
+												<td>2017.04</td>
+												<td>기업신용등급</td>
+												<td><span class="color-point">AA+</span></td>
+												<td>㈜나이스디앤비(AAA~NG)</td>
+												<td>공공기관 제출용</td>
+											</tr>
+											<!--e: 20200907 텍스트 수정-->
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="section-cont">
+							<h3 class="title-sect">신용평가등급 정의</h3>
+							<div class="table-wrap-type01">
+								<table class="table-col-type01">
+									<caption>
+										<span class="txt01">신용평가기관</span>
+										<span class="txt02">등급</span>
+										<span class="txt03">정의</span>
+									</caption>
+									<colgroup>
+										<col style="width:27.3vw" />
+										<col style="width:21.6vw" />
+										<col style="width:73vw" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th>신용평가기관</th>
+											<th>등급</th>
+											<th>정의</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<!--s: 20200907 텍스트 수정-->
+											<td rowspan="6">NICE신용평가</td>
+											<!--e: 20200907 텍스트 수정-->
+											<td><span class="color-point">A1</span></td>
+											<td class="left sp02">
+												적기상환능력이 최고수준으로 투자위험도가
+												<br />
+												극히 낮으며, 현 단계에서 합리적으로 예측
+												<br />
+												가능한 장래의 어떠한 환경변화에도 영향을
+												<br />
+												받지 않을 만큼 안정적임.
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left"><span class="color-point">A2</span></td>
+											<td class="left sp02">
+												적기상환능력이 우수하며 투자위험도가 매우
+												<br />
+												낮지만 A1등급에 비해 다소 열등한 요소가 있음.
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left"><span class="color-point">A3</span></td>
+											<td class="left sp02">
+												적기상환능력이 양호하며, 투자위험도는 낮은
+												<br />
+												수준이지만 장래 급격한 환경변화에 따라 다소
+												<br />
+												영향을 받을 가능성이 있음.
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left"><span class="color-point">B</span></td>
+											<td class="left sp02">
+												적기상환능력은 인정되지만 투기적 요소가
+												<br />
+												내재되어 있음.
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left"><span class="color-point">C</span></td>
+											<td class="left sp02">적기상환능력이 의문시됨.</td>
+										</tr>
+										<tr>
+											<td class="line-left"><span class="color-point">D</span></td>
+											<td class="left">지급불능 상태에 있음.</td>
+										</tr>
+										<!--s :20200907 수정		-->
+										<tr>
+											<td rowspan="11">㈜나이스디앤비</td>
+											<td>
+												<span class="color-point">
+													e-1
+													<br />
+													(AAA)
+												</span>
+											</td>
+											<td class="left sp02">
+												최상위의 상거래 신뢰도를 보유하며, 합리적으로
+												<br />
+												예측 가능한 어떠한 환경변화에도 대처가능한
+												<br />
+												초우량의 신용수준
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left">
+												<span class="color-point">
+													e-2
+													<br />
+													(AA)
+												</span>
+											</td>
+											<td class="left sp02">
+												양호한 상거래 신뢰도를 보유하며, 예측 가능한
+												<br />
+												환경변화에 대한 대처능력이 상당한 수준
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left">
+												<span class="color-point">
+													e-3
+													<br />
+													(A)
+												</span>
+											</td>
+											<td class="left sp02">
+												우위의 상거래 신뢰도가 인정되지만, 예측 가능한
+												<br />
+												환경변화에 대한 대처능력이 제한적인 수준
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left">
+												<span class="color-point">
+													e-4
+													<br />
+													(BBB)
+												</span>
+											</td>
+											<td class="left sp02">적정 수준의 상거래 신뢰도를 보유하지만, 장래 거래안정성에 다소 부정적인 요인이 내재되어 있는 수준</td>
+										</tr>
+										<tr>
+											<td class="line-left">
+												<span class="color-point">
+													e-5
+													<br />
+													(BB)
+												</span>
+											</td>
+											<td class="left sp02">비교적 무난한 수준의 상거래 신뢰도를 보유하지만, 장래 거래안정성에 다소 부정적인 요인이 내재되어 있는 수준</td>
+										</tr>
+										<tr>
+											<td class="line-left">
+												<span class="color-point">
+													e-6
+													<br />
+													(B)
+												</span>
+											</td>
+											<td class="left sp02">
+												단기적인 상거래 신뢰도는 인정되지만,
+												<br />
+												향후 환경변화에 따라 거래 안정성이 저하될 가능성이 있는 수준
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left">
+												<span class="color-point">
+													e-7
+													<br />
+													(CCC)
+												</span>
+											</td>
+											<td class="left sp02">
+												현재 수준에서 상거래 신뢰도가 제한적이며, 장래
+												<br />
+												거래 안정성 저하 가능성이 예상 되어 주의가
+												<br />
+												요망되는 수준
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left">
+												<span class="color-point">
+													e-8
+													<br />
+													(CC)
+												</span>
+											</td>
+											<td class="left sp02">
+												채무불이행 발생 가능성을 내포하고 있으며, 상위
+												<br />
+												등급에 비해 거래안정성이 매우 낮은 수준
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left">
+												<span class="color-point">
+													e-9
+													<br />
+													(C)
+												</span>
+											</td>
+											<td class="left sp02">채무불이행 발생 가능성이 높아 향후 회복가능성이 낮고 적기상환능력이 의심되는 수준으로 현금거래가 요망</td>
+										</tr>
+										<tr>
+											<td class="line-left">
+												<span class="color-point">
+													e-10
+													<br />
+													(D)
+												</span>
+											</td>
+											<td class="left sp02">
+												지급불능 상태의 매우 취약한 신용능력을
+												<br />
+												나타내어 적기 상환능력이 전무한 수준
+											</td>
+										</tr>
+										<tr>
+											<td class="line-left"><span class="color-point">NG</span></td>
+											<td class="left sp02">등급부재 : 신용평가 불응, 자료 불충분, 폐(휴)업 등의 사유로 판단보류</td>
+										</tr>
+										<!--e :20200907 수정-->
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer" id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">TOP</button>
+						</div>
+						<div class="footer-family">
+							<div class="family-inner">
+								<button class="family-btn" type="button"><span>Employee Site</span></button>
+								<ul class="family-list">
+									<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+									<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+									<li class="family-item">
+										<!--s: 20200903 텍스트 수정-->
+										<a href="#none" title="새창열림">CMFG</a>
+										<!--e: 20200903 텍스트 수정-->
+									</li>
+									<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer-inner">
+							<span class="footer-logo"><img src="/images/common_mobile/img_footer_logo.jpg" alt="DOHWA" /></span>
+							<span class="footer-sns">
+								<a class="ico-blog" href="#none" title="새창열림"><span class="hide-txt">Blog</span></a>
+								<a class="ico-youtube" href="#none" title="새창열림"><span class="hide-txt">Youtube</span></a>
+							</span>
+							<div class="footer-info">
+								<!--s :20200914 우편번호 수정-->
+								<p>서울특별시 강남구 삼성로 438 (#06178)</p>
+								<!--s :20200914 우편번호 수정-->
+								<p>대표전화 : 02 - 6323 - 3000</p>
+								<ul class="footer-menu">
+									<li>
+										<!-- s: 20200813 수정 -->
+										<a href="#none"><strong class="nanumB">개인정보처리방침</strong></a>
+										<!-- e: 20200813 수정 -->
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">
+									COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD.
+									<br />
+									AllRIGHT RESERVED.
+								</address>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<div class="cnt-grid-wrap" aria-hidden="true">
+			<div class="grid-ico-wrap" aria-hidden="true">
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+			</div>
+			<div class="grid-line-wrap" aria-hidden="true">
+				<div class="grid-line" aria-hidden="true"></div>
+				<div class="grid-line" aria-hidden="true"></div>
+			</div>
+		</div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/CustomEase.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common_mo.js"></script>
+		<script>
+			component.tabContent(".tab-list-3depth", ".contents", function() {
+				//20200903 수정
+				// count
+				var options = {
+					useEasing: false,
+					easingFn: function(t, b, c, d) {
+						var ts = (t /= d) * t;
+						var tc = ts * t;
+						return b + c * (tc + -3 * ts + 3 * t);
+					},
+					useGrouping: true,
+					separator: ",",
+					decimal: ""
+				};
+
+				new CountUp("assets", 0, 3759 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+				new CountUp("liabilities", 0, 1564 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+				new CountUp("capital", 0, 2487 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+			});
+		</script>
+	</body>
+</html>

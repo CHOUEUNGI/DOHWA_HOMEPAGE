@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dohwa.mappermssql.SpeakMapper">
+
+	<select id="getSpeakInfo" parameterType="speakVO" resultType="speakVO">
+		SELECT
+			ID, AGREE_AT, NAME, MOBILE1, MOBILE2, MOBILE3, EMAIL1, EMAIL2, RETURN_WAY, PASSWORD, TITLE, WHO, WHEREWHEN, SPEAK_CONTENT, RESULT, INSERT_DATE, UPDATE_DATE, STATE
+		FROM DH_SPEAKUP.DBO.DH_SPEAKUP_TBL
+		WHERE ID = #{id} AND PASSWORD = #{password}
+	</select>
+
+	<select id="getSpeakNewId" resultType="String">
+		SELECT
+			CASE WHEN MAX(ID) IS NOT NULL THEN CONVERT(varchar, CONVERT(bigint, MAX(ID))+1) ELSE CONVERT(varchar, getdate(), 112)+'001' END
+		FROM DBO.DH_SPEAKUP_TBL WHERE ID LIKE CONVERT(varchar, getdate(), 112)+'%'
+	</select>
+
+	<insert id="insertSpeakInfo" parameterType="speakVO">
+		INSERT INTO DH_SPEAKUP.DBO.DH_SPEAKUP_TBL(
+			ID,
+			AGREE_AT,
+			NAME,
+			MOBILE1,
+			MOBILE2,
+			MOBILE3,
+			EMAIL1,
+			EMAIL2,
+			RETURN_WAY,
+			PASSWORD,
+			TITLE,
+			WHO,
+			WHEREWHEN,
+			SPEAK_CONTENT,
+			[RESULT],
+			INSERT_DATE,
+			STATE
+		)
+		VALUES(
+			#{id},
+			#{agreeAt},
+			#{name},
+			#{mobile1},
+			#{mobile2},
+			#{mobile3},
+			#{email1},
+			#{email2},
+			#{returnWay},
+			#{password},
+			#{title},
+			#{who},
+			#{wherewhen},
+			#{speakContent},
+			#{result},
+			getdate(),
+			'접수(Received)'
+		)
+	</insert>
+
+	<insert id="insertSpeakFile" parameterType="speakFileVO">
+		INSERT INTO DH_SPEAKUP.DBO.DH_SPEAKUP_FILE_TBL(id, filename, upload_date)
+		VALUES(#{id}, #{filename}, getdate())
+	</insert>
+
+	<insert id="insertSpeakLog" parameterType="speakVO">
+		INSERT INTO DH_SPEAKUP.DBO.DH_SPEAKUP_LOG_TBL(id, LOGIN_DATE)
+		VALUES(#{id}, getdate())
+	</insert>
+
+</mapper>
+

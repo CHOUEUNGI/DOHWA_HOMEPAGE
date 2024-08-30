@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dohwa.mapper.FileMapper">
+
+	<sql id="insertColumnEtcSql">
+		<if test="null != etc1 and !''.equals(etc1)">
+			,ETC_1
+		</if>
+		<if test="null != etc2 and !''.equals(etc2)">
+			,ETC_2
+		</if>
+		<if test="null != etc3 and !''.equals(etc3)">
+			,ETC_3
+		</if>
+	</sql>
+	
+	<sql id="insertValueEtcSql">
+		<if test="null != etc1 and !''.equals(etc1)">
+			,#{etc1}
+		</if>
+		<if test="null != etc2 and !''.equals(etc2)">
+			,#{etc1}
+		</if>
+		<if test="null != etc3 and !''.equals(etc3)">
+			,#{etc1}
+		</if>
+	</sql>
+
+	<insert id="insert" parameterType="fileVO">
+		INSERT INTO
+		TB_FILE(ID
+				,ATT_SEQ
+				,ATT_TYPE
+				,ATT_ORDER
+				,ORG_NAME
+				,NEW_NAME
+				,PATH
+				,ALT
+				,TYPE
+				<include refid="insertColumnEtcSql" />
+				,LANG)
+		VALUES(#{id}
+				,#{attSeq}
+				,#{attType}
+				,#{attOrder}
+				,#{orgName}
+				,#{newName}
+				,#{path}
+				,#{alt}
+				,#{type}
+				<include refid="insertValueEtcSql" />
+				,#{lang})
+	</insert>
+
+	<insert id="insertForeach" parameterType="hashmap">
+		INSERT INTO
+		TB_FILE(ID
+				,ATT_SEQ
+				,ATT_TYPE
+				,ATT_ORDER
+				,ORG_NAME
+				,NEW_NAME
+				,PATH
+				,ALT
+				,TYPE
+				<include refid="insertColumnEtcSql" />
+				,LANG)
+		VALUES
+		<foreach collection="list" item="item" separator=",">
+				(#{item.id}
+				,#{item.attSeq}
+				,#{item.attType}
+				,#{item.attOrder}
+				,#{item.orgName}
+				,#{item.newName}
+				,#{item.path}
+				,#{item.alt}
+				,#{item.type}
+				<include refid="insertValueEtcSql" />
+				,#{item.lang})
+		</foreach>
+	</insert>
+
+	<insert id="insertForeachToList" parameterType="java.util.List">
+		INSERT INTO
+		TB_FILE(ID
+				,ATT_SEQ
+				,ATT_TYPE
+				,ATT_ORDER
+				,ORG_NAME
+				,NEW_NAME
+				,PATH
+				,ALT
+				,TYPE
+				,LANG)
+		VALUES
+		<foreach collection="list" item="item" separator=",">
+				(#{item.id}
+				,#{item.attSeq}
+				,#{item.attType}
+				,#{item.attOrder}
+				,#{item.orgName}
+				,#{item.newName}
+				,#{item.path}
+				,#{item.alt}
+				,#{item.type}
+				,#{item.lang})
+		</foreach>
+	</insert>
+
+	<select id="getFile" parameterType="fileVO" resultType="fileVO">
+		SELECT TB1.*
+		FROM TB_FILE TB1
+		<where>
+			<if test="null != id and !''.equals(id)">
+				TB1.ID = #{id}
+			</if>
+			<if test="0 lt attSeq">
+				AND TB1.ATT_SEQ = #{attSeq}
+			</if>
+			<if test="null != attType and !''.equals(attType)">
+				AND TB1.ATT_TYPE = #{attType}
+			</if>
+		</where>
+	</select>
+
+	<select id="getFileList" parameterType="fileVO" resultType="fileVO">
+		SELECT TB1.*
+		FROM TB_FILE TB1
+		<where>
+			<if test="null != id and !''.equals(id)">
+				TB1.ID = #{id}
+			</if>
+			<if test="0 lt attSeq">
+				AND TB1.ATT_SEQ = #{attSeq}
+			</if>
+			<if test="0 lt attOrder">
+				AND TB1.ATT_ORDER = #{attOrder}
+			</if>
+			<if test="null != attType and !''.equals(attType)">
+				AND TB1.ATT_TYPE = #{attType}
+			</if>
+			<if test="null != type and !''.equals(type)">
+				AND TB1.TYPE = #{type}
+			</if>
+			<if test="null != lang and !''.equals(lang)">
+				AND TB1.LANG = #{lang}
+			</if>
+			<if test="null != etc1 and !''.equals(etc1)">
+				AND TB1.ETC_1 = #{etc1}
+			</if>
+		</where>
+		ORDER BY ATT_ORDER ASC
+	</select>
+
+	<select id="getFileListByInSeq" parameterType="java.util.Map" resultType="fileVO">
+
+		SELECT TB1.*
+		FROM TB_FILE TB1
+
+		<where>
+			<foreach collection="seqs" item="seq" open="ATT_SEQ IN (" close=")" separator=",">
+			#{seq}
+			</foreach>
+			
+			AND ATT_TYPE = #{attType}
+		</where>
+
+	</select>
+
+	<delete id="deleteFileId" parameterType="fileVO">
+		DELETE FROM TB_FILE
+		WHERE ID = #{id}
+	</delete>
+
+	<delete id="deleteFileByInSeq" parameterType="java.util.Map">
+
+		DELETE FROM TB_FILE
+
+		<where>
+			<foreach collection="seqs" item="seq" open="ATT_SEQ IN (" close=")" separator=",">
+			#{seq}
+			</foreach>
+			
+			AND ATT_TYPE = #{attType}
+		</where>
+
+	</delete>
+
+	<delete id="deleteFileAttSeqType" parameterType="fileVO">
+		DELETE FROM TB_FILE
+		WHERE ATT_SEQ = #{attSeq}
+		  AND ATT_TYPE = #{attType}
+	</delete>
+	
+	<update id="update" parameterType="fileVO">
+	
+		UPDATE	TB_FILE
+		SET		ATT_SEQ = #{attSeq}
+		WHERE	ID = #{id}	
+		AND		ATT_TYPE = #{attType}
+	
+	</update>
+	
+	<update id="updateFileInfo" parameterType="fileVO">
+		UPDATE TB_FILE SET
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="null != attType and !''.equals(attType)">ATT_TYPE = #{attType},</if>
+			<if test="0 lt attSeq">ATT_ORDER = #{attOrder},</if>
+			<if test="null != etc1 and !''.equals(etc1)">ETC_1 = #{etc1},</if>
+			<if test="null != etc2 and !''.equals(etc2)">ETC_2 = #{etc2},</if>
+		</trim>
+		WHERE ID = #{id}
+	</update>
+
+</mapper>
+

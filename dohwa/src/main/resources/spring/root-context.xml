@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- 프로퍼티 설정. application.properties : 운영용,  application_${spring.profiles.active}.properties : 로컬용-->
+	<!-- 로컬에서 할 경우 서버 VM arguments에 -Dspring.profiles.active="local" 을 추가하자.-->
+	<util:properties id="config" ignore-resource-not-found="true" location="classpath:/application.properties,classpath:/application_${spring.profiles.active}.properties" />
+
+	<!--  mybatic 맵퍼 스캔 기본패키지 위치 설정 -->
+	<mybatis:scan base-package="kr.co.dohwa.mapper" factory-ref="sqlSessionFactory"/>
+	<mybatis:scan base-package="kr.co.dohwa.mappermssql" factory-ref="sqlSessionFactoryMssql"/> <!--  윤리경영 제보 라인. -->
+
+	<!-- 데이터 베이스 source 설정 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://dhhomedb.mysql.database.azure.com:3306/dohwa?serverTimezone=UTC&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useSSL=false" />
+        <property name="username" value="dhhomedbadmin@dhhomedb" />
+        <property name="password" value="dhetriveDEV!" />
+    </bean>
+
+    <!-- 데이터 베이스 source 설정 : 윤리경영 제보라인 -->
+	<bean id="dataSourceMssql" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+        <property name="url" value="jdbc:sqlserver://speakupdbsvr.database.windows.net:1433;database=DH_SPEAKUP;user=speakupadmin@speakupdbsvr;password=SpeakUp@;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;" />
+       <!--  <property name="username" value="sa" />
+        <property name="password" value="password=dhspeakup1!@" /> -->
+    </bean>
+
+	<!-- 데이터베이스 소스와 mybatis 매칭 정보 설정 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:/mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:/mapper/*Mapper.xml" />
+		<property name="typeAliasesPackage" value="kr.co.dohwa.vo" />
+	</bean>
+
+	<!-- 데이터베이스 소스와 mybatis 매칭 정보 설정 : 윤리경영 제보 라인.-->
+	<bean id="sqlSessionFactoryMssql" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceMssql" />
+		<property name="configLocation" value="classpath:/mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:/mappermssql/*Mapper.xml" />
+		<property name="typeAliasesPackage" value="kr.co.dohwa.vo" />
+	</bean>
+
+	<!-- 데이터베이스 연동을 위한 설정 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- 데이터베이스 연동을 위한 설정  : 윤리경영 제보 라인. -->
+	<bean id="sqlSessionMssql" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg ref="sqlSessionFactoryMssql" />
+	</bean>
+
+	<!-- 다국어 메시지 -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="fileEncodings" value="UTF-8"/>
+		<property name="cacheSeconds" value="5" />
+    	<property name="basenames" value="/WEB-INF/i18n/message" />
+ 	</bean>
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="ko" />
+	</bean>
+
+<!-- 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"> -->
+<!-- 		<property name="cookieName" value="dohwaClientLanguage" /> -->
+<!--         <property name="cookieMaxAge" value="86400" /> -->
+<!--         <property name="cookiePath" value="/" /> -->
+<!-- 	</bean> -->
+
+	<!-- email  -->
+   	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+   		<property name="host" value="smtp.gmail.com"/>
+   		<property name="port" value="587" />
+   		<property name="username" value="dohwarepresentinfo@gmail.com"/>
+   		<property name="password" value="gcvahpnpjparjhbr"/>
+   		<property name="javaMailProperties">
+	   		<props>
+	   			<prop key="mail.smtp.auth">true</prop>
+	   			<prop key="mail.smtp.starttls.enable">true</prop>
+	   		</props>
+   		</property>
+   	</bean>
+
+</beans>

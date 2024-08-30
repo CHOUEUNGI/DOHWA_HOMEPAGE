@@ -1,0 +1,740 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common_mobile.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/swiper.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body class="main">
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div id="wrap">
+			<header class="header" id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header_content">
+					<!--스크롤 및 햄버거 클릭시 .on 클래스 추가-->
+					<h1 class="logo-wrap">
+						<a href="#"></a>
+						<span class="hide-txt">DOHWA</span>
+					</h1>
+					<div class="header-menu">
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								<span class="hide-txt">Menu</span>
+							</button>
+						</span>
+						<div class="header-all-menu">
+							<!-- .bttn-all-menu 클릭시 .active 추가 (전체메뉴 노출) -->
+							<div class="scroll-wrap">
+								<ul class="all-menu-list">
+									<li class="all-menu-item">
+										<!-- 활성화 클래스 : active -->
+										<a href="#none">
+											회사소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">Vision</a></li>
+											<li class="gnb-sub-item"><a href="#">People</a></li>
+											<li class="gnb-sub-item"><a href="#">History</a></li>
+											<li class="gnb-sub-item"><a href="#">CSR</a></li>
+											<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											사업소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											투자정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+											<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+											<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+											<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											홍보센터
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<!--s: 20200831 메뉴추가-->
+											<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+											<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+											<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+											<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+											<!--e: 20200831 메뉴추가-->
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											채용정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+											<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="lang-list">
+									<li>
+										<button class="bttn-lang on" type="button">
+											KOR
+											<!-- 활성화 클래스 : on -->
+										</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ENG</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ESP</button>
+									</li>
+								</ul>
+							</div>
+							<button class="bttn-menu-close" type="button" title="전체메뉴 닫기"><span class="hide-txt">전체메뉴 닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<!-- s: 20200827 레이어팝업 추가 .active 디폴트 클래스 추가-->
+				<div class="lypopup-wrap active">
+					<!-- 활성화시 .active 추가 -->
+					<div class="lypopup-container">
+						<button class="lypopup-close layer-close" type="button"><span class="hide-txt">닫기</span></button>
+						<div class="lypopup-content">
+							<img src="/images/pc/img_main_pop01.jpg" alt="도화엔지니어링 신입사원 공개채용 - 도화에지니어링 함께 성장하고 싶은 여러분의 많은 지원을 기다립니다." />
+							<a href="#none" style="display:block;height:11.3333vw;padding:3.2vw 0px;text-align:center;background:#004442"><span style='font-family:"NanumSquareB";color:#fff'>도화엔지니어링 채용사이트 바로가기</span></a>
+						</div>
+						<div class="lypopup-footer clfix">
+							<span class="input-checkbox right">
+								<input type="checkbox" id="popchk01" name="popchk" />
+								<label for="popchk01"><span class="txt">오늘 하루 열지 않기</span></label>
+							</span>
+							<button class="btn-close" type="button">닫기</button>
+						</div>
+					</div>
+				</div>
+				<!-- e: 2020820 레이어팝업 추가-->
+				<div id="content" role="main">
+					<div class="main-visual-wrap">
+						<div class="main-visual visual-area">
+							<div class="main-slide swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide slide01">
+										<div class="img-box" style='background-image:url("/images/mobile/img_main_thumb_01.jpg");'></div>
+										<div class="img-box" style='background-image:url("/images/mobile/img_main_thumb_02.jpg");'></div>
+										<div class="img-box" style='background-image:url("/images/mobile/img_main_thumb_01.jpg");'></div>
+										<div class="tit-box">
+											<div class="txt-list">
+												<strong class="slide-tit ui-tit">
+													자연과 사람을
+													<br />
+													생각합니다1
+												</strong>
+												<p class="slide-txt ui-sub-tit">안전하고 행복한 삶을 위한 미래를 창조합니다.</p>
+											</div>
+											<div class="txt-list">
+												<strong class="slide-tit ui-tit">
+													자연과 사람을
+													<br />
+													생각합니다2
+												</strong>
+												<p class="slide-txt ui-sub-tit">안전하고 행복한 삶을 위한 미래를 창조합니다.</p>
+											</div>
+											<div class="txt-list">
+												<strong class="slide-tit ui-tit">
+													자연과 사람을
+													<br />
+													생각합니다3
+												</strong>
+												<p class="slide-txt ui-sub-tit">안전하고 행복한 삶을 위한 미래를 창조합니다.</p>
+											</div>
+										</div>
+										<!-- s: 20200903 서브텍스트 1개 추가-->
+										<div class="btn-wrap">
+											<a class="bttn-link" href="#none">
+												<span class="txt01">링크1</span>
+												<em class="line" aria-hidden="true"></em>
+											</a>
+										</div>
+										<!-- s: 20200903 서브텍스트 1개 추가-->
+									</div>
+									<div class="swiper-slide slide02">
+										<div class="img-box" style='background-image:url("/images/mobile/img_main_thumb_02.jpg");'></div>
+										<div class="tit-box">
+											<div class="txt-list">
+												<strong class="slide-tit ui-tit">비지니스 타이틀 텍스트</strong>
+												<p class="slide-txt ui-sub-tit">비지니스 설명 텍스트</p>
+											</div>
+										</div>
+										<!-- s: 20200903 서브텍스트 1개 추가-->
+										<div class="btn-wrap">
+											<a class="bttn-link" href="#none">
+												<span class="txt01">링크1</span>
+												<em class="line" aria-hidden="true"></em>
+											</a>
+										</div>
+										<!-- s: 20200903 서브텍스트 1개 추가-->
+									</div>
+									<div class="swiper-slide slide03">
+										<div class="img-box" style='background-image:url("/images/mobile/img_main_thumb_01.jpg");'></div>
+										<div class="img-box" style='background-image:url("/images/mobile/img_main_thumb_02.jpg");'></div>
+										<div class="tit-box">
+											<div class="txt-list">
+												<strong class="slide-tit ui-tit">
+													자연과 사람을
+													<br />
+													생각합니다3-1
+												</strong>
+												<p class="slide-txt ui-sub-tit">안전하고 행복한 삶을 위한 미래를 창조합니다.</p>
+											</div>
+											<div class="txt-list">
+												<strong class="slide-tit ui-tit">
+													자연과 사람을
+													<br />
+													생각합니다3-2
+												</strong>
+											</div>
+										</div>
+										<!-- s: 20200903 서브텍스트 1개 추가-->
+										<div class="btn-wrap">
+											<a class="bttn-link" href="#none">
+												<span class="txt01">링크1</span>
+												<em class="line" aria-hidden="true"></em>
+											</a>
+										</div>
+										<!-- s: 20200903 서브텍스트 1개 추가-->
+									</div>
+								</div>
+								<button class="swiper-button-prev bttn-swiper" type="button"><span class="hide-txt">Prev</span></button>
+								<button class="swiper-button-next bttn-swiper" type="button"><span class="hide-txt">Next</span></button>
+							</div>
+							<div class="visual-grid-wrap" aria-hidden="true">
+								<div class="grid-ico-wrap" aria-hidden="true">
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+								</div>
+								<div class="grid-line-wrap">
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line-act" aria-hidden="true"></div>
+									<div class="grid-line-act" aria-hidden="true"></div>
+									<div class="grid-line-act" aria-hidden="true"></div>
+									<div class="grid-line-act" aria-hidden="true"></div>
+								</div>
+							</div>
+						</div>
+						<div class="noti-scroll"><span>Scroll</span></div>
+					</div>
+					<div class="main-cont-wrap">
+						<div class="main-cont-box business">
+							<div class="box-inner" style="display:none">
+								<h2 class="box-tit ui-tit">BUSINESS</h2>
+								<p class="tit-desc ui-sub-tit">
+									초일류 종합엔지니어링 기업 도화의 세계를 향한 도전은
+									<br />
+									계속됩니다.
+								</p>
+								<div class="business-slide swiper-container">
+									<ul class="business-list swiper-wrapper">
+										<li class="swiper-slide">
+											<div class="img-area"><img src="/images/mobile/img_business01.png" alt="" /></div>
+											<div class="txt-area">
+												<span class="tit-eng">Water Division</span>
+												<!--s: 20200907 텍스트 수정-->
+												<a class="tit" href="#none">
+													물 부문
+													<em class="ico-arr" aria-hidden="true"></em>
+												</a>
+												<!--e: 20200907 텍스트 수정-->
+												<!-- s: 20200813 텍스트 수정-->
+												<ul class="sub-list">
+													<li><a href="#none">상수도</a></li>
+													<li><a href="#none">하수도</a></li>
+													<li><a href="#none">하천 / 수자원개발 / 댐 / 수력발전</a></li>
+												</ul>
+												<!-- e: 20200813 텍스트 수정-->
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="img-area"><img src="/images/mobile/img_business02.png" alt="" /></div>
+											<div class="txt-area">
+												<span class="tit-eng">Urban Division</span>
+												<!--s: 20200910 부문 앞 띄어쓰기-->
+												<a class="tit" href="#none">
+													도시 부문
+													<em class="ico-arr" aria-hidden="true"></em>
+												</a>
+												<!--e: 20200910 부문 앞 띄어쓰기-->
+												<!-- s: 20200813 텍스트 수정-->
+												<ul class="sub-list">
+													<li><a href="#none">도시계획&middot;개발</a></li>
+													<li><a href="#none">조경&middot;레저</a></li>
+													<li><a href="#none">스마트시티</a></li>
+												</ul>
+												<!-- e: 20200813 텍스트 수정-->
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="img-area"><img src="/images/mobile/img_business03.png" alt="" /></div>
+											<div class="txt-area">
+												<span class="tit-eng">Transportation Division</span>
+												<!--s: 20200910 부문 앞 띄어쓰기-->
+												<a class="tit" href="#none">
+													교통 부문
+													<em class="ico-arr" aria-hidden="true"></em>
+												</a>
+												<!--e: 20200910 부문 앞 띄어쓰기-->
+												<!-- s: 20200813 텍스트 수정-->
+												<ul class="sub-list">
+													<li><a href="#none">도로공항</a></li>
+													<li><a href="#none">교통계획</a></li>
+													<li><a href="#none">철도</a></li>
+													<li><a href="#none">교량</a></li>
+													<li><a href="#none">항만</a></li>
+													<li><a href="#none">지반터널</a></li>
+												</ul>
+												<!-- e: 20200813 텍스트 수정-->
+											</div>
+										</li>
+										<li class="swiper-slide">
+											<div class="img-area"><img src="/images/mobile/img_business04.png" alt="" /></div>
+											<div class="txt-area">
+												<span class="tit-eng">Energy Division</span>
+												<!--s: 20200910 부문 앞 띄어쓰기-->
+												<a class="tit" href="#none">
+													에너지 부문
+													<em class="ico-arr" aria-hidden="true"></em>
+												</a>
+												<!--e: 20200910 부문 앞 띄어쓰기-->
+												<!-- s: 20200813 텍스트 수정-->
+												<ul class="sub-list">
+													<li><a href="#none">태양광</a></li>
+													<li><a href="#none">풍력</a></li>
+													<li><a href="#none">환경플랜트</a></li>
+													<li><a href="#none">화력</a></li>
+												</ul>
+												<!-- e: 20200813 텍스트 수정-->
+											</div>
+										</li>
+									</ul>
+									<div class="swiper-pagination"></div>
+								</div>
+							</div>
+						</div>
+						<div class="main-cont-box project">
+							<div class="box-inner">
+								<div class="box-tit-area">
+									<h2 class="box-tit ui-tit">PROJECT</h2>
+									<p class="tit-desc ui-sub-tit">도화의 세계를 향한 도전은 계속됩니다.</p>
+								</div>
+								<div class="project-slide swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide list-item">
+											<a class="item-link" href="#none">
+												<span class="item-img" style="background-image:url('/images/mobile/@temp_img_main_project01.jpg'"></span>
+												<p class="item-tit">
+													<!-- 3줄 말줄임-->
+													<span class="line-clamp">킬린토 산업단지 킬린토 산업단지 킬린토 산업단지 킬린토 산업단지 킬린토 산업단지 킬린토 산업단지 킬린토 산업단지 킬린토 산업단지</span>
+												</p>
+											</a>
+										</div>
+										<div class="swiper-slide list-item">
+											<a class="list-link" href="#none">
+												<span class="item-img" style="background-image:url('/images/mobile/@temp_img_main_project01.jpg'"></span>
+												<p class="item-tit"><span class="line-clamp">Manila South Harbor</span></p>
+											</a>
+										</div>
+										<div class="swiper-slide list-item">
+											<a class="item-link" href="#none">
+												<span class="item-img" style="background-image:url('/images/mobile/@temp_img_main_project01.jpg'"></span>
+												<p class="item-tit"><span class="line-clamp">킬린토 산업단지</span></p>
+											</a>
+										</div>
+										<div class="swiper-slide list-item">
+											<a class="list-link" href="#none">
+												<span class="item-img" style="background-image:url('/images/mobile/@temp_img_main_project01.jpg'"></span>
+												<p class="item-tit"><span class="line-clamp">Manila South Harbor</span></p>
+											</a>
+										</div>
+										<div class="swiper-slide list-item">
+											<a class="item-link" href="#none">
+												<span class="item-img" style="background-image:url('/images/mobile/@temp_img_main_project01.jpg'"></span>
+												<p class="item-tit"><span class="line-clamp">킬린토 산업단지</span></p>
+											</a>
+										</div>
+										<div class="swiper-slide list-item">
+											<a class="list-link" href="#none">
+												<span class="item-img" style="background-image:url('/images/mobile/@temp_img_main_project01.jpg'"></span>
+												<p class="item-tit"><span class="line-clamp">Manila South Harbor</span></p>
+											</a>
+										</div>
+										<div class="swiper-slide list-item">
+											<a class="item-link" href="#none">
+												<span class="item-img" style="background-image:url('/images/mobile/@temp_img_main_project01.jpg'"></span>
+												<p class="item-tit"><span class="line-clamp">킬린토 산업단지</span></p>
+											</a>
+										</div>
+										<div class="swiper-slide list-item">
+											<a class="list-link" href="#none">
+												<span class="item-img" style="background-image:url('/images/mobile/@temp_img_main_project01.jpg'"></span>
+												<p class="item-tit"><span class="line-clamp">Manila South Harbor</span></p>
+											</a>
+										</div>
+									</div>
+									<div class="swiper-controller">
+										<button class="swiper-button-next swiper-button-black"></button>
+										<button class="swiper-button-prev swiper-button-black"></button>
+										<div class="swiper-pagination"></div>
+									</div>
+								</div>
+								<a class="bttn-more" href="#none"><em class="ico-more" aria-hidden="true">더보기</em></a>
+							</div>
+						</div>
+						<div class="main-cont-box news">
+							<div class="box-inner">
+								<h2 class="box-tit ui-tit">NEWS</h2>
+								<p class="tit-desc ui-sub-tit">
+									세상을 아름답게 디자인하는 도화의 새로운 소식을 만나보세요.
+									<!-- 20200813 텍스트 수정 -->
+								</p>
+								<div class="news-slide swiper-container">
+									<div class="swiper-wrapper news-list">
+										<div class="news-item swiper-slide">
+											<span class="list-category txt-blue">수주소식</span>
+											<strong class="list-tit">
+												<span class="line-clamp">
+													도화엔지니어링, 73억 ‘인천도시철도1호선 검단 연장선 2,3,4공구
+													<!-- 20200813 텍스트 수정 -->
+												</span>
+											</strong>
+											<!-- 20200813 p.list-txt 삭제-->
+											<a class="bttn-link-bd" href="#none">언론사 바로가기</a>
+										</div>
+										<div class="news-item swiper-slide">
+											<span class="list-category txt-green">보도자료</span>
+											<strong class="list-tit">
+												<span class="line-clamp">
+													외형 독주하는 도화
+													<br />
+													엔지니어링, 성장 배경
+												</span>
+											</strong>
+											<!-- 20200813 p.list-txt 삭제-->
+											<a class="bttn-link-bd" href="#none">언론사 바로가기</a>
+										</div>
+										<div class="news-item swiper-slide">
+											<span class="list-category txt-blue">수주소식</span>
+											<strong class="list-tit"><span class="line-clamp">도화엔지니어링, 일본 하코네 태양광발전소 EPC 수주</span></strong>
+											<!-- 20200813 p.list-txt 삭제-->
+											<a class="bttn-link-bd" href="#none">언론사 바로가기</a>
+										</div>
+										<div class="news-item swiper-slide">
+											<span class="list-category txt-green">보도자료</span>
+											<strong class="list-tit"><span class="line-clamp">도화 vs 한국종합기술, 1인당 매출 2강 구도 지속</span></strong>
+											<!-- 20200813 p.list-txt 삭제-->
+											<a class="bttn-link-bd" href="#none">언론사 바로가기</a>
+										</div>
+									</div>
+									<div class="swiper-pagination"></div>
+								</div>
+								<a class="bttn-more" href="#none"><em class="ico-more" aria-hidden="true">더보기</em></a>
+							</div>
+						</div>
+						<div class="main-cont-box carrer">
+							<div class="box-inner" style="display:none">
+								<!-- s: 20200804 텍스트 수정 CARRER => CAREER-->
+								<h2 class="box-tit ui-tit">CAREER</h2>
+								<!-- e: 20200804 텍스트 수정 CARRER => CAREER-->
+								<p class="tit-desc ui-sub-tit">
+									열정과 패기가 넘치는 창의적인 인재를 환영합니다.
+									<!-- 20200813 텍스트 수정 -->
+								</p>
+								<div class="ui-cont">
+									<!-- 국문-->
+									<div class="txt-box">
+										사람이 최우선이라는
+										<span class="txt-green">‘인간 중심의 사고’</span>
+										는 60년 동안 정도 경영을 하게 한 힘이었으며, 진취적인 행동과
+										<span class="txt-blue">‘창의적인 사고’</span>
+										는 미래를 개척해 나가는 원동력입니다.
+										<span class="txt-orange">‘도화인의 화합’</span>
+										을 통해 글로벌 종합 엔지니어링 회사로 도약하겠습니다.
+									</div>
+									<!-- 영문-->
+									<!--.txt-box
+                  span.txt-green "Human-centered thinking"
+                  | , which puts people first, has been the driving force behind our management for about 60 years, and 
+                  span.txt-blue "progressive action" 
+                  | and
+                  span.txt-orange "creative thinking" 
+                  | are forces that propel us forward as we pioneer the future.
+                  
+                  -->
+									<!-- 스페인어-->
+									<!--.txt-box Nuestro enfoque centrado en el ser humano, que pone en primer lugar a las personas, es el motor que impulsa a la empresa desde hace 60 años. Las palabras 
+                  span.txt-green "progreso" 
+                  | y
+                  span.txt-blue "pensamiento creativo" 
+                  | son las fuerzas que nos impulsan como pioneros del futuro. Incursionaremos en nuevas áreas como una empresa de ingeniería multidisciplinaria global a través de nuestro ideal de
+                  span.txt-orange "armonía."
+                  
+                  -->
+									<div class="btn-wrap">
+										<a class="bttn type01 style01" href="#none">
+											<span class="txt01">채용안내 바로가기</span>
+											<em class="ico01" aria-hidden="true"></em>
+										</a>
+										<br />
+										<a class="bttn type01 style01" href="#none">
+											<span class="txt01">채용사이트 바로가기</span>
+											<em class="ico01" aria-hidden="true"></em>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="main-cont-box company">
+							<div class="box-inner">
+								<h2 class="box-tit ui-tit">지속가능경영</h2>
+								<p class="tit-desc ui-sub-tit">
+									고객과 파트너 모두에게 최고의 기술과 품질을 바탕으로
+									<br />
+									정성을 다하는 기업이 되겠습니다
+								</p>
+								<div class="box-btm ui-cont">
+									<div class="box-btm-inner">
+										<a class="bttn-link-bd" href="#none"><span>나눔경영</span></a>
+									</div>
+									<div class="box-btm-inner">
+										<a class="bttn-link-bd" href="#none">
+											<span>
+												안전품질
+												<br />
+												경영
+											</span>
+										</a>
+									</div>
+									<div class="box-btm-inner">
+										<a class="bttn-link-bd" href="#none">
+											<span>
+												윤리준법
+												<br />
+												경영
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="grid-wrap" aria-hidden="true">
+								<div class="grid-ico-wrap" aria-hidden="true">
+									<div class="grid-ico" aria-hidden="true"></div>
+									<div class="grid-ico" aria-hidden="true"></div>
+								</div>
+								<div class="grid-line-wrap">
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line" aria-hidden="true"></div>
+									<div class="grid-line" aria-hidden="true"></div>
+								</div>
+							</div>
+						</div>
+						<div class="cnt-grid-wrap" aria-hidden="true">
+							<div class="grid-ico-wrap" aria-hidden="true">
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+							</div>
+							<div class="grid-line-wrap" aria-hidden="true">
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer" id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">TOP</button>
+						</div>
+						<div class="footer-family">
+							<div class="family-inner">
+								<button class="family-btn" type="button"><span>Employee Site</span></button>
+								<ul class="family-list">
+									<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+									<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+									<li class="family-item">
+										<!--s: 20200903 텍스트 수정-->
+										<a href="#none" title="새창열림">CMFG</a>
+										<!--e: 20200903 텍스트 수정-->
+									</li>
+									<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer-inner">
+							<span class="footer-logo"><img src="/images/common_mobile/img_footer_logo.jpg" alt="DOHWA" /></span>
+							<span class="footer-sns">
+								<a class="ico-blog" href="#none" title="새창열림"><span class="hide-txt">Blog</span></a>
+								<a class="ico-youtube" href="#none" title="새창열림"><span class="hide-txt">Youtube</span></a>
+							</span>
+							<div class="footer-info">
+								<!--s :20200914 우편번호 수정-->
+								<p>서울특별시 강남구 삼성로 438 (#06178)</p>
+								<!--s :20200914 우편번호 수정-->
+								<p>대표전화 : 02 - 6323 - 3000</p>
+								<ul class="footer-menu">
+									<li>
+										<!-- s: 20200813 수정 -->
+										<a href="#none"><strong class="nanumB">개인정보처리방침</strong></a>
+										<!-- e: 20200813 수정 -->
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">
+									COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD.
+									<br />
+									AllRIGHT RESERVED.
+								</address>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<div class="cnt-grid-wrap" aria-hidden="true">
+			<div class="grid-ico-wrap" aria-hidden="true">
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+			</div>
+			<div class="grid-line-wrap" aria-hidden="true">
+				<div class="grid-line" aria-hidden="true"></div>
+				<div class="grid-line" aria-hidden="true"></div>
+			</div>
+		</div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/CustomEase.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common_mo.js"></script>
+		<script src="/inc/js/main_mo.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var businessSwiper = new Swiper(".business-slide.swiper-container", {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+				//autoHeight : true,
+				pagination: {
+					el: ".business-slide .swiper-pagination"
+				}
+			});
+
+			var projectSwiper = new Swiper(".project-slide.swiper-container", {
+				slidesPerView: 1,
+				effect: "coverflow",
+				grabCursor: true,
+				slidesPerView: "auto",
+				coverflowEffect: {
+					rotate: 50,
+					stretch: 0,
+					depth: 100,
+					modifier: 1,
+					slideShadows: false
+				},
+				pagination: {
+					el: ".project-slide .swiper-pagination",
+					type: "fraction"
+				},
+				navigation: {
+					nextEl: ".project-slide .swiper-button-next",
+					prevEl: ".project-slide .swiper-button-prev"
+				}
+			});
+
+			var newsSwiper = new Swiper(".news-slide.swiper-container", {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+				pagination: {
+					el: ".news-slide .swiper-pagination"
+				}
+			});
+
+			component.selectBox(".bttn-lang-sel", 150);
+			// s: 20200827 모바일 레이어팝업 스크립트 추가
+			component.modalPopUp(".lypopup-wrap");
+		</script>
+	</body>
+</html>

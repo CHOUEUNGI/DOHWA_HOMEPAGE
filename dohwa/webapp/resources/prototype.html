@@ -1,0 +1,1412 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common.css" type="text/css" rel="stylesheet" />
+		<style>
+			#header {
+				width: 100%;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				background: black;
+				color: #ffffff;
+			}
+			#footer {
+				width: 100%;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				background: black;
+				color: #ffffff;
+			}
+			.prototype-group {
+				margin-bottom: 50px;
+			}
+			.prototype-tit01 {
+				text-align: left;
+				font-size: 20px;
+				padding: 10px 10px 10px 10px;
+				background: #cccccc;
+				font-weight: bold;
+				line-height: 1.5;
+			}
+			.input-checkbox {
+				margin-right: 10px;
+			}
+			.input-radio {
+				margin-right: 10px;
+			}
+			.code-info {
+				display: block;
+				background: #dceef9;
+				color: #000000;
+				padding: 10px;
+				border: 1px dotted #000000;
+				margin-top: 20px;
+				white-space: pre-wrap;
+				line-height: 1.5;
+				font-size: 14px;
+				font-family: NanumSquareR;
+				letter-spacing: 0;
+			}
+			.btn-info-view {
+				cursor: pointer;
+				margin-top: 10px;
+				background: #000000;
+				color: #ffffff;
+				height: 30px;
+				padding: 0 30px 0 10px;
+				position: relative;
+			}
+			.btn-info-view:before {
+				display: block;
+				content: "";
+				width: 9px;
+				height: 1px;
+				background: #ffffff;
+				position: absolute;
+				top: 50%;
+				right: 10px;
+				margin-top: -1px;
+			}
+			.btn-info-view:after {
+				display: block;
+				content: "";
+				width: 1px;
+				height: 9px;
+				background: #ffffff;
+				position: absolute;
+				top: 50%;
+				right: 14px;
+				margin-top: -5px;
+			}
+			.code-info-view {
+				display: none;
+				background: #dceee5;
+				color: #000000;
+				padding: 10px;
+				border: 1px dotted #000000;
+				margin-top: 0;
+				white-space: pre-wrap;
+				line-height: 1.5;
+				font-size: 14px;
+			}
+			.btn-info-view.on + .code-info-view {
+				display: block;
+			}
+			.btn-info-view.on:after {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div id="wrap">
+			<header id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header-content">
+					<h1 class="logo-wrap"><a href="#">도화엔지니어링</a></h1>
+					<div class="gnb-wrap">
+						<ul class="gnb-menu-list">
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">회사소개</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">Overview</a></li>
+									<li class="gnb-sub-item"><a href="#">Vision</a></li>
+									<li class="gnb-sub-item"><a href="#">People</a></li>
+									<li class="gnb-sub-item"><a href="#">History</a></li>
+									<li class="gnb-sub-item"><a href="#">CSR</a></li>
+									<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">사업소개</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">Overview</a></li>
+									<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">투자정보</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+									<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+									<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+									<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">홍보센터</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+									<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+									<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+									<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+								</ul>
+							</li>
+							<li class="gnb-menu-item">
+								<a class="gnb-menu-link" href="#">채용정보</a>
+								<ul class="gnb-sub-list">
+									<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+									<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="menu">
+						<span class="down-wrap">
+							<a class="bttn-down-brochure" href="#none">
+								회사소개 브로셔
+								<em class="ico down" aria-hidden="true"></em>
+							</a>
+						</span>
+						<span class="lang-wrap">
+							<button class="bttn-lang-sel" type="button">KOR</button>
+							<!-- 20200804 텍스트 수정 KR => KOR -->
+							<ul class="lang-list">
+								<li>
+									<button class="bttn-lang" type="button">KOR</button>
+									<!-- 20200804 텍스트 수정 KR => KOR -->
+								</li>
+								<li>
+									<button class="bttn-lang" type="button">ENG</button>
+								</li>
+								<li>
+									<button class="bttn-lang" type="button">ESP</button>
+								</li>
+							</ul>
+						</span>
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								MENU
+							</button>
+						</span>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<h1 class="hide-txt">프로토타입</h1>
+				<div id="content" role="main">
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] 기본</h2>
+						<pre class="code-info">
+# 소스내 탭 공백을 사용하고 space 2칸 범위를 사용합니다.
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] CSS</h2>
+						<pre class="code-info">
+# css 클래스 단어 구분은 ( - ) 대쉬를 사용 합니다.
+# css 의 텍스트 속성에는 font-family, color, line-height, font-size 4가지 속성이 정의 되어야 합니다.
+# css line-height 는 단위를 넣지 않고 사용합니다. (예: line-height:1.5)
+# 위 비율을 계산 하는 방법은 PSD 에서 font-size가 20px 이고 line-height 가 34 이면 34 나누기 20 하면 1.7 이라는 비율이 나옵니다. 그 값을 사용하면 됩니다.
+# sass, pug 이미지 url 공통 변수를 사용하지 않고 직접 입력합니다.
+# sass font-size 는 _setting.scss 정의된 변수를 사용 합니다.
+# sass font-family 는 _setting.scss 정의된 변수를 사용 합니다.
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] HTML</h2>
+						<pre class="code-info">
+# table - caption 반응형을 고려한 마크업 형식
+# caption 의 클래스명은 아래 같이 정의 해줍니다.
+# 페이지마다 생성되는 순서대로 번호로 클래스명을 추가 해줍니다.
+
+&#60;caption class="caption-페이지명-넘버링">
+	&#60;span class="txt01"> 테이블 이름 &#60;/span>
+	&#60;span class="txt02"> :th 이름 &#60;/span>
+	&#60;span class="txt03"> ,th 이름 &#60;/span>
+	&#60;span class="txt04"> ,th 이름 &#60;/span>
+	&#60;span class="txt05"> ,th 이름 &#60;/span>
+&#60;/caption>
+
+# table - colgroup 반응형을 고려한 마크업 형식
+# colgroup 의 클래스명은 아래 같이 정의 해줍니다.
+# 페이지마다 생성되는 순서대로 번호로 클래스명을 추가 해줍니다.
+
+&#60;colgroup class="colgroup-페이지명-넘버링">
+	&#60;col class="col01">
+	&#60;col class="col02">
+	&#60;col class="col03">
+&#60;/colgroup>
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] Images</h2>
+						<pre class="code-info">
+# 헤더, 푸터의 공통 이미지들은 css sprite 를 사용 합니다.
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] 웹접근성</h2>
+						<pre class="code-info">
+# 빈 태그에는 aria-hidden="true" 속성을 넣어줍니다. (예: &lt;em class="ico" aria-hidden="true"&gt;&lt;/em&gt;)
+
+# 모바일에서 모든 a 태그는 아래의 속성이 공통으로 적용되어 있습니다.
+# content:'공백문자', 아래와 같이 공백문자를 넣어서 초점영역을 정확히 잡아주는 역할을 합니다.
+# a 태그의 before 속성을 사용하지 않도록 주의 합니다.
+a:before{
+	content: '　';position:absolute;font-size:0;
+}
+
+# 새창으로 열리는 링크는 title="새창열림" 으로 통일합니다.
+# 해당 기능의 대한 내용이 있을 경우 title 을 또 사용해서 내용이 중복되지 않도록 합니다.
+	예) &#60;a href="#" title="더보기">더보기&#60;/a>
+
+# talbe - caption 입력 형식
+# 테이블 이름: th, th, th, th
+# 위와 같이 테이블 이름과 th 항목만 나열합니다. 뒤에 무슨무슨 테이블이라는 단어도 붙이지 않습니다.
+# caption HTML 가이드도 확인 바랍니다.
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] 주석</h2>
+						<pre class="code-info">
+# html 구분시
+# &#60;!-- s: header -->
+#         소스내용
+# &#60;!-- e: header -->
+
+# html 수정시
+# &#60;!-- s: 20190520 수정 -->
+#         소스내용
+# &#60;!-- e: 20190520 수정 -->
+
+# css 구분시
+# /*! prototype */
+# /*! prototype - pc */
+# /*! prototype - mobile */
+# /*! layout */
+# /*! main */
+
+# css 구분시 추가 내용이 필요할때
+# /*!
+#  * prototype
+#  * 프로토타입 PC 버전
+#  */
+
+# /*!
+#  * 컨텐츠 카테고리명
+#  * 컨텐츠 설명 1
+#  * 컨텐츠 설명 2
+#  */
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] 폴더 구조</h2>
+						<pre class="code-info">
+=== 산출물 제출용 가이드 및 프로토타입 작성 하기. 제출시에는 안내멘트들은 지워 주세요. (구성은 프로젝트에 맞춰서 구성하기) ===
+
+# /inc/css/ - css 폴더
+# /inc/js/ - 프론트 js 폴더
+# /inc/fonts/ - 웹폰트 폴더
+# /inc/layout/ - 공통 include 파일 폴더
+# /images/ - 이미지 폴더
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] 공통 파일 설명</h2>
+						<pre class="code-info">
+# cl.html - 코딩리스트
+# prototype.html - 코딩 가이드
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] CSS 파일 설명</h2>
+						<pre class="code-info">
+# common.css - 컨텐츠 css 파일 (언어별로 동일이름으로 존재합니다.)
+# reset.css - 공통 브라우저 리셋 css 파일
+# print.css - 공통 프린트 출력 설정 css 파일
+# font.css - 공통 웹폰트 설정 css 파일
+
+=== 추가로 생성되는 css 파일 설명 필요 ===
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] SASS 파일 구성 - 산출물 제출시 SASS 부분은 지우고 제출하기</h2>
+						<pre class="code-info">
+# 공통 속성과 화면별 sass 로 분리 합니다.
+# 각각의 sass 파일 안에는 다시 3개의 파일로 분리 됩니다.
+# _mobile, _tablet, _pc 세 개의 브레이크 포인트로 구분 됩니다.
+
+# _sprite_mobile.scss - mobile 스프라이트
+# _sprite_pc.scss - pc 스프라이트
+# _prototype.scss - 공통 프로토타입 (버튼, 탭, 테이블, 폼요소등)
+# _layout.scss - 공통 레이아웃 (헤더, 푸터, 팝업, 레이아웃등)
+	ㄴ _layout_mobile.scss
+	ㄴ _layout_tablet.scss
+	ㄴ _layout_pc.scss
+
+# 아래는 카테고리별 구성 예시
+# company.scss - 회사소개 페이지
+	ㄴ _company_mobile.scss
+	ㄴ _company_tablet.scss
+	ㄴ _company_pc.scss
+
+# main.scss - 메인 페이지
+	ㄴ _main_mobile.scss
+	ㄴ _main_tablet.scss
+	ㄴ _main_pc.scss
+
+# product.scss - 상품 페이지
+	ㄴ _product_mobile.scss
+	ㄴ _product_tablet.scss
+	ㄴ _product_pc.scss
+
+# recruit.scss - 채용 페이지
+	ㄴ _recruit_mobile.scss
+	ㄴ _recruit_tablet.scss
+	ㄴ _recruit_pc.scss
+
+# etc.scss - 기타 (유틸, 푸터)
+	ㄴ _etc_mobile.scss
+	ㄴ _etc_tablet.scss
+	ㄴ _etc_pc.scss
+
+
+=== 추가로 생성되는 sass 파일 설명 필요 20190514 ===
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">[가이드] JS 파일 설명</h2>
+						<pre class="code-info">
+# common.js - 프론트 ui 스크립트 파일
+# jquery.js - 공통 jquery 플러그인
+
+=== 추가로 생성되는 js 파일 설명 필요 ===</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">input[type="checkbox"]</h2>
+						<span class="input-checkbox">
+							<input type="checkbox" id="checkbox201" name="checkbox201" />
+							<label for="checkbox201"><span class="hide-txt">숨김텍스트처리</span></label>
+						</span>
+						<span class="input-checkbox">
+							<input type="checkbox" id="checkbox202" name="checkbox202" checked />
+							<label for="checkbox202"><span class="hide-txt">숨김텍스트처리</span></label>
+						</span>
+						<span class="input-checkbox">
+							<input type="checkbox" id="checkbox203" name="checkbox203" disabled />
+							<label for="checkbox203"><span class="hide-txt">숨김텍스트처리</span></label>
+						</span>
+						<span class="input-checkbox">
+							<input type="checkbox" id="checkbox204" name="checkbox204" checked disabled />
+							<label for="checkbox204"><span class="hide-txt">숨김텍스트처리</span></label>
+						</span>
+						<pre class="code-info">
+# 텍스트가 없는 기본형. (라디오버튼 내용 동일)
+# 텍스트의 위치에 따라 right, left, up, down 클래스를 붙여줍니다.
+# label 태그에는 width, height 값을 지정 하면 안됩니다.
+# label 태그에는 가로 길이에 맞게 padding 을 조정합니다.
+# 체크박스 및 라디오버튼의 선택표시는 이미지를 사용하지 않고 css를 사용했습니다.
+# input 태그는 appearance를 사용하면 IE 에서는 기본 컴퍼넌트가 지워지지 않기 때문에 숨김텍스트 처리하듯이 지웠습니다.
+# 애니메이션이 필요 없을 경우는 css에서 애니메이션 영역을 지우고 label:after 를 display:none; 처리하고 checked 되면 display:block; 되게 수정하면 됩니다.
+# 신규타입을 만들때는 "input-checkbox-타입형태" 로 네이밍해서 만듭니다.
+# 신규타입은 input-checkbox에 추가로 클래스 붙여서 css를 바꾸지 않고 위와 같은 네이밍으로 기본형태와 분리하여 css 작성해 줍니다.
+</pre
+						>
+						<button class="btn-info-view" type="button">소스보기</button>
+						<pre class="code-info-view">
+&#60;span class="input-checkbox">
+	&#60;input type="checkbox" id="checkbox201" name="checkbox201">
+	&#60;label for="checkbox201">
+		&#60;span class="hide-txt">숨김텍스트처리&#60;/span>
+	&#60;/label>
+&#60;/span>
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">input[type="checkbox"] - 텍스트 위치 변경</h2>
+						<span class="input-checkbox right">
+							<input type="checkbox" id="checkbox211" name="checkbox211" />
+							<label for="checkbox211"><span class="txt">텍스트 오른쪽</span></label>
+						</span>
+						<span class="input-checkbox left">
+							<input type="checkbox" id="checkbox221" name="checkbox221" />
+							<label for="checkbox221"><span class="txt">텍스트 왼쪽</span></label>
+						</span>
+						<span class="input-checkbox down">
+							<input type="checkbox" id="checkbox231" name="checkbox231" />
+							<label for="checkbox231"><span class="txt">텍스트 아래쪽</span></label>
+						</span>
+						<span class="input-checkbox up">
+							<input type="checkbox" id="checkbox241" name="checkbox241" />
+							<label for="checkbox241"><span class="txt">텍스트 위쪽</span></label>
+						</span>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">input[type="radio"]</h2>
+						<span class="input-radio">
+							<input type="radio" id="radio201" name="radio201" />
+							<label for="radio201"><span class="hide-txt">숨김텍스트처리</span></label>
+						</span>
+						<span class="input-radio">
+							<input type="radio" id="radio202" name="radio202" checked />
+							<label for="radio202"><span class="hide-txt">숨김텍스트처리</span></label>
+						</span>
+						<span class="input-radio">
+							<input type="radio" id="radio203" name="radio203" disabled />
+							<label for="radio203"><span class="hide-txt">숨김텍스트처리</span></label>
+						</span>
+						<span class="input-radio">
+							<input type="radio" id="radio204" name="radio204" checked disabled />
+							<label for="radio204"><span class="hide-txt">숨김텍스트처리</span></label>
+						</span>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">input[type="radio"] - 텍스트 위치 변경</h2>
+						<span class="input-radio right">
+							<input type="radio" id="radio211" name="radio211" />
+							<label for="radio211"><span class="txt">텍스트 오른쪽</span></label>
+						</span>
+						<span class="input-radio left">
+							<input type="radio" id="radio221" name="radio221" />
+							<label for="radio221"><span class="txt">텍스트 왼쪽</span></label>
+						</span>
+						<span class="input-radio down">
+							<input type="radio" id="radio231" name="radio231" />
+							<label for="radio231"><span class="txt">텍스트 아래쪽</span></label>
+						</span>
+						<span class="input-radio up">
+							<input type="radio" id="radio241" name="radio241" />
+							<label for="radio241"><span class="txt">텍스트 위쪽</span></label>
+						</span>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">input text</h2>
+						<br />
+						<span class="input-txt">
+							<input type="text" title="검색어 입력" placeholder="검색어를 입력해주세요" />
+						</span>
+						<br />
+						<br />
+						<span class="input-txt">
+							<input type="text" title="검색어 입력" placeholder="읽기 전용" readonly />
+						</span>
+
+						<pre class="code-info">
+# input text 기본형.
+# 가로 길이는 span.input-txt에 정해주면 됩니다. input 가로길이는 항상 100% 입니다.
+# 신규타입을 만들때는 "input-txt-타입형태" 로 네이밍해서 만듭니다.
+# 신규타입은 input-txt에 추가로 클래스 붙여서 css를 바꾸지 않고 위와 같은 네이밍으로 기본형태와 분리하여 css 작성해 줍니다.
+</pre
+						>
+						<button class="btn-info-view" type="button">소스보기</button>
+						<pre class="code-info-view">
+&#60;span class="input-txt">
+	&#60;input type="text" title="검색어 입력" placeholder="검색어를 입력해주세요">
+&#60;/span>
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">input[type="file"]</h2>
+						<br />
+						<div class="input-file">
+							<label class="bttn-file-upload" for="file-upload">
+								파일선택
+								<input class="inp-file-hide" type="file" id="file-upload" />
+							</label>
+							<input class="selected-file" type="text" disabled="true" placeholder="선택된 파일 없음" aria-hidden="true" />
+							<p class="info-txt">* 첨부 파일은 jpg, png, gif, hwp, pdf, ppt, xls, zip 파일에 한해 등록이 가능합니다. / 최대 용량 : 00MB</p>
+						</div>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">input date (IE 미지원)</h2>
+						<br />
+						<span class="input-date">
+							<input type="date" title="날짜 선택" value="2019-02-28" />
+						</span>
+
+						<pre class="code-info">
+# input date 기본형.
+# IE는 지원하지 않기 때문에 모바일웹에서 사용하기 적당합니다.
+# 기본 컴퍼넌트는 웹접근성을 준수합니다.(인증마크 획득시 통과)
+# 커스터마이징에 제약사항이 많습니다.
+# 텍스트가 가운데정렬이 되지 않아 텍스트 오른쪽에 아이콘 이미지를 추가하는 형태를 만들어서 maring:0 auto; 등으로 달력 컴퍼넌트 전체를 가운데 정렬해서 사용해야 합니다.
+</pre
+						>
+						<button class="btn-info-view" type="button">소스보기</button>
+						<pre class="code-info-view">
+&#60;span class="input-date">
+	&#60;input type="date" title="날짜 선택" value="2019-02-28">
+&#60;/span>
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">셀렉트 박스 (IE9 부터 지원)</h2>
+						<br />
+						<span class="selectbox">
+							<select title="">
+								<option value="">선택</option>
+								<option value="">아이템1</option>
+								<option value="">아이템2</option>
+							</select>
+						</span>
+						<br />
+						<br />
+						<span class="selectbox">
+							<select title="" disabled>
+								<option value="">disabled</option>
+								<option value="">아이템1</option>
+								<option value="">아이템2</option>
+							</select>
+						</span>
+						<br />
+						<br />
+						<div class="select-box">
+							<select name="">
+								<option value="">카테고리 선택</option>
+								<option value="">홈페이지 문의</option>
+								<option value="">기타문의</option>
+							</select>
+						</div>
+						<pre class="code-info">
+# selectbox 기본형.
+# IE9도 지원 합니다.
+# span.selectbox 의 가로 길이를 조정 합니다.
+# select의 가로는 항상 100% 입니다.
+# 신규타입을 만들때는 "selectbox-타입형태" 로 네이밍해서 만듭니다.
+# 신규타입은 selectbox에 추가로 클래스 붙여서 css를 바꾸지 않고 위와 같은 네이밍으로 기본형태와 분리하여 css 작성해 줍니다.
+# 셀렉트박스는 사용시 웹접근성 준수를 위하여 선택 후 "버튼"을 누를 수 있도록 퍼블리싱되어야 합니다.
+</pre
+						>
+						<button class="btn-info-view" type="button">소스보기</button>
+						<pre class="code-info-view">
+&#60;span class="selectbox">
+	&#60;select title="">
+		&#60;option value="">선택&#60;/option>
+		&#60;option value="">아이템1&#60;/option>
+		&#60;option value="">아이템2&#60;/option>
+	&#60;/select>
+&#60;/span>
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">버튼 타입 - 1</h2>
+						<br />
+						<button class="bttn type01 style01" type="button" title="">
+							<span class="txt01">button태그 - 라운드</span>
+							<em class="ico01" aria-hidden="true"></em>
+						</button>
+						<a class="bttn type01 style01" href="#none" role="button">
+							<span class="txt01">a태그 버튼역할 - 라운드</span>
+							<em class="ico01" aria-hidden="true"></em>
+						</a>
+						<br />
+						<div class="bttn-area">
+							<a class="bttn type01 style01" href="#none" role="button">
+								<span class="txt01">버튼영역</span>
+								<em class="ico01" aria-hidden="true"></em>
+							</a>
+						</div>
+						<div class="bttn-area center">
+							<a class="bttn type01 style01" href="#none" role="button">
+								<span class="txt01">중앙정렬 버튼 영역</span>
+								<em class="ico01" aria-hidden="true"></em>
+							</a>
+							<a class="bttn type01 style01" href="#none" role="button">
+								<span class="txt01">중앙정렬 버튼 영역</span>
+								<em class="ico01" aria-hidden="true"></em>
+							</a>
+						</div>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">버튼 타입 - 2</h2>
+						<br />
+						<button class="bttn-more" type="button" title="">
+							<span class="hide-txt">더보기</span>
+							<em class="ico-more" aria-hidden="true"></em>
+						</button>
+						<a class="bttn-more" href="#none">
+							<span class="hide-txt">더보기</span>
+							<em class="ico-more" aria-hidden="true"></em>
+						</a>
+						<button class="bttn-more style01" type="button" title="">
+							<span class="hide-txt">더보기</span>
+							<em class="ico-more" aria-hidden="true"></em>
+						</button>
+						<a class="bttn-more style01" href="#none">
+							<span class="hide-txt">더보기</span>
+							<em class="ico-more" aria-hidden="true"></em>
+						</a>
+						<br />
+						<br />
+						<button class="bttn-download" type="button" title="">
+							<em class="ico download" aria-hidden="true"></em>
+							다운로드
+						</button>
+						<a class="bttn-download" href="#none" title="">
+							<em class="ico download" aria-hidden="true"></em>
+							다운로드
+						</a>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">탭 메뉴</h2>
+						<br />
+						<div class="tab-menu-type01 center">
+							<ul class="tab-list">
+								<li class="active"><a class="item" href="#none" data-id="msg45">탭 메뉴1</a></li>
+								<li><a class="item" href="#none" data-id="msg46">탭 메뉴2</a></li>
+								<li><a class="item" href="#none" data-id="msg47">탭 메뉴3</a></li>
+								<li><a class="item" href="#none" data-id="msg48">탭 메뉴4</a></li>
+							</ul>
+						</div>
+						<button class="btn-info-view" type="button">소스보기</button>
+						<pre class="code-info-view">
+&#60;div class="tab-menu-type01 center">
+	&#60;ul class="tab-list">
+		&#60;li>
+			&#60;a class="item" href="#none">탭 메뉴1&#60;/a>
+		&#60;/li>
+		&#60;li>
+			&#60;a class="item" href="#none">탭 메뉴2&#60;/a>
+		&#60;/li>
+		&#60;li>
+			&#60;a class="item" href="#none">탭 메뉴3&#60;/a>
+		&#60;/li>
+		&#60;li>
+			&#60;a class="item" href="#none">탭 메뉴4&#60;/a>
+		&#60;/li>
+	&#60;/ul>
+&#60;/div>
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">탭 메뉴 (테이블 형식)</h2>
+						<br />
+						<div class="tab-menu-type02">
+							<ul class="tab-list">
+								<li class="active">
+									<a class="item" href="#none"><span class="txt" data-id="">탭 메뉴1</span></a>
+								</li>
+								<li>
+									<a class="item" href="#none"><span class="txt" data-id="">탭 메뉴2</span></a>
+								</li>
+								<li>
+									<a class="item" href="#none"><span class="txt" data-id="">탭 메뉴3</span></a>
+								</li>
+								<li>
+									<a class="item" href="#none"><span class="txt" data-id="">탭 메뉴4</span></a>
+								</li>
+							</ul>
+						</div>
+						<pre class="code-info">
+# 탭 메뉴 리스트의 넓이를 지정할 경우, .tab-menu-type02 에 별도의 클래스를 추가하여 지정합니다.
+# 탭 메뉴 중앙정렬이 필요한 경우, .tab-menu-type02에 .center 추가. 오른쪽이 정렬할 경우 .right (부모태그에 .clfix 추가해 주셔야 합니다.) default : left
+# 텝 메뉴 텍스트가 두줄일 경우, br 태그를 사용하지 않고 span.txt 태그를 추가하여 사용 합니다.
+# 텍스트 좌측, 우측 정렬시 .tab 에 별도의 클래스 추가하여 사용합니다.
+</pre
+						>
+						<button class="btn-info-view" type="button">소스보기</button>
+						<pre class="code-info-view">
+&#60;div class="tab-menu-type02">
+	&#60;ul class="tab-list">
+		&#60;li>
+			&#60;a class="item" href="#none">
+				&#60;span class="txt">탭 메뉴1&#60;/span>
+			&#60;/a>
+		&#60;/li>
+		&#60;li>
+			&#60;a class="item" href="#none">
+				&#60;span class="txt">탭 메뉴2&#60;/span>
+				&#60;em class="icon" aria-hidden="true">&#60;/em>
+			&#60;/a>
+		&#60;/li>
+		&#60;li>
+			&#60;a class="item" href="#none">
+				&#60;span class="txt">탭 메뉴3&#60;/span>
+			&#60;/a>
+		&#60;/li>
+		&#60;li>
+			&#60;a class="item" href="#none">
+				&#60;span class="txt">탭 메뉴4&#60;/span>
+				&#60;em class="icon" aria-hidden="true">&#60;/em>
+			&#60;/a>
+		&#60;/li>
+	&#60;/ul>
+&#60;/div>
+</pre
+						>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">테이블 (col 타입 1)</h2>
+						<p class="table-desc-txt">(단위)</p>
+						<div class="table-wrap-type01">
+							<table class="table-col-type01">
+								<caption>
+									<span class="txt01">공시자료</span>
+									<span class="txt02">:번호</span>
+									<span class="txt03">,보고서명</span>
+									<span class="txt04">,등록일</span>
+								</caption>
+								<colgroup>
+									<col style="width:7%" />
+									<col style="width:80%" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>보고서명</th>
+										<th>등록일</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<td>총계</td>
+										<td class="left">기업설명회 총계</td>
+										<td>2019.04.05</td>
+									</tr>
+								</tfoot>
+								<tbody>
+									<tr>
+										<td>10</td>
+										<td class="left">기업설명회(IR)개최(안내공시)</td>
+										<td>2019.04.05</td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td class="left">
+											<a class="txt-link" href="#"><span class="line-clamp">링크 말줄임 - 기업설명회(IR)개최(안내공시) 기업설명회(IR)개최(안내공시) 기업설명회(IR)개최(안내공시) 기업설명회(IR)개최(안내공시) 기업설명회(IR)개최(안내공시)</span></a>
+										</td>
+										<td>2019.04.05</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td class="left">기업설명회(IR)개최(안내공시)</td>
+										<td>2019.04.05</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td class="left">기업설명회(IR)개최(안내공시)</td>
+										<td>2019.04.05</td>
+									</tr>
+									<tr class="total-cell">
+										<td>6</td>
+										<td class="left">기업설명회(IR)개최(안내공시)</td>
+										<td>2019.04.05</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td class="left">기업설명회(IR)개최(안내공시)</td>
+										<td>2019.04.05</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">테이블 (col 타입 1)</h2>
+						<div class="table-wrap-type01">
+							<table class="table-col-type01">
+								<caption>
+									<span class="txt01">감사위원회 활동 내역</span>
+									<span class="txt02">:회차</span>
+									<span class="txt03">,개최일자</span>
+									<span class="txt04">,의안내용</span>
+									<span class="txt04">,가결여부</span>
+									<span class="txt04">,사외이사 출석현황</span>
+								</caption>
+								<colgroup>
+									<col style="width:10%" />
+									<col style="width:15%" />
+									<col style="width:40%" />
+									<col style="width:15%" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<th>회차</th>
+										<th>개최일자</th>
+										<th>의안내용</th>
+										<th>가결여부</th>
+										<th>사외이사 출석현황</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td rowspan="2">제5차</td>
+										<td rowspan="2">2018.10.25</td>
+										<td class="left">외부감사인 검토 진행경과 보고의 건</td>
+										<td>-</td>
+										<td rowspan="2">3/3</td>
+									</tr>
+									<tr>
+										<td class="left">2018년 3분기 재무제표(案) 보고의 건</td>
+										<td>
+											<a class="bttn-download-type02" href="#none" role="button"><span class="hide-txt">자료 다운로드</span></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">테이블 (col 타입 1)</h2>
+						<div class="table-wrap-type01">
+							<table class="table-col-type01">
+								<caption>
+									<span class="txt01">사이버 신문고</span>
+									<span class="txt02">:E-mail</span>
+									<span class="txt03">,Tel</span>
+									<span class="txt04">,Fax</span>
+									<span class="txt04">,주소</span>
+									<span class="txt04">,바로가기</span>
+								</caption>
+								<colgroup>
+									<col />
+									<col />
+									<col />
+									<col />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<th>E-mail</th>
+										<th>Tel</th>
+										<th>Fax</th>
+										<th>주소</th>
+										<th>바로가기</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="middle">lethicsoffice@lgchem.com</td>
+										<td class="middle">02-785-2020</td>
+										<td class="middle">02-3773-7099</td>
+										<td class="middle">
+											<div class="txt01">서울시 영등포구 여의대로 128</div>
+											<div class="txt01">LG트윈타워 동관 24층</div>
+											<div class="txt01">LG화학 윤리사무국</div>
+										</td>
+										<td class="middle">
+											<div class="link01">
+												<a class="btn-link01" href="#none" title="새창열림" target="_blank">
+													<span class="txt">사이버신문고 홈</span>
+													<em class="ico" aria-hidden="true"></em>
+												</a>
+											</div>
+											<div class="link01">
+												<a class="btn-link01" href="#none" title="새창열림" target="_blank">
+													<span class="txt">제보유형</span>
+													<em class="ico" aria-hidden="true"></em>
+												</a>
+											</div>
+											<div class="link01">
+												<a class="btn-link01" href="#none" title="새창열림" target="_blank">
+													<span class="txt">제보대상</span>
+													<em class="ico" aria-hidden="true"></em>
+												</a>
+											</div>
+											<div class="link01">
+												<a class="btn-link01" href="#none" title="새창열림" target="_blank">
+													<span class="txt">제보자 보호항목</span>
+													<em class="ico" aria-hidden="true"></em>
+												</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">테이블 (col 타입 1)</h2>
+						<div class="table-wrap-type01">
+							<table class="table-col-type01">
+								<caption>
+									<span class="txt01">감사위원회 활동 내역</span>
+									<span class="txt02">:회차</span>
+									<span class="txt03">,개최일자</span>
+									<span class="txt04">,의안내용</span>
+									<span class="txt04">,가결여부</span>
+									<span class="txt04">,사외이사 출석현황</span>
+								</caption>
+								<colgroup>
+									<col style="width:12%" />
+									<col style="width:12%" />
+									<col style="width:35%" />
+									<col />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th colspan="2">전일종가</th>
+										<td class="left">외부감사인 검토 진행경과 보고의 건</td>
+										<td>-</td>
+										<td class="right">7,830</td>
+									</tr>
+									<tr>
+										<th rowspan="2">52주</th>
+										<th>최고</th>
+										<td class="left">외부감사인 검토 진행경과 보고의 건</td>
+										<td>-</td>
+										<td class="right">11,750</td>
+									</tr>
+									<tr>
+										<th>최저</th>
+										<td class="left">외부감사인 검토 진행경과 보고의 건</td>
+										<td>-</td>
+										<td class="right">11,750</td>
+									</tr>
+									<tr>
+										<th colspan="2">상한가</th>
+										<td class="left">외부감사인 검토 진행경과 보고의 건</td>
+										<td>-</td>
+										<td class="right">7,850</td>
+									</tr>
+									<tr>
+										<th colspan="2">하한가</th>
+										<td class="left">외부감사인 검토 진행경과 보고의 건</td>
+										<td>-</td>
+										<td class="right">11,830</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">테이블 (col 타입 2)</h2>
+						<div class="table-wrap-type01">
+							<table class="table-col-type02">
+								<caption>
+									<span class="txt01">테이블 col type02</span>
+									<span class="txt02">:구분</span>
+									<span class="txt03">,번호</span>
+									<span class="txt04">,제목</span>
+									<span class="txt05">,파일</span>
+									<span class="txt06">,출처</span>
+								</caption>
+								<colgroup>
+									<col style="width:10%" />
+									<col style="width:7%" />
+									<col style="width:63%" />
+									<col style="width:10%" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<th>구분</th>
+										<th>번호</th>
+										<th>제목</th>
+										<th>파일</th>
+										<th>출처</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bold">영업</td>
+										<td>121</td>
+										<td class="left">
+											<a class="txt-link" href="#"><span class="line-clamp">ME 산업 한국엔지니어링 협회, 엔지니어링 수주 실적, 지난해 8.1조... 도화엔지니어링-한국전력기술-현대엔지니어링</span></a>
+										</td>
+										<td>
+											<a class="bttn-download" href="#none">
+												<em class="ico download"></em>
+												다운로드
+											</a>
+										</td>
+										<td>더벨</td>
+									</tr>
+									<tr>
+										<td class="bold">영업</td>
+										<td>121</td>
+										<td class="left">
+											<a class="txt-link" href="#"><span class="line-clamp">ME 산업 한국엔지니어링 협회, 엔지니어링 수주 실적, 지난해 8.1조... 도화엔지니어링-한국전력기술-현대엔지니어링</span></a>
+										</td>
+										<td>
+											<a class="bttn-download" href="#none">
+												<em class="ico download"></em>
+												다운로드
+											</a>
+										</td>
+										<td>건설경제</td>
+									</tr>
+									<tr>
+										<td class="bold">영업</td>
+										<td>121</td>
+										<td class="left">
+											<a class="txt-link" href="#"><span class="line-clamp">ME 산업 한국엔지니어링 협회, 엔지니어링 수주 실적, 지난해 8.1조... 도화엔지니어링-한국전력기술-현대엔지니어링 ME 산업 한국엔지니어링 협회, 엔지니어링 수주 실적, 지난해 8.1조...</span></a>
+										</td>
+										<td>
+											<a class="bttn-download" href="#none">
+												<em class="ico download"></em>
+												다운로드
+											</a>
+										</td>
+										<td>이코노뉴스</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="table-btn-wrap more">
+								<button class="bttn type01 style01" type="button" title="목록 더보기"><span class="txt01">더보기</span></button>
+							</div>
+							<div class="table-btn-wrap">
+								<button class="bttn type01 style01 bttn-download" type="button" title="목록 더보기">
+									<span class="txt01">제 58기 주주총회 자료 다운로드</span>
+									<em class="ico download" aria-hidden="true"></em>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">리스트 (dot 타입)</h2>
+						<div class="list-type-dot">
+							<ul>
+								<li>
+									<strong class="list-tit">주주총회 일시 :</strong>
+									<span class="list-txt">2019년 03월 22일</span>
+								</li>
+								<li>
+									<strong class="list-tit">주주총회 장소 :</strong>
+									<span class="list-txt">서울시 강남구 삼성로 438 도화타워 9층</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">폰트</h2>
+						<p>사이트의 국문/영문 폰트는 나눔스퀘어를 사용한다.</p>
+						<br />
+						<h2 class="prototype-tit02">나눔스퀘어</h2>
+						<p style="font-family: NanumSquareL">나눔스퀘어 Light - 12345 텍스트의 두께는 웹폰트 사용시 로딩시간을 고려하여 최대 4개로 제한한다.</p>
+						<p style="font-family: NanumSquareR">나눔스퀘어 Regural - 12345 텍스트의 두께는 웹폰트 사용시 로딩시간을 고려하여 최대 4개로 제한한다.</p>
+						<p style="font-family: NanumSquareB">나눔스퀘어 Bold - 12345 텍스트의 두께는 웹폰트 사용시 로딩시간을 고려하여 최대 4개로 제한한다.</p>
+						<p style="font-family: NanumSquareEB">나눔스퀘어 ExtraBold - 12345 텍스트의 두께는 웹폰트 사용시 로딩시간을 고려하여 최대 4개로 제한한다.</p>
+						<br />
+						<h2 class="prototype-tit02">Roboto</h2>
+						<p style="font-family: RobotoL, NanumSquareL">Roboto Light - 12345 사이트의 숫자 폰트는 Roboto를 사용한다. (단, 지정 역역에 한하여 사용한다)</p>
+						<p style="font-family: RobotoR, NanumSquareR">Roboto Regural - 12345 사이트의 숫자 폰트는 Roboto를 사용한다. (단, 지정 역역에 한하여 사용한다)</p>
+						<p style="font-family: RobotoM, NanumSquareR">Roboto Medium - 12345 사이트의 숫자 폰트는 Roboto를 사용한다. (단, 지정 역역에 한하여 사용한다)</p>
+						<p style="font-family: RobotoB, NanumSquareB">Roboto Bold - 12345 사이트의 숫자 폰트는 Roboto를 사용한다. (단, 지정 역역에 한하여 사용한다)</p>
+						<br />
+						<br />
+						<h2 class="prototype-tit02">포인트 컬러</h2>
+						<p class="color-point-03">폰트 컬러 #f52536 (클래스 color-point-03)</p>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">타이틀(h1-h6)</h2>
+						<h1 class="title-head">72px ( title-head )- Main 이미지영역, Carrer 해드라인</h1>
+						<p class="title-head">72px ( title-head ) - Main 이미지영역, Carrer 해드라인</p>
+						<h2 class="title-main">56px ( title-main ) - Main 지속가능경영 영역, Sub 상단 이미지 영역 해드라인</h2>
+						<p class="title-main">56px ( title-main ) - Main 지속가능경영 영역, Sub 상단 이미지 영역 해드라인</p>
+						<h3 class="title-sect">36px ( title-sect ) - Sub Contents 대 타이틀</h3>
+						<p class="title-sect">36px ( title-sect ) - Sub Contents 대 타이틀</p>
+						<h5 class="title-sub">24px ( title-sub ) - Sub Contents 소 타이틀</h5>
+						<p class="title-sub">24px ( title-sub ) - Sub Contents 소 타이틀</p>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">영역 간 간격</h2>
+						<div class="section-cont">
+							<div class="title-sect">타이틀</div>
+							<div class="cont-box">| 영역 타이틀과 컨텐츠 사이 여백은 60</div>
+						</div>
+					</div>
+					<div class="prototype-group">
+						<h2 class="prototype-tit01">드롭다운</h2>
+						<div class="dropdown-item">
+							<button class="bttn-dropdown" type="button" role="button">
+								구분
+								<!-- 활성화 클래스 : active -->
+							</button>
+							<ul class="dropdown-list">
+								<li><a class="dropdown-menu" href="#">전체</a></li>
+								<li><a class="dropdown-menu" href="#">수상</a></li>
+								<li><a class="dropdown-menu" href="#">영업</a></li>
+								<li><a class="dropdown-menu" href="#">사회공헌</a></li>
+								<li><a class="dropdown-menu" href="#">기타</a></li>
+							</ul>
+						</div>
+						<br />
+						<br />
+						<div class="dropdown-wrap">
+							<div class="dropdown-item all">
+								<button class="bttn-dropdown" type="button" role="button">ALL</button>
+								<ul class="dropdown-list">
+									<li><a class="dropdown-menu" href="#">ALL</a></li>
+								</ul>
+							</div>
+							<div class="dropdown-item">
+								<button class="bttn-dropdown" type="button" role="button">Market</button>
+								<ul class="dropdown-list">
+									<li><a class="dropdown-menu" href="#">전체</a></li>
+									<li>
+										<a class="dropdown-menu" href="#">물</a>
+										<ul class="dropdown-sub-list">
+											<li><a class="dropdown-sub-menu" href="#">상수도</a></li>
+											<li><a class="dropdown-sub-menu" href="#">하수도</a></li>
+											<li><a class="dropdown-sub-menu" href="#">하천/ 수자원개발</a></li>
+											<li><a class="dropdown-sub-menu" href="#">재해/ 방재/ 댐/ 수력발전</a></li>
+										</ul>
+									</li>
+									<li>
+										<a class="dropdown-menu" href="#">도시</a>
+										<ul class="dropdown-sub-list">
+											<li><a class="dropdown-sub-menu" href="#">도시개발</a></li>
+											<li><a class="dropdown-sub-menu" href="#">도시계획</a></li>
+											<li><a class="dropdown-sub-menu" href="#">조령레저</a></li>
+											<li><a class="dropdown-sub-menu" href="#">스마트시티</a></li>
+										</ul>
+									</li>
+									<li>
+										<a class="dropdown-menu" href="#">교통</a>
+										<ul class="dropdown-sub-list">
+											<li><a class="dropdown-sub-menu" href="#">도로</a></li>
+											<li><a class="dropdown-sub-menu" href="#">공항</a></li>
+											<li><a class="dropdown-sub-menu" href="#">철도</a></li>
+											<li><a class="dropdown-sub-menu" href="#">교통계획</a></li>
+											<li><a class="dropdown-sub-menu" href="#">항만</a></li>
+											<li><a class="dropdown-sub-menu" href="#">교량</a></li>
+											<li><a class="dropdown-sub-menu" href="#">지반</a></li>
+										</ul>
+									</li>
+									<li>
+										<a class="dropdown-menu" href="#">에너지</a>
+										<ul class="dropdown-sub-list">
+											<li><a class="dropdown-sub-menu" href="#">태양광</a></li>
+											<li><a class="dropdown-sub-menu" href="#">풍력</a></li>
+											<li><a class="dropdown-sub-menu" href="#">발전</a></li>
+											<li><a class="dropdown-sub-menu" href="#">환경</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="dropdown-item">
+								<button class="bttn-dropdown" type="button" role="button">Service</button>
+								<ul class="dropdown-list">
+									<li><a class="dropdown-menu" href="#">전체</a></li>
+									<li><a class="dropdown-menu" href="#">구분</a></li>
+									<li><a class="dropdown-menu" href="#">설계</a></li>
+									<li><a class="dropdown-menu" href="#">감리</a></li>
+									<li><a class="dropdown-menu" href="#">O&amp;M</a></li>
+									<li><a class="dropdown-menu" href="#">PMC</a></li>
+									<li><a class="dropdown-menu" href="#">EPC</a></li>
+									<li><a class="dropdown-menu" href="#">건설</a></li>
+								</ul>
+							</div>
+							<div class="dropdown-item">
+								<button class="bttn-dropdown" type="button" role="button">Region</button>
+								<ul class="dropdown-list">
+									<li><a class="dropdown-menu" href="#">전체</a></li>
+									<li>
+										<a class="dropdown-menu" href="#">국내</a>
+										<ul class="dropdown-sub-list">
+											<li><a class="dropdown-sub-menu" href="#">서울</a></li>
+											<li><a class="dropdown-sub-menu" href="#">인천</a></li>
+											<li><a class="dropdown-sub-menu" href="#">경기도</a></li>
+											<li><a class="dropdown-sub-menu" href="#">강원도</a></li>
+											<li><a class="dropdown-sub-menu" href="#">충청도</a></li>
+											<li><a class="dropdown-sub-menu" href="#">세종</a></li>
+											<li><a class="dropdown-sub-menu" href="#">대전</a></li>
+											<li><a class="dropdown-sub-menu" href="#">전라도</a></li>
+											<li><a class="dropdown-sub-menu" href="#">광주</a></li>
+											<li><a class="dropdown-sub-menu" href="#">경상도</a></li>
+											<li><a class="dropdown-sub-menu" href="#">대구</a></li>
+											<li><a class="dropdown-sub-menu" href="#">창원</a></li>
+											<li><a class="dropdown-sub-menu" href="#">울산</a></li>
+											<li><a class="dropdown-sub-menu" href="#">부산</a></li>
+											<li><a class="dropdown-sub-menu" href="#">제주도</a></li>
+										</ul>
+									</li>
+									<li>
+										<a class="dropdown-menu" href="#">아시아</a>
+										<ul class="dropdown-sub-list">
+											<li><a class="dropdown-sub-menu" href="#">네팔</a></li>
+											<li><a class="dropdown-sub-menu" href="#">동티모르</a></li>
+											<li><a class="dropdown-sub-menu" href="#">라오스</a></li>
+											<li><a class="dropdown-sub-menu" href="#">말레이시아</a></li>
+											<li><a class="dropdown-sub-menu" href="#">몰디브</a></li>
+											<li><a class="dropdown-sub-menu" href="#">버마</a></li>
+											<li><a class="dropdown-sub-menu" href="#">방글라데시</a></li>
+											<li><a class="dropdown-sub-menu" href="#">베트남</a></li>
+											<li><a class="dropdown-sub-menu" href="#">부탄</a></li>
+											<li><a class="dropdown-sub-menu" href="#">브루나이</a></li>
+											<li><a class="dropdown-sub-menu" href="#">스리랑카</a></li>
+											<li><a class="dropdown-sub-menu" href="#">싱가포르</a></li>
+											<li><a class="dropdown-sub-menu" href="#">인도</a></li>
+											<li><a class="dropdown-sub-menu" href="#">인도네시아</a></li>
+											<li><a class="dropdown-sub-menu" href="#">캄보디아</a></li>
+											<li><a class="dropdown-sub-menu" href="#">태국</a></li>
+											<li><a class="dropdown-sub-menu" href="#">파키스탄</a></li>
+											<li><a class="dropdown-sub-menu" href="#">필리킨</a></li>
+										</ul>
+									</li>
+									<li><a class="dropdown-menu" href="#">유럽</a></li>
+									<li><a class="dropdown-menu" href="#">아프리카</a></li>
+									<li><a class="dropdown-menu" href="#">북아메리카</a></li>
+									<li><a class="dropdown-menu" href="#">남아메리카</a></li>
+									<li><a class="dropdown-menu" href="#">오세아니아</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">
+								<span class="hide-txt">맨위로가기</span>
+								<em class="ico" aria-hidden="true"></em>
+							</button>
+						</div>
+						<span class="footer-logo">
+							<!--s: 20200831 다국어 로고 이미지 변경-->
+							<!--img(src="/images/common/img_footer_logo_en.png", alt="DOHWA")-->
+							<!--e: 20200831 다국어 로고 이미지 변경-->
+							<img src="/images/common/img_footer_logo.jpg" alt="DOHWA 엔지니어링" />
+						</span>
+
+						<div class="clfix">
+							<div class="footer-left">
+								<ul class="footer-menu">
+									<!--s: 20200914 우편번호 수정-->
+									<li>서울특별시 강남구 삼성로 438 (#06178)</li>
+									<!--e: 20200914 우편번호 수정-->
+									<li>대표전화 02-6323-3000</li>
+									<li>
+										<a href="#none"><strong>개인정보 처리방침</strong></a>
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD. AllRIGHT RESERVED.</address>
+							</div>
+							<div class="footer-right">
+								<span class="footer-sns">
+									<a class="ico-blog" href="#none"><span class="hide-txt">Blog</span></a>
+									<a class="ico-youtube" href="#none"><span class="hide-txt">Youtube</span></a>
+								</span>
+								<!--s: 20200828 디자인셀렉트 박스 교체-->
+								<div class="footer-family">
+									<div class="family-inner">
+										<button class="family-btn" type="button"><span>Employee Site</span></button>
+										<ul class="family-list">
+											<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+											<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+											<li class="family-item">
+												<!--s:20200903 텍스트 수정-->
+												<a href="#none" title="새창열림">CMFG</a>
+												<!--e:20200903 텍스트 수정-->
+											</li>
+											<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+										</ul>
+									</div>
+								</div>
+								<!--e: 20200828 디자인셀렉트 박스 교체-->
+							</div>
+						</div>
+					</div>
+					<!-- s : 20200813 footer grid 추가-->
+					<div class="footer-grid-wrap" aria-hidden="true">
+						<div class="grid-line-wrap" aria-hidden="true">
+							<div class="grid-line" aria-hidden="true"></div>
+							<div class="grid-line" aria-hidden="true"></div>
+						</div>
+					</div>
+					<!-- e : 20200813 footer grid 추가-->
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/jquery.mousewheel.min.js"></script>
+		<script src="/inc/js/ScrollMagic.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/animation.gsap.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/lottie.js"></script>
+		<script src="/inc/js/jquery.scrollbar.min.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common.js"></script>
+		<script src="inc/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				$(".btn-info-view").on("click", function(e) {
+					e.preventDefault();
+					var isAlreadyOpen = $(this).hasClass("on");
+
+					if (!isAlreadyOpen) {
+						$(this).addClass("on");
+					} else {
+						$(this).removeClass("on");
+					}
+				});
+
+				$(".grid-wrap").hide();
+
+				//- $('.dropdown-item .bttn-dropdown').on('click', function(){
+				//- 	var _this = $(this),
+				//- 		_next = _this.next('.dropdown-list'),
+				//- 		_state = $(this).hasClass('active'),
+				//- 		_activeClass = 'active',
+				//- 		_isMoving = _next.is(':animated');
+
+				//- 	if(!_state && !_isMoving){
+				//- 		_this.addClass(_activeClass);
+				//- 		_next.slideDown(300);
+				//- 	} else {
+				//- 		_this.removeClass(_activeClass);
+				//- 		_next.slideUp(300);
+				//- 	}
+				//- });
+			});
+		</script>
+	</body>
+</html>

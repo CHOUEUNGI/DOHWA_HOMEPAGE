@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>CSS</title>
+	<link href="resources/github-markdown.css" type="text/css" rel="stylesheet" />
+	<link href="resources/github.css" type="text/css" rel="stylesheet" />
+	<style>
+	
+	ul {
+		list-style: none;
+		padding-left:0px;
+		margin: 40px 0px;
+	}
+	
+	li {
+		margin: 20px 50px;
+		font-weight: bold;
+	}
+	
+	li a { 
+		text-decoration: none;
+		color: black; 
+	}
+	
+	#jb-sidebar {
+		width: 20%;
+		float: left;
+	}
+	
+	#markdown {
+		width: 76%;
+		float: left;
+		margin: 20px;
+	}
+	</style>
+</head>
+<body>
+	<div id="jb-sidebar">
+		<ul>
+			<li><a href="#" onclick="return false;" data-md="OVERVIEW.md">Overview</a></li>
+			<li><a href="#" onclick="return false;" data-md="GUIDE.md">Guide</a></li>
+		</ul>
+	</div>
+	<div class="markdown-body" id="markdown">
+	</div>
+</body>
+<script type="text/javascript" src="../inc/js/jquery.js"></script>
+<script type="text/javascript" src="resources/marked.min.js"></script>
+<script type="text/javascript" src="resources/highlight.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+			
+		$('[data-md]').on('click', function() {
+			
+			var md = $(this).data('md');
+			
+			$.get(md, function(data) {
+				
+				$('#markdown').html( marked(data) );
+				
+				var pres = document.querySelectorAll('pre > code');
+			    for (var i = 0; i < pres.length; i++) {
+			        hljs.highlightBlock(pres[i]);
+			    }
+			}).fail(function(e) {
+			    
+				$('#markdown').html(`[error] ${e.status} ${e.statusText} ${md} is not found`);
+			});
+		});
+		
+	});
+	
+</script>
+</html>

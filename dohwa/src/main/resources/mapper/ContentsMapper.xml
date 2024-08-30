@@ -1,0 +1,1229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dohwa.mapper.ContentsMapper">
+	<!-- 컨텐츠관리 Mybatis Mapper -->
+
+	<resultMap type="peopleVO" id="peopleListResult">
+		<result column="SEQ" property="seq" />
+		<result column="ORDER" property="order" />
+		<result column="DISP_YN" property="dispYn" />
+		<result column="NAME" property="peopleMlVO.name" />
+		<result column="STAFF_LEVEL" property="peopleMlVO.staffLevel" />
+		<result column="PARTNAME" property="peopleMlVO.partname" />
+		<result column="INTERVIEW" property="peopleMlVO.interview" />
+		<result column="ID" property="fileVO.id" />
+		<result column="ORG_NAME" property="fileVO.orgName" />
+		<result column="PATH" property="fileVO.path" />
+		<result column="NEW_NAME" property="fileVO.newName" />
+		<result column="REG_ID" property="regId" />
+		<result column="REG_DT" property="regDt" />
+		<result column="UPD_ID" property="updId" />
+		<result column="UPD_DT" property="updDt" />
+	</resultMap>
+
+	<select id="getPeopleList" parameterType="peopleVO" resultMap="peopleListResult">
+		/* 컨텐츠 관리 > People 관리 > 목록 */
+
+		SELECT
+				tp.SEQ
+				, tp.`ORDER`
+				, tp.DISP_YN
+				, tpm.NAME
+				, tpm.STAFF_LEVEL
+				, tpm.PARTNAME
+				, tpm.INTERVIEW
+				, tf.ID
+				, tf.ORG_NAME
+				, tf.PATH
+				, tf.NEW_NAME
+				, tp.REG_ID
+				, tp.REG_DT
+				, tp.UPD_ID
+				, tp.UPD_DT
+		FROM	dohwa.tb_people tp
+
+		INNER	JOIN dohwa.tb_people_ml tpm
+		ON		tp.SEQ = tpm.PEOPLE_SEQ
+		AND		tpm.LANG = #{lang}
+
+		INNER	JOIN dohwa.tb_file tf
+		ON		tp.SEQ = tf.ATT_SEQ
+		AND		tf.ATT_TYPE = 'PEOPLE'
+		AND		tf.ATT_ORDER = 0
+
+		<where>
+			<if test="dispYn != null and dispYn != ''">
+				tp.DISP_YN = #{dispYn}
+			</if>
+		</where>
+
+		ORDER	BY tp.`ORDER`='', tp.`ORDER`*1 asc
+
+	</select>
+
+	<insert id="insertPeople" parameterType="peopleVO" useGeneratedKeys="true" keyProperty="seq">
+		/* 컨텐츠 관리 > People 관리 > 등록  */
+
+		INSERT INTO dohwa.tb_people
+			(`ORDER`, DISP_YN, REG_ID)
+		VALUES
+			(#{order}
+			, #{dispYn}
+			, #{regId})
+
+	</insert>
+
+	<insert id="insertPeopleMl" parameterType="peopleVO">
+		/* 컨텐츠 관리 > People 관리 > 다국어 등록  */
+
+		INSERT INTO dohwa.tb_people_ml
+			(PEOPLE_SEQ, LANG, NAME, STAFF_LEVEL, PARTNAME, INTERVIEW)
+		VALUES
+			(#{seq}
+			, 'KO'
+			, #{peopleMlVO.name}
+			, #{peopleMlVO.staffLevel}
+			, #{peopleMlVO.partname}
+			, #{peopleMlVO.interview});
+
+		INSERT INTO dohwa.tb_people_ml
+			(PEOPLE_SEQ, LANG, NAME, STAFF_LEVEL, PARTNAME, INTERVIEW)
+		VALUES
+			(#{seq}
+			, 'EN'
+			, #{peopleMlVO.name}
+			, #{peopleMlVO.staffLevel}
+			, #{peopleMlVO.partname}
+			, #{peopleMlVO.interview});
+
+		INSERT INTO dohwa.tb_people_ml
+			(PEOPLE_SEQ, LANG, NAME, STAFF_LEVEL, PARTNAME, INTERVIEW)
+		VALUES
+			(#{seq}
+			, 'ES'
+			, #{peopleMlVO.name}
+			, #{peopleMlVO.staffLevel}
+			, #{peopleMlVO.partname}
+			, #{peopleMlVO.interview});
+
+	</insert>
+
+	<update id="updatePeople" parameterType="java.util.List">
+		/* 컨텐츠 관리 > People 관리 > 수정 */
+
+		UPDATE	dohwa.tb_people
+		SET		`ORDER` = #{order}
+				, DISP_YN = #{dispYn}
+				, UPD_DT = CURRENT_TIMESTAMP
+				, UPD_ID = #{regId}
+
+		WHERE	SEQ = #{seq}
+
+	</update>
+
+	<update id="updatePeopleMl" parameterType="peopleVO">
+		/* 컨텐츠 관리 > People 관리 > 다국어 수정 */
+
+		UPDATE	dohwa.tb_people_ml
+		SET		NAME = #{peopleMlVO.name}
+				, STAFF_LEVEL = #{peopleMlVO.staffLevel}
+				, PARTNAME = #{peopleMlVO.partname}
+				, INTERVIEW = #{peopleMlVO.interview}
+
+		WHERE	PEOPLE_SEQ = #{seq}
+		AND		LANG = #{lang}
+
+	</update>
+
+	<delete id="deleteAllPeople">
+		/* 컨텐츠 관리 > People 관리 > 전체삭제 */
+
+		DELETE FROM dohwa.tb_people
+
+	</delete>
+
+	<update id="deletePeople" parameterType="java.util.List">
+		/* 컨텐츠 관리 > People 관리 > 삭제 */
+
+		DELETE FROM dohwa.tb_people
+		<where>
+			<foreach collection="list" item="seq" open="SEQ IN (" close=");" separator=",">
+			#{seq}
+			</foreach>
+		</where>
+
+		DELETE FROM dohwa.tb_people_ml
+		<where>
+			<foreach collection="list" item="seq" open="PEOPLE_SEQ IN (" close=");" separator=",">
+			#{seq}
+			</foreach>
+		</where>
+
+	</update>
+
+	<update id="updateOrderPeople">
+		/* 컨텐츠 관리 > People 관리 > Order 수정 */
+
+		SELECT	@order:=0;
+
+		UPDATE	dohwa.tb_people SET `ORDER`=@order:=@order+1
+		ORDER	BY `ORDER`;
+
+	</update>
+
+	<select id="getLicenseCount" parameterType="searchVO" resultType="int">
+		/* 컨텐츠 관리 > 면허 관리 > 목록 개수 */
+
+		SELECT	COUNT(*) FROM dohwa.tb_license
+
+		<where>
+			<if test="searchText != null and searchText != ''">
+				KO_TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchDispYn != null and searchDispYn != ''">
+				DISP_YN = #{searchDispYn}
+			</if>
+		</where>
+
+	</select>
+
+	<select id="getLicenseList" parameterType="searchVO" resultType="licenseVO">
+		/* 컨텐츠 관리 > 면허 관리 > 목록 */
+
+		SELECT
+				SEQ
+				, DISP_YN
+				, KO_TITLE
+				, EN_TITLE
+				, ES_TITLE
+				, DATE_FORMAT(STR_TO_DATE(ACQUIRE_DT, '%Y%m%d'),'%Y-%m-%d') AS ACQUIRE_DT
+				, KO_ISSUE_AGENCY
+				, EN_ISSUE_AGENCY
+				, ES_ISSUE_AGENCY
+				, REG_ID
+				, REG_DT
+				, UPD_ID
+				, UPD_DT
+		FROM	dohwa.tb_license
+
+		<where>
+			<if test="searchText != null and searchText != ''">
+				KO_TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchDispYn != null and searchDispYn != ''">
+				DISP_YN = #{searchDispYn}
+			</if>
+		</where>
+
+		ORDER	BY ACQUIRE_DT DESC
+
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+			LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+
+	</select>
+
+	<resultMap type="licenseVO" id="licenseListResult">
+		<result column="SEQ" property="seq" />
+		<result column="DISP_YN" property="dispYn" />
+		<result column="KO_TITLE" property="koTitle" />
+		<result column="EN_TITLE" property="enTitle" />
+		<result column="ES_TITLE" property="esTitle" />
+		<result column="ACQUIRE_DT" property="acquireDt" />
+		<result column="KO_ISSUE_AGENCY" property="koIssueAgency" />
+		<result column="EN_ISSUE_AGENCY" property="enIssueAgency" />
+		<result column="ES_ISSUE_AGENCY" property="esIssueAgency" />
+		<result column="PC_PATH" property="pcFile.path" />
+		<result column="PC_NEW_NAME" property="pcFile.newName" />
+		<result column="MO_PATH" property="moFile.path" />
+		<result column="MO_NEW_NAME" property="moFile.newName" />
+		
+		<result column="PCEN_PATH" property="pcFileEnPath" />
+		<result column="PCEN_NEW_NAME" property="pcFileEnNewName" />
+		<result column="MOEN_PATH" property="moFileEnPath" />
+		<result column="MOEN_NEW_NAME" property="moFileEnNewName" />
+		
+		<result column="PCES_PATH" property="pcFileEsPath" />
+		<result column="PCES_NEW_NAME" property="pcFileEsNewName" />
+		<result column="MOES_PATH" property="moFileEsPath" />
+		<result column="MOES_NEW_NAME" property="moFileEsNewName" />
+		
+		<result column="REG_ID" property="regId" />
+		<result column="REG_DT" property="regDt" />
+		<result column="UPD_ID" property="updId" />
+		<result column="UPD_DT" property="updDt" />
+	</resultMap>
+	<select id="getLicenseListFront" parameterType="searchVO" resultMap="licenseListResult">
+		/* 컨텐츠 관리 > 면허 관리 > 목록 (front no paging) */
+
+		SELECT
+				tl.SEQ
+				, tl.DISP_YN
+				, tl.KO_TITLE
+				, tl.EN_TITLE
+				, tl.ES_TITLE
+				, DATE_FORMAT(STR_TO_DATE(tl.ACQUIRE_DT, '%Y%m%d'),'%Y-%m-%d') AS ACQUIRE_DT
+				, tl.KO_ISSUE_AGENCY
+				, tl.EN_ISSUE_AGENCY
+				, tl.ES_ISSUE_AGENCY
+				, pc_tf.PATH AS PC_PATH
+				, pc_tf.NEW_NAME AS PC_NEW_NAME
+				, mo_tf.PATH AS MO_PATH
+				, mo_tf.NEW_NAME AS MO_NEW_NAME
+				
+				, (SELECT pcen_tf.PATH 
+					FROM dohwa.tb_file pcen_tf 
+			        WHERE tl.SEQ = pcen_tf.ATT_SEQ
+					AND pcen_tf.ATT_TYPE = 'LICENSE'
+					AND pcen_tf.TYPE = 'PCEN') AS PCEN_PATH   
+				, (SELECT pcen_tf.NEW_NAME 
+					FROM dohwa.tb_file pcen_tf 
+			        WHERE tl.SEQ = pcen_tf.ATT_SEQ
+					AND pcen_tf.ATT_TYPE = 'LICENSE'
+					AND pcen_tf.TYPE = 'PCEN') AS PCEN_NEW_NAME
+				,( SELECT moen_tf.PATH 
+			       FROM dohwa.tb_file moen_tf 
+			       WHERE tl.SEQ = moen_tf.ATT_SEQ
+					AND moen_tf.ATT_TYPE = 'LICENSE'
+					AND moen_tf.TYPE = 'MOEN' ) AS MOEN_PATH  
+			   ,( SELECT moen_tf.NEW_NAME 
+			       FROM dohwa.tb_file moen_tf 
+			       WHERE tl.SEQ = moen_tf.ATT_SEQ
+					AND moen_tf.ATT_TYPE = 'LICENSE'
+					AND moen_tf.TYPE = 'MOEN' ) AS MOEN_NEW_NAME  
+			  
+			  , (SELECT pces_tf.PATH 
+					FROM dohwa.tb_file pces_tf 
+			        WHERE tl.SEQ = pces_tf.ATT_SEQ
+					AND pces_tf.ATT_TYPE = 'LICENSE'
+					AND pces_tf.TYPE = 'PCES') AS PCES_PATH    
+				, (SELECT pces_tf.NEW_NAME 
+					FROM dohwa.tb_file pces_tf 
+			        WHERE tl.SEQ = pces_tf.ATT_SEQ
+					AND pces_tf.ATT_TYPE = 'LICENSE'
+					AND pces_tf.TYPE = 'PCES') AS PCES_NEW_NAME
+				,( SELECT moes_tf.PATH 
+			       FROM dohwa.tb_file moes_tf 
+			       WHERE tl.SEQ = moes_tf.ATT_SEQ
+					AND moes_tf.ATT_TYPE = 'LICENSE'
+					AND moes_tf.TYPE = 'MOES' ) AS MOES_PATH  
+			   ,( SELECT moes_tf.NEW_NAME 
+			       FROM dohwa.tb_file moes_tf 
+			       WHERE tl.SEQ = moes_tf.ATT_SEQ
+					AND moes_tf.ATT_TYPE = 'LICENSE'
+					AND moes_tf.TYPE = 'MOES' ) AS MOES_NEW_NAME  
+				, tl.REG_ID
+				, tl.REG_DT
+				, tl.UPD_ID
+				, tl.UPD_DT
+		FROM	dohwa.tb_license tl
+
+		INNER	JOIN dohwa.tb_file pc_tf
+		ON		tl.SEQ = pc_tf.ATT_SEQ
+		AND		pc_tf.ATT_TYPE = 'LICENSE'
+		AND		pc_tf.TYPE = 'PC'
+
+		INNER	JOIN dohwa.tb_file mo_tf
+		ON		tl.SEQ = mo_tf.ATT_SEQ
+		AND		mo_tf.ATT_TYPE = 'LICENSE'
+		AND		mo_tf.TYPE = 'MO'
+
+		<where>
+			<if test="searchText != null and searchText != ''">
+				TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchDispYn != null and searchDispYn != ''">
+				<!-- DISP_YN = #{searchDispYn} -->
+			</if>
+		</where>
+
+		ORDER	BY ACQUIRE_DT DESC
+
+	</select>
+
+	<select id="getLicense" parameterType="int" resultType="licenseVO">
+		/* 컨텐츠 관리 > 면허 관리 > 상세 */
+
+		SELECT
+				SEQ
+				, DISP_YN
+				, KO_TITLE
+				, EN_TITLE
+				, ES_TITLE
+				, DATE_FORMAT(STR_TO_DATE(ACQUIRE_DT, '%Y%m%d'),'%Y-%m-%d') AS ACQUIRE_DT
+				, KO_ISSUE_AGENCY
+				, EN_ISSUE_AGENCY
+				, ES_ISSUE_AGENCY
+				, REG_ID
+				, REG_DT
+				, UPD_ID
+				, UPD_DT
+		FROM	dohwa.tb_license
+
+		<where>
+				SEQ = #{seq}
+		</where>
+
+	</select>
+
+	<insert id="insertLicense" parameterType="licenseVO" useGeneratedKeys="true" keyProperty="seq">
+		/* 컨텐츠 관리 > 면허 관리 > 등록 */
+
+		INSERT INTO dohwa.tb_license
+			(DISP_YN, KO_TITLE, EN_TITLE, ES_TITLE, ACQUIRE_DT, KO_ISSUE_AGENCY, EN_ISSUE_AGENCY, ES_ISSUE_AGENCY, REG_ID)
+		VALUES
+			(#{dispYn}
+			, #{koTitle}
+			, #{enTitle}
+			, #{esTitle}
+			, REPLACE(#{acquireDt}, '-', '')
+			, #{koIssueAgency}
+			, #{enIssueAgency}
+			, #{esIssueAgency}
+			, #{regId})
+
+	</insert>
+
+	<update id="updateLicense" parameterType="licenseVO">
+		/* 컨텐츠 관리 > 면허 관리 > 수정 */
+
+		UPDATE	dohwa.tb_license
+		SET		DISP_YN = #{dispYn}
+				, KO_TITLE = #{koTitle}
+				, EN_TITLE = #{enTitle}
+				, ES_TITLE = #{esTitle}
+				, UPD_DT = CURRENT_TIMESTAMP
+				, ACQUIRE_DT = REPLACE(#{acquireDt}, '-', '')
+				, KO_ISSUE_AGENCY = #{koIssueAgency}
+				, EN_ISSUE_AGENCY = #{enIssueAgency}
+				, ES_ISSUE_AGENCY = #{esIssueAgency}
+				, UPD_ID = #{updId}
+
+		WHERE SEQ = #{seq}
+
+	</update>
+
+	<delete id="deleteLicense" parameterType="java.util.List">
+		/* 컨텐츠 관리 > 면허 관리 > 삭제 */
+
+		DELETE	FROM dohwa.tb_license
+
+		<where>
+			<foreach collection="list" item="seq" open="SEQ IN (" close=")" separator=",">
+			#{seq}
+			</foreach>
+		</where>
+
+	</delete>
+
+	<select id="getBoardCount" parameterType="searchVO" resultType="int">
+		/* 컨텐츠 관리 > 게시판 관리 > 목록 개수 */
+
+		SELECT	COUNT(*) FROM dohwa.tb_board
+
+		<where>
+				LANG = #{searchLangType}
+
+			<if test="searchText != null and searchText != ''">
+				AND TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchDispYn != null and !''.equals(searchDispYn)">
+				AND DISP_YN = #{searchDispYn}
+			</if>
+			<if test="searchType != null and !''.equals(searchType)">
+				AND TYPE_CODE = #{searchType}
+			</if>
+		</where>
+
+	</select>
+
+	<select id="getBoardList" parameterType="searchVO" resultType="boardVO">
+		/* 컨텐츠 관리 > 게시판 관리 > 목록 */
+		SELECT
+				SEQ
+				, LANG
+				, (SELECT KO_TEXT FROM dohwa.tb_code WHERE PARENT_CODE = 'BOARD_TYPE' AND VALUE = TYPE_CODE) TYPE_CODE
+				, TYPE_CODE AS typeCd
+				, TITLE
+				, CONT
+				, REFR
+				, URL
+				, DISP_YN
+				, MAIN_YN
+				, DATE_FORMAT(STR_TO_DATE(MAIN_DISP_SDT, '%Y%m%d'),'%Y-%m-%d') AS MAIN_DISP_SDT
+				, DATE_FORMAT(STR_TO_DATE(MAIN_DISP_EDT, '%Y%m%d'),'%Y-%m-%d') AS MAIN_DISP_EDT
+				, REG_ID
+				, REG_DT
+				, UPD_ID
+				, UPD_DT
+				, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS STR_REG_DT
+		FROM	dohwa.tb_board
+
+		<where>
+				LANG = #{searchLangType}
+
+			<if test="searchText != null and searchText != ''">
+				AND TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchDispYn != null and !''.equals(searchDispYn)">
+				AND DISP_YN = #{searchDispYn}
+			</if>
+			<if test="searchType != null and !''.equals(searchType)">
+				AND TYPE_CODE = #{searchType}
+			</if>
+			<if test="dispYn != null and !''.equals(dispYn)">
+				AND MAIN_YN = #{dispYn}
+			</if>
+			<if test="searchStartDate != null and !''.equals(searchStartDate)">
+				AND #{searchStartDate} BETWEEN MAIN_DISP_SDT AND MAIN_DISP_EDT
+			</if>
+		</where>
+
+		ORDER BY REG_DT DESC, SEQ DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+			LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+	
+	<select id="getFrontMainNewsList" parameterType="searchVO" resultType="boardVO">
+		/* 프론트 메인 뉴스 목록 */
+		SELECT
+				SEQ
+				, LANG
+				, (SELECT KO_TEXT FROM dohwa.tb_code WHERE PARENT_CODE = 'BOARD_TYPE' AND VALUE = TYPE_CODE) TYPE_CODE
+				, TYPE_CODE AS typeCd
+				, TITLE
+				, CONT
+				, REFR
+				, URL
+				, DISP_YN
+				, MAIN_YN
+				, DATE_FORMAT(STR_TO_DATE(MAIN_DISP_SDT, '%Y%m%d'),'%Y-%m-%d') AS MAIN_DISP_SDT
+				, DATE_FORMAT(STR_TO_DATE(MAIN_DISP_EDT, '%Y%m%d'),'%Y-%m-%d') AS MAIN_DISP_EDT
+				, REG_ID
+				, REG_DT
+				, UPD_ID
+				, UPD_DT
+				, MAIN_DISP_SDT
+				, MAIN_DISP_EDT
+		FROM	dohwa.tb_board
+		WHERE LANG = #{searchLangType}
+		AND DISP_YN = 'Y'
+		ORDER BY (CASE WHEN MAIN_YN = 'Y' AND #{searchStartDate} BETWEEN MAIN_DISP_SDT AND MAIN_DISP_EDT THEN 1 ELSE 0 END) DESC, REG_DT DESC, SEQ DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+			LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+
+	<select id="getBoard" parameterType="int" resultType="boardVO">
+		/* 컨텐츠 관리 > 게시판 관리 > 상세 */
+
+		SELECT
+				SEQ
+				, LANG
+				, TYPE_CODE
+				, TITLE
+				, CONT
+				, REFR
+				, URL
+				, DISP_YN
+				, MAIN_YN
+				, DATE_FORMAT(STR_TO_DATE(MAIN_DISP_SDT, '%Y%m%d'),'%Y-%m-%d') AS MAIN_DISP_SDT
+				, DATE_FORMAT(STR_TO_DATE(MAIN_DISP_EDT, '%Y%m%d'),'%Y-%m-%d') AS MAIN_DISP_EDT
+				, REG_ID
+				, REG_DT
+				, UPD_ID
+				, UPD_DT
+		FROM	dohwa.tb_board
+
+		<where>
+				SEQ = #{seq}
+		</where>
+
+
+	</select>
+
+	<insert id="insertBoard" parameterType="boardVO" useGeneratedKeys="true" keyProperty="seq">
+		/* 컨텐츠 관리 > 게시판 관리 > 등록 */
+
+		INSERT INTO dohwa.tb_board
+			(LANG, TYPE_CODE, TITLE, CONT, REFR, URL, DISP_YN, MAIN_YN, MAIN_DISP_SDT, MAIN_DISP_EDT, REG_ID, REG_DT)
+		VALUES
+			(
+				#{lang}
+				, #{typeCode}
+				, #{title}
+				, #{cont}
+				, #{refr}
+				, #{url}
+				, #{dispYn}
+				, #{mainYn}
+				, REPLACE(#{mainDispSdt}, '-', '')
+				, REPLACE(#{mainDispEdt}, '-', '')
+				, #{regId}
+				, #{createDt}
+			)
+
+	</insert>
+
+	<update id="updateBoard" parameterType="boardVO">
+		/* 컨텐츠 관리 > 게시판 관리 > 수정 */
+
+		UPDATE	dohwa.tb_board
+		SET		TYPE_CODE = #{typeCode}
+				, TITLE = #{title}
+				, CONT = #{cont}
+				, REFR = #{refr}
+				, URL = #{url}
+				, DISP_YN = #{dispYn}
+				, MAIN_YN = #{mainYn}
+				, MAIN_DISP_SDT = REPLACE(#{mainDispSdt}, '-', '')
+				, MAIN_DISP_EDT = REPLACE(#{mainDispEdt}, '-', '')
+				, REG_DT = REPLACE(#{createDt}, '-', '')
+				, UPD_ID = #{updId}
+				, UPD_DT = REPLACE(#{createDt}, '-', '')
+
+		<where>
+				SEQ = #{seq}
+		AND		LANG = #{lang}
+		</where>
+
+	</update>
+
+	<delete id="deleteBoard" parameterType="java.util.List">
+		/* 컨텐츠 관리 > 게시판 관리 > 삭제 */
+
+		DELETE	FROM dohwa.tb_board
+
+		<where>
+			<foreach collection="list" item="seq" open="SEQ IN (" close=")" separator=",">
+			#{seq}
+			</foreach>
+		</where>
+
+	</delete>
+
+	<select id="getBoardBy" parameterType="boardVO" resultType="boardVO">
+		SELECT
+				SEQ
+				, LANG
+				, TYPE_CODE
+				, TITLE
+				, CONT
+				, REFR
+				, URL
+				, DISP_YN
+				, MAIN_YN
+				, DATE_FORMAT(STR_TO_DATE(MAIN_DISP_SDT, '%Y%m%d'),'%Y-%m-%d') AS MAIN_DISP_SDT
+				, DATE_FORMAT(STR_TO_DATE(MAIN_DISP_EDT, '%Y%m%d'),'%Y-%m-%d') AS MAIN_DISP_EDT
+				, REG_ID
+				, REG_DT
+				, UPD_ID
+				, UPD_DT
+				, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS STR_REG_DT
+		FROM	dohwa.tb_board
+		<where>
+				SEQ = #{seq}
+			<if test="dispYn != null and !''.equals(dispYn)">
+				AND DISP_YN = #{dispYn}
+			</if>
+			<if test="lang != null and !''.equals(lang)">
+				AND LANG = #{lang}
+			</if>
+		</where>
+	</select>
+
+	<select id="getBoardByPrevNext" parameterType="searchVO" resultType="boardVO">
+		SELECT 'PREV' AS btnNm, SEQ, TITLE
+		FROM TB_BOARD
+		WHERE SEQ = (SELECT 
+						SEQ
+					 FROM TB_BOARD 
+					 WHERE SEQ &lt; #{seq}
+					<if test="searchDispYn != null and !''.equals(searchDispYn)">
+						AND DISP_YN = #{searchDispYn}
+					</if>
+					<if test="searchLangType != null and !''.equals(searchLangType)">
+						AND LANG = #{searchLangType}
+					</if>
+					<if test="searchText != null and searchText != ''">
+						AND TITLE LIKE CONCAT('%',#{searchText},'%')
+					</if>
+					<if test="searchType != null and !''.equals(searchType)">
+						AND TYPE_CODE = #{searchType}
+					</if> 
+					ORDER BY REG_DT ASC LIMIT 1)
+		UNION ALL
+
+		SELECT 'NEXT' AS btnNm, SEQ, TITLE
+		FROM TB_BOARD
+		WHERE SEQ = (SELECT 
+						SEQ
+					 FROM TB_BOARD
+					 WHERE SEQ &gt; #{seq}
+					<if test="searchDispYn != null and !''.equals(searchDispYn)">
+						AND DISP_YN = #{searchDispYn}
+					</if>
+					<if test="searchLangType != null and !''.equals(searchLangType)">
+						AND LANG = #{searchLangType}
+					</if>
+					<if test="searchText != null and searchText != ''">
+						AND TITLE LIKE CONCAT('%',#{searchText},'%')
+					</if>
+					<if test="searchType != null and !''.equals(searchType)">
+						AND TYPE_CODE = #{searchType}
+					</if>
+					ORDER BY REG_DT DESC LIMIT 1)
+	</select>
+	
+	<select id="getPressCount" parameterType="searchVO" resultType="int">
+		/* 컨텐츠 관리 > 보도자료 관리 > 목록 개수 */
+
+		SELECT	COUNT(*) FROM dohwa.tb_press
+
+		<where>
+				1=1
+			<if test="searchText != null and searchText != ''">
+				AND TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchDispYn != null and !''.equals(searchDispYn)">
+				AND DISP_YN = #{searchDispYn}
+			</if>
+		</where>
+
+	</select>
+
+	<resultMap type="pressVO" id="pressListResult">
+		<result column="SEQ" property="seq" />
+		<result column="DISP_YN" property="dispYn" />
+		<result column="TITLE" property="title" />
+		<result column="TITLE_MO" property="TitleMo" />
+		<result column="CONT" property="Cont" />
+		<result column="WRITE_DT" property="writeDt" />
+		<result column="MAIN_FILE_NAME1" property="mainFileName1" />
+		<result column="MAIN_FILE_NAME2" property="mainFileName2" />
+		<result column="ID" property="fileVO.id" />
+		<result column="ORG_NAME" property="fileVO.orgName" />
+		<result column="PATH" property="fileVO.path" />
+		<result column="NEW_NAME" property="fileVO.newName" />
+		<result column="PC_NEW_NAME" property="pcFile.newName" />
+		<result column="MO_PATH" property="moFile.path" />
+		<result column="MO_NEW_NAME" property="moFile.newName" />
+	</resultMap>
+
+	<select id="getPressList"  parameterType="pressVO" resultMap="pressListResult">
+		/* 컨텐츠 관리 > 보도자료 관리 > 목록 */
+		SELECT
+				SEQ
+				, DATE_FORMAT(STR_TO_DATE(WRITE_DT, '%Y%m%d'),'%Y-%m-%d') AS WRITE_DT
+				, TITLE
+				, CONT
+				, DISP_YN
+		FROM	dohwa.tb_press
+
+		<where>
+			1=1
+			
+			<if test="searchText != null and searchText != ''">
+				AND TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+		</where>
+
+		ORDER BY WRITE_DT DESC, SEQ DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+			LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+	
+	<select id="getPress" parameterType="int" resultType="pressVO">
+		/* 컨텐츠 관리 > 보도자료 관리 > 상세 */
+
+		SELECT
+			  SEQ
+			, TITLE
+			, CONT
+			, DATE_FORMAT(STR_TO_DATE(WRITE_DT, '%Y%m%d'),'%Y-%m-%d') AS WRITE_DT
+			, DISP_YN
+		FROM	dohwa.tb_press
+
+		<where>
+				SEQ = #{seq}
+		</where>
+
+	</select>
+	
+	<select id="getPressListFront" parameterType="searchVO" resultMap="pressListResult">
+		/* 컨텐츠 관리 > 보도자료 관리 > 목록 (front no paging) */
+		SELECT
+			SEQ
+			, DATE_FORMAT(STR_TO_DATE(WRITE_DT, '%Y%m%d'),'%Y-%m-%d') AS WRITE_DT
+			, CASE WHEN CHAR_LENGTH(TITLE) > 38 THEN CONCAT(SUBSTRING(TITLE,1,37),'...') ELSE TITLE END AS TITLE
+			, CASE WHEN CHAR_LENGTH(TITLE) > 22 THEN CONCAT(SUBSTRING(TITLE,1,22),'...') ELSE TITLE END AS TITLE_MO
+			<![CDATA[, CASE WHEN CHAR_LENGTH(REGEXP_REPLACE(CONT, '<[^>]*>|\&([^;])*;', '')) > 101 THEN CONCAT(SUBSTRING(REGEXP_REPLACE(CONT, '<[^>]*>|\&([^;])*;', ''), 1, 101),'...')
+			ELSE REGEXP_REPLACE(CONT, '<[^>]*>|\&([^;])*;', '') END AS CONT ]]>
+			, DISP_YN
+		    ,(
+				SELECT CONCAT (TF.`PATH`,'/',TF.NEW_NAME)
+				FROM TB_FILE TF
+				WHERE ATT_TYPE = 'PRESS'
+					AND TF.`TYPE` = 'PC'
+					AND TF.ATT_SEQ = TB1.SEQ
+					AND ATT_ORDER = 1 LIMIT 1
+				) AS filePath1
+			,(
+				SELECT CONCAT (
+						TF.`PATH`
+						,'/'
+						,TF.NEW_NAME
+						)
+				FROM TB_FILE TF
+				WHERE ATT_TYPE = 'PRESS'
+					AND TF.`TYPE` = 'PC'
+					AND TF.ATT_SEQ = TB1.SEQ
+					AND ATT_ORDER = 1 LIMIT 1
+				) AS MAIN_FILE_NAME1
+			,(
+				SELECT CONCAT (
+						TF.`PATH`
+						,'/'
+						,TF.NEW_NAME
+						)
+				FROM TB_FILE TF
+				WHERE ATT_TYPE = 'PRESS'
+					AND TF.`TYPE` = 'MO'
+					AND TF.ATT_SEQ = TB1.SEQ
+					AND ATT_ORDER = 1 LIMIT 1
+				) AS filePath2				
+			,(
+				SELECT CONCAT (
+						TF.`PATH`
+						,'/'
+						,TF.NEW_NAME
+						)
+				FROM TB_FILE TF
+				WHERE ATT_TYPE = 'PRESS'
+					AND TF.`TYPE` = 'MO'
+					AND TF.ATT_SEQ = TB1.SEQ
+					AND ATT_ORDER = 1 LIMIT 1
+				) AS MAIN_FILE_NAME2
+		FROM	dohwa.tb_press TB1
+		<where>
+			<if test="searchText != null and searchText != ''">
+				TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchDispYn != null and searchDispYn != ''">
+				DISP_YN = #{searchDispYn}
+			</if>
+			
+		</where>
+
+		ORDER	BY WRITE_DT DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+			LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+
+	</select>
+	
+	<insert id="insertPress" parameterType="pressVO" useGeneratedKeys="true" keyProperty="seq">
+		/* 컨텐츠 관리 > 보도자료 관리 > 등록 */
+
+		INSERT INTO dohwa.tb_press
+		( 
+			  WRITE_DT
+			, TITLE
+			, CONT
+			, DISP_YN
+		)
+		VALUES
+		(
+			  REPLACE(#{writeDt}, '-', '')
+			, #{Title}
+			, #{Cont}
+			, #{dispYn}
+		)
+	</insert>
+
+	<update id="updatePress" parameterType="pressVO">
+		/* 컨텐츠 관리 > 보됴자료 관리 > 수정 */
+
+		UPDATE	dohwa.tb_press
+		SET		  WRITE_DT 	= REPLACE(#{writeDt}, '-', '')
+				, TITLE 	= #{Title}
+				, CONT 		= #{Cont}
+				, DISP_YN 	= #{dispYn}
+		<where>
+				SEQ = #{seq}
+		</where>
+
+	</update>
+
+	<delete id="deletePress" parameterType="java.util.List">
+		/* 컨텐츠 관리 > 보도자료 관리 > 삭제 */
+
+		DELETE	FROM dohwa.tb_press
+
+		<where>
+			<foreach collection="list" item="seq" open="SEQ IN (" close=")" separator=",">
+			#{seq}
+			</foreach>
+		</where>
+
+	</delete>
+	
+	<select id="getPressBy" parameterType="pressVO" resultType="pressVO">
+		SELECT                        
+				tp.SEQ
+				, tp.DISP_YN
+				, tp.CONT
+                , tp.TITLE	
+				, DATE_FORMAT(STR_TO_DATE(tp.WRITE_DT, '%Y%m%d'),'%Y-%m-%d') AS WRITE_DT
+				,(
+					SELECT CONCAT (TF.`PATH`,'/',TF.NEW_NAME)
+					FROM TB_FILE TF
+					WHERE ATT_TYPE = 'PRESS'
+						AND TF.`TYPE` = 'PC'
+						AND TF.ATT_SEQ = tp.SEQ
+						AND ATT_ORDER = 1 LIMIT 1
+					) AS PATH
+			        ,(
+					SELECT NEW_NAME
+					FROM TB_FILE TF
+					WHERE ATT_TYPE = 'PRESS'
+						AND TF.`TYPE` = 'PC'
+						AND TF.ATT_SEQ = tp.SEQ
+						AND ATT_ORDER = 1 LIMIT 1
+					) AS NEW_NAME
+		FROM	dohwa.tb_press tp
+	
+		<where>
+				SEQ = #{seq}
+			<if test="dispYn != null and !''.equals(dispYn)">
+				AND DISP_YN = #{dispYn}
+			</if>
+		</where>
+	</select>
+
+	<select id="getPressByPrevNext" parameterType="searchVO" resultType="pressVO">
+		SELECT 'PREV' AS btnNm, SEQ, TITLE
+		FROM TB_PRESS
+		WHERE SEQ = (SELECT 
+						SEQ
+					 FROM TB_PRESS 
+					 WHERE SEQ &lt; #{seq}
+					<if test="searchDispYn != null and !''.equals(searchDispYn)">
+						AND DISP_YN = #{searchDispYn}
+					</if>
+					<if test="searchText != null and searchText != ''">
+						AND TITLE LIKE CONCAT('%',#{searchText},'%')
+					</if>
+					ORDER BY WRITE_DT ASC LIMIT 1)
+		UNION ALL
+
+		SELECT 'NEXT' AS btnNm, SEQ, TITLE
+		FROM TB_PRESS
+		WHERE SEQ = (SELECT 
+						SEQ
+					 FROM TB_PRESS
+					 WHERE SEQ &gt; #{seq}
+					<if test="searchDispYn != null and !''.equals(searchDispYn)">
+						AND DISP_YN = #{searchDispYn}
+					</if>
+					<if test="searchText != null and searchText != ''">
+						AND TITLE LIKE CONCAT('%',#{searchText},'%')
+					</if>
+					ORDER BY WRITE_DT DESC LIMIT 1)
+	</select>
+	
+	<resultMap type="donateVO" id="donateListResult">
+		<result column="SEQ" property="seq" />
+		<result column="TYPE_CODE" property="typeCd" />
+		<result column="WRITE_DT" property="writeDt" />
+		<result column="WRITE_DT_EN" property="writeDtEn" />
+		<result column="DISP_YN" property="dispYn" />
+		<result column="KO_TITLE" property="koTitle" />
+		<result column="EN_TITLE" property="enTitle" />
+		<result column="ES_TITLE" property="esTitle" />
+		<result column="KO_TITLE_MO" property="koTitleMo" />
+		<result column="EN_TITLE_MO" property="enTitleMo" />
+		<result column="ES_TITLE_MO" property="esTitleMo" />
+		<result column="KO_CONT" property="koCont" />
+		<result column="EN_CONT" property="enCont" />
+		<result column="ES_CONT" property="esCont" />
+		<result column="MAIN_FILE_NAME1" property="mainFileName1" />
+		<result column="MAIN_FILE_NAME2" property="mainFileName2" />
+		<result column="ID" property="fileVO.id" />
+		<result column="ORG_NAME" property="fileVO.orgName" />
+		<result column="PATH" property="fileVO.path" />
+	</resultMap>
+
+	<select id="getDonateCount" parameterType="searchVO" resultType="int">
+		/* 컨텐츠 관리 > CSR(사회공헌) 관리 > 목록 개수 */
+
+		SELECT	COUNT(*) FROM dohwa.tb_donate
+
+		<where>
+			<if test="searchDispYn != null and searchDispYn != ''">
+				DISP_YN = #{searchDispYn}
+			</if>
+		</where>
+
+	</select>
+
+	<select id="getDonateList"  parameterType="donateVO" resultMap="donateListResult">
+		/* 컨텐츠 관리 > CSR(사회공헌) 관리 > 목록 */
+		SELECT
+				  SEQ
+				, TYPE_CODE
+				, DATE_FORMAT(STR_TO_DATE(WRITE_DT, '%Y%m%d'),'%Y-%m-%d') AS WRITE_DT
+				, WRITE_DT_EN
+				, KO_TITLE
+				, EN_TITLE
+				, ES_TITLE
+				, KO_CONT
+				, EN_CONT
+				, ES_CONT
+				, DISP_YN
+		FROM	dohwa.tb_donate
+
+		<where>
+			1=1
+			
+			<if test="searchText != null and searchText != ''">
+				AND TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+		</where>
+
+		ORDER BY WRITE_DT DESC, SEQ DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+			LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+	</select>
+	
+	<select id="getDonate" parameterType="int" resultType="donateVO">
+		/* 컨텐츠 관리 > CSR(사회공헌) 관리 > 상세 */
+
+		SELECT
+			  SEQ
+			, TYPE_CODE
+			, KO_TITLE
+			, EN_TITLE
+			, ES_TITLE
+			, KO_CONT
+			, EN_CONT
+			, ES_CONT
+			, DATE_FORMAT(STR_TO_DATE(WRITE_DT, '%Y%m%d'),'%Y-%m-%d') AS WRITE_DT
+			, WRITE_DT_EN
+			, DISP_YN
+		FROM	dohwa.tb_donate
+
+		<where>
+				SEQ = #{seq}
+		</where>
+
+	</select>
+	
+	<select id="getDonateListFront" parameterType="donateVO" resultMap="donateListResult">
+		/* 컨텐츠 관리 > CSR(사회공헌) 관리 > 목록 (front no paging) */
+		SELECT
+			SEQ
+			, TYPE_CODE
+			, DATE_FORMAT(STR_TO_DATE(WRITE_DT, '%Y%m%d'),'%Y-%m-%d') AS WRITE_DT
+			, WRITE_DT_EN
+			, KO_TITLE 
+			, EN_TITLE
+			, ES_TITLE
+			, CASE WHEN CHAR_LENGTH(KO_TITLE) > 18 THEN CONCAT(SUBSTRING(KO_TITLE,1,17),'...') ELSE KO_TITLE END AS KO_TITLE_MO
+			, CASE WHEN CHAR_LENGTH(EN_TITLE) > 30 THEN CONCAT(SUBSTRING(EN_TITLE,1,29),'...') ELSE EN_TITLE END AS EN_TITLE_MO
+			, CASE WHEN CHAR_LENGTH(ES_TITLE) > 30 THEN CONCAT(SUBSTRING(ES_TITLE,1,29),'...') ELSE ES_TITLE END AS ES_TITLE_MO
+			<!-- , <![CDATA[REGEXP_REPLACE(KO_CONT, '<[^>]*>|\&([^;])*;', '') AS KO_CONT ]]> 
+			, <![CDATA[REGEXP_REPLACE(EN_CONT, '<[^>]*>|\&([^;])*;', '') AS EN_CONT ]]>
+			, <![CDATA[REGEXP_REPLACE(ES_CONT, '<[^>]*>|\&([^;])*;', '') AS ES_CONT ]]>-->
+			, KO_CONT
+			, EN_CONT
+			, ES_CONT
+			, DISP_YN
+		    ,(
+				SELECT CONCAT (TF.`PATH`,'/',TF.NEW_NAME)
+				FROM TB_FILE TF
+				WHERE ATT_TYPE = 'DONATE'
+				AND TF.ATT_SEQ = TB1.SEQ
+				AND ATT_ORDER = 1 LIMIT 1 ) AS filePath1
+			,(
+				SELECT CONCAT (
+						TF.`PATH`
+						,'/'
+						,TF.NEW_NAME
+						)
+				FROM TB_FILE TF
+				WHERE ATT_TYPE = 'DONATE'
+				AND TF.ATT_SEQ = TB1.SEQ
+				AND ATT_ORDER = 1 LIMIT 1 ) AS MAIN_FILE_NAME1
+			,(
+				SELECT CONCAT (
+						TF.`PATH`
+						,'/'
+						,TF.NEW_NAME
+						)
+				FROM TB_FILE TF
+				WHERE ATT_TYPE = 'DONATE'
+				AND TF.ATT_SEQ = TB1.SEQ
+				AND ATT_ORDER = 2 LIMIT 1 ) AS filePath2				
+			,(
+				SELECT CONCAT (
+						TF.`PATH`
+						,'/'
+						,TF.NEW_NAME
+						)
+				FROM TB_FILE TF
+				WHERE ATT_TYPE = 'DONATE'
+				AND TF.ATT_SEQ = TB1.SEQ
+				AND ATT_ORDER = 2 LIMIT 1 ) AS MAIN_FILE_NAME2
+		FROM	dohwa.tb_donate TB1
+		<where>
+			<if test="searchText != null and searchText != ''">
+				TITLE LIKE CONCAT('%',#{searchText},'%')
+			</if>
+			<if test="searchDispYn != null and searchDispYn != ''">
+				DISP_YN = #{searchDispYn}
+			</if>
+			
+		</where>
+
+		ORDER BY WRITE_DT DESC
+		<if test="offsetStartNumber >= 0 and rowPerPage > 0">
+			LIMIT #{offsetStartNumber}, #{rowPerPage}
+		</if>
+
+	</select>
+	
+	<insert id="insertDonate" parameterType="donateVO" useGeneratedKeys="true" keyProperty="seq">
+		/* 컨텐츠 관리 > CSR(사회공헌) 관리 > 등록 */
+
+		INSERT INTO dohwa.tb_donate
+		( 
+			  WRITE_DT
+			, WRITE_DT_EN
+			, TYPE_CODE  
+			, KO_TITLE
+			, EN_TITLE
+			, ES_TITLE
+			, KO_CONT
+			, EN_CONT
+			, ES_CONT
+			, DISP_YN
+		)
+		VALUES
+		(
+			  REPLACE(#{writeDt}, '-', '')
+			, #{writeDtEn}  
+			, #{typeCode}  
+			, #{koTitle}
+			, #{enTitle}
+			, #{esTitle}
+			, #{koCont}
+			, #{enCont}
+			, #{esCont}
+			, #{dispYn}
+		)
+	</insert>
+
+	<update id="updateDonate" parameterType="donateVO">
+		/* 컨텐츠 관리 > CSR(사회공헌) 관리 > 수정 */
+
+		UPDATE	dohwa.tb_donate
+		SET		  WRITE_DT 	= REPLACE(#{writeDt}, '-', '')
+				, WRITE_DT_EN = #{writeDtEn}
+				, TYPE_CODE = #{typeCode}	
+				, KO_TITLE 	= #{koTitle}
+				, EN_TITLE 	= #{enTitle}
+				, ES_TITLE 	= #{esTitle}
+				, KO_CONT 	= #{koCont}
+				, EN_CONT 	= #{enCont}
+				, ES_CONT 	= #{esCont}
+				, DISP_YN 	= #{dispYn}
+		<where>
+				SEQ = #{seq}
+		</where>
+
+	</update>
+
+	<delete id="deleteDonate" parameterType="java.util.List">
+		/* 컨텐츠 관리 > CSR(사회공헌) 관리 > 삭제 */
+
+		DELETE FROM dohwa.tb_donate
+
+		<where>
+			<foreach collection="list" item="seq" open="SEQ IN (" close=")" separator=",">
+			#{seq}
+			</foreach>
+		</where>
+
+	</delete>
+	
+	<select id="getDonateBy" parameterType="donateVO" resultType="donateVO">
+		SELECT
+				  tp.SEQ
+				, tp.TYPE_CODE
+				, tp.DISP_YN
+				, tp.CONT
+                , tp.KO_TITLE	
+				, DATE_FORMAT(STR_TO_DATE(tp.WRITE_DT, '%Y%m%d'),'%Y-%m-%d') AS WRITE_DT
+				, WRITE_DT_EN
+				,(
+					SELECT CONCAT (TF.`PATH`,'/',TF.NEW_NAME)
+					FROM TB_FILE TF
+					WHERE ATT_TYPE = 'PRESS'
+						AND TF.`TYPE` = 'PC'
+						AND TF.ATT_SEQ = tp.SEQ
+						AND ATT_ORDER = 1 LIMIT 1
+					) AS PATH
+			        ,(
+					SELECT NEW_NAME
+					FROM TB_FILE TF
+					WHERE ATT_TYPE = 'PRESS'
+						AND TF.`TYPE` = 'PC'
+						AND TF.ATT_SEQ = tp.SEQ
+						AND ATT_ORDER = 1 LIMIT 1
+					) AS NEW_NAME
+		FROM	dohwa.tb_donate tp
+	
+		<where>
+				SEQ = #{seq}
+			<if test="dispYn != null and !''.equals(dispYn)">
+				AND DISP_YN = #{dispYn}
+			</if>
+		</where>
+	</select>
+
+	<select id="getDonateByPrevNext" parameterType="searchVO" resultType="donateVO">
+		SELECT 'PREV' AS btnNm, SEQ, KO_TITLE
+		FROM TB_DONATE
+		WHERE SEQ = (SELECT 
+						SEQ
+					 FROM TB_DONATE 
+					 WHERE SEQ &lt; #{seq}
+					<if test="searchDispYn != null and !''.equals(searchDispYn)">
+						AND DISP_YN = #{searchDispYn}
+					</if>
+					<if test="searchText != null and searchText != ''">
+						AND TITLE LIKE CONCAT('%',#{searchText},'%')
+					</if>
+					ORDER BY WRITE_DT ASC LIMIT 1)
+		UNION ALL
+
+		SELECT 'NEXT' AS btnNm, SEQ, KO_TITLE
+		FROM TB_DONATE
+		WHERE SEQ = (SELECT 
+						SEQ
+					 FROM TB_DONATE
+					 WHERE SEQ &gt; #{seq}
+					<if test="searchDispYn != null and !''.equals(searchDispYn)">
+						AND DISP_YN = #{searchDispYn}
+					</if>
+					<if test="searchText != null and searchText != ''">
+						AND TITLE LIKE CONCAT('%',#{searchText},'%')
+					</if>
+					ORDER BY WRITE_DT DESC LIMIT 1)
+	</select>
+</mapper>
+

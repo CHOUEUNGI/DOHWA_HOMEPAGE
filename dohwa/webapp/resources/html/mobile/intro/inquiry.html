@@ -1,0 +1,515 @@
+<!-- 지도-->
+<!-- 영상-->
+<!-- paging-->
+<!-- location-->
+<!DOCTYPE html>
+<!--[if IE 7]><html lang="ko" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="ko">
+	<!--<![endif]-->
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link href="/inc/css/font.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/reset.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/print.css" type="text/css" rel="stylesheet" />
+		<link href="/inc/css/common_mobile.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--[if lte IE 8]>
+			<p class="browserupgrade">
+				You are using an
+				<strong>outdated</strong>
+				browser. Please
+				<a href="https://browsehappy.com/">upgrade your browser</a>
+				to improve your experience and security.
+			</p>
+		<![endif]-->
+		<div class="intro" id="wrap">
+			<header class="header" id="header">
+				<!-- header include -->
+				<ul class="skipnav">
+					<li><a href="#">주요메뉴 바로가기</a></li>
+					<li><a href="#content">컨텐츠 바로가기</a></li>
+				</ul>
+				<div class="header_content">
+					<!--스크롤 및 햄버거 클릭시 .on 클래스 추가-->
+					<h1 class="logo-wrap">
+						<a href="#"></a>
+						<span class="hide-txt">DOHWA</span>
+					</h1>
+					<div class="header-menu">
+						<span class="btn-gnb-wrap">
+							<button class="bttn-all-menu" type="button">
+								<em class="ico gnb-menu" aria-hidden="true"></em>
+								<span class="hide-txt">Menu</span>
+							</button>
+						</span>
+						<div class="header-all-menu">
+							<!-- .bttn-all-menu 클릭시 .active 추가 (전체메뉴 노출) -->
+							<div class="scroll-wrap">
+								<ul class="all-menu-list">
+									<li class="all-menu-item">
+										<!-- 활성화 클래스 : active -->
+										<a href="#none">
+											회사소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">Vision</a></li>
+											<li class="gnb-sub-item"><a href="#">People</a></li>
+											<li class="gnb-sub-item"><a href="#">History</a></li>
+											<li class="gnb-sub-item"><a href="#">CSR</a></li>
+											<li class="gnb-sub-item"><a href="#">Contact us</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											사업소개
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">Overview</a></li>
+											<li class="gnb-sub-item"><a href="#">프로젝트</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											투자정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">재무정보</a></li>
+											<li class="gnb-sub-item"><a href="#">전자공고 및 공시</a></li>
+											<li class="gnb-sub-item"><a href="#">IR 자료실</a></li>
+											<li class="gnb-sub-item"><a href="#">주식 및 주주정보</a></li>
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											홍보센터
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<!--s: 20200831 메뉴추가-->
+											<li class="gnb-sub-item"><a href="#">CI소개</a></li>
+											<li class="gnb-sub-item"><a href="#">최신뉴스</a></li>
+											<li class="gnb-sub-item"><a href="#">기업브로슈어</a></li>
+											<li class="gnb-sub-item"><a href="#">홍보영상</a></li>
+											<!--e: 20200831 메뉴추가-->
+										</ul>
+									</li>
+									<li class="all-menu-item">
+										<a href="#none">
+											채용정보
+											<i class="ico-gnb-arrow" aria-hidden="true"></i>
+										</a>
+										<ul class="gnb-sub-list">
+											<li class="gnb-sub-item"><a href="#">채용안내</a></li>
+											<li class="gnb-sub-item"><a href="#">채용지원</a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="lang-list">
+									<li>
+										<button class="bttn-lang on" type="button">
+											KOR
+											<!-- 활성화 클래스 : on -->
+										</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ENG</button>
+									</li>
+									<li>
+										<button class="bttn-lang" type="button">ESP</button>
+									</li>
+								</ul>
+							</div>
+							<button class="bttn-menu-close" type="button" title="전체메뉴 닫기"><span class="hide-txt">전체메뉴 닫기</span></button>
+						</div>
+					</div>
+				</div>
+				<!-- header include -->
+			</header>
+			<div id="container">
+				<div id="content" role="main">
+					<div class="page-visual intro06 visual-area">
+						<div class="page-title-sec">
+							<span class="title-main-sub">COMPANY INFO</span>
+							<h2 class="title-main">회사소개</h2>
+						</div>
+						<div class="visual-grid-wrap" aria-hidden="true">
+							<div class="grid-ico-wrap" aria-hidden="true">
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+								<div class="grid-ico" aria-hidden="true"></div>
+							</div>
+							<div class="grid-line-wrap">
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+								<div class="grid-line-act" aria-hidden="true"></div>
+							</div>
+						</div>
+					</div>
+					<div class="page-tab-section">
+						<div class="tab-menu-type01 center swiper-container">
+							<ul class="tab-list swiper-wrapper">
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">Overview</a></li>
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">Vision</a></li>
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">People</a></li>
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">History</a></li>
+								<li class="swiper-slide"><a class="item" href="#none" data-id="">CSR</a></li>
+								<li class="active swiper-slide"><a class="item" href="#none" data-id="">Contact us</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="contents no-btm-type">
+						<div class="section-cont inquiry-cont">
+							<div class="tab-menu-type02">
+								<ul class="tab-list">
+									<li>
+										<a class="item" href="#none"><span class="txt" data-id="">연락처 &middot; 위치</span></a>
+									</li>
+									<li>
+										<a class="item" href="#none"><span class="txt" data-id="">해외지사</span></a>
+									</li>
+									<li class="active">
+										<a class="item" href="#none"><span class="txt" data-id="">문의사항</span></a>
+									</li>
+								</ul>
+							</div>
+							<!--s: 20200915 텍스트 수정-->
+							<div class="inner-tab-cont active">
+								<div class="terms-cont">
+									<h3 class="title-sect">
+										개인정보 수집
+										<br />
+										및 이용에 대한 안내
+									</h3>
+									<div class="terms-box">
+										<div class="terms-inner">
+											<strong>개인정보처리방침</strong>
+											<p>01. 총칙</p>
+											<p>
+												"개인정보"란 살아있는 개인에 관한 정보로서 성명, 주민등록번호 및 영상 등을 통하여 개인을 알아볼 수 있는 정보 (해당 정보만으로는 특정개인을 알아볼 수 없더라도 다른 정보와 쉽게 결합하여 알아볼 수 있는 것을 포함)를 말합니다. "정보주체"란 처리되는 정보에 의하여 알아볼 수 있는 사람으로서 그 정보의 주체가 되는 사람을 말합니다. 회사는 개인정보 처리방침을 홈페이지 (http://www.dohwa.co.kr) 첫 화면에
+												공개함으로써 언제나 쉽게 확인할 수 있도록 조치하고 있으며, 개인정보처리방침을 개정하는 경우 웹사이트공지사항(또는 개별공지)을 통하여 공지할 것입니다.
+											</p>
+											<p>02. 개인정보의 처리항목 및 목적</p>
+											<p>회사는 법령의 규정 또는 정보 주체의 동의 없이는 정보주체의 사생활을 현저히 침해 할 우려가 있는 민감 정보, 개인을 고유하게 구별하기 위하여 부여된 고유 식별정보를 처리하지 않습니다.</p>
+											<p>
+												가. 처리항목
+												<br />
+												성명(국문/한자/영문), 사진, 비밀번호, 자택전화번호, 자택주소, 본적, 휴대전화번호, 이메일, 학력, 병역(군필 여부, 복무기간, 군별, 계급), 어학능력, 컴퓨터능력, 자격사항, 가족관계, 보훈여부, 경력, 사회경험, 수상경력, 해외경험, 연구경험
+											</p>
+											<p>
+												나. 처리목적
+												<br />
+												- 입사전형 및 지원자와의 연락
+												<br />
+												- 급여지급, 복리후생제공, 교육, 신용보증 보험가입 업무, 각종 업무수행 지원 및 평가 등 인사관리
+											</p>
+											<p>03. 개인정보의 처리 및 보유기간</p>
+											<p>원칙적으로, 개인정보의 수집 및 이용목적이 달성된 후에는 해당정보를 지체 없이 파기합니다. 다만, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보유하며 필요시 정보주체의 동의를 받습니다.</p>
+											<p>
+												가. 채용된 입사지원자의 개인정보
+												<br />
+												- 보유기간 : 영구보유
+												<br />
+												- 보유이유 : 재직 중 인사관리 등, 퇴직 후 복리후생, 경력증명서 발급 등
+												<br />
+												- 보유항목 : 성명(국문/한자/영문), 사진, 비밀번호, 자택전화번호, 자택주소, 휴대전화번호, 이메일, 학력, 병역(군필 여부, 복무기간, 군별, 계급), 어학능력, 컴퓨터능력, 자격사항, 가족관계, 보훈여부, 경력, 사회경험, 수상경력, 해외경험, 연구경험
+											</p>
+											<p>
+												나. 채용되지 아니한 입사지원자의 개인정보
+												<br />
+												- 보유기간 : 채용절차 종료 후 5년
+												<br />
+												- 보유이유 : 향후 채용가능자원의 관리
+												<br />
+												- 보유항목 : 성명(국문/한자/영문), 사진, 비밀번호, 자택전화번호, 자택주소, 휴대전화번호, 이메일, 학력, 병역(군필 여부, 복무기간, 군별, 계급), 어학능력, 컴퓨터능력, 자격사항, 가족관계, 보훈여부, 경력, 사회경험, 수상경력, 해외경험, 연구경험
+											</p>
+											<p>04. 개인정보의 파기방법</p>
+											<p>전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다. 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.</p>
+											<p>
+												공고일자 : 2012년01월 01일
+												<br />
+												시행일자 : 2012년01월 01일
+											</p>
+										</div>
+									</div>
+									<div class="agree-area">
+										<span class="input-checkbox right">
+											<input type="checkbox" id="chk01" name="chk01" />
+											<label for="chk01"><span class="txt">위의 개인정보 제공에 동의합니다.</span></label>
+										</span>
+									</div>
+									<h3 class="title-sect">
+										개인정보 제3자
+										<br />
+										제공에 대한 안내
+									</h3>
+									<div class="terms-box">
+										<div class="terms-inner">
+											<strong>개인정보의 제3자 제공</strong>
+											<p>회사는 수집목적 범위 내에서 개인정보를 이용하며, 동 범위를 초과하여 개인정보를 이용하거나 제3자에게 제공·공개하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.</p>
+											<p>
+												- 정보주체로부터 별도의 동의를 받는 경우
+												<br />
+												- 다른 법률에 특별한 규정이 있는 경우
+												<br />
+												- 정보주체 또는 그 법정대리인이 의사표시를 할 수 없는 상태에 있거나 주소불명 등으로 사전 동의를 받을 수 없는 경우로서 명백히 정보주체 또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요하다고 인정되는 경우
+												<br />
+												- 통계 작성 및 학술 연구 등의 목적을 위하여 필요한 경우로서 특정 개인을 알아볼 수 없는 형태로 개인정보를 제공하는 경우
+											</p>
+											<p>현재 회사는 아래와 같이 개인정보를 제공하고 있습니다.</p>
+											<p>
+												- 개인정보를 제공받는 자 :엔지니어링공제조합, LIG보험, 서울보증보험
+												<br />
+												- 제공하는 개인정보의 항목 : 성명, 주민등록번호
+												<br />
+												- 제공정보의 이용목적 : 단체상해보험가입목적, 개인별신원보증보험가입
+												<br />
+												- 제공정보의 보유 및 이용기간 : 즉시파기
+											</p>
+										</div>
+									</div>
+									<div class="agree-area">
+										<span class="input-checkbox right">
+											<input type="checkbox" id="chk02" name="chk01" />
+											<label for="chk02"><span class="txt">위의 개인정보 제공에 동의합니다.</span></label>
+										</span>
+									</div>
+									<div class="bttn-area center">
+										<!-- s: 20200825 확인 -> 제출 수정-->
+										<a class="bttn type01 style01" href="#none" role="button">
+											<span class="txt01">제출</span>
+											<i class="ico01" aria-hidden="true"></i>
+										</a>
+										<!-- e: 20200825 확인 -> 제출 수정-->
+									</div>
+								</div>
+								<h3 class="title-sect">문의하기</h3>
+								<div class="table-wrap-type01">
+									<table class="table-col-type01 table-form-type">
+										<caption>
+											<span class="txt01">문의하기</span>
+											<span class="txt02">:이름</span>
+											<span class="txt03">,이메일</span>
+											<span class="txt04">,연락처</span>
+											<span class="txt05">,제목</span>
+											<span class="txt06">,내용</span>
+											<span class="txt07">,첨부파일</span>
+										</caption>
+										<colgroup>
+											<col style="width:25%" />
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>이름</th>
+												<td>
+													<span class="input-txt">
+														<input type="text" title="이름" />
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th>이메일</th>
+												<td>
+													<div class="input-group input-email">
+														<span class="input-txt">
+															<input type="text" title="이메일 아이디" />
+														</span>
+														<span class="input-email-at">&#64;</span>
+														<span class="input-txt">
+															<input type="text" title="이메일 도메인" />
+														</span>
+													</div>
+													<div class="input-email-domain">
+														<span class="selectbox">
+															<select title="이메일 도메인">
+																<option value="">직접입력</option>
+																<option value="">naver.com</option>
+																<option value="">gmail.com</option>
+																<option value="">hanmail.net</option>
+															</select>
+														</span>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>연락처</th>
+												<td>
+													<span class="input-txt">
+														<input type="text" title="연락처" />
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th>제목</th>
+												<td>
+													<span class="input-txt">
+														<input type="text" title="제목" />
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th>내용</th>
+												<td>
+													<span class="input-txt">
+														<textarea name="" title="내용"></textarea>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<th>첨부파일</th>
+												<td>
+													<div class="input-file">
+														<label class="bttn-file-upload" for="file-upload">
+															파일선택
+															<input class="inp-file-hide" type="file" id="file-upload" />
+														</label>
+														<input class="selected-file" type="text" disabled="true" placeholder="선택된 파일 없음" aria-hidden="true" />
+														<p class="info-txt">
+															* 첨부 파일은 jpg, png, gif, hwp, pdf, ppt, xls, zip 파일에 한해 등록이 가능합니다.
+															<br />
+															/ 최대 용량 : 00MB
+														</p>
+													</div>
+													<div class="file-list">
+														<p class="file-item">
+															도화엔지니어링_Img_20200722.png
+															<button class="btn-delete" type="button">
+																<i class="ico-file-delete" aria-hidden="true"></i>
+																<span class="hide-txt">파일삭제</span>
+															</button>
+														</p>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="table-btn-wrap center">
+										<a class="bttn type01 style01" href="#none" role="button">
+											<span class="txt01">문의하기</span>
+											<em class="ico01" aria-hidden="true"></em>
+										</a>
+									</div>
+								</div>
+							</div>
+							<!--e: 20200915 텍스트 수정-->
+						</div>
+					</div>
+					<!--s: 20200831 #content 안으로 위치변경-->
+					<div class="btm-full-banner">
+						<div class="intro-link-wrap">
+							<div class="intro-link-box">
+								<a class="intro-link" href="#none">
+									<span class="intro-menu">Career</span>
+									<strong class="intro-name">채용지원</strong>
+								</a>
+							</div>
+							<div class="intro-link-box">
+								<a class="intro-link" href="#none">
+									<span class="intro-menu">Business</span>
+									<strong class="intro-name">사업소개</strong>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!--e: 20200831 #content 안으로 위치변경-->
+				</div>
+			</div>
+			<footer class="footer" id="footer">
+				<!-- footer include -->
+				<div class="footer-wrap">
+					<div class="footer-content">
+						<div class="btn-goTop">
+							<button class="btn-top" type="button">TOP</button>
+						</div>
+						<div class="footer-family">
+							<div class="family-inner">
+								<button class="family-btn" type="button"><span>Employee Site</span></button>
+								<ul class="family-list">
+									<li class="family-item"><a href="#none" title="새창열림">PDIM</a></li>
+									<li class="family-item"><a href="#none" title="새창열림">Group Ware</a></li>
+									<li class="family-item">
+										<!--s: 20200903 텍스트 수정-->
+										<a href="#none" title="새창열림">CMFG</a>
+										<!--e: 20200903 텍스트 수정-->
+									</li>
+									<li class="family-item"><a href="#none" title="새창열림">Webhard</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer-inner">
+							<span class="footer-logo"><img src="/images/common_mobile/img_footer_logo.jpg" alt="DOHWA" /></span>
+							<span class="footer-sns">
+								<a class="ico-blog" href="#none" title="새창열림"><span class="hide-txt">Blog</span></a>
+								<a class="ico-youtube" href="#none" title="새창열림"><span class="hide-txt">Youtube</span></a>
+							</span>
+							<div class="footer-info">
+								<!--s :20200914 우편번호 수정-->
+								<p>서울특별시 강남구 삼성로 438 (#06178)</p>
+								<!--s :20200914 우편번호 수정-->
+								<p>대표전화 : 02 - 6323 - 3000</p>
+								<ul class="footer-menu">
+									<li>
+										<!-- s: 20200813 수정 -->
+										<a href="#none"><strong class="nanumB">개인정보처리방침</strong></a>
+										<!-- e: 20200813 수정 -->
+									</li>
+									<li><a href="#none">윤리경영 제보라인</a></li>
+								</ul>
+								<address class="copyright">
+									COPYRIGHT © 2020 DOHWA ENGINEERING CO., LTD.
+									<br />
+									AllRIGHT RESERVED.
+								</address>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- footer include -->
+			</footer>
+		</div>
+		<div class="dimm"></div>
+		<div class="cnt-grid-wrap" aria-hidden="true">
+			<div class="grid-ico-wrap" aria-hidden="true">
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+				<div class="grid-ico" aria-hidden="true"></div>
+			</div>
+			<div class="grid-line-wrap" aria-hidden="true">
+				<div class="grid-line" aria-hidden="true"></div>
+				<div class="grid-line" aria-hidden="true"></div>
+			</div>
+		</div>
+		<script src="/inc/js/jquery.js"></script>
+		<script src="/inc/js/swiper.min.js"></script>
+		<script src="/inc/js/TweenMax.min.js"></script>
+		<script src="/inc/js/CustomEase.min.js"></script>
+		<script src="/inc/js/ComponentUI.js"></script>
+		<script src="/inc/js/countUp.min.js"></script>
+		<script src="/inc/js/common_mo.js"></script>
+	</body>
+</html>

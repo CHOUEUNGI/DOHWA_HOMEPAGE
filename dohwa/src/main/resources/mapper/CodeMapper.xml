@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dohwa.mapper.CodeMapper">
+
+	<select id="getCodeList" parameterType="codeVO" resultType="codeVO">
+		SELECT TB1.*
+		FROM TB_CODE TB1
+		<where>
+			<if test="null != code and !''.equals(code)">
+				TB1.CODE = #{code}
+			</if>
+			<if test="null != parentCode and !''.equals(parentCode)">
+				AND TB1.PARENT_CODE = #{parentCode}
+			</if>
+			<if test="null != useYn and !''.equals(useYn)">
+				AND TB1.USE_YN = #{useYn}
+			</if>
+		</where>
+		ORDER BY TB1.ORDER ASC
+	</select>
+
+	<insert id="insertMerge" parameterType="hashmap">
+		INSERT INTO TB_CODE
+		(SEQ, CODE, PARENT_CODE, KO_TEXT, EN_TEXT, ES_TEXT, `ORDER`, USE_YN, REG_ID, REG_DT)
+		VALUES
+		<foreach collection="list" item="item" separator=",">
+			(#{item.seq}, #{item.code}, #{item.parentCode}, #{item.koText}, #{item.enText}, #{item.esText}, #{item.order}, #{item.useYn}, #{regId}, NOW())
+		</foreach>
+		    ON DUPLICATE KEY UPDATE KO_TEXT = VALUES(KO_TEXT),
+									EN_TEXT = VALUES(EN_TEXT),
+		    						ES_TEXT = VALUES(ES_TEXT),
+		    						`ORDER` = VALUES(`ORDER`),
+		    						USE_YN = VALUES(USE_YN),
+		    						UPD_ID = #{regId},
+		    						UPD_DT = NOW()
+	</insert>
+
+	<select id="getProjectItemList" resultType="codeVO">
+		WITH RECURSIVE CTE_TABLE AS (
+			SELECT SEQ
+				,CODE
+				,PARENT_CODE
+				,KO_TEXT
+				,EN_TEXT
+				,ES_TEXT
+				,`ORDER`
+				,USE_YN
+			FROM TB_CODE
+			WHERE PARENT_CODE = 'PROJECT_ITEM'
+
+			UNION ALL
+
+			SELECT TB1.SEQ
+				,TB1.CODE
+				,TB1.PARENT_CODE
+				,TB1.KO_TEXT
+				,TB1.EN_TEXT
+				,TB1.ES_TEXT
+				,TB1.`ORDER`
+				,TB1.USE_YN
+			FROM TB_CODE 		 TB1
+			INNER JOIN CTE_TABLE TB2 ON TB1.PARENT_CODE = TB2.CODE)
+		SELECT SEQ
+			,CODE
+			,PARENT_CODE
+			,`ORDER`
+			,KO_TEXT
+			,EN_TEXT
+			,ES_TEXT
+		FROM CTE_TABLE
+		WHERE USE_YN = 'Y'
+		ORDER BY (CASE WHEN CODE LIKE '%MARKET%'  THEN 1
+					   WHEN CODE LIKE '%SERVICE%' THEN 2
+					   WHEN CODE LIKE '%REGION%'  THEN 3
+					   ELSE 4
+				  END), CODE, `ORDER` ASC
+	</select>
+
+
+</mapper>
