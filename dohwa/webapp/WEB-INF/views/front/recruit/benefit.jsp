@@ -116,8 +116,8 @@
 						</div>
 						<div class="contents full-type no-btm-type clfix">
 							<span class="page-decs page-decs-type02">
-								<strong>05 <spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.003" text="RECRUIT" /></strong>
-								<spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.005" text="DOHWA ENGINEERING" />
+								<strong>05 RECRUIT</strong>
+								DOHWA ENGINEERING
 							</span>
 							<div class="section-cont recruit-welfare">
 								<div class="content-inner">

@@ -149,7 +149,7 @@
 										</div>
 									</div>
 									<div class="sub-visual">
-										<span class="img"><img src="/images/pc/recruit_introduction.jpg"/></span>
+										<span><img  style="width:1920px;height:640px;margin:0 auto; display: block;" src="/images/pc/recruit_introduction.jpg"/></span>
 									</div>
 									<!-- 
 									<div class="sub-visual">
@@ -158,7 +158,6 @@
 									 -->
 									<div class="content-inner">
 										<h3 class="title-sect"><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.003.001" text="직무소개" /></h3>
-										
 										<span class="img"><img src="/images/pc/recruit_introduction_detail.jpg"/></span>
 									</div>
 								</div>

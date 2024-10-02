@@ -106,7 +106,6 @@
 									</ul>
 								</c:otherwise>
 							</c:choose>
-							
 						</div>
 					</div>
 					<div class="contents no-btm-type">
