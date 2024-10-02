@@ -420,40 +420,66 @@
 									                </span>
 									        </p>
 									</div>' />
-									
 								</div>
 								<div class="btn-wrap">
-									<a class="bttn type01 style01" href="<c:url value="/recruit/procedure" />">
-										<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.019" text="채용안내 바로가기" /></span>
-										<em class="ico01" aria-hidden="true"></em>
-									</a>
 									<c:choose>
 										<c:when test="${'ko' eq _lang}">
-											<a class="bttn type01 style01" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index"/>" target="_blank">
-												<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
+											<a class="bttn type01 style01" href="<c:url value="/recruit/procedure" />">
+												<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.019" text="채용안내 바로가기" /></span>
 												<em class="ico01" aria-hidden="true"></em>
 											</a>
-										</c:when>
-										<c:when test="${'en' eq _lang}">
-											<a class="bttn type01 style01" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec"/>" target="_blank">
-												<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
+											<a class="bttn type01 style01" href="<c:url value="/recruit/introduction" />">
+												<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.033" text="직무소개 바로가기" /></span>
 												<em class="ico01" aria-hidden="true"></em>
 											</a>
+											<c:choose>
+												<c:when test="${'ko' eq _lang}">
+													<a class="bttn type01 style01" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index"/>" target="_blank">
+														<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
+														<em class="ico01" aria-hidden="true"></em>
+													</a>
+												</c:when>
+												<c:when test="${'en' eq _lang}">
+													<a class="bttn type01 style01" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec"/>" target="_blank">
+														<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
+														<em class="ico01" aria-hidden="true"></em>
+													</a>
+												</c:when>
+												<c:otherwise>
+													<a class="bttn type01 style01" href="<c:url value="https://script.google.com/macros/s/AKfycbwFFqqueySvUYaw5c6h7Uyy5dOfRBYwet4NLrOmaLcdEhE2JRw_z7vuI0J0rDgxSreYqg/exec"/>" target="_blank">
+														<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
+														<em class="ico01" aria-hidden="true"></em>
+													</a>
+												</c:otherwise>
+											</c:choose>
 										</c:when>
 										<c:otherwise>
-											<a class="bttn type01 style01" href="<c:url value="https://script.google.com/macros/s/AKfycbwFFqqueySvUYaw5c6h7Uyy5dOfRBYwet4NLrOmaLcdEhE2JRw_z7vuI0J0rDgxSreYqg/exec"/>" target="_blank">
-												<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
+											<a class="bttn type01 style01" href="<c:url value="/recruit/procedure" />">
+												<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.019" text="채용안내 바로가기" /></span>
 												<em class="ico01" aria-hidden="true"></em>
 											</a>
+											<c:choose>
+												<c:when test="${'ko' eq _lang}">
+													<a class="bttn type01 style01" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index"/>" target="_blank">
+														<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
+														<em class="ico01" aria-hidden="true"></em>
+													</a>
+												</c:when>
+												<c:when test="${'en' eq _lang}">
+													<a class="bttn type01 style01" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec"/>" target="_blank">
+														<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
+														<em class="ico01" aria-hidden="true"></em>
+													</a>
+												</c:when>
+												<c:otherwise>
+													<a class="bttn type01 style01" href="<c:url value="https://script.google.com/macros/s/AKfycbwFFqqueySvUYaw5c6h7Uyy5dOfRBYwet4NLrOmaLcdEhE2JRw_z7vuI0J0rDgxSreYqg/exec"/>" target="_blank">
+														<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
+														<em class="ico01" aria-hidden="true"></em>
+													</a>
+												</c:otherwise>
+											</c:choose>
 										</c:otherwise>
 									</c:choose>
-									
-									<!-- 
-									<a class="bttn type01 style01" href="<c:url value="http://recruiter.dohwa.co.kr" />" target="_blank">
-										<span class="txt01"><spring:message code="FRONT.COMMON.MENU.MAIN.020" text="채용사이트 바로가기" /></span>
-										<em class="ico01" aria-hidden="true"></em>
-									</a>
-									 -->
 								</div>
 							</div>
 						</div>

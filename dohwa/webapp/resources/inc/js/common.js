@@ -1383,6 +1383,7 @@
 		var el;
 
 		var _procedure,
+			_introduction,
 			_benefit;
 
 		function init(_el){
@@ -1406,6 +1407,7 @@
 
 			setTimeout(function(){
 				_procedure.goToAndPlay(0);
+				_introduction.goToAndPlay(0);
 				_benefit.goToAndPlay(0);
 			},2000);
 		}
@@ -1418,7 +1420,15 @@
 				autoplay: false,
 				path: '/images/svg/procedure/dh_txt.json'
 			});
-
+			
+			_introduction = bodymovin.loadAnimation({
+				container: document.getElementById('bg3'),
+				renderer: 'svg',
+				loop: false,
+				autoplay: false,
+				path: '/images/svg/introduction/dh_txt.json'
+			});
+			
 			_benefit = bodymovin.loadAnimation({
 				container: document.getElementById('bg2'),
 				renderer: 'svg',
@@ -1432,47 +1442,6 @@
 			init: init
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }(jQuery);
 

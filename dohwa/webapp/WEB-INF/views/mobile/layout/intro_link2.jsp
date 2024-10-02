@@ -6,7 +6,7 @@
 				<a class="intro-link" href="" target="_blank">
 					<span class="intro-menu"><spring:message code="FRONT.COMMON.MENU.INTROLINK.007.MOB" text="CAREER" /></span>
 					<strong class="intro-name"><spring:message code="FRONT.COMMON.MENU.INTROLINK.008" text="채용지원" /></strong>
-					<p><spring:message code="FRONT.COMMON.MENU.INTROLINK.009" text="도화와 함께 세계인의 미래를 디자인할 여러분의 도전을 기다리고 있습니다." />
+					<p><spring:message code="FRONT.COMMON.MENU.INTROLINK.009.MOB" text="도화와 함께 세계인의 미래를 디자인할 여러분의 도전을 기다리고 있습니다." />
 					</p>
 				</a>
 			</c:when>
@@ -14,7 +14,7 @@
 				<a class="intro-link" href="" target="_blank">
 					<span class="intro-menu"><spring:message code="FRONT.COMMON.MENU.INTROLINK.007.MOB" text="CAREER" /></span>
 					<strong class="intro-name"><spring:message code="FRONT.COMMON.MENU.INTROLINK.008" text="채용지원" /></strong>
-					<p><spring:message code="FRONT.COMMON.MENU.INTROLINK.009" text="도화와 함께 세계인의 미래를 디자인할 여러분의 도전을 기다리고 있습니다." />
+					<p><spring:message code="FRONT.COMMON.MENU.INTROLINK.009.MOB" text="도화와 함께 세계인의 미래를 디자인할 여러분의 도전을 기다리고 있습니다." />
 					</p>
 				</a>
 			</c:when>
@@ -22,7 +22,7 @@
 				<a class="intro-link" href="" target="_blank">
 					<span class="intro-menu"><spring:message code="FRONT.COMMON.MENU.INTROLINK.007.MOB" text="CAREER" /></span>
 					<strong class="intro-name"><spring:message code="FRONT.COMMON.MENU.INTROLINK.008" text="채용지원" /></strong>
-					<p><spring:message code="FRONT.COMMON.MENU.INTROLINK.009" text="도화와 함께 세계인의 미래를 디자인할 여러분의 도전을 기다리고 있습니다." /></p>
+					<p><spring:message code="FRONT.COMMON.MENU.INTROLINK.009.MOB" text="도화와 함께 세계인의 미래를 디자인할 여러분의 도전을 기다리고 있습니다." /></p>
 				</a>
 			</c:otherwise>
 		</c:choose>

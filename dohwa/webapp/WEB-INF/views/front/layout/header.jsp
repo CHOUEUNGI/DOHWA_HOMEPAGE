@@ -52,30 +52,57 @@
 				</li>
 				<li class="gnb-menu-item">
 					<a class="gnb-menu-link" href="<c:url value="/recruit/procedure" />"><spring:message code="FRONT.COMMON.MENU.HEADER.024" text="채용정보" /></a>
-					<ul class="gnb-sub-list">
-						<li class="gnb-sub-item"><a href="<c:url value="/recruit/procedure" />"><spring:message code="FRONT.COMMON.MENU.HEADER.025" text="채용안내" /></a></li>
-						<!-- <li class="gnb-sub-item"><a href="<c:url value="http://recruiter.dohwa.co.kr" />" target="_blank"><spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" /></a></li> -->
-						<li class="gnb-sub-item">
-							<c:choose>
-								<c:when test="${'ko' eq _lang}">
-									<!-- <a class="item" href="#" onclick="alert('현재 채용사이트 작업중입니다.')"><span class="txt" data-id=""><spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" /></span></a> -->
-									<a class="item" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index" />" data-id="" target="_blank">
-										<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
-									</a>
-								</c:when>
-								<c:when test="${'en' eq _lang}">
-									<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec" />" data-id="" target="_blank">
-										<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
-									</a>
-								</c:when>
-								<c:otherwise>
-									<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwFFqqueySvUYaw5c6h7Uyy5dOfRBYwet4NLrOmaLcdEhE2JRw_z7vuI0J0rDgxSreYqg/exec" />" data-id="" target="_blank">
-										<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
-									</a>
-								</c:otherwise>
-							</c:choose>
-						</li>
-					</ul>
+						<c:choose>
+						<c:when test="${'ko' eq _lang}">
+							<ul class="gnb-sub-list">
+								<li class="gnb-sub-item"><a href="<c:url value="/recruit/procedure" />"><spring:message code="FRONT.COMMON.MENU.HEADER.025" text="채용안내" /></a></li>
+								<li class="gnb-sub-item"><a href="<c:url value="/recruit/introduction" />"><spring:message code="FRONT.COMMON.MENU.HEADER.033" text="직무소개" /></a></li>	
+								<li class="gnb-sub-item">
+									<c:choose>
+										<c:when test="${'ko' eq _lang}">
+											<a class="item" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index" />" data-id="" target="_blank">
+												<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
+											</a>
+										</c:when>
+										<c:when test="${'en' eq _lang}">
+											<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec" />" data-id="" target="_blank">
+												<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
+											</a>
+										</c:when>
+										<c:otherwise>
+											<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwFFqqueySvUYaw5c6h7Uyy5dOfRBYwet4NLrOmaLcdEhE2JRw_z7vuI0J0rDgxSreYqg/exec" />" data-id="" target="_blank">
+												<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
+											</a>
+										</c:otherwise>
+									</c:choose>
+								</li>
+							</ul>
+						</c:when>
+						<c:otherwise>
+							<ul class="gnb-sub-list">
+								<li class="gnb-sub-item"><a href="<c:url value="/recruit/procedure" />"><spring:message code="FRONT.COMMON.MENU.HEADER.025" text="채용안내" /></a></li>	
+								<li class="gnb-sub-item">
+									<c:choose>
+										<c:when test="${'ko' eq _lang}">
+											<a class="item" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index" />" data-id="" target="_blank">
+												<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
+											</a>
+										</c:when>
+										<c:when test="${'en' eq _lang}">
+											<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec" />" data-id="" target="_blank">
+												<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
+											</a>
+										</c:when>
+										<c:otherwise>
+											<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwFFqqueySvUYaw5c6h7Uyy5dOfRBYwet4NLrOmaLcdEhE2JRw_z7vuI0J0rDgxSreYqg/exec" />" data-id="" target="_blank">
+												<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
+											</a>
+										</c:otherwise>
+									</c:choose>
+								</li>
+							</ul>
+						</c:otherwise>
+					</c:choose>
 				</li>
 			</ul>
 		</div>

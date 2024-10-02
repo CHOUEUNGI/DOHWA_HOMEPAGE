@@ -55,42 +55,89 @@
 					</div>
 					<div class="page-tab-section">
 						<div class="tab-menu-type01 center">
-							<ul class="tab-list">
-								<li class="active"><a class="item" href="<c:url value="${mobileStartPath}recruit/benefit" />" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.043" text="채용안내" /></a></li>
-								<!-- <li><a class="item" href="<c:url value="http://recruiter.dohwa.co.kr" />" data-id="" target="_blank"><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" /></a></li> -->
-								<li>
-									<c:choose>
-										<c:when test="${'ko' eq _lang}">
-											<a class="item" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index" />" data-id="" target="_blank">
-											<spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" />
-											</a>
-										</c:when>
-										<c:when test="${'en' eq _lang}">
-											<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec" />" data-id="" target="_blank">
-											<spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" />
-											</a>
-										</c:when>
-										<c:otherwise>
-											<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwFFqqueySvUYaw5c6h7Uyy5dOfRBYwet4NLrOmaLcdEhE2JRw_z7vuI0J0rDgxSreYqg/exec" />" data-id="" target="_blank">
-											<spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" />
-											</a>
-										</c:otherwise>
-									</c:choose>
-								</li>
-							</ul>
+							<c:choose>
+								<c:when test="${'ko' eq _lang}">
+									<ul class="tab-list">
+										<li class="active"><a class="item" href="<c:url value="${mobileStartPath}recruit/benefit" />" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.043" text="채용안내" /></a></li>
+										<li><a class="item" href="<c:url value="${mobileStartPath}recruit/introduction" />" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.057" text="직무소개" /></a></li>
+										<li>
+											<c:choose>
+												<c:when test="${'ko' eq _lang}">
+													<a class="item" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index" />" data-id="" target="_blank">
+													<spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" />
+													</a>
+												</c:when>
+												<c:when test="${'en' eq _lang}">
+													<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec" />" data-id="" target="_blank">
+													<spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" />
+													</a>
+												</c:when>
+												<c:otherwise>
+													<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwFFqqueySvUYaw5c6h7Uyy5dOfRBYwet4NLrOmaLcdEhE2JRw_z7vuI0J0rDgxSreYqg/exec" />" data-id="" target="_blank">
+													<spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" />
+													</a>
+												</c:otherwise>
+											</c:choose>
+										</li>
+									</ul>
+								</c:when>
+								<c:otherwise>
+									<ul class="tab-list">
+										<li class="active"><a class="item" href="<c:url value="${mobileStartPath}recruit/benefit" />" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.043" text="채용안내" /></a></li>
+										<li>
+											<c:choose>
+												<c:when test="${'ko' eq _lang}">
+													<a class="item" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index" />" data-id="" target="_blank">
+													<spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" />
+													</a>
+												</c:when>
+												<c:when test="${'en' eq _lang}">
+													<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec" />" data-id="" target="_blank">
+													<spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" />
+													</a>
+												</c:when>
+												<c:otherwise>
+													<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwFFqqueySvUYaw5c6h7Uyy5dOfRBYwet4NLrOmaLcdEhE2JRw_z7vuI0J0rDgxSreYqg/exec" />" data-id="" target="_blank">
+													<spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.044" text="채용지원" />
+													</a>
+												</c:otherwise>
+											</c:choose>
+										</li>
+									</ul>
+								</c:otherwise>
+							</c:choose>
+							
 						</div>
 					</div>
 					<div class="contents no-btm-type">
 						<div class="section-cont recruit-welfare">
 							<div class="tab-menu-type02">
-								<ul class="tab-list tab-list-2depth">
-									<li>
-										<a class="item" href="<c:url value="${mobileStartPath }recruit/procedure" />"><span class="txt" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.001" text="채용절차" /></span></a>
-									</li>
-									<li class="active">
-										<a class="item" href="#none"><span class="txt" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002" text="복리후생" /></span></a>
-									</li>
-								</ul>
+							<c:choose>
+								<c:when test="${'ko' eq _lang}">
+									<ul class="tab-list tab-list-2depth">
+										<li>
+											<a class="item" href="<c:url value="${mobileStartPath }recruit/procedure" />"><span class="txt" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.001" text="채용절차" /></span></a>
+										</li>
+										<li>
+											<a class="item" href="<c:url value="${mobileStartPath }recruit/introduction" />"><span class="txt" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.003" text="직무소개" /></span></a>
+										</li>
+										<li class="active">
+											<a class="item" href="#none"><span class="txt" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002" text="복리후생" /></span></a>
+										</li>
+									</ul>
+								</c:when>
+								<c:otherwise>
+										<ul class="tab-list tab-list-2depth">
+										<li>
+											<a class="item" href="<c:url value="${mobileStartPath }recruit/procedure" />"><span class="txt" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.001" text="채용절차" /></span></a>
+										</li>
+										<li class="active">
+											<a class="item" href="#none"><span class="txt" data-id=""><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002" text="복리후생" /></span></a>
+										</li>
+									</ul>
+								</c:otherwise>
+							</c:choose>
+								
 							</div>
 							<p class="title-main"><spring:message code="FRONT.COMMON.MENU.RECRUIT.001.002.005.MOB" text="도화엔지니어링은 임직원이
 								<br />

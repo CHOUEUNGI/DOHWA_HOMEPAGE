@@ -24,6 +24,15 @@ public class RecruitController extends BaseController {
 	}
 	
 	/**
+	 * 직무소개
+	 * @return
+	 */
+	@GetMapping("introduction")
+	public String introduction() {
+		return frontViewPath() + "/introduction";
+	}
+	
+	/**
 	 * 복리후생
 	 * @return
 	 */
