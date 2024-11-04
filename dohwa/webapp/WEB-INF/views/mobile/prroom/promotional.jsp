@@ -88,8 +88,15 @@
 									<h3 class="title-sect">
 										<spring:message code="FRONT.COMMON.MENU.PRROOM.003.002.008.MOB" text="2020 도화엔지니어링<br/>홍보영상" />
 									</h3>
-									<button id="btn_business" type="button" style="outline:none"><img id="businessImg" src=${'ko' eq _lang ? '"/images/pc/img_prroom_business.png"' : '"/images/pc/img_prroom_business_en.png"'} alt="Business"></button>
-									<button id="btn_brand"type="button" style="outline:none"><img id="brandImg" style="display:${'es' eq _lang ? 'none' : ''};" src=${'ko' eq _lang ? '"/images/pc/img_prroom_brand_n.png"' : '"/images/pc/img_prroom_brand_en_n.png"'} alt="Brand"></button>
+									<button id="btn_business" type="button" style="outline:none">
+										<img id="businessImg" src=${'ko' eq _lang ? '"/images/pc/img_prroom_business.png"' : '"/images/pc/img_prroom_business_en.png"'} alt="Business">
+									</button>
+									<button id="btn_brand"type="button" style="outline:none">
+										<img id="brandImg" style="display:${'es' eq _lang ? 'none' : ''};" src=${'ko' eq _lang ? '"/images/pc/img_prroom_brand_n.png"' : '"/images/pc/img_prroom_brand_en_n.png"'} alt="Brand">
+									</button>
+									<button id="btn_job_intr" type="button" style="outline:none">
+										 <img id="jobintrImg" style="display:${'en' eq _lang || 'es' eq _lang ? 'none' : ''};" src=${'ko' eq _lang ? '"/images/pc/img_prroom_job_intr_n.png"' : ''} alt="JobIntroduction">
+									</button>
 									<br>
 									<br>
 									<div class="video-tab-cont ${'ko' eq _lang ? 'active' : ''}" style="display:${'ko' eq _lang ? 'block' : 'none'};">
@@ -99,9 +106,13 @@
 										<div class="video-box" id="ko_brand" style="display:none;">
 											<iframe width="100%" src="https://www.youtube.com/embed/CGZnkCWXUu4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 										</div>
+										<div class="video-box" id="ko_job_intr" style="display:none;">
+											<iframe width="100%" src="https://www.youtube.com/embed/UwxgTHfNaic" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</div>
 										<div class="video-desc">
 											<spring:message code="FRONT.COMMON.MENU.PRROOM.003.002.012" text="안전하고 행복한 삶을 위한 미래를 창조합니다." />
 										</div>
+										
 									</div>
 									<div class="video-tab-cont ${'en' eq _lang ? 'active' : ''}" style="display:${'en' eq _lang ? 'block' : 'none'};">
 										<div class="video-box" id="en_business">
@@ -157,26 +168,42 @@
 			
 			var language = "${'es' eq _lang ? 'es' : 'en' eq _lang ? 'en' : 'ko'}";
 			$('[data-btn]').off('click').on('click', function() {
+				$.each($('[data-video]'), function() {
+					$(this).css('display', 'none');
+					$(this).removeClass('active');
+				});
+
+				$('[data-video="'+ $(this).data('btn') +'"]').css('display', '');
+				$('[data-video="'+ $(this).data('btn') +'"]').addClass('active');
+				$('[data-btn]').closest('ul').find('li').removeClass('active');
+				$(this).closest('li').addClass('active');
+				
 				if($(this).data('btn') == 'ko'){
 					language = 'ko';
 					$('#brandImg').css('display','');
+					$('#jobintrImg').css('display','');
 					$('#businessImg').attr('src','/images/pc/img_prroom_business.png');
 					$('#brandImg').attr('src','/images/pc/img_prroom_brand_n.png');
+					$('#jobintrImg').attr('src','/images/pc/img_prroom_job_intr_n.png');
 				}else if($(this).data('btn') == 'es'){
 					language = 'es';
 					$('#brandImg').css('display','none');
+					$('#jobintrImg').css('display','none');
 					$('#businessImg').attr('src','/images/pc/img_prroom_business_en.png');					
 				}else{
 					language = 'en';
 					$('#brandImg').css('display','');
+					$('#jobintrImg').css('display','none');
 					$('#businessImg').attr('src','/images/pc/img_prroom_business_en.png');
 					$('#brandImg').attr('src','/images/pc/img_prroom_brand_en_n.png');	
 				}
 				
 				$('#ko_brand').css('display', 'none');
 				$('#ko_brand').removeClass('active');
+		
 				$('#ko_business').css('display', 'block');
 				$('#ko_business').addClass('active');
+			
 				$('#en_brand').css('display', 'none');
 				$('#en_brand').removeClass('active');
 				$('#en_business').css('display', 'block');
@@ -187,8 +214,13 @@
 				if(language == 'ko'){
 					$('#businessImg').attr('src','/images/pc/img_prroom_business.png');
 					$('#brandImg').attr('src','/images/pc/img_prroom_brand_n.png');
+					$('#jobintrImg').attr('src','/images/pc/img_prroom_job_intr_n.png');
+					
 					$('#ko_brand').css('display', 'none');
 					$('#ko_brand').removeClass('active');
+					$('#ko_job_intr').css('display', 'none');
+					$('#ko_job_intr').removeClass('active');
+					
 					$('#ko_business').css('display', 'block');
 					$('#ko_business').addClass('active');
 				}else if(language == 'es'){
@@ -210,15 +242,19 @@
 			$('#btn_brand').off('click').on('click', function() {
 				if(language == 'ko'){
 					$('#businessImg').attr('src','/images/pc/img_prroom_business_n.png');
+					$('#jobintrImg').attr('src','/images/pc/img_prroom_job_intr_n.png');
 					$('#brandImg').attr('src','/images/pc/img_prroom_brand.png');
 					$('#ko_business').css('display', 'none');
 					$('#ko_business').removeClass('active');
+					$('#ko_job_intr').css('display', 'none');
+					$('#ko_job_intr').removeClass('active');
 					$('#ko_brand').css('display', 'block');
 					$('#ko_brand').addClass('active');
 				}else if(language == 'es'){
 					$('#businessImg').attr('src','/images/pc/img_prroom_business_en.png');
 					$('#en_business').css('display', 'none');
 					$('#en_business').removeClass('active');
+					
 					$('#en_brand').css('display', 'block');
 					$('#en_brand').addClass('active');
 				}else{
@@ -228,6 +264,22 @@
 					$('#en_business').removeClass('active');
 					$('#en_brand').css('display', 'block');
 					$('#en_brand').addClass('active');
+				}
+			});
+			$('#btn_job_intr').off('click').on('click', function() {
+				if(language == 'ko'){
+					$('#businessImg').attr('src','/images/pc/img_prroom_business_n.png');
+					$('#brandImg').attr('src','/images/pc/img_prroom_brand_n.png');
+					$('#jobintrImg').attr('src','/images/pc/img_prroom_job_intr.png');
+					
+					$('#ko_business').css('display', 'none');
+					$('#ko_business').removeClass('active');
+					
+					$('#ko_brand').css('display', 'none');
+					$('#ko_brand').removeClass('active');
+					
+					$('#ko_job_intr').css('display', 'block');
+					$('#ko_job_intr').addClass('active');
 				}
 			});
 		</script>
