@@ -109,8 +109,12 @@
 											<span class="txt01"><spring:message code="FRONT.COMMON.MENU.PRROOM.003.001.016" text="English" /></span>
 											<em class="ico download" aria-hidden="true"></em>
 										</button>
- 										<button class="bttn type01 style01 bttn-download" type="button" onclick="download('es');"title="<spring:message code="FRONT.COMMON.MENU.PRROOM.003.001.017" text="Spanish brochure 다운로드" />"> 
-											<span class="txt01"><spring:message code="FRONT.COMMON.MENU.PRROOM.003.001.018" text="Spanish" /></span> 
+ 										<button class="bttn type01 style01 bttn-download" type="button" onclick="download('es');"title="<spring:message code="FRONT.COMMON.MENU.PRROOM.003.001.018" text="Spanish brochure 다운로드" />"> 
+											<span class="txt01"><spring:message code="FRONT.COMMON.MENU.PRROOM.003.001.019" text="Spanish" /></span> 
+ 											<em class="ico download" aria-hidden="true"></em> 
+										</button> 
+										<button class="bttn type01 style01 bttn-download" type="button" onclick="download('arab');"title="<spring:message code="FRONT.COMMON.MENU.PRROOM.003.001.020" text="Arabic brochure 다운로드" />"> 
+											<span class="txt01"><spring:message code="FRONT.COMMON.MENU.PRROOM.003.001.021" text="Arabic" /></span> 
  											<em class="ico download" aria-hidden="true"></em> 
 										</button> 
 									</div>
@@ -150,6 +154,8 @@
 				pdfUrl = "/upload/file_import/2024_ENGLISH.pdf";
 			} else if(lang === 'es'){
 				pdfUrl = "/upload/file_import/2024_SPANISH.pdf";
+			} else if(lang === 'arab'){
+				pdfUrl = "/upload/file_import/2024_ARABIC.pdf";
 			}
 			window.open(pdfUrl);
 		}		
