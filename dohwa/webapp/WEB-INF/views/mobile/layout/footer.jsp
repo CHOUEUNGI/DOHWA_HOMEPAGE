@@ -16,6 +16,7 @@
 						</div>
 						<div class="footer-family">
 							<div class="family-inner">
+								<!-- 
 								<button class="family-btn" type="button"><span><spring:message code="FRONT.COMMON.MENU.FOOTER.010" text="Employee Site" /></span></button>
 								<ul class="family-list">
 									<li class="family-item"><a href="http://edm.dohwa.co.kr" title="새창열림">EDMS</a></li>
@@ -23,6 +24,11 @@
 									<li class="family-item"><a href="http://cmfg.dohwa.co.kr/" title="새창열림">CMFG</a></li>
 									<li class="family-item"><a href="http://webhard.dohwa.co.kr/pm/" title="새창열림">Webhard</a></li>
 								</ul>
+								 -->
+								 <button class="family-btn" type="button"><span><spring:message code="FRONT.COMMON.MENU.FOOTER.013" text="Family Site" /></span></button>
+									<ul class="family-list">
+										<li class="family-item"><a href="https://dohwapolska.pl/" title="새창열림">DOHWA POLSKA</a></li>
+									</ul>
 							</div>
 						</div>
 						<div class="footer-inner">
