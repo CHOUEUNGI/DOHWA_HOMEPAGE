@@ -61,10 +61,11 @@
 								<li class="family-item"><a href="http://cmfg.dohwa.co.kr/" title="새창열림">CMFG</a></li>
 								<li class="family-item"><a href="http://webhard.dohwa.co.kr/pm/" title="새창열림">Webhard</a></li>
 							</ul>
-							 -->
+							-->
 							<button class="family-btn" type="button"><span><spring:message code="FRONT.COMMON.MENU.FOOTER.013" text="Family Site" /></span></button>
 							<ul class="family-list">
 								<li class="family-item"><a href="https://dohwapolska.pl/" title="새창열림">DOHWA POLSKA</a></li>
+								<li class="family-item"><a href="https://www.vmsa.com.pe/" title="새창열림">VM S.A.</a></li>
 							</ul>
 						</div>
 					</div>
