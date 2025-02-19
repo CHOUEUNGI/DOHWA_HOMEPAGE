@@ -91,6 +91,7 @@
 											<c:when test="${'ko' eq _lang}">
 												<a class="item" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index" />" data-id="" target="_blank">
 													<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
+												</a>
 											</c:when>
 											<c:when test="${'en' eq _lang}">
 												<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec" />" data-id="" target="_blank">
@@ -112,6 +113,7 @@
 											<c:when test="${'ko' eq _lang}">
 												<a class="item" href="<c:url value="https://dohwa.recruiter.co.kr/appsite/company/index" />" data-id="" target="_blank">
 													<spring:message code="FRONT.COMMON.MENU.HEADER.026" text="채용지원" />
+												</a>
 											</c:when>
 											<c:when test="${'en' eq _lang}">
 												<a class="item" href="<c:url value="https://script.google.com/macros/s/AKfycbwwiYlD3VrB_sNYaH2iqR3PPY-dvXzR5b6aIVUj9udEwdTXXF9_Ele1K_n10Gnc8y8TPA/exec" />" data-id="" target="_blank">
