@@ -86,7 +86,7 @@
 							</span>
 							<div class="section-cont">
 								<div class="best-executives">
-									<h3 class="title-sect"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.003.001.006" text="2020 도화 우수 임직원" /></h3>
+									<h3 class="title-sect"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.003.001.006" text="2024 도화 우수 임직원" /></h3>
 									<ul class="executives-list">
 
 										<c:forEach items="${peopleList }" var="list">

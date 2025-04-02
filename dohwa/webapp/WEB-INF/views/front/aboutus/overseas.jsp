@@ -429,7 +429,7 @@
 												<div class="branch-box-desc">
 													<p class="txt-add">
 														<i class="ico-branch-point" aria-hidden="true"></i>
-														<spring:message code="FRONT.COMMON.MENU.ABOUTUS.006.002.053" text="폴란드, Street Zablocie 25/31, Kraków, Poland (30-701)"/>
+														<spring:message code="FRONT.COMMON.MENU.ABOUTUS.006.002.053" text="폴란드, Ul. Grzybowska. St. 4, apartment 117, Warsaw"/>
 													</p>
 													<p class="txt-tel">
 														<i class="ico-branch-tel" aria-hidden="true"></i>
