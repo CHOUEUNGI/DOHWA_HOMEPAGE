@@ -486,34 +486,32 @@
 
 			}
 
-			// 막대 차트 생성
+			// 막대 차트 생성			
 			function createBarChart(divId, arrData){
 				try {
 					am4core.useTheme(am4themes_animated);
 					am4core.options.commercialLicense = true;
 
 					window[divId] = am4core.create(divId, am4charts.XYChart);
-					//window[divId].scrollbarX = new am4core.Scrollbar();
-					//window[divId].zoomOutButton.disabled = true;
 					window[divId].cursor = new am4charts.XYCursor();
 					window[divId].padding(10, 0, 0, 0);
 					window[divId].data = arrData;
 
+					// X축
 					window['categoryAxis_'+divId] = window[divId].xAxes.push(new am4charts.CategoryAxis());
 					window['categoryAxis_'+divId].dataFields.category = "year";
 					window['categoryAxis_'+divId].renderer.grid.template.location = 0;
 					window['categoryAxis_'+divId].renderer.minGridDistance = 30;
-					//window['categoryAxis_'+divId].renderer.labels.template.horizontalCenter = "left";
-					//window['categoryAxis_'+divId].renderer.labels.template.verticalCenter = "middle";
 					window['categoryAxis_'+divId].renderer.labels.template.rotation = 0;
 					window['categoryAxis_'+divId].tooltip.disabled = true;
-					//window['categoryAxis_'+divId].renderer.minHeight = 110;
 
+					// Y축
 					window['valueAxis_'+divId] = window[divId].yAxes.push(new am4charts.ValueAxis());
-					//window['valueAxis_'+divId].renderer.minWidth = 50;
-					window['valueAxis_'+divId].min = 0;
+					window['valueAxis_'+divId].strictMinMax = false;
 					window['valueAxis_'+divId].extraMax = 0.1;
+					window['valueAxis_'+divId].extraMin = 0.1;  // ✅ 음수를 위한 여유 공간
 
+					// 시리즈
 					window['series_'+divId] = window[divId].series.push(new am4charts.ColumnSeries());
 					window['series_'+divId].sequencedInterpolation = true;
 					window['series_'+divId].dataFields.valueY = "value";
@@ -521,29 +519,63 @@
 					window['series_'+divId].tooltipText = "[{categoryX}: bold]{valueY}[/]";
 					window['series_'+divId].columns.template.strokeWidth = 0;
 					window['series_'+divId].tooltip.pointerOrientation = "vertical";
-					window['series_'+divId].columns.template.column.cornerRadiusTopLeft = 10;
-					window['series_'+divId].columns.template.column.cornerRadiusTopRight = 10;
 					window['series_'+divId].columns.template.column.fillOpacity = 0.8;
 					window['series_'+divId].columns.template.width = am4core.percent(70);
 					window['series_'+divId].columns.template.maxWidth = 75;
+
+					// ✅ 둥근 모서리: 양수는 위, 음수는 아래
+					window['series_'+divId].columns.template.adapter.add("cornerRadiusTopLeft", function(radius, target) {
+						let value = target.dataItem.valueY;
+						return value >= 0 ? 10 : 0;
+					});
+					window['series_'+divId].columns.template.adapter.add("cornerRadiusTopRight", function(radius, target) {
+						let value = target.dataItem.valueY;
+						return value >= 0 ? 10 : 0;
+					});
+					window['series_'+divId].columns.template.adapter.add("cornerRadiusBottomLeft", function(radius, target) {
+						let value = target.dataItem.valueY;
+						return value < 0 ? 10 : 0;
+					});
+					window['series_'+divId].columns.template.adapter.add("cornerRadiusBottomRight", function(radius, target) {
+						let value = target.dataItem.valueY;
+						return value < 0 ? 10 : 0;
+					});
+					
+					
+					// 색상
 					window['series_'+divId].columns.template.adapter.add("fill", function(fill, target) {
 						return window[divId].colors.getIndex(target.dataItem.index);
 					});
-					
+
+					// ✅ 라벨 (양수는 위, 음수는 아래)
 					var labelBullet = window['series_'+divId].bullets.push(new am4charts.LabelBullet())
 					labelBullet.label.text = "{valueY}";
-					labelBullet.label.dy = -10;
 					labelBullet.label.fontWeight = 'bold';
+					labelBullet.label.fill = am4core.color("#000");
+					labelBullet.label.truncate = false;
+					labelBullet.label.hideOversized = false;
 
-					// on hover, make corner radiuses bigger
+					// 위치 자동 조절
+					labelBullet.adapter.add("dy", function(dy, target){
+						var v = target.dataItem && target.dataItem.values.valueY.value;
+						if (v >= 0) return -10; // 양수: 위
+						else return 10;         // 음수: 아래
+					});
+					labelBullet.adapter.add("verticalCenter", function(center, target){
+						var v = target.dataItem && target.dataItem.values.valueY.value;
+						return v >= 0 ? "bottom" : "top";
+					});
+
+					// hover 효과
 					window['hoverState_'+divId] = window['series_'+divId].columns.template.column.states.create("hover");
-					window['hoverState_'+divId].properties.cornerRadiusTopLeft = 10;
-					window['hoverState_'+divId].properties.cornerRadiusTopRight = 10;
 					window['hoverState_'+divId].properties.fillOpacity = 1;
+
 				} catch( e ) {
 					console.log( e );
 				}
 			}
+
+
 
 			return {
 				createBarChart: createBarChart,

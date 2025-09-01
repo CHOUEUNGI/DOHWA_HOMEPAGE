@@ -312,7 +312,8 @@
 			#{yyyy},
 			#{dispYn},
 			#{title},
-			DATE_FORMAT(#{pblDt}, '%Y%m%d'),
+			<!-- DATE_FORMAT(#{pblDt}, '%Y%m%d'), -->
+			#{pblDt},
 			#{regId},
 			CURRENT_TIMESTAMP
 		)

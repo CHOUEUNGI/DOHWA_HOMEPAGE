@@ -54,6 +54,13 @@
 							<th class="bg-none line-btm">평가구분</th>
 						</tr>
 						<tr>						
+							<td>2024.03</td>	
+							<td>기업신용등급</td>	
+							<td><span class="color-point">AA+</span></td>	
+							<td>(주)나이스디앤비(AAA~NG)</td>	
+							<td>공공기관 제출용</td>
+						</tr>
+						<tr>						
 							<td>2023.03</td>	
 							<td>기업신용등급</td>	
 							<td><span class="color-point">AA+</span></td>	

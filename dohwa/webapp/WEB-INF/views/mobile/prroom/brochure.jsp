@@ -75,7 +75,7 @@
 							<div class="brochure-inner">
 								<div class="brochure-txt">
 									<span class="add-txt">
-										<em>2024</em>
+										<em>2025</em>
 										<span>
 											<spring:message code="FRONT.COMMON.MENU.PRROOM.003.001.010.MOB" text="Comprehensive
 											<br />
@@ -149,11 +149,11 @@
 		<%@ include file="/WEB-INF/views/mobile/layout/after_script.jsp" %>
 		<script>
 		function download(lang){
-			var pdfUrl = "/upload/file_import/2024_KOREAN.pdf";
+			var pdfUrl = "/upload/file_import/2025_KOREAN.pdf";
 			if(lang === 'en'){
-				pdfUrl = "/upload/file_import/2024_ENGLISH.pdf";
+				pdfUrl = "/upload/file_import/2025_ENGLISH.pdf";
 			} else if(lang === 'es'){
-				pdfUrl = "/upload/file_import/2024_SPANISH.pdf";
+				pdfUrl = "/upload/file_import/2025_SPANISH.pdf";
 			} else if(lang === 'arab'){
 				pdfUrl = "/upload/file_import/2024_ARABIC.pdf";
 			}

@@ -403,6 +403,75 @@
 												<th><spring:message code="FRONT.COMMON.YEAR.03" text="{0}년" arguments="${lastVO.yyyy}"/></th>
 											</tr>
 										</thead>
+											<tbody>
+												<tr>
+													<td rowspan="4">
+														<spring:message code="FRONT.COMMON.MENU.INVEST.001.002.022" text="수익성"/>
+													</td>
+													<td>ROE</td>
+													<c:choose>
+														<c:when test="${firstVO.roe == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${firstVO.roe}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+													<c:choose>
+														<c:when test="${secondVO.roe == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${secondVO.roe}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+													<c:choose>
+														<c:when test="${lastVO.roe == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${lastVO.roe}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+												</tr>
+											
+												<tr>
+													<td>PER</td>
+													<c:choose>
+														<c:when test="${firstVO.per == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${firstVO.per}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+													<c:choose>
+														<c:when test="${secondVO.per == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${secondVO.per}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+													<c:choose>
+														<c:when test="${lastVO.per == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${lastVO.per}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+												</tr>
+											
+												<tr>
+													<td>PBR</td>
+													<c:choose>
+														<c:when test="${firstVO.pbr == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${firstVO.pbr}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+													<c:choose>
+														<c:when test="${secondVO.pbr == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${secondVO.pbr}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+													<c:choose>
+														<c:when test="${lastVO.pbr == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${lastVO.pbr}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+												</tr>
+										
+												<tr class="table-role-sum">
+													<th><spring:message code="FRONT.COMMON.MENU.INVEST.001.002.023" text="영업이익률"/></th>
+													<c:choose>
+														<c:when test="${firstVO.oprtMrgn == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${firstVO.oprtMrgn}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+													<c:choose>
+														<c:when test="${secondVO.oprtMrgn == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${secondVO.oprtMrgn}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+													<c:choose>
+														<c:when test="${lastVO.oprtMrgn == 0}"><td>-</td></c:when>
+														<c:otherwise><td><fmt:formatNumber value="${lastVO.oprtMrgn}" pattern="0.00#" /></td></c:otherwise>
+													</c:choose>
+												</tr>
+											</tbody>
+										<!--  
 										<tbody>
 											<tr>
 												<td rowspan="4">
@@ -434,6 +503,7 @@
 												<td><fmt:formatNumber value="${lastVO.oprtMrgn }" pattern="0.00#" /></td>
 											</tr>
 										</tbody>
+										-->
 									</table>
 								</div>
 							</div>

@@ -46,6 +46,69 @@
 						</tr>
 					</thead>
 					<tbody>
+						<tr>						
+							<td>2024.03</td>	
+							<td>기업신용등급</td>	
+							<td><span class="color-point">AA+</span></td>	
+							<td>(주)나이스디앤비(AAA~NG)</td>	
+							<td>공공기관 제출용</td>
+						</tr>
+						<tr>						
+							<td>2023.03</td>	
+							<td>기업신용등급</td>	
+							<td><span class="color-point">AA+</span></td>	
+							<td>(주)나이스디앤비(AAA~NG)</td>	
+							<td>공공기관 제출용</td>
+						</tr>
+						<tr>
+							<td>2022.12</td>	
+							<td>기업어음</td>	
+							<td><span class="color-point">A2+</span></td>	
+							<td>NICE신용평가(주)(D~A1)</td>	
+							<td>정기평가</td>
+						</tr>
+						<tr>
+							<td>2022.06</td>	
+							<td>기업어음</td>	
+							<td><span class="color-point">A2+</span></td>	
+							<td>NICE신용평가(주)(D~A1)</td>	
+							<td>본평가</td>
+						</tr>
+						<tr>
+							<td>2022.04</td>	
+							<td>기업신용등급</td>	
+							<td><span class="color-point">AA+</span></td>	
+							<td>(주)나이스디앤비(AAA~NG)</td>	
+							<td>공공기관 제출용</td>
+						</tr>
+						<tr>
+							<td>2021.12</td>	
+							<td>기업어음</td>	
+							<td><span class="color-point">A2+</span></td>	
+							<td>NICE신용평가(주)(D~A1)</td>	
+							<td>정기평가</td>
+						</tr>
+						<tr>
+							<td>2021.06</td>	
+							<td>기업어음</td>	
+							<td><span class="color-point">A2+</span></td>	
+							<td>NICE신용평가(주)(D~A1)</td>	
+							<td>본평가</td>
+						</tr>
+						<tr>
+							<td>2021.04</td>
+							<td>기업신용등급</td>
+							<td><span class="color-point">AA+</span></td>
+							<td>(주)나이스디앤비(AAA~NG)</td>	
+							<td>공공기관 제출용</td>
+						</tr>						
+						<tr>
+							<td>2020.12</td>
+							<td>기업어음</td>
+							<td><span class="color-point">A2+</span></td>
+							<td>NICE신용평가㈜(D~A1)</td>
+							<td>정기평가</td>
+						</tr>
 						<tr>
 							<td>2020.06</td>
 							<td>기업어음</td>
