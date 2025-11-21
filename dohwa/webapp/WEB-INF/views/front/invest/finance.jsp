@@ -55,12 +55,25 @@
 						<div class="page-tab-section">
 							<div class="tab-menu-type01 center">
 								<!--s: 20200903 depth 메뉴명 변경-->
-								<ul class="tab-list">
-									<li class="active"><a class="item" href="<c:url value="/invest/finance" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.001" text="재무정보" /></a></li>
-									<li><a class="item" href="<c:url value="/invest/eAnno" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.002" text="전자공고 및 공시" /></a></li>
-									<li><a class="item" href="<c:url value="/invest/ir" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.003" text="IR 자료실" /></a></li>
-									<li><a class="item" href="<c:url value="/invest/stock" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.004" text="주식 및 주주정보" /></a></li>
-								</ul>
+								<c:choose>
+									<c:when test="${'ko' eq _lang}">
+										<ul class="tab-list">
+											<li><a class="item" href="<c:url value="/invest/director" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.005" text="경영정보" /></a></li>
+											<li class="active"><a class="item" href="<c:url value="/invest/finance" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.001" text="재무정보" /></a></li>
+											<li><a class="item" href="<c:url value="/invest/eAnno" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.002" text="전자공고 및 공시" /></a></li>
+											<li><a class="item" href="<c:url value="/invest/ir" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.003" text="IR 자료실" /></a></li>
+											<li><a class="item" href="<c:url value="/invest/stock" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.004" text="주식 및 주주정보" /></a></li>
+										</ul>
+									 </c:when>
+									<c:otherwise>
+								      	<ul class="tab-list">
+											<li class="active"><a class="item" href="<c:url value="/invest/finance" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.001" text="재무정보" /></a></li>
+											<li><a class="item" href="<c:url value="/invest/eAnno" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.002" text="전자공고 및 공시" /></a></li>
+											<li><a class="item" href="<c:url value="/invest/ir" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.003" text="IR 자료실" /></a></li>
+											<li><a class="item" href="<c:url value="/invest/stock" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.004" text="주식 및 주주정보" /></a></li>
+										</ul>
+									</c:otherwise>
+								</c:choose>
 								<!--e: 20200903 depth 메뉴명 변경-->
 							</div>
 						</div>

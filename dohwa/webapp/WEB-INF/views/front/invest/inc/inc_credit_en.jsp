@@ -15,14 +15,14 @@
 								<div class="grade-wrap clfix">
 									<div class="grade-box">
 										<div class="credit-rating-txt">
-											<span class="year">2020</span>
+											<span class="year">2022</span>
 											<sapn class="grade">A2+</sapn>
 											<span class="txt">By NICE Investors Service</span>
 										</div>
 									</div>
 									<div class="grade-box">
 										<div class="credit-rating-txt">
-											<span class="year">2020</span>
+											<span class="year">2024</span>
 											<sapn class="grade">AA+</sapn>
 											<span class="txt">NICE D&#38;B Co. LTD.</span>
 										</div>
@@ -57,7 +57,13 @@
 												</th>
 												<th class="bg-none line-btm">Type of Assessment</th>
 											</tr>
-											
+											<tr>						
+												<td>2024.03</td>	
+												<td>Corporate credit rating</td>
+												<td><span class="color-point">AA+</span></td>
+												<td>NICE D&B Co. LTD.</td>
+												<td>2For submission to public institutions</td>
+											</tr>
 											<tr>											
 												<td>2023.03</td>
 												<td>Corporate credit rating</td>

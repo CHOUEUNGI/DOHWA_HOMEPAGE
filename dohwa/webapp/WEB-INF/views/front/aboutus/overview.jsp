@@ -167,7 +167,7 @@
 													<span class="lb"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.030" text="당기순이익" /></span>
 													<em class="number">
 														<c:if test="${'ko' eq _lang}">
-															<span class="ani" id="proceeds_ko">207</span>
+															<span class="ani" id="proceeds_ko">63</span>
 														</c:if>
 														<c:if test="${'en' eq _lang}">
 															<span class="ani" id="proceeds">1.3</span>
@@ -620,7 +620,7 @@
 				};
 
 				new CountUp("capital_ko", 0, 5750 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
-				new CountUp("proceeds_ko", 0, 207 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+				new CountUp("proceeds_ko", 0, 63 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
 				new CountUp("capital", 0, 420.2 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
 				new CountUp("proceeds", 0,1.5 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
 

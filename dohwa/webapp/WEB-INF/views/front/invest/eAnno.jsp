@@ -71,20 +71,25 @@
 					<div class="page-tab-section">
 						<div class="tab-menu-type01 center">
 							<!--s: 20200903 depth 메뉴명 변경-->
-							<ul class="tab-list">
-								<li><a class="item"
-									href="<c:url value="/invest/finance" />" data-id=""><spring:message
-											code="FRONT.COMMON.MENU.INVEST.001" text="재무정보" /></a></li>
-								<li class="active"><a class="item"
-									href="<c:url value="/invest/eAnno" />" data-id=""><spring:message
-											code="FRONT.COMMON.MENU.INVEST.002" text="전자공고 및 공시" /></a></li>
-								<li><a class="item" href="<c:url value="/invest/ir" />"
-									data-id=""><spring:message
-											code="FRONT.COMMON.MENU.INVEST.003" text="IR 자료실" /></a></li>
-								<li><a class="item" href="<c:url value="/invest/stock" />"
-									data-id=""><spring:message
-											code="FRONT.COMMON.MENU.INVEST.004" text="주식 및 주주정보" /></a></li>
-							</ul>
+							<c:choose>
+								<c:when test="${'ko' eq _lang}">
+									<ul class="tab-list">
+										<li><a class="item" href="<c:url value="/invest/director" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.005" text="경영정보" /></a></li>
+										<li><a class="item" href="<c:url value="/invest/finance" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.001" text="재무정보" /></a></li>
+										<li class="active"><a class="item" href="<c:url value="/invest/eAnno" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.002" text="전자공고 및 공시" /></a></li>
+										<li><a class="item" href="<c:url value="/invest/ir" />"data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.003" text="IR 자료실" /></a></li>
+										<li><a class="item" href="<c:url value="/invest/stock" />"data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.004" text="주식 및 주주정보" /></a></li>
+									</ul>
+								</c:when>
+								<c:otherwise>
+									<ul class="tab-list">
+										<li><a class="item" href="<c:url value="/invest/finance" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.001" text="재무정보" /></a></li>
+										<li class="active"><a class="item" href="<c:url value="/invest/eAnno" />" data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.002" text="전자공고 및 공시" /></a></li>
+										<li><a class="item" href="<c:url value="/invest/ir" />"data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.003" text="IR 자료실" /></a></li>
+										<li><a class="item" href="<c:url value="/invest/stock" />"data-id=""><spring:message code="FRONT.COMMON.MENU.INVEST.004" text="주식 및 주주정보" /></a></li>
+									</ul>
+								</c:otherwise>
+							</c:choose>
 							<!--e: 20200903 depth 메뉴명 변경-->
 						</div>
 					</div>
@@ -635,7 +640,8 @@
 	<script type="text/javascript">
 		$(function() {
 			$(document).ready(function() {
-				getInvRef("eAnno", "box_eAnno"); //전자공고 파일 리스트 조회 및 리스트 그리기.
+				getInvRef("eAnno", "
+		box_eAnno"); //전자공고 파일 리스트 조회 및 리스트 그리기.
 			});
 		});
 
@@ -645,126 +651,302 @@
 
 		// 주가정보(KRX) 추가
 		function getKRXDataAjax() {
-			$.ajax({
-				url : '/invest/getKRXDataAjax',
-				type : 'post',
-				data : {},
-				dataType : 'json',
-				success : function(data) {
-					if (data.success) {
-						//stock_faceJuka
-						if (data.krxResponse) {
-							// 주가 정보
-							if (data.krxResponse.stockInfoResponse) {
-								var kDungRak = StringUtils.nvl(data.krxResponse.stockInfoResponse.dungRak,'3');
-								$.each(data.krxResponse.stockInfoResponse,function(k, v) {
-									$('#stock_' + k).html(StringUtils.nvl(v,'-'));
-									if (k === 'debi') {
-										$('#stock_' + k).parent().removeClass('up').removeClass('down');
-										if (kDungRak == '2') { //day_Dungrak : 2(상승),3(동일),5(하락)
-											$('#stock_'+ k).parent().addClass('up');
-										} else if (kDungRak == '3') { //day_Dungrak : 2(상승),3(동일),5(하락)
-										} else if (kDungRak == '5') { //day_Dungrak : 2(상승),3(동일),5(하락)
-											$('#stock_'+ k).parent().addClass('down');
+			$
+					.ajax({
+						url : '/invest/getKRXDataAjax',
+						type : 'post',
+						data : {},
+						dataType : 'json',
+						success : function(data) {
+							if (data.success) {
+								//stock_faceJuka
+								if (data.krxResponse) {
+									// 주가 정보
+									if (data.krxResponse.stockInfoResponse) {
+										var kDungRak = StringUtils
+												.nvl(
+														data.krxResponse.stockInfoResponse.dungRak,
+														'3');
+										$
+												.each(
+														data.krxResponse.stockInfoResponse,
+														function(k, v) {
+															$('#stock_' + k)
+																	.html(
+																			StringUtils
+																					.nvl(
+																							v,
+																							'-'));
+															if (k === 'debi') {
+																$('#stock_' + k)
+																		.parent()
+																		.removeClass(
+																				'up')
+																		.removeClass(
+																				'down');
+																if (kDungRak == '2') { //day_Dungrak : 2(상승),3(동일),5(하락)
+																	$(
+																			'#stock_'
+																					+ k)
+																			.parent()
+																			.addClass(
+																					'up');
+																} else if (kDungRak == '3') { //day_Dungrak : 2(상승),3(동일),5(하락)
+																} else if (kDungRak == '5') { //day_Dungrak : 2(상승),3(동일),5(하락)
+																	$(
+																			'#stock_'
+																					+ k)
+																			.parent()
+																			.addClass(
+																					'down');
+																}
+															}
+														});
+									}
+
+									//일자별 시세
+									var stockHtml1 = '';
+									if (data.krxResponse.dailyStockResponse
+											&& data.krxResponse.dailyStockResponse.length) {
+										data.krxResponse.dailyStockResponse
+												.forEach(function(o, i) {
+													stockHtml1 += '<tr>';
+													stockHtml1 += '	<td>'
+															+ StringUtils.nvl(
+																	o.day_Date,
+																	'-')
+															+ '</td>';
+													stockHtml1 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.day_EndPrice,
+																			'-')
+															+ '</td>';
+													if (StringUtils.nvl(
+															o.day_Dungrak, '3') == '2') { //day_Dungrak : 2(상승),3(동일),5(하락)
+														stockHtml1 += '	<td class="up">';
+													} else if (StringUtils.nvl(
+															o.day_Dungrak, '3') == '3') { //day_Dungrak : 2(상승),3(동일),5(하락)
+														stockHtml1 += '	<td class="">';
+													} else if (StringUtils.nvl(
+															o.day_Dungrak, '3') == '5') { //day_Dungrak : 2(상승),3(동일),5(하락)
+														stockHtml1 += '	<td class="down">';
+													}
+													stockHtml1 += '		<em class="ico stock-net-change"></em>';
+													stockHtml1 += '		<span>'
+															+ StringUtils
+																	.nvl(
+																			o.day_getDebi,
+																			'-')
+															+ '</span>';
+													stockHtml1 += '	</td>';
+													stockHtml1 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.day_Start,
+																			'-')
+															+ '</td>';
+													stockHtml1 += '	<td>'
+															+ StringUtils.nvl(
+																	o.day_High,
+																	'-')
+															+ '</td>';
+													stockHtml1 += '	<td>'
+															+ StringUtils.nvl(
+																	o.day_Low,
+																	'-')
+															+ '</td>';
+													stockHtml1 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.day_Volume,
+																			'-')
+															+ '</td>';
+													stockHtml1 += '	<td class="right">'
+															+ StringUtils
+																	.nvl(
+																			o.day_getAmount,
+																			'-')
+															+ '</td>';
+													stockHtml1 += '</tr>';
+												});
+									}
+									$('#stockInfoTab1 tbody').html(stockHtml1);
+
+									//시간대별 시세
+									var stockHtml2 = '';
+									if (data.krxResponse.timeConcludeResponse
+											&& data.krxResponse.timeConcludeResponse.length) {
+										data.krxResponse.timeConcludeResponse
+												.forEach(function(o, i) {
+													stockHtml2 += '<tr>';
+													stockHtml2 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.time,
+																			'-')
+															+ '</td>';
+													stockHtml2 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.negoprice,
+																			'-')
+															+ '</td>';
+													if (StringUtils.nvl(
+															o.dungrak, '3') == '2') { //dungrak : 2(상승),3(동일),5(하락)
+														stockHtml2 += '	<td class="up">';
+													} else if (StringUtils.nvl(
+															o.dungrak, '3') == '3') { //dungrak : 2(상승),3(동일),5(하락)
+														stockHtml2 += '	<td class="">';
+													} else if (StringUtils.nvl(
+															o.dungrak, '3') == '5') { //dungrak : 2(상승),3(동일),5(하락)
+														stockHtml2 += '	<td class="down">';
+													}
+													stockHtml2 += '		<em class="ico stock-net-change"></em>';
+													stockHtml2 += '		<span>'
+															+ StringUtils
+																	.nvl(
+																			o.debi,
+																			'-')
+															+ '</span>';
+													stockHtml2 += '	</td>';
+													stockHtml2 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.sellprice,
+																			'-')
+															+ '</td>';
+													stockHtml2 += '	<td>'
+															+ StringUtils.nvl(
+																	o.buyprice,
+																	'-')
+															+ '</td>';
+													stockHtml2 += '	<td>'
+															+ StringUtils.nvl(
+																	o.amount,
+																	'-')
+															+ '</td>';
+													stockHtml2 += '</tr>';
+												});
+									}
+									$('#stockInfoTab2 tbody').html(stockHtml2);
+
+									// 호가
+									if (data.krxResponse.hogaResponse) {
+										for (var trIdx = 0; trIdx < 5; trIdx++) {
+											$('#stockInfoTab3 tbody tr')
+													.eq(trIdx)
+													.find('td')
+													.eq(0)
+													.html(
+															StringUtils
+																	.nvl(
+																			data.krxResponse.hogaResponse['medoJan'
+																					+ trIdx],
+																			'-'));
+											$('#stockInfoTab3 tbody tr')
+													.eq(trIdx)
+													.find('td')
+													.eq(1)
+													.html(
+															StringUtils
+																	.nvl(
+																			data.krxResponse.hogaResponse['medoHoka'
+																					+ trIdx],
+																			'-'));
+											//$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(2).html();
+										}
+
+										for (trIdx = 5; trIdx < 10; trIdx++) {
+											if (trIdx == 5) {
+												//$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(0).html();
+												$('#stockInfoTab3 tbody tr')
+														.eq(trIdx)
+														.find('td')
+														.eq(1)
+														.html(
+																StringUtils
+																		.nvl(
+																				data.krxResponse.hogaResponse['mesuHoka'
+																						+ (trIdx - 5)],
+																				'-'));
+												$('#stockInfoTab3 tbody tr')
+														.eq(trIdx)
+														.find('td')
+														.eq(2)
+														.html(
+																StringUtils
+																		.nvl(
+																				data.krxResponse.hogaResponse['mesuJan'
+																						+ (trIdx - 5)],
+																				'-'));
+											} else {
+												$('#stockInfoTab3 tbody tr')
+														.eq(trIdx)
+														.find('td')
+														.eq(0)
+														.html(
+																StringUtils
+																		.nvl(
+																				data.krxResponse.hogaResponse['mesuHoka'
+																						+ (trIdx - 5)],
+																				'-'));
+												$('#stockInfoTab3 tbody tr')
+														.eq(trIdx)
+														.find('td')
+														.eq(1)
+														.html(
+																StringUtils
+																		.nvl(
+																				data.krxResponse.hogaResponse['mesuJan'
+																						+ (trIdx - 5)],
+																				'-'));
+											}
 										}
 									}
-								});
-							}
-	
-							//일자별 시세
-							var stockHtml1 = '';
-							if (data.krxResponse.dailyStockResponse && data.krxResponse.dailyStockResponse.length) {
-								data.krxResponse.dailyStockResponse.forEach(function(o, i) {
-									stockHtml1 += '<tr>';
-									stockHtml1 += '	<td>'+ StringUtils.nvl(o.day_Date,'-')+ '</td>';
-									stockHtml1 += '	<td>'+ StringUtils.nvl(o.day_EndPrice,'-')+ '</td>';
-									if (StringUtils.nvl(o.day_Dungrak, '3') == '2') { //day_Dungrak : 2(상승),3(동일),5(하락)
-										stockHtml1 += '	<td class="up">';
-									} else if (StringUtils.nvl(o.day_Dungrak, '3') == '3') { //day_Dungrak : 2(상승),3(동일),5(하락)
-										stockHtml1 += '	<td class="">';
-									} else if (StringUtils.nvl(o.day_Dungrak, '3') == '5') { //day_Dungrak : 2(상승),3(동일),5(하락)
-										stockHtml1 += '	<td class="down">';
+
+									// 회원사별 거래
+									var stockHtml4 = '';
+									if (data.krxResponse.askPriceResponses
+											&& data.krxResponse.askPriceResponses.length) {
+										data.krxResponse.askPriceResponses
+												.forEach(function(o, i) {
+													stockHtml4 += '<tr>';
+													stockHtml4 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.member_memdoMem,
+																			'-')
+															+ '</td>';
+													stockHtml4 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.member_memdoVol,
+																			'-')
+															+ '</td>';
+													stockHtml4 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.member_memsoMem,
+																			'-')
+															+ '</td>';
+													stockHtml4 += '	<td>'
+															+ StringUtils
+																	.nvl(
+																			o.member_mesuoVol,
+																			'-')
+															+ '</td>';
+													stockHtml4 += '</tr>';
+												});
 									}
-									stockHtml1 += '		<em class="ico stock-net-change"></em>';
-									stockHtml1 += '		<span>'+ StringUtils.nvl(o.day_getDebi,'-')+ '</span>';
-									stockHtml1 += '	</td>';
-									stockHtml1 += '	<td>'+ StringUtils.nvl(o.day_Start,'-') + '</td>';
-									stockHtml1 += '	<td>'+ StringUtils.nvl(o.day_High,'-') + '</td>';
-									stockHtml1 += '	<td>'+ StringUtils.nvl(o.day_Low,'-')+ '</td>';
-									stockHtml1 += '	<td>'+ StringUtils.nvl(o.day_Volume,'-')+ '</td>';
-									stockHtml1 += '	<td class="right">'+ StringUtils.nvl(o.day_getAmount,'-')+ '</td>';
-									stockHtml1 += '</tr>';
-								});
-							}
-							$('#stockInfoTab1 tbody').html(stockHtml1);
-	
-							//시간대별 시세
-							var stockHtml2 = '';
-							if (data.krxResponse.timeConcludeResponse
-									&& data.krxResponse.timeConcludeResponse.length) {
-								data.krxResponse.timeConcludeResponse.forEach(function(o, i) {
-									stockHtml2 += '<tr>';
-									stockHtml2 += '	<td>'+ StringUtils.nvl(o.time,'-') + '</td>';
-									stockHtml2 += '	<td>'+ StringUtils.nvl(o.negoprice,'-')+ '</td>';
-									if (StringUtils.nvl(o.dungrak, '3') == '2') { //dungrak : 2(상승),3(동일),5(하락)
-										stockHtml2 += '	<td class="up">';
-									} else if (StringUtils.nvl(o.dungrak, '3') == '3') { //dungrak : 2(상승),3(동일),5(하락)
-										stockHtml2 += '	<td class="">';
-									} else if (StringUtils.nvl(o.dungrak, '3') == '5') { //dungrak : 2(상승),3(동일),5(하락)
-										stockHtml2 += '	<td class="down">';
-									}
-									stockHtml2 += '		<em class="ico stock-net-change"></em>';
-									stockHtml2 += '		<span>'+ StringUtils.nvl(o.debi,'-')+ '</span>';
-									stockHtml2 += '	</td>';
-									stockHtml2 += '	<td>'+ StringUtils.nvl(o.sellprice,'-')+ '</td>';
-									stockHtml2 += '	<td>'+ StringUtils.nvl(o.buyprice,'-')+ '</td>';
-									stockHtml2 += '	<td>'+ StringUtils.nvl(o.amount,'-')+ '</td>';
-									stockHtml2 += '</tr>';
-								});
-							}
-							$('#stockInfoTab2 tbody').html(stockHtml2);
-	
-							// 호가
-							if (data.krxResponse.hogaResponse) {
-								for (var trIdx = 0; trIdx < 5; trIdx++) {
-									$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(0).html(StringUtils.nvl(data.krxResponse.hogaResponse['medoJan'+ trIdx],'-'));
-									$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(1).html(StringUtils.nvl(data.krxResponse.hogaResponse['medoHoka'+ trIdx],'-'));
-									//$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(2).html();
-								}
-	
-								for (trIdx = 5; trIdx < 10; trIdx++) {
-									if (trIdx == 5) {
-										//$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(0).html();
-										$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(1).html(StringUtils.nvl(data.krxResponse.hogaResponse['mesuHoka'+ (trIdx - 5)],'-'));
-										$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(2).html(StringUtils.nvl(data.krxResponse.hogaResponse['mesuJan'+ (trIdx - 5)],'-'));
-									} else {
-										$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(0).html(StringUtils.nvl(data.krxResponse.hogaResponse['mesuHoka'+ (trIdx - 5)],'-'));
-										$('#stockInfoTab3 tbody tr').eq(trIdx).find('td').eq(1).html(StringUtils.nvl(data.krxResponse.hogaResponse['mesuJan'+ (trIdx - 5)],'-'));
-									}
+									$('#stockInfoTab4 tbody').html(stockHtml4);
 								}
 							}
-	
-							// 회원사별 거래
-							var stockHtml4 = '';
-							if (data.krxResponse.askPriceResponses
-									&& data.krxResponse.askPriceResponses.length) {
-								data.krxResponse.askPriceResponses.forEach(function(o, i) {
-									stockHtml4 += '<tr>';
-									stockHtml4 += '	<td>'+ StringUtils.nvl(o.member_memdoMem,'-')+ '</td>';
-									stockHtml4 += '	<td>'+ StringUtils.nvl(o.member_memdoVol,'-')+ '</td>';
-									stockHtml4 += '	<td>'+ StringUtils.nvl(o.member_memsoMem,'-')+ '</td>';
-									stockHtml4 += '	<td>'+ StringUtils.nvl(o.member_mesuoVol,'-')+ '</td>';
-									stockHtml4 += '</tr>';
-								});
-							}
-							$('#stockInfoTab4 tbody').html(stockHtml4);
+						},
+						error : function(jqXHR) {
+							console.log(jqXHR);
 						}
-					}
-				},
-				error : function(jqXHR) {
-					console.log(jqXHR);
-				}
-			});
+					});
 		}
 	</script>
 </body>

@@ -30,13 +30,27 @@
 					</ul>
 				</li>
 				<li class="gnb-menu-item">
-					<a class="gnb-menu-link" href="<c:url value="/invest/finance" />"><spring:message code="FRONT.COMMON.MENU.HEADER.014" text="투자정보" /></a>
-					<ul class="gnb-sub-list">
-						<li class="gnb-sub-item"><a href="<c:url value="/invest/finance" />"><spring:message code="FRONT.COMMON.MENU.HEADER.015" text="재무정보" /></a></li>
-						<li class="gnb-sub-item"><a href="<c:url value="/invest/eAnno" />"><spring:message code="FRONT.COMMON.MENU.HEADER.016" text="전자공고 및 공시" /></a></li>
-						<li class="gnb-sub-item"><a href="<c:url value="/invest/ir" />"><spring:message code="FRONT.COMMON.MENU.HEADER.017" text="IR 자료실" /></a></li>
-						<li class="gnb-sub-item"><a href="<c:url value="/invest/stock" />"><spring:message code="FRONT.COMMON.MENU.HEADER.018" text="주식 및 주주정보" /></a></li>
-					</ul>
+					<c:choose>
+						<c:when test="${'ko' eq _lang}">
+							<a class="gnb-menu-link" href="<c:url value="/invest/director" />"><spring:message code="FRONT.COMMON.MENU.HEADER.014" text="투자정보" /></a>
+							<ul class="gnb-sub-list">
+								<li class="gnb-sub-item"><a href="<c:url value="/invest/director" />"><spring:message code="FRONT.COMMON.MENU.HEADER.034" text="경영정보" /></a></li>
+								<li class="gnb-sub-item"><a href="<c:url value="/invest/finance" />"><spring:message code="FRONT.COMMON.MENU.HEADER.015" text="재무정보" /></a></li>
+								<li class="gnb-sub-item"><a href="<c:url value="/invest/eAnno" />"><spring:message code="FRONT.COMMON.MENU.HEADER.016" text="전자공고 및 공시" /></a></li>
+								<li class="gnb-sub-item"><a href="<c:url value="/invest/ir" />"><spring:message code="FRONT.COMMON.MENU.HEADER.017" text="IR 자료실" /></a></li>
+								<li class="gnb-sub-item"><a href="<c:url value="/invest/stock" />"><spring:message code="FRONT.COMMON.MENU.HEADER.018" text="주식 및 주주정보" /></a></li>
+							</ul>
+						</c:when>
+						<c:otherwise>
+							<a class="gnb-menu-link" href="<c:url value="/invest/finance" />"><spring:message code="FRONT.COMMON.MENU.HEADER.014" text="투자정보" /></a>
+							<ul class="gnb-sub-list">
+								<li class="gnb-sub-item"><a href="<c:url value="/invest/finance" />"><spring:message code="FRONT.COMMON.MENU.HEADER.015" text="재무정보" /></a></li>
+								<li class="gnb-sub-item"><a href="<c:url value="/invest/eAnno" />"><spring:message code="FRONT.COMMON.MENU.HEADER.016" text="전자공고 및 공시" /></a></li>
+								<li class="gnb-sub-item"><a href="<c:url value="/invest/ir" />"><spring:message code="FRONT.COMMON.MENU.HEADER.017" text="IR 자료실" /></a></li>
+								<li class="gnb-sub-item"><a href="<c:url value="/invest/stock" />"><spring:message code="FRONT.COMMON.MENU.HEADER.018" text="주식 및 주주정보" /></a></li>
+							</ul>
+						</c:otherwise>
+					</c:choose>
 				</li>
 				<li class="gnb-menu-item">
 					<a class="gnb-menu-link" href="<c:url value="/prroom/ci" />"><spring:message code="FRONT.COMMON.MENU.HEADER.019" text="홍보센터" /></a>

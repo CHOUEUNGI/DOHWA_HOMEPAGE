@@ -8,12 +8,12 @@
 		<div class="table-box credit-rating-table-wrap">
 			<div class="credit-rating-box clfix">
 				<div class="credit-rating-txt">
-					<span class="year">2020</span>
+					<span class="year">2022</span>
 					<sapn class="grade">A2+</sapn>
 					<span class="txt">NICE신용평가㈜(D~A1)</span>
 				</div>
 				<div class="credit-rating-txt">
-					<span class="year">2020</span>
+					<span class="year">2024</span>
 					<sapn class="grade">AA+</sapn>
 					<span class="txt">㈜나이스디앤비(AAA~NG)</span>
 				</div>

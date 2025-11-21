@@ -8,7 +8,7 @@
 		<div class="table-box credit-rating-table-wrap">
 			<div class="credit-rating-box clfix">
 				<div class="credit-rating-txt">
-					<span class="year">2020</span>
+					<span class="year">2022</span>
 					<sapn class="grade">A2+</sapn>
 					<span class="txt">
 						Por NICE Investors
@@ -17,7 +17,7 @@
 					</span>
 				</div>
 				<div class="credit-rating-txt">
-					<span class="year">2020</span>
+					<span class="year">2024</span>
 					<sapn class="grade">AA+</sapn>
 					<span class="txt">NICE D&#38;B Co. LTD.</span>
 				</div>
@@ -66,6 +66,70 @@
 						</tr>
 					</thead>
 					<tbody>
+						<tr>						
+							<td>2024.03</td>	
+							<td>Calificación crediticia corporativa</td>
+							<td><span class="color-point">AA+</span></td>
+							<td>NICE D&B Co. LTD.</td>
+							<td>For submission to public institutions</td>
+						</tr>
+						<tr>											
+							<td>2023.03</td>
+							<td>Calificación crediticia corporativa</td>
+							<td><span class="color-point">AA+</span></td>
+							<td>NICE D&B Co. LTD.</td>
+							<td>For submission to public institutions</td>
+						</tr>
+						<tr>
+							<td>2022.12</td>
+							<td>Pagaré de Empresa</td>
+							<td><span class="color-point">A2+</span></td>
+							<td>NICE Investors Service Co. LTD. (D-A1)</td>
+							<td>Evaluación periódica</td>
+						</tr>
+						<tr>
+							<td>2022.06</td>
+							<td>Pagaré de Empresa</td>
+							<td><span class="color-point">A2+</span></td>
+							<td>NICE Investors Service Co. LTD. (D-A1)</td>
+							<td>Evaluación Principal</td>
+						</tr>
+						<tr>
+							<td>2022.04</td>
+							<td>Calificación crediticia corporativa</td>
+							<td><span class="color-point">AA+</span></td>
+							<td>NICE D&B Co. LTD.</td>
+							<td>For submission to public institutions</td>
+						</tr>
+						<tr>
+							<td>2021.12</td>
+							<td>Pagaré de Empresa</td>
+							<td><span class="color-point">A2+</span></td>
+							<td>NICE Investors Service Co. LTD. (D-A1)</td>
+							<td>Evaluación periódica</td>
+						</tr>
+						<tr>
+							<td>2021.06</td>
+							<td>Pagaré de Empresa</td>
+							<td><span class="color-point">A2+</span></td>
+							<td>NICE Investors Service Co. LTD. (D-A1)</td>
+							<td>Evaluación Principal</td>
+						</tr>
+						<tr>
+							<td>2021.04</td>
+							<td>Calificación crediticia corporativa</td>
+							<td><span class="color-point">AA+</span></td>
+							<td>NICE D&B Co. LTD.</td>
+							<td>For submission to public institutions</td>
+						</tr>
+						
+						<tr>
+							<td>2020.12</td>
+							<td>Pagaré de Empresa</td>
+							<td><span class="color-point">A2+</span></td>
+							<td>NICE Investors Service Co. LTD. (D-A1)</td>
+							<td>Evaluación periódica</td>
+						</tr>
 						<tr>
 							<td>2020.06</td>
 							<td>Pagaré de Empresa</td>
@@ -75,11 +139,7 @@
 						</tr>
 						<tr>
 							<td>2020.04</td>
-							<td>
-								Calificación crediticia
-								<br />
-								corporativa
-							</td>
+							<td>Calificación crediticia corporativa</td>
 							<td><span class="color-point">AA+</span></td>
 							<td>NICE D&#38;B Co. LTD.</td>
 							<td>For submission to public institutions</td>
@@ -100,11 +160,7 @@
 						</tr>
 						<tr>
 							<td>2019.04</td>
-							<td>
-								Calificación crediticia
-								<br />
-								corporativa
-							</td>
+							<td>Calificación crediticia corporativa</td>
 							<td><span class="color-point">AA+</span></td>
 							<td>NICE D&#38;B Co. LTD.</td>
 							<td>For submission to public institutions</td>
@@ -125,11 +181,7 @@
 						</tr>
 						<tr>
 							<td>2018.04</td>
-							<td>
-								Calificación crediticia
-								<br />
-								corporativa
-							</td>
+							<td>Calificación crediticia corporativa</td>
 							<td><span class="color-point">AA+</span></td>
 							<td>NICE D&#38;B Co. LTD.</td>
 							<td>For submission to public institutions</td>
@@ -150,11 +202,7 @@
 						</tr>
 						<tr>
 							<td>2017.04</td>
-							<td>
-								Calificación crediticia
-								<br />
-								corporativa
-							</td>
+							<td>Calificación crediticia corporativa</td>
 							<td><span class="color-point">AA+</span></td>
 							<td>NICE D&#38;B Co. LTD.</td>
 							<td>For submission to public institutions</td>

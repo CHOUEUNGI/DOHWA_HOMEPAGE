@@ -447,6 +447,7 @@
 													maxFractionDigits="3" value="${lastDvst.tcdvAmt }" /></td>
 										</c:if>
 									</tr>
+									<!-- 
 									<tr>
 										<td><spring:message
 												code="FRONT.COMMON.MENU.INVEST.004.003.008" text="현금배당성향" />
@@ -464,6 +465,50 @@
 													maxFractionDigits="3" value="${lastDvst.cdpoRatio }" /></td>
 										</c:if>
 									</tr>
+									 -->
+									 <tr>
+										<td><spring:message code="FRONT.COMMON.MENU.INVEST.004.003.008" text="현금배당성향" /> (%)</td>
+									
+										<c:if test="${not empty firstDvst}">
+											<td>
+												<c:choose>
+													<c:when test="${empty firstDvst.cdpoRatio or firstDvst.cdpoRatio == 0.0}">
+														-
+													</c:when>
+													<c:otherwise>
+														<fmt:formatNumber type="number" maxFractionDigits="3" value="${firstDvst.cdpoRatio}" />
+													</c:otherwise>
+												</c:choose>
+											</td>
+										</c:if>
+									
+										<c:if test="${not empty secondDvst}">
+											<td>
+												<c:choose>
+													<c:when test="${empty secondDvst.cdpoRatio or secondDvst.cdpoRatio == 0.0}">
+														-
+													</c:when>
+													<c:otherwise>
+														<fmt:formatNumber type="number" maxFractionDigits="3" value="${secondDvst.cdpoRatio}" />
+													</c:otherwise>
+												</c:choose>
+											</td>
+										</c:if>
+									
+										<c:if test="${not empty lastDvst}">
+											<td>
+												<c:choose>
+													<c:when test="${empty lastDvst.cdpoRatio or lastDvst.cdpoRatio == 0.0}">
+														-
+													</c:when>
+													<c:otherwise>
+														<fmt:formatNumber type="number" maxFractionDigits="3" value="${lastDvst.cdpoRatio}" />
+													</c:otherwise>
+												</c:choose>
+											</td>
+										</c:if>
+									</tr>
+									 
 									<tr>
 										<td><spring:message
 												code="FRONT.COMMON.MENU.INVEST.004.003.009" text="현금배당수익률" />

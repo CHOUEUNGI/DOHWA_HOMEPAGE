@@ -154,7 +154,7 @@ public class InvestController extends BaseController {
 		DateTimeFormatter format2 = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일");
 		DateTimeFormatter format3 = DateTimeFormatter.ofPattern("MMM/dd/yyyy", Locale.ENGLISH);
 		
-		String baseDate1 = "2023-05-12 00:00:00";
+		String baseDate1 = "2024-12-31 00:00:00";
 		String baseDate2 = !shcpList.isEmpty() && 0 < shcpList.size() ? shcpList.get(0).getStdDate() + " 00:00:00" : ""; 
 		String convetDate1 = "";
 		String convetDate2 = "";
@@ -220,6 +220,67 @@ public class InvestController extends BaseController {
 		retMap.put("success", true);
 		return retMap;
 	}
+	
+	
+	
+	/**
+	 * 투자정보 > 경영정보 > 이사회
+	 */
+	@RequestMapping("/director")
+	public String director(HttpServletRequest request, Model model) {
 
+	    String lang = request.getParameter("lang");
+	    if(lang == null) {
+	        Object langAttr = request.getAttribute("lang");
+	        if(langAttr != null) lang = langAttr.toString();
+	    }
+
+	    // 한국어가 아니라면 -> 재무정보로 이동
+	    if(lang != null && !lang.equals("ko")) {
+	        return "redirect:/invest/finance?lang=" + lang;
+	    }
+
+	    return frontViewPath() + "/director";
+	}
+
+	/**
+	 * 투자정보 > 경영정보 > 정관
+	 */
+	@RequestMapping("/article")
+	public String article(HttpServletRequest request, Model model) {
+
+	    String lang = request.getParameter("lang");
+	    if(lang == null) {
+	        Object langAttr = request.getAttribute("lang");
+	        if(langAttr != null) lang = langAttr.toString();
+	    }
+
+	    if(lang != null && !lang.equals("ko")) {
+	        return "redirect:/invest/finance?lang=" + lang;
+	    }
+
+	    return frontViewPath() + "/article";
+	}
+
+	/**
+	 * 투자정보 > 경영정보 > 위원회
+	 */
+	@RequestMapping("/committee")
+	public String committee(HttpServletRequest request, Model model) {
+
+	    String lang = request.getParameter("lang");
+	    if(lang == null) {
+	        Object langAttr = request.getAttribute("lang");
+	        if(langAttr != null) lang = langAttr.toString();
+	    }
+
+	    if(lang != null && !lang.equals("ko")) {
+	        return "redirect:/invest/finance?lang=" + lang;
+	    }
+
+	    return frontViewPath() + "/committee";
+	}
+
+	
 }
 

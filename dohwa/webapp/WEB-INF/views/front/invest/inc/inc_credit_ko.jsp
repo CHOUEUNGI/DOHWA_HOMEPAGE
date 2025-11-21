@@ -14,14 +14,14 @@
 			<div class="grade-wrap clfix">
 				<div class="grade-box">
 					<div class="credit-rating-txt">
-						<span class="year">2020</span>
+						<span class="year">2022</span>
 						<sapn class="grade">A2+</sapn>
 						<span class="txt">NICE신용평가㈜(D~A1)</span>
 					</div>
 				</div>
 				<div class="grade-box">
 					<div class="credit-rating-txt">
-						<span class="year">2020</span>
+						<span class="year">2024</span>
 						<sapn class="grade">AA+</sapn>
 						<span class="txt">㈜나이스디앤비(AAA~NG)</span>
 					</div>

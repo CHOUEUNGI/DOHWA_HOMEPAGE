@@ -42,90 +42,101 @@
 			
 			//언어변경
 			function chgLang(lang) {
-				// hashtag 제거하기
-				// 보도자료 화면은 국문에만 존재, 영문 스페인일경우 메인으로 이동
-				var bfSplitUrl = location.href.replace('prroom/press', 'main');
-				
-				//var arrUrl = location.href.split('?');
-				var arrUrl = bfSplitUrl.split('?');
-				
-				var uri = '';
-				var qs = '';
-				if(arrUrl.length > 1){
-					uri = arrUrl[0].substr(0, (arrUrl[0].indexOf('#') > -1 ? arrUrl[0].indexOf('#') :  arrUrl[0].length) );		
-					qs = StringUtils.isEmpty(arrUrl[1]) ? '' : ('?' + arrUrl[1]);
-				} else if(arrUrl.length > 0){
-					uri = arrUrl[0].substr(0, (arrUrl[0].indexOf('#') > -1 ? arrUrl[0].indexOf('#') :  arrUrl[0].length) );
-				} else {
-					 uri = location.href;
-				}
-				var url = uri + qs;
-				
-				// tab 유지를 위한 정보 셋팅
-				try{
-					var arrTabIdx = [];
-					// 첫번째 탭
-					$('ul.tab-list:first li').each(function(i, o){
-						if($(o).hasClass('active')){
-							if( $(o).find('a').length > 0 && ($(o).find('a').attr('href').indexOf('http') > -1 || $(o).find('a').attr('href').indexOf('/') > -1) ){
-								// arrTabIdx.push(j);	
-							} else {
-								arrTabIdx.push(i);	
-							}
-						}
-					});
-					//두번째 탭부터는 현재 active된 영역안의 것만
-					if($('ul.tab-list').length > 1){
-						$('ul.tab-list').each(function(i, o){
-							if(i > 0){
-								if($(o).closest('.active').length && $(o).closest('.active').length > 0){
-									$(o).find('li').each(function(j, x){
-										if($(x).hasClass('active')){
-											if( $(x).find('a').length > 0 && ($(x).find('a').attr('href').indexOf('http') > -1 || $(x).find('a').attr('href').indexOf('/') > -1) ){
-												// arrTabIdx.push(j);	
-											} else {
-												arrTabIdx.push(j);	
-											}
-										}
-									});
-								}
-							}
-						});
-					}
-					//예외처리
-					if($('ul.tab-list-2depth').length > 0){
-						arrTabIdx = [];
-						$('ul.tab-list-2depth li').each(function(i, o){
-							if($(o).hasClass('active')){
-								if( $(o).find('a').length > 0 && ($(o).find('a').attr('href').indexOf('http') > -1 || $(o).find('a').attr('href').indexOf('/') > -1) ){
-									// arrTabIdx.push(j);	
-								} else {
-									arrTabIdx.push(i);	
-								}
-							}
-						});
-					} else if($('ul.tab-list-3depth').length > 0){
-						arrTabIdx = [];
-						$('ul.tab-list-3depth li').each(function(i, o){
-							if($(o).hasClass('active')){
-								if( $(o).find('a').length > 0 && ($(o).find('a').attr('href').indexOf('http') > -1 || $(o).find('a').attr('href').indexOf('/') > -1) ){
-									// arrTabIdx.push(j);	
-								} else {
-									arrTabIdx.push(i);	
-								}
-							}
-						});
-					}
-					tabIdx = arrTabIdx.join('');
-					url = SnsUtils.rplaceQueryString(url, 'tabIdx', tabIdx);
-				}catch(e){
-					console.log('CommonUtils chgLang set tabIdx error ', e);
-				}
-				
-				// url 언어 변경 
-				location.href=SnsUtils.rplaceQueryString(url, 'lang', lang);
-			}
+
+			    // ------------------------------------------------------------------
+			    // 1) 현재 URL
+			    // ------------------------------------------------------------------
+			    var curUrl = location.href;
 			
+			    var isDirectorPage =
+			        curUrl.indexOf('/invest/director') > -1 ||
+			        $("a.item[href$='/invest/director']").length > 0 ||
+			        $(".tab-list li.active a[href*='/invest/director']").length > 0;
+			
+			    // ------------------------------------------------------------------
+			    // 2) 지금 언어가 한국어가 아니고, director 페이지라면 → 강제 이동!
+			    // ------------------------------------------------------------------
+			    if (lang !== 'ko' && isDirectorPage) {
+			        var redirectUrl = curUrl.replace('/invest/director', '/invest/finance');
+			
+			        // 언어 파라미터 적용
+			        redirectUrl = SnsUtils.rplaceQueryString(redirectUrl, 'lang', lang);
+			
+			        location.href = redirectUrl;
+			        return; // ❗ 중요한 부분: 여기서 함수 종료해야 중복 로직 방지됨
+			    }
+			
+			
+			    // ------------------------------------------------------------------
+			    // 3) 일반적인 언어 변경 로직 (원래 너 코드)
+			    // ------------------------------------------------------------------
+			
+			    var bfSplitUrl = location.href
+			        .replace('prroom/press', 'main');
+			
+			    var arrUrl = bfSplitUrl.split('?');
+			
+			    var uri = '';
+			    var qs = '';
+			    if (arrUrl.length > 1) {
+			        uri = arrUrl[0].split('#')[0];
+			        qs = arrUrl[1] ? '?' + arrUrl[1] : '';
+			    } else {
+			        uri = arrUrl[0].split('#')[0];
+			    }
+			    var url = uri + qs;
+			
+			
+			    // tab 유지 처리 (기존 코드 그대로 유지)
+			    try {
+			        var arrTabIdx = [];
+			
+			        $('ul.tab-list:first li').each(function (i, o) {
+			            if ($(o).hasClass('active') &&
+			                !($(o).find('a').attr('href') || '').startsWith('/')) {
+			                arrTabIdx.push(i);
+			            }
+			        });
+			
+			        if ($('ul.tab-list').length > 1) {
+			            $('ul.tab-list').each(function (i, o) {
+			                if (i > 0 && $(o).closest('.active').length) {
+			                    $(o).find('li').each(function (j, x) {
+			                        if ($(x).hasClass('active') &&
+			                            !($(x).find('a').attr('href') || '').startsWith('/')) {
+			                            arrTabIdx.push(j);
+			                        }
+			                    });
+			                }
+			            });
+			        }
+			
+			        if ($('ul.tab-list-2depth').length > 0) {
+			            arrTabIdx = [];
+			            $('ul.tab-list-2depth li').each(function (i, o) {
+			                if ($(o).hasClass('active')) arrTabIdx.push(i);
+			            });
+			        } else if ($('ul.tab-list-3depth').length > 0) {
+			            arrTabIdx = [];
+			            $('ul.tab-list-3depth li').each(function (i, o) {
+			                if ($(o).hasClass('active')) arrTabIdx.push(i);
+			            });
+			        }
+			
+			        tabIdx = arrTabIdx.join('');
+			        url = SnsUtils.rplaceQueryString(url, 'tabIdx', tabIdx);
+			    } catch (e) {
+			        console.log('tabIdx error', e);
+			    }
+			
+			    // 마지막으로 lang 적용
+			    location.href = SnsUtils.rplaceQueryString(url, 'lang', lang);
+			}
+
+
+
+
+
 			//언어변경 후 탭유지
 			function setTabChgLang() {
 				try{
@@ -487,93 +498,111 @@
 			}
 
 			// 막대 차트 생성			
-			function createBarChart(divId, arrData){
-				try {
-					am4core.useTheme(am4themes_animated);
-					am4core.options.commercialLicense = true;
+			function createBarChart(divId, arrData) {
+			  try {
+			    am4core.useTheme(am4themes_animated);
+			    am4core.options.commercialLicense = true;
+			
+			    var chart = window[divId] = am4core.create(divId, am4charts.XYChart);
+			    chart.data = arrData;
+			
+			    // 확대/축소 버튼/커서 비활성(옵션)
+			    chart.zoomOutButton.disabled = true;
+			    chart.cursor = new am4charts.XYCursor();
+			    chart.cursor.behavior = "none";
+			
+			    // 🔑 라벨이 플롯 밖으로 나가도 보이도록 마스크 해제
+			    chart.maskBullets = false;
+			
+			    // X축
+			    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+			    categoryAxis.dataFields.category = "year";
+			    categoryAxis.renderer.grid.template.location = 0;
+			    categoryAxis.renderer.minGridDistance = 30;
+			    categoryAxis.renderer.labels.template.rotation = 0;
+			    categoryAxis.tooltip.disabled = true;
+			
+			    // Y축 범위 자동 계산(과장 방지)
+			    var values = arrData.map(function (d) { return +d.value || 0; });
+			    var minY = Math.min.apply(null, values);
+			    var maxY = Math.max.apply(null, values);
+			    var range = maxY - minY;
+			    var pad = range <= 0 ? Math.max(10, Math.abs(minY) * 0.05) : range * 0.1;
+			
+			    var yMin = Math.floor((minY - pad) / 10) * 10;
+			    var yMax = Math.ceil((maxY + pad) / 10) * 10;
+			
+			    if (minY >= 0 && yMin > 0) yMin = 0;
+			    if (maxY <= 0 && yMax < 0) yMax = 0;
+			
+			    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+			    valueAxis.min = yMin;
+			    valueAxis.max = yMax;
+			    valueAxis.strictMinMax = true;
+			    valueAxis.extraMin = 0;
+			    valueAxis.extraMax = 0;
+			    valueAxis.renderer.minGridDistance = 30;
+			    valueAxis.renderer.grid.template.strokeOpacity = 0.07;
+			
+			    // 시리즈
+			    var series = chart.series.push(new am4charts.ColumnSeries());
+			    series.dataFields.valueY = "value";
+			    series.dataFields.categoryX = "year";
+			    series.columns.template.strokeWidth = 0;
+			    series.columns.template.column.fillOpacity = 0.85;
+			    series.tooltipText = "[{categoryX}] {valueY.formatNumber('#,###')}";
+			    series.sequencedInterpolation = true;
+			
+			    // 🔑 시리즈 쪽도 마스크 해제 (라벨이 막대 밖으로 나가도 보이게)
+			    series.maskBullets = false;
+			
+			    // 색상
+			    series.columns.template.adapter.add("fill", function (fill, target) {
+			      return chart.colors.getIndex(target.dataItem.index);
+			    });
 
-					window[divId] = am4core.create(divId, am4charts.XYChart);
-					window[divId].cursor = new am4charts.XYCursor();
-					window[divId].padding(10, 0, 0, 0);
-					window[divId].data = arrData;
-
-					// X축
-					window['categoryAxis_'+divId] = window[divId].xAxes.push(new am4charts.CategoryAxis());
-					window['categoryAxis_'+divId].dataFields.category = "year";
-					window['categoryAxis_'+divId].renderer.grid.template.location = 0;
-					window['categoryAxis_'+divId].renderer.minGridDistance = 30;
-					window['categoryAxis_'+divId].renderer.labels.template.rotation = 0;
-					window['categoryAxis_'+divId].tooltip.disabled = true;
-
-					// Y축
-					window['valueAxis_'+divId] = window[divId].yAxes.push(new am4charts.ValueAxis());
-					window['valueAxis_'+divId].strictMinMax = false;
-					window['valueAxis_'+divId].extraMax = 0.1;
-					window['valueAxis_'+divId].extraMin = 0.1;  // ✅ 음수를 위한 여유 공간
-
-					// 시리즈
-					window['series_'+divId] = window[divId].series.push(new am4charts.ColumnSeries());
-					window['series_'+divId].sequencedInterpolation = true;
-					window['series_'+divId].dataFields.valueY = "value";
-					window['series_'+divId].dataFields.categoryX = "year";
-					window['series_'+divId].tooltipText = "[{categoryX}: bold]{valueY}[/]";
-					window['series_'+divId].columns.template.strokeWidth = 0;
-					window['series_'+divId].tooltip.pointerOrientation = "vertical";
-					window['series_'+divId].columns.template.column.fillOpacity = 0.8;
-					window['series_'+divId].columns.template.width = am4core.percent(70);
-					window['series_'+divId].columns.template.maxWidth = 75;
-
-					// ✅ 둥근 모서리: 양수는 위, 음수는 아래
-					window['series_'+divId].columns.template.adapter.add("cornerRadiusTopLeft", function(radius, target) {
-						let value = target.dataItem.valueY;
-						return value >= 0 ? 10 : 0;
-					});
-					window['series_'+divId].columns.template.adapter.add("cornerRadiusTopRight", function(radius, target) {
-						let value = target.dataItem.valueY;
-						return value >= 0 ? 10 : 0;
-					});
-					window['series_'+divId].columns.template.adapter.add("cornerRadiusBottomLeft", function(radius, target) {
-						let value = target.dataItem.valueY;
-						return value < 0 ? 10 : 0;
-					});
-					window['series_'+divId].columns.template.adapter.add("cornerRadiusBottomRight", function(radius, target) {
-						let value = target.dataItem.valueY;
-						return value < 0 ? 10 : 0;
-					});
-					
-					
-					// 색상
-					window['series_'+divId].columns.template.adapter.add("fill", function(fill, target) {
-						return window[divId].colors.getIndex(target.dataItem.index);
-					});
-
-					// ✅ 라벨 (양수는 위, 음수는 아래)
-					var labelBullet = window['series_'+divId].bullets.push(new am4charts.LabelBullet())
-					labelBullet.label.text = "{valueY}";
-					labelBullet.label.fontWeight = 'bold';
-					labelBullet.label.fill = am4core.color("#000");
-					labelBullet.label.truncate = false;
-					labelBullet.label.hideOversized = false;
-
-					// 위치 자동 조절
-					labelBullet.adapter.add("dy", function(dy, target){
-						var v = target.dataItem && target.dataItem.values.valueY.value;
-						if (v >= 0) return -10; // 양수: 위
-						else return 10;         // 음수: 아래
-					});
-					labelBullet.adapter.add("verticalCenter", function(center, target){
-						var v = target.dataItem && target.dataItem.values.valueY.value;
-						return v >= 0 ? "bottom" : "top";
-					});
-
-					// hover 효과
-					window['hoverState_'+divId] = window['series_'+divId].columns.template.column.states.create("hover");
-					window['hoverState_'+divId].properties.fillOpacity = 1;
-
-				} catch( e ) {
-					console.log( e );
-				}
+			    // 라벨
+			    var lb = series.bullets.push(new am4charts.LabelBullet());
+			    lb.label.text = "{valueY.formatNumber('#,###')}";
+			    lb.label.fontWeight = "bold";
+			    lb.label.fill = am4core.color("#000");
+			    lb.label.truncate = false;
+			    lb.label.hideOversized = false;
+			
+			    // 🔑 부호에 따라 위치를 정확히 지정 (음수 라벨은 막대에 더 가깝게)
+			    function getVal(target){
+			      var di = target.dataItem;
+			      return di && di.values && di.values.valueY ? di.values.valueY.value : null;
+			    }
+			
+			    // 간격(px): 양수는 10px 위, 음수는 2px 아래
+			    var POS_GAP = 10;
+			    var NEG_GAP = 2;
+			
+			    lb.adapter.add("locationY", function(loc, target){
+			      var v = getVal(target);
+			      if (v === null) return loc;
+			      return v >= 0 ? 1 : 0; // 양수: 윗끝, 음수: 아랫끝
+			    });
+			
+			    lb.adapter.add("dy", function(dy, target){
+			      var v = getVal(target);
+			      if (v === null) return dy;
+			      return v >= 0 ? -POS_GAP : NEG_GAP; // 음수만 더 바짝(2px)
+			    });
+			
+			    lb.label.adapter.add("verticalCenter", function(center, target){
+			      var v = getVal(target);
+			      if (v === null) return center;
+			      return v >= 0 ? "bottom" : "top";
+			    });
+			
+			  } catch (e) {
+			    console.error(e);
+			  }
 			}
+
+
 
 
 

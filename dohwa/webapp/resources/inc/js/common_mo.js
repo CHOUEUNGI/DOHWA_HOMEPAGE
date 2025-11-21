@@ -880,7 +880,7 @@ var overviewUiController = function(){
         }
 
         new CountUp("capital_ko", 0, 5750 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
-		new CountUp("proceeds_ko", 0, 207 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+		new CountUp("proceeds_ko", 0, 63 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
 		new CountUp("capital", 0, 420.2 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
 		new CountUp("proceeds", 0,1.5 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
 
