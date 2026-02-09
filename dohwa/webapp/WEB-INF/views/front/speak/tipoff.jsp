@@ -142,9 +142,11 @@
 										</div>
 										<div class="agree-area tab-toggel">
 											<p class="agree-desc">
-												<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.019" text="개인정보 수집 및 이용에 관하여 동의하지 않으시는 경우는 익명제보를 이용해 주시길 바랍니다." />
+												<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.019"
+													text="개인정보 수집 및 이용에 관하여 동의하지 않으시는 경우는 익명제보를 이용해 주시길 바랍니다." />
 												<br />
-												<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.019.1" text="단, 익명 제보의 경우 명확한 증거물 및 자료가 없는 경우 조사가 진행되지 않을 수 있습니다. 실명 제보의 경우 제보자의 신원은 비밀이 보장됩니다." />
+												<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.019.1"
+													text="단, 익명 제보의 경우 명확한 증거물 및 자료가 없는 경우 조사가 진행되지 않을 수 있습니다. 실명 제보의 경우 제보자의 신원은 비밀이 보장됩니다." />
 											</p>
 											<div class="input-group">
 												<span class="input-radio right"> <form:radiobutton
@@ -190,8 +192,7 @@
 													<tr>
 														<th><spring:message
 																code="FRONT.COMMON.MENU.SPEAK.002.001.030" text="이름"
-																var="name" />
-															<c:out value="${name }" /></th>
+																var="name" /> <c:out value="${name }" /></th>
 														<td><span class="input-txt"> <form:input
 																	path="name" title="${name }" type="text" value=""
 																	maxlength="10" />
@@ -272,8 +273,8 @@
 																		class="txt"><spring:message
 																				code="FRONT.COMMON.MENU.SPEAK.002.001.042" text="전화" /></span></label>
 																</span> <span class="input-radio right"> <form:radiobutton
-																		path="returnWay" id="radio-reply02" value="email" /> <label
-																	for="radio-reply02"><span class="txt"><spring:message
+																		path="returnWay" id="radio-reply02" value="email" />
+																	<label for="radio-reply02"><span class="txt"><spring:message
 																				code="FRONT.COMMON.MENU.SPEAK.002.001.043"
 																				text="이메일" /></span></label>
 																</span>
@@ -505,269 +506,173 @@
 	<%@ include file="/WEB-INF/views/front/layout/after_script.jsp"%>
 	<%--// 화면 로딩 완료 후 스크립트 처리 --%>
 	<script type="text/javascript">
-		var component = new ComponentUI();
-		component.selectBox(".bttn-dropdown", 250);
-
-		// file html
-		function getFileHtml(idx) {
-
-			var sb = new StringBuilder();
-
-			sb.append('<label class="bttn-file-upload" for="{0}">', 'file'
-					+ idx);
-			sb
-					.append('	<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.066" text="파일선택" javaScriptEscape="true" />');
-			sb
-					.append(
-							'	<input class="inp-file-hide" name="{0}" type="file" id="{1}" />',
-							'PC_FILE_' + idx, 'file' + idx);
-			sb.append('</label>');
-
-			return sb.toString();
-		}
-
-		// file list html
-		function getFileListHtml(obj) {
-
-			var sb = new StringBuilder();
-
-			sb.append('<p class="file-item">');
-			sb.append('	{0}', obj.name);
-			sb.append('	<button class="btn-delete" type="button">');
-			sb.append('		<i class="ico-file-delete" aria-hidden="true"></i>');
-			sb
-					.append('		<span class="hide-txt"><spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.071" text="파일삭제" javaScriptEscape="true" /></span>');
-			sb.append('	</button>');
-			sb.append('</p>');
-
-			return sb.toString();
-		}
-
-		// file reset
-		function fncResetFile(obj) {
-
-			var agent = navigator.userAgent.toLowerCase();
-			if ((navigator.appName == 'Netscape' && navigator.userAgent
-					.search('Trident') != -1)
-					|| (agent.indexOf("msie") != -1)) {
-				$(obj).replaceWith($(obj).clone(true));
-			} else {
-				$(obj).val("");
-			}
-		}
-
-		$(function() {
-
-			$('a.dropdown-menu')
-					.on(
-							'click',
-							function() {
-
-								if ('<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.039" text="직접입력" javaScriptEscape="true" />' == $(
-										this).html()) {
-									$('#email2').val('');
-									$('#email2').focus();
-									$('#email2').removeAttr('readonly');
-								} else {
-									$('#email2').val($(this).html());
-									$('#email2').attr('readonly', 'readonly');
-								}
-							});
-
-			var regEmailDomain = '${speakVO.email2}';
-			$('a.dropdown-menu').each(function() {
-				if (regEmailDomain == $(this).html()) {
-					$(this).trigger('click');
-				}
-			});
-
-			// 파일 선택 event
-			var fileCnt = 1;
-			$(document)
-					.on(
-							'change',
-							'input[type="file"]',
-							function() {
-
-								$('#file\\.errors').hide();
-								
-								// 용량 체크
-								if($(this)[0].files[0].size > 1024 * 1024 * 20){
-									var fileSizeErrMsg = '<spring:message code="FRONT.VALIDATE.FILE.UPLOAD.SIZE" />';
-									fileSizeErrMsg = fileSizeErrMsg.replace('{0}', '20MB');
-									fileSizeErrMsg = fileSizeErrMsg.replace('{1}', (Math.round($(this)[0].files[0].size / 1024 / 1024 * 100) / 100) + 'MB');
-									alert(fileSizeErrMsg);
-									fncResetFile(this); 
-									return;
-								}
-								
-								var length = $('input[type="file"]').length;
-								if (length === 6) {
-
-									fncResetFile($(this));
-									alert('<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.072" text="첨부파일은 최대 5개까지 첨부 가능합니다." arguments="5" javaScriptEscape="true" />');
-									return false;
-								}
-								
-								fileCnt = fileCnt + 1;
-
-								$('label[for="' + $(this).attr('id') + '"]')
-										.hide();
-								$('.input-file').prepend(
-										getFileHtml(fileCnt));
-								$('.file-list').append(
-										getFileListHtml($(this)[0].files[0]));
-							});
-
-			// 파일 삭제 event
-			$(document).on(
-					'click',
-					'.file-item button',
-					function() {
-						$('#file\\.errors').hide();
-						var idx = $('.file-item button').index($(this));
-						var length = $('input[type="file"]').length;
-
-						$('input[type="file"]').eq(length - idx - 1).closest(
-								'label').remove();
-						$(this).closest('.file-item').remove();
-					});
-
-			// 제출하기 event
-			$('#saveButton')
-					.on(
-							'click',
-							function(e) {
-								e.preventDefault();
-
-								var form = $('#form');
-
-								if ($('#anonymous').val() === 'N'
-										&& !$('input[name="agreeAt"]').prop(
-												'checked')) {
-
-									alert('<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.073" text="개인정보 수집 및 이용에 관하여 동의해 주세요." javaScriptEscape="true" />');
-									$('input[name="agreeAt"]').focus();
-									return false;
-								}
-
-								/* if(!confirm("저장하시겠습니까?")) {
-									return;
-								} */
-
-								// empty file 삭제
-								if ($('input[type="file"]').length > 1) {
-									$('input[type="file"]').eq(0).attr(
-											'disalbed', true);
-								}
-
-								var data = new FormData(form[0]);
-								$("#saveButton").prop("disabled", true);
-
-								if ($('span[id$="errors"]').length > 0) {
-									$('span[id$="errors"]').remove();
-								}
-
-								$
-										.ajax({
-											type : "POST",
-											enctype : 'multipart/form-data',
-											url : "/speak/tipoffProc",
-											data : data,
-											processData : false,
-											contentType : false,
-											cache : false,
-											timeout : 600000,
-											success : function(data) {
-												$("#saveButton").prop(
-														"disabled", false);
-												if (data.result === true) {
-													$('#divResultY').hide();
-													$('#divResultN').hide();
-													$('#divResultN').find(
-															'em.colorB').html(
-															data.id);
-													$(
-															'#divResult'
-																	+ data.anonymous)
-															.show();
-												} else {
-													if (data.errorList
-															&& data.errorList.length
-															&& data.errorList.length > 0) {
-														data.errorList
-																.forEach(function(
-																		o, i) {
-																	if (form
-																			.find('#'
-																					+ o.field).length > 0) {
-																		form
-																				.find(
-																						'#'
-																								+ o.field)
-																				.closest(
-																						'td')
-																				.append(
-																						'<span id="'+o.field+'.errors" style="color: #ff0000;">'
-																								+ o.msg
-																								+ '</span>');
-																		if (i == 0) {
-																			form
-																					.find(
-																							'#'
-																									+ o.field)
-																					.focus();
-																			$(
-																					window)
-																					.scrollTop(
-																							form
-																									.find(
-																											'#'
-																													+ o.field)
-																									.offset().top - 200);
-																		}
-																	} else if (o.field === 'file') {
-																		form
-																				.find(
-																						'div.input-file')
-																				.closest(
-																						'td')
-																				.append(
-																						'<span id="'+o.field+'.errors" style="color: #ff0000;">'
-																								+ o.msg
-																								+ '</span>');
-																	}
-																});
-													}
-
-													// empty file 활성화
-													if ($('input[type="file"]').length > 1) {
-														$('input[type="file"]')
-																.eq(0)
-																.removeAttr(
-																		'disalbed');
-													}
-												}
-											},
-											error : function(e) {
-												debugger;
-												alert('<spring:message code="FRONT.COMMON.MENU.ERROR.003.003" javaScriptEscape="true" />');
-												$("#saveButton").prop(
-														"disabled", false);
-												// empty file 활성화
-												if ($('input[type="file"]').length > 1) {
-													$('input[type="file"]').eq(
-															0).removeAttr(
-															'disalbed');
-												}
-												console.log("ERROR : ", e);
-											}
-										});
-
-								//form.submit();
-							});
-
-		});
+	    var component = new ComponentUI();
+	    component.selectBox(".bttn-dropdown", 250);
+	
+	    // file html
+	    function getFileHtml(idx) {
+	        var sb = new StringBuilder();
+	        sb.append('<label class="bttn-file-upload" for="{0}">', 'file' + idx);
+	        sb.append('	<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.066" text="파일선택" javaScriptEscape="true" />');
+	        sb.append('	<input class="inp-file-hide" name="{0}" type="file" id="{1}" />', 'PC_FILE_' + idx, 'file' + idx);
+	        sb.append('</label>');
+	
+	        return sb.toString();
+	    }
+	
+	    // file list html
+	    function getFileListHtml(obj) {
+	        var sb = new StringBuilder();
+	        sb.append('<p class="file-item">');
+	        sb.append('	{0}', obj.name);
+	        sb.append('	<button class="btn-delete" type="button">');
+	        sb.append('		<i class="ico-file-delete" aria-hidden="true"></i>');
+	        sb.append('		<span class="hide-txt"><spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.071" text="파일삭제" javaScriptEscape="true" /></span>');
+	        sb.append('	</button>');
+	        sb.append('</p>');
+	
+	        return sb.toString();
+	    }
+	
+	    // file reset
+	    function fncResetFile(obj) {
+	        var agent = navigator.userAgent.toLowerCase();
+	        if ((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)) {
+	            $(obj).replaceWith($(obj).clone(true));
+	        } else {
+	            $(obj).val("");
+	        }
+	    }
+	
+	    $(function() {
+	        // 드롭다운 메뉴 클릭 이벤트
+	        $('a.dropdown-menu').on('click', function() {
+	            var directInputMsg = '<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.039" text="직접입력" javaScriptEscape="true" />';
+	            
+	            if (directInputMsg == $(this).html()) {
+	                $('#email2').val('').focus().removeAttr('readonly');
+	            } else {
+	                $('#email2').val($(this).html()).attr('readonly', 'readonly');
+	            }
+	        });
+	
+	        // 이메일 도메인 초기 세팅
+	        var regEmailDomain = '${speakVO.email2}';
+	        $('a.dropdown-menu').each(function() {
+	            if (regEmailDomain == $(this).html()) {
+	                $(this).trigger('click');
+	            }
+	        });
+	
+	        // 파일 선택 event
+	        var fileCnt = 1;
+	        $(document).on('change', 'input[type="file"]', function() {
+	            $('#file\\.errors').hide();
+	
+	            // 용량 체크 (20MB)
+	            if ($(this)[0].files[0].size > 1024 * 1024 * 20) {
+	                var fileSizeErrMsg = '<spring:message code="FRONT.VALIDATE.FILE.UPLOAD.SIZE" />';
+	                fileSizeErrMsg = fileSizeErrMsg.replace('{0}', '20MB');
+	                fileSizeErrMsg = fileSizeErrMsg.replace('{1}', (Math.round($(this)[0].files[0].size / 1024 / 1024 * 100) / 100) + 'MB');
+	                alert(fileSizeErrMsg);
+	                fncResetFile(this);
+	                return;
+	            }
+	
+	            var length = $('input[type="file"]').length;
+	            if (length === 6) {
+	                fncResetFile($(this));
+	                alert('<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.072" text="첨부파일은 최대 5개까지 첨부 가능합니다." arguments="5" javaScriptEscape="true" />');
+	                return false;
+	            }
+	
+	            fileCnt++;
+	            $('label[for="' + $(this).attr('id') + '"]').hide();
+	            $('.input-file').prepend(getFileHtml(fileCnt));
+	            $('.file-list').append(getFileListHtml($(this)[0].files[0]));
+	        });
+	
+	        // 파일 삭제 event
+	        $(document).on('click', '.file-item button', function() {
+	            $('#file\\.errors').hide();
+	            var idx = $('.file-item button').index($(this));
+	            var length = $('input[type="file"]').length;
+	
+	            $('input[type="file"]').eq(length - idx - 1).closest('label').remove();
+	            $(this).closest('.file-item').remove();
+	        });
+	
+	        // 제출하기 event
+	        $('#saveButton').on('click', function(e) {
+	            e.preventDefault();
+	            var form = $('#form');
+	
+	            // 동의 체크 여부 확인
+	            if ($('#anonymous').val() === 'N' && !$('input[name="agreeAt"]').prop('checked')) {
+	                alert('<spring:message code="FRONT.COMMON.MENU.SPEAK.002.001.073" text="개인정보 수집 및 이용에 관하여 동의해 주세요." javaScriptEscape="true" />');
+	                $('input[name="agreeAt"]').focus();
+	                return false;
+	            }
+	
+	            // 빈 파일 input 처리
+	            if ($('input[type="file"]').length > 1) {
+	                $('input[type="file"]').eq(0).attr('disabled', true);
+	            }
+	
+	            var data = new FormData(form[0]);
+	            $("#saveButton").prop("disabled", true);
+	
+	            if ($('span[id$="errors"]').length > 0) {
+	                $('span[id$="errors"]').remove();
+	            }
+	
+	            $.ajax({
+	                type: "POST",
+	                enctype: 'multipart/form-data',
+	                url: "/speak/tipoffProc",
+	                data: data,
+	                processData: false,
+	                contentType: false,
+	                cache: false,
+	                timeout: 600000,
+	                success: function(data) {
+	                    $("#saveButton").prop("disabled", false);
+	                    if (data.result === true) {
+	                        $('#divResultY, #divResultN').hide();
+	                        $('#divResultN em.colorB').html(data.id);
+	                        $('#divResult' + data.anonymous).show();
+	                    } else {
+	                        if (data.errorList && data.errorList.length > 0) {
+	                            data.errorList.forEach(function(o, i) {
+	                                var target = form.find('#' + o.field.replace('.', '\\.'));
+	                                if (target.length > 0) {
+	                                    target.closest('td').append('<span id="' + o.field + '.errors" style="color: #ff0000;">' + o.msg + '</span>');
+	                                    if (i == 0) {
+	                                        target.focus();
+	                                        $(window).scrollTop(target.offset().top - 200);
+	                                    }
+	                                } else if (o.field === 'file') {
+	                                    form.find('div.input-file').closest('td').append('<span id="' + o.field + '.errors" style="color: #ff0000;">' + o.msg + '</span>');
+	                                }
+	                            });
+	                        }
+	                        // 에러 시 파일 활성화 복구
+	                        if ($('input[type="file"]').length > 1) {
+	                            $('input[type="file"]').eq(0).removeAttr('disabled');
+	                        }
+	                    }
+	                },
+	                error: function(e) {
+	                    alert('<spring:message code="FRONT.COMMON.MENU.ERROR.003.003" javaScriptEscape="true" />');
+	                    $("#saveButton").prop("disabled", false);
+	                    if ($('input[type="file"]').length > 1) {
+	                        $('input[type="file"]').eq(0).removeAttr('disabled');
+	                    }
+	                    console.log("ERROR : ", e);
+	                }
+	            });
+	        });
+	    });
 	</script>
 </body>
 </html>
