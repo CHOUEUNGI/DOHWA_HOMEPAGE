@@ -100,6 +100,7 @@
 							</span>
 							<div class="section-cont">
 								<h3 class="title-sect"><spring:message code="FRONT.COMMON.MENU.INVEST.001.001.004" text="수주 및 수주잔고" /></h3>
+								<!-- 관리자페이지에서 수정 -->
 								<div class="chart-box col-02">
 									<div class="box-left">
 										<div class="tit-area">

@@ -13,8 +13,8 @@
 					<span class="txt">By NICE Investors Service</span>
 				</div>
 				<div class="credit-rating-txt">
-					<span class="year">2024</span>
-					<sapn class="grade">AA+</sapn>
+					<span class="year">2026</span>
+					<sapn class="grade">AA0</sapn>
 					<span class="txt">NICE D&#38;B Co. LTD.</span>
 				</div>
 			</div>
@@ -62,6 +62,20 @@
 						</tr>
 					</thead>
 					<tbody>
+						<tr>						
+							<td>2026.03</td>	
+							<td>Corporate credit rating</td>
+							<td><span class="color-point">AA0</span></td>
+							<td>NICE D&B Co. LTD.</td>
+							<td>2For submission to public institutions</td>
+						</tr>
+						<tr>											
+							<td>2025.03</td>
+							<td>Corporate credit rating</td>
+							<td><span class="color-point">AA0</span></td>
+							<td>NICE D&B Co. LTD.</td>
+							<td>2For submission to public institutions</td>
+						</tr>
 						<tr>						
 							<td>2024.03</td>	
 							<td>Corporate credit rating</td>

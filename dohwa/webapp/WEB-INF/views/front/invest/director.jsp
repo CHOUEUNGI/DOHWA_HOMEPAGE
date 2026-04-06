@@ -211,7 +211,7 @@
 										<div class="csr-cont">
 											<h4 class="title-sub">이사회 구성</h4>
 											<div class="desc-area">
-												<p class="group-top">이사회는 사내이사 7명과 사외이사 3명을 포함하여 총 10명으로 구성되어 있습니다.</p>
+												<p class="group-top">이사회는 사내이사 6명과 사외이사 3명을 포함하여 총 9명으로 구성되어 있습니다.</p>
 												<p>이사회는 효율적 운영과 전략적인 의사결정을 위하여 다양한 전문성과 배경을 갖춘 이사로 구성되었으며, 독립성이 검증된 사외이사를 통해</p>
 												<p>경영진에 대한 견제 기능을 강화하였습니다.경영, 법률 재무 분야 등에서 종사한 경험이 있는 전문가를 이사로 선임하여 다양성과 전문성을 갖춘</p>
 												<p>이사들이 회사를 관리 감독할 수 있도록 하고 있습니다.</p>
@@ -260,77 +260,67 @@
 												    </tr>
 												  </thead>
 												  <tbody>
-												    <tr>
-												      <td class="tac">김영윤</td>
-												      <td class="tac">남</td>
-												      <td class="tac">사내이사/회장/의장</td>
-												      <td class="tac">여</td>
-												      <td class="tac">3년</td>
-												      <td class="tac">2028-03-26</td>
-												      <td class="tac">경영지원</td>
-												      <td class="tal">서울대학교 토목공학<br>現 (주)도화엔지니어링 이사회 의장</td>
-												    </tr>
-												    <tr>
-												      <td class="tac">박승우</td>
-												      <td class="tac">남</td>
-												      <td class="tac">대표이사/회장</td>
-												      <td class="tac">여</td>
-												      <td class="tac">3년</td>
-												      <td class="tac">2027-03-21</td>
-												      <td class="tac">경영지원</td>
-												      <td class="tal">고려대학교 토목공학<br>現 (주)도화엔지니어링 대표이사</td>
-												    </tr>
-												    <tr>
-												      <td class="tac">곽준상</td>
-												      <td class="tac">남</td>
-												      <td class="tac">대표이사/부회장</td>
-												      <td class="tac">여</td>
-												      <td class="tac">3년</td>
-												      <td class="tac">2026-03-23</td>
-												      <td class="tac">경영지원</td>
-												      <td class="tal">고려대학교(대학원) 재료금속공학<br>現) (주)채널에이 사외이사</td>
-												    </tr>
-												    <tr>
-												      <td class="tac">손영일</td>
-												      <td class="tac">남</td>
-												      <td class="tac">대표이사/사장</td>
-												      <td class="tac">부</td>
-												      <td class="tac">3년</td>
-												      <td class="tac">2026-03-23</td>
-												      <td class="tac">경영지원</td>
-												      <td class="tal">연세대학교 토목공학<br>現 (주)도화엔지니어링 사장</td>
-												    </tr>
-												    <tr>
-												      <td class="tac">김덕구</td>
-												      <td class="tac">남</td>
-												      <td class="tac">대표이사/사장</td>
-												      <td class="tac">부</td>
-												      <td class="tac">3년</td>
-												      <td class="tac">2027-03-21</td>
-												      <td class="tac">CM부문</td>
-												      <td class="tal">고려대학교 대학원 사회환경시스템공학과<br>現 (주)도화엔지니어링 사장</td>
-												    </tr>
-												    <tr>
-												      <td class="tac">김용구</td>
-												      <td class="tac">남</td>
-												      <td class="tac">사내이사/사장</td>
-												      <td class="tac">부</td>
-												      <td class="tac">3년</td>
-												      <td class="tac">2026-03-23</td>
-												      <td class="tac">지원부문</td>
-												      <td class="tal">인하대학교 대학원 토질 및 기초공학<br>現 (주)도화엔지니어링 사장</td>
-												    </tr>
-												    <tr>
-												      <td class="tac">정수동</td>
-												      <td class="tac">남</td>
-												      <td class="tac">사내이사/사장</td>
-												      <td class="tac">부</td>
-												      <td class="tac">3년</td>
-												      <td class="tac">2026-03-23</td>
-												      <td class="tac">교통부문</td>
-												      <td class="tal">인하대학교 대학원 기계구조<br>現 (주)도화엔지니어링 사장</td>
-												    </tr>
-												  </tbody>
+													  <tr>
+													    <td class="tac">박승우</td>
+													    <td class="tac">남</td>
+													    <td class="tac">대표이사/회장</td>
+													    <td class="tac">여</td>
+													    <td class="tac">3년</td>
+													    <td class="tac">2027.03.21</td>
+													    <td class="tac">경영지원</td>
+													    <td class="tal">고려대학교 토목공학<br>現 (주)도화엔지니어링 대표이사</td>
+													  </tr>
+													  <tr>
+													    <td class="tac">곽준상</td>
+													    <td class="tac">남</td>
+													    <td class="tac">대표이사/부회장</td>
+													    <td class="tac">여</td>
+													    <td class="tac">3년</td>
+													    <td class="tac">2029.03.23</td>
+													    <td class="tac">경영지원</td>
+													    <td class="tal">고려대학교(대학원) 재료금속공학<br>現) (주)채널에이 사외이사</td>
+													  </tr>
+													  <tr>
+													    <td class="tac">손영일</td>
+													    <td class="tac">남</td>
+													    <td class="tac">대표이사/사장</td>
+													    <td class="tac">부</td>
+													    <td class="tac">3년</td>
+													    <td class="tac">2029.03.23</td>
+													    <td class="tac">경영지원</td>
+													    <td class="tal">연세대학교 토목공학<br>現 (주)도화엔지니어링 사장</td>
+													  </tr>
+													  <tr>
+													    <td class="tac">김덕구</td>
+													    <td class="tac">남</td>
+													    <td class="tac">대표이사/사장</td>
+													    <td class="tac">여</td>
+													    <td class="tac">3년</td>
+													    <td class="tac">2027.03.21</td>
+													    <td class="tac">CM부문</td>
+													    <td class="tal">고려대학교 대학원 사회환경시스템공학과<br>現 (주)도화엔지니어링 사장</td>
+													  </tr>
+													  <tr>
+													    <td class="tac">김용구</td>
+													    <td class="tac">남</td>
+													    <td class="tac">사내이사/사장</td>
+													    <td class="tac">부</td>
+													    <td class="tac">3년</td>
+													    <td class="tac">2029.03.23</td>
+													    <td class="tac">지원부문</td>
+													    <td class="tal">인하대학교 대학원 토질 및 기초공학<br>現 (주)도화엔지니어링 사장</td>
+													  </tr>
+													  <tr>
+													    <td class="tac">정수동</td>
+													    <td class="tac">남</td>
+													    <td class="tac">사내이사/사장</td>
+													    <td class="tac">부</td>
+													    <td class="tac">3년</td>
+													    <td class="tac">2029.03.23</td>
+													    <td class="tac">교통부문</td>
+													    <td class="tal">인하대학교 대학원 기계구조<br>現 (주)도화엔지니어링 사장</td>
+													  </tr>
+													</tbody>
 												</table>
 												
 												<h2 class="section-title mt-40">사외이사</h2>
@@ -358,36 +348,37 @@
 												    </tr>
 												  </thead>
 												  <tbody>
-												    <tr>
-												      <td class="tac">박영봉</td>
-												      <td class="tac">남</td>
-												      <td class="tac">사외이사/감사위원회 위원장</td>
-												      <td class="tac">여</td>
-												      <td class="tac">2</td>
-												      <td class="tac">2026-03-21</td>
-												      <td class="tac">회계</td>
-												      <td class="tal">성균관대학교 경제학과<br>現) 대원 회계와 세무 대표 공인회계사</td>
-												    </tr>
-												    <tr>
-												      <td class="tac">배보경</td>
-												      <td class="tac">여</td>
-												      <td class="tac">사외이사/감사위원회 위원</td>
-												      <td class="tac">여</td>
-												      <td class="tac">2</td>
-												      <td class="tac">2026-03-21</td>
-												      <td class="tac">기업경영</td>
-												      <td class="tal">이화여자대학교 국제사무학과<br>고려대학교 경영학 박사<br>現) 한미사이언스(주) 기타비상무이사</td>
-												    </tr>
-												    <tr>
+												  	<tr>
 												      <td class="tac">이상진</td>
 												      <td class="tac">남</td>
-												      <td class="tac">사외이사/감사위원회 위원</td>
-												      <td class="tac">부</td>
-												      <td class="tac">2.5</td>
-												      <td class="tac">2026-03-21</td>
+												      <td class="tac">사외이사/감사위원회 위원장/이사회 의장</td>
+												      <td class="tac">여</td>
+												      <td class="tac">2</td>
+												      <td class="tac">2028.03.23</td>
 												      <td class="tac">법률</td>
 												      <td class="tal">American University WashingtonCollege of Law<br>고려대학교 법과대학원<br>現) 김앤장 법률사무소 변호사</td>
 												    </tr>
+												    <tr>
+												      <td class="tac">김혜진</td>
+												      <td class="tac">여</td>
+												      <td class="tac">사외이사/감사위원회 위원</td>
+												      <td class="tac">부</td>
+												      <td class="tac">2</td>
+												      <td class="tac">2028.03.23</td>
+												      <td class="tac">회계</td>
+												      <td class="tal">서울대학교 경제학<br>서울시립대세무전문대학원 조세전략<br>現) 하나세무회계 대표</td>
+												    </tr>
+												    <tr>
+												      <td class="tac">손상영</td>
+												      <td class="tac">남</td>
+												      <td class="tac">사외이사/감사위원회 위원</td>
+												      <td class="tac">부</td>
+												      <td class="tac">2</td>
+												      <td class="tac">2028.03.23</td>
+												      <td class="tac">건설</td>
+												      <td class="tal">서울대학교 지구환경시스템공학<br>University of Southern California 토목환경공학 박사<br>現) 고려대학교 건축사회환경 교수</td>
+												    </tr>
+												    
 												  </tbody>
 												</table>
 											</div>
@@ -551,160 +542,188 @@
 												    <div class="panel-inner">
 												      <div class="table-wrap">
 												        <table class="board">
-												          <colgroup>
-												            <col style="width:6%;">   <!-- 회차 -->
-												            <col style="width:12%;">  <!-- 개최일자 -->
-												            <col style="width:56%;">  <!-- 의안내용 -->
-												            <col style="width:12%;">  <!-- 가결여부 -->
-												            <col style="width:14%;">  <!-- 사외이사 참석현황 -->
-												          </colgroup>
-												          <thead>
-												            <tr>
-												              <th>회차</th>
-												              <th>개최일자</th>
-												              <th>의안내용</th>
-												              <th>가결여부</th>
-												              <th>사외이사 참석현황</th>
-												            </tr>
-												          </thead>
-												          <tbody>
-												            <!-- 1회 -->
-												            <tr>
-												              <td class="center">1</td>
-												              <td class="center">2025.01.24</td>
-												              <td>
-												                1. 재무제표 연결재무제표 승인의 건<br>
-												                2. 영업보고서 승인의 건<br>
-												                3. 임직원 성과급 지급의 건
-												              </td>
-												              <td class="center">가결</td>
-												              <td class="center">2/3</td>
-												            </tr>
-												
-												            <!-- 2회 -->
-												            <tr>
-												              <td class="center">2</td>
-												              <td class="center">2025.02.11</td>
-												              <td>
-												                1. 재무제표 연결재무제표 재승인의 건<br>
-												                2. 영업보고서 재승인의 건
-												              </td>
-												              <td class="center">가결</td>
-												              <td class="center">0/3</td>
-												            </tr>
-												
-												            <!-- 3회 -->
-												            <tr>
-												              <td class="center">3</td>
-												              <td class="center">2025.02.21</td>
-												              <td>
-												                1. 제63기 정기주주총회 소집 승인의 건<br>
-												                2. 사내이사 후보 추천 승인의 건<br>
-												                3. 현금배당액 결정 의 건<br>
-												                4. 전자투표제도 도입 의 건<br>
-												                5. 컴플라이언스 개선, 수립 보고 및 승인의 건<br>
-												                6. 하자보수 보증의 건<br>
-												                7. 방글라데시 지사장 변경의 건<br>
-												                8. 탄자니아 지사장 변경의 건<br>
-												              </td>
-												              <td class="center">가결</td>
-												              <td class="center">3/3</td>
-												            </tr>
-												
-												            <!-- 4회 -->
-												            <tr>
-												              <td class="center">4</td>
-												              <td class="center">2025.03.27</td>
-												              <td>
-												               	1. 금전 차입의 건
-												                2. 폴란드 자회사 도화 폴스카의 금전 대여 연장에 관한 건<br>
-												                3. 폴란드 자회사 도화 폴스카의 출자에 관한 건<br>
-												                4. 윤리경영책임자(부패방지책임자) 선임의 건<br>
-												                5. 캄보디아 지사(Branch Office) 설립의 건<br>
-												                6. 영덕동대산 풍력발전㈜ 법인장 변경의 건<br>
-												              </td>
-												              <td class="center">가결</td>
-												              <td class="center">3/3</td>
-												            </tr>
-												
-												            <!-- 5회 -->
-												            <tr>
-												              <td class="center">5</td>
-												              <td class="center">2025.05.07</td>
-												              <td>
-												                1. 자회사(DHJ)의 타법인 주식 취득의 건(슈키, 키츠키1)<br>
-												                2. 자회사(DHJ)의 채무보증의 건(DHJ → 신한은행)
-												                3. 채무보증의 건(도화 → DHJ)<br>
-												                4. 자회사(DHJ)의 대표이사 변경의 건<br>
-												                5. 자회사(DHJ)의 본점 소재지 변경의 건<br>
-												                6. 자회사(DHJ)의 유상증자의 건<br>
-												                7. 자회사(DRD)의 금전 대여에 관한 건<br>
-												                8. 자회사(DRD)의 채무보증에 관한 건(도화 → DRD)<br>
-												                9. 사규 개정의 건
-												              </td>
-												              <td class="center">가결</td>
-												              <td class="center">3/3</td>
-												            </tr>
-												
-												            <!-- 6회 -->
-												            <tr>
-												              <td class="center">6</td>
-												              <td class="center">2025.06.05</td>
-												              <td>
-												                1. 루마니아 지사(Branch Office)설립 및 지사장 선임의 건<br>
-												                2. 우크라이나 대표사무소(Representative Office)설립 및 소장 선임의 건<br>
-												                3. 스리랑카 지사의 계좌 동결 조치 철회, 지사장 및 주소 변경의 건<br>
-												                4. 페루 지사장 변경의 건<br>
-												                5. 도화 폴스카 기업구조 변경의 건<br>
-												                6. 외화 지급보증 한도 설정의 건
-												              </td>
-												              <td class="center">가결</td>
-												              <td class="center">3/3</td>
-												            </tr>
-												
-												            <!-- 7회 -->
-												            <tr>
-												              <td class="center">7</td>
-												              <td class="center">2025.07.23</td>
-												              <td>
-												                1. 폴란드 자회사 도화 폴스카의 금전 대여에 관한 건<br>
-												                2. 폴란드 자회사 도화 폴스카의 금전 대여 연장에 관한 건<br>
-												                3. 외화 지급보증 한도 재약정의 건<br>
-												                4. 일본 키츠키1, 슈키 태양광 사업시행법인 주소 변경의 건<br>
-												                5. 케냐 유한회사(LLP) 설립의 건
-												              </td>
-												              <td class="center">가결</td>
-												              <td class="center">2/3</td>
-												            </tr>
-												
-												            <!-- 8회 -->
-												            <tr>
-												              <td class="center">8</td>
-												              <td class="center">2025.08.21</td>
-												              <td>
-												                1. 우간다 지사장 및 지사 주소 변경의 건<br>
-												                2. 사규 개정에 관한 건<br>
-												                3. 외화 지급보증 한도 연장의 건
-												              </td>
-												              <td class="center">가결</td>
-												              <td class="center">2/3</td>
-												            </tr>
-												
-												            <!-- 9회 -->
-												            <tr>
-												              <td class="center">9</td>
-												              <td class="center">2025.09.24</td>
-												              <td>
-												                1. 자회사의 금전 대여에 관한 건<br>
-												                2. 채무보증 결정의 건<br>
-												                3. 하자보수 보증금 변경의 건
-												              </td>
-												              <td class="center">가결</td>
-												              <td class="center">2/3</td>
-												            </tr>
-												
-												          </tbody>
-												        </table>
+															 <colgroup>
+															    <col style="width:6%;">  
+															    <col style="width:12%;"> 
+															    <col style="width:56%;"> 
+															    <col style="width:12%;"> 
+															    <col style="width:14%;"> 
+															</colgroup>
+														  <thead>
+														    <tr>
+														      <th>회차</th>
+														      <th>개최일자</th>
+														      <th>의안내용</th>
+														      <th>가결여부</th>
+														      <th>사외이사 참석현황</th>
+														    </tr>
+														  </thead>
+														  <tbody>
+														    <tr>
+														      <td class="center">1</td>
+														      <td class="center">2025.01.24</td>
+														      <td>
+														        1. 재무제표 연결재무제표 승인의 건<br>
+														        2. 영업보고서 승인의 건<br>
+														        3. 임직원 성과급 지급의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">2/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">2</td>
+														      <td class="center">2025.02.11</td>
+														      <td>
+														        1. 재무제표 연결재무제표 재승인의 건<br>
+														        2. 영업보고서 재승인의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">0/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">3</td>
+														      <td class="center">2025.02.21</td>
+														      <td>
+														        1. 제63기 정기주주총회 소집 승인의 건<br>
+														        2. 사내이사 후보 추천 승인의 건<br>
+														        3. 현금배당액 결정의 건<br>
+														        4. 전자투표제도 도입의 건<br>
+														        5. 컴플라이언스 개선, 수립 보고 및 승인의 건<br>
+														        6. 하자보수 보증의 건<br>
+														        7. 방글라데시 지사장 변경의 건<br>
+														        8. 탄자니아 지사장 변경의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">3/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">4</td>
+														      <td class="center">2025.03.27</td>
+														      <td>
+														        1. 금전 차입의 건<br>
+														        2. 자회사의 금전 대여 연장에 관한 건<br>
+														        3. 자회사의 출자에 관한 건<br>
+														        4. 윤리경영책임자(부패방지책임자) 선임의 건<br>
+														        5. 캄보디아 지사 설립의 건<br>
+														        6. 영덕동대산 풍력발전㈜ 법인장 변경의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">3/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">5</td>
+														      <td class="center">2025.05.07</td>
+														      <td>
+														        1. 자회사(DHJ)의 타법인 주식 취득의 건<br>
+														        2. 자회사(DHJ)의 채무 보증의 건<br>
+														        3. 채무보증의 건<br>
+														        4. 자회사(DHJ)의 대표이사 변경의 건<br>
+														        5. 자회사(DHJ)의 본점소재지 변경의 건<br>
+														        6. 자회사(DHJ)의 유상증자의 건<br>
+														        7. 자회사(DRD)의 금전 대여에 관한 건<br>
+														        8. 자회사(DRD)의 채무 보증에 관한 건<br>
+														        9. 사규 개정의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">3/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">6</td>
+														      <td class="center">2025.06.05</td>
+														      <td>
+														        1. 루마니아 지사 설립 및 지사장 선임의 건<br>
+														        2. 우크라이나 대표사무소 설립 및 소장 선임의 건<br>
+														        3. 스리랑카 지사의 계좌 동결 조치 철회, 지사장 및 주소 변경의 건<br>
+														        4. 페루 지사장 변경의 건<br>
+														        5. 도화 폴스카 기업구조 변경의 건<br>
+														        6. 외화 지급 보증 한도 설정의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">3/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">7</td>
+														      <td class="center">2025.07.23</td>
+														      <td>
+														        1. 자회사의 금전 대여에 관한 건<br>
+														        2. 자회사의 금전 대여 연장에 관한 건<br>
+														        3. 외화 지급보증 한도 재약정의 건<br>
+														        4. 일본 키츠키1, 슈키 태양광 사업시행법인 주소 변경의 건<br>
+														        5. 케냐 유한회사 설립의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">2/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">8</td>
+														      <td class="center">2025.08.21</td>
+														      <td>
+														        1. 우간다 지사장 및 지사 주소 변경의 건<br>
+														        2. 사규 개정에 관한 건<br>
+														        3. 외화 지급보증 한도 연장의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">2/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">9</td>
+														      <td class="center">2025.09.24</td>
+														      <td>
+														        1. 자회사의 금전 대여에 관한 건<br>
+														        2. 채무 보증 결정의 건<br>
+														        3. 하자보수 보증금액 변경의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">2/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">10</td>
+														      <td class="center">2025.10.30</td>
+														      <td>
+														        1. 사규 개정의 건<br>
+														        2. 사외이사후보추천위원회 위원 선임의 건<br>
+														        3. 해외 지사 계좌 인출권자 추가의 건<br>
+														        4. 스리랑카 계좌정보 갱신 및 권한 변경의 건<br>
+														        5. 자회사 추가 출자의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">1/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">11</td>
+														      <td class="center">2025.11.21</td>
+														      <td>
+														        1. 일반자금대출 약정기간 변경의 건<br>
+														        2. 일반대출 신규 약정의 건<br>
+														        3. 해외 지사 설립의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">3/3</td>
+														    </tr>
+														
+														    <tr>
+														      <td class="center">12</td>
+														      <td class="center">2025.12.23</td>
+														      <td>
+														        1. 사규 개정의 건<br>
+														        2. 채무 보증 연장의 건<br>
+														        3. 인도 법인장 변경의 건
+														      </td>
+														      <td class="center">가결</td>
+														      <td class="center">2/3</td>
+														    </tr>
+														  </tbody>
+														</table>
 												      </div>
 												    </div>
 												  </div>
@@ -740,7 +759,7 @@
 										      <tr>
 										        <td class="center">2025</td>
 										        <td class="center">삼정회계법인</td>
-										        <td class="center">-</td>
+										        <td class="center">적정</td>
 										        <td class="center">-</td>
 										      </tr>
 										      <tr>

@@ -93,7 +93,7 @@
 					<div class="contents">
 						<div class="section-cont">
 							<h3 class="title-sect"><spring:message code="FRONT.COMMON.MENU.INVEST.001.001.004" text="수주 및 수주잔고" /></h3>
-							<div class="chart-box">
+							<div class="chart-box"><!-- 관리자페이지에서 수정 -->
 								<div class="tit-area">
 									<strong class="chart-tit"><spring:message code="FRONT.COMMON.MENU.INVEST.001.001.005" text="신규수주" /></strong>
 									<span class="chart-unit"><spring:message code="FRONT.COMMON.UNIT" text="단위" /> : <spring:message code="FRONT.COMMON.CURRENCY.02" text="억원" /></span>

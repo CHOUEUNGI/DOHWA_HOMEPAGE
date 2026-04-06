@@ -122,7 +122,7 @@
 									<div class="company-status">
 										<div class="content-inner">
 											<h3 class="title-sect"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.013" text="기업 현황" /></h3>
-											<span class="comment"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.014" text="2023.12 기준" /></span>
+											<span class="comment"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.014" text="2025.12 기준" /></span>
 											<ul class="status-list">
 												<li class="name">
 													<span class="lb"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.015" text="회사명" /></span>
@@ -138,7 +138,7 @@
 												</li>
 												<li class="personnel ui-section ui-section-03">
 													<span class="lb"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.021" text="인력현황" /></span>
-													<em class="txt"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.022" text="2,646명" /></em>
+													<em class="txt"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.022" text="2,956명" /></em>
 												</li>
 												<li class="country">
 													<span class="lb"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.023" text="진출국가" /></span>
@@ -152,28 +152,28 @@
 													<span class="lb"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.027" text="매출액" /></span>
 													<em class="number">
 													<c:if test="${'ko' eq _lang}">
-														<span class="ani" id="capital_ko"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.028" text="5,750" /></span>
+														<span class="ani" id="capital_ko"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.028" text="6,958" /></span>
 													</c:if>
 													<c:if test="${'en' eq _lang}">
-														<span class="ani" id="capital"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.028" text="438.6" /></span>
+														<span class="ani" id="capital"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.028" text="461" /></span>
 													</c:if>
 													<c:if test="${'es' eq _lang}">
-														<span class="ani" id="capital"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.028" text="438.6" /></span>
+														<span class="ani" id="capital"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.028" text="461" /></span>
 													</c:if>
 														<spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.029" text="억" />
 													</em>
 												</li>
 												<li class="revenue">
 													<span class="lb"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.030" text="당기순이익" /></span>
-													<em class="number">
+													<em class="number"><!-- PC은 페이지 하단, 모바일은 common_mo.js에서 수정 -->
 														<c:if test="${'ko' eq _lang}">
-															<span class="ani" id="proceeds_ko">63</span>
+															<span class="ani" id="proceeds_ko">301</span>
 														</c:if>
 														<c:if test="${'en' eq _lang}">
-															<span class="ani" id="proceeds">1.3</span>
+															<span class="ani" id="proceeds">19.9</span>
 														</c:if>
 														<c:if test="${'es' eq _lang}">
-															<span class="ani" id="proceeds">1.3</span>
+															<span class="ani" id="proceeds">19.9</span>
 														</c:if>
 														
 														<spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.032" text="억원" />
@@ -184,8 +184,8 @@
 													<em class="number">
 														<span class="ani creditNum">
 															<span>A</span>
-															<span>2</span>
-															<span>+</span>
+															<span>A</span>
+															<span>0</span>
 														</span>
 													</em>
 												</li>
@@ -207,6 +207,12 @@
 														<!-- s: 20200814 마크업 수정-->
 														<ul class="award-list" style="overflow:scroll; width:656px; height:361px; overflow-x:hidden;">
 														<!-- 수상현황 스크롤 추가 20201208 -->
+															<li class="award-item">
+																<span class="date">2025.04.29</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.062" text="동탑 산업훈장 - 해외건설 및 수주실적 확대에 기여" /></span></button>
+																</p>
+															</li>
 															<li class="award-item">
 																<span class="date">2020.11.02</span>
 																<p class="desc">
@@ -272,6 +278,7 @@
 															<div class="swiper-container award-container">
 																<div class="swiper-wrapper">
 																	<!-- s: 20200814 이미지 추가-->
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide111.png" alt="2025.04.29 동탑 산업훈장 - 해외건설 및 수주실적 확대에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide110.png" alt="2020.11.02 금탑 산업훈장 – 해외건설플랜트산업 진흥을 통하여 국토교통업무에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide01.jpg" alt="2018.10.18 금탑 산업훈장 – 건설기술진흥을 통하여 국가산업 발전에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide102.jpg" alt="2016.03.25 금탑 산업훈장 – 건설기술진흥을 통하여 국가산업 발전에 기여" /></div>
@@ -307,6 +314,12 @@
 													</div>
 													<div class="inner-tab-cont">
 														<ul class="award-list">
+															<li class="award-item">
+																<span class="date">2025.03.04</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.061" text="장관 표창장 - 성실한 납세의무 이행으로 국가재정에 기여" /></span></button>
+																</p>
+															</li>
 															<li class="award-item">
 																<span class="date">2020.11.02</span>
 																<p class="desc">
@@ -345,6 +358,7 @@
 														<div class="award-slide tab-slide01">
 															<div class="swiper-container award-container">
 																<div class="swiper-wrapper">
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide207.jpg" alt="2025.03.04 장관 표창장 - 성실한 납세의무 이행으로 국가재정에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide206.jpg" alt="2020.11.02 장관 표창장 – 해외건설플랜트산업 진흥을 통하여 국토교통업무에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide203.jpg" alt="2019.11.27 장관 표창장 – 타당성 조사에 전력하여 해외의 산업발전에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide204.jpg" alt="2009.03.03 장관 표창장 – 성실한 납세의무 이행으로 국가재정에 기여" /></div>
@@ -619,10 +633,10 @@
 					decimal: ""
 				};
 
-				new CountUp("capital_ko", 0, 5750 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
-				new CountUp("proceeds_ko", 0, 63 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
-				new CountUp("capital", 0, 420.2 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
-				new CountUp("proceeds", 0,1.5 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
+				new CountUp("capital_ko", 0, 6985 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+				new CountUp("proceeds_ko", 0, 301 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+				new CountUp("capital", 0, 461 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
+				new CountUp("proceeds", 0,19.9 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
 
 				$(".ani.creditNum span").css("opacity", "0");
 
@@ -630,20 +644,16 @@
 
 				setTimeout(function() {
 					clearTimeout(_timeout);
-					$(".ani.creditNum span")
-						.eq(0)
-						.text("A");
+					$(".ani.creditNum span").eq(0).text("A");
 
-					$(".ani.creditNum span")
-						.eq(1)
-						.fadeIn();
-					_countUp($(".ani.creditNum span").eq(1), ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]);
+					$(".ani.creditNum span").eq(1).fadeIn();
+					//_countUp($(".ani.creditNum span").eq(1), ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]);
+					_countUp($(".ani.creditNum span").eq(1),["A", "B", "C", "D"]);
 
 					setTimeout(function() {
 						clearTimeout(_timeout);
-						$(".ani.creditNum span")
-							.eq(1)
-							.text("2");
+						//$(".ani.creditNum span").eq(1).text("2");
+						$(".ani.creditNum span").eq(1).text("A");
 					}, 500);
 
 					setTimeout(function() {

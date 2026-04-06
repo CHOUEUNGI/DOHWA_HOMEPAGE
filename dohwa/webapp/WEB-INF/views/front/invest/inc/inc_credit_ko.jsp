@@ -21,8 +21,8 @@
 				</div>
 				<div class="grade-box">
 					<div class="credit-rating-txt">
-						<span class="year">2024</span>
-						<sapn class="grade">AA+</sapn>
+						<span class="year">2026</span>
+						<sapn class="grade">AA0</sapn>
 						<span class="txt">㈜나이스디앤비(AAA~NG)</span>
 					</div>
 				</div>
@@ -52,6 +52,20 @@
 							<th class="bg-none line-btm">평가대상증권의 신용등급</th>
 							<th class="bg-none line-btm">평가회사(신용평가등급범위)</th>
 							<th class="bg-none line-btm">평가구분</th>
+						</tr>
+						<tr>						
+							<td>2026.03</td>	
+							<td>기업신용등급</td>	
+							<td><span class="color-point">AA0</span></td>	
+							<td>(주)나이스디앤비(AAA~NG)</td>	
+							<td>공공기관 제출용</td>
+						</tr>
+						<tr>						
+							<td>2025.03</td>	
+							<td>기업신용등급</td>	
+							<td><span class="color-point">AA0</span></td>	
+							<td>(주)나이스디앤비(AAA~NG)</td>	
+							<td>공공기관 제출용</td>
 						</tr>
 						<tr>						
 							<td>2024.03</td>	

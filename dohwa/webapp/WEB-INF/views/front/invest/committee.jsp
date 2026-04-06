@@ -238,29 +238,26 @@
 									      <td>−</td>
 									      <td>위원장</td>
 									    </tr>
-									
-									    <tr>
-									      <td class="left">
-									        박영봉<small>사외이사</small>
-									      </td>
-									      <td>위원장</td>
-									      <td>위원</td>
-									    </tr>
-									
-									    <tr>
+									 	<tr>
 									      <td class="left">
 									        이상진<small>사외이사</small>
 									      </td>
+									      <td>워원장</td>
+									      <td>-</td>
+									    </tr>
+									    <tr>
+									      <td class="left">
+									        김혜진<small>사외이사</small>
+									      </td>
 									      <td>위원</td>
 									      <td>위원</td>
 									    </tr>
-									
 									    <tr>
 									      <td class="left">
-									        배보경<small>사외이사</small>
+									        손상영<small>사외이사</small>
 									      </td>
 									      <td>위원</td>
-									      <td>−</td>
+									      <td>위원</td>
 									    </tr>
 									  </tbody>
 									</table>
@@ -321,43 +318,46 @@
 										  <tbody>
 										    <tr>
 										      <th scope="row" class="name">
-										        박영봉<small>감사위원장</small>
-										      </th>
-										      <td class="center">2년</td>
-										      <td class="center">2026-03-21</td>
-										      <td class="bio">
-										        <p>성균관대학교 경제학과</p>
-										        <p>現) 대원 회계와 세무 대표 공인회계사</p>
-										      </td>
-										      <td class="note">회계전문가</td>
-										    </tr>
-										
-										    <tr>
-										      <th scope="row" class="name">
 										        이상진<small>감사위원</small>
 										      </th>
 										      <td class="center">2년</td>
-										      <td class="center">2026-03-21</td>
-										      <td class="bio">
-										        <p>이화여자대학교 국제사무학과</p>
-										        <p>고려대학교 경영대 박사</p>
-										        <p>現) 한미사이언스(주) 기타비상무이사</p>
-										      </td>
-										      <td class="note"> </td>
-										    </tr>
-										
-										    <tr>
-										      <th scope="row" class="name">
-										        배보경<small>감사위원</small>
-										      </th>
-										      <td class="center">2.5년</td>
-										      <td class="center">2026-03-21</td>
+										      <td class="center">2028.03.23</td>
 										      <td class="bio">
 										        <p>American University WashingtonCollege of Law</p>
 										        <p>고려대학교 법과대학원</p>
 										        <p>現) 김앤장 법률사무소 변호사</p>
 										      </td>
 										      <td class="note"> </td>
+										    </tr>
+										
+										    <tr>
+										      <th scope="row" class="name">
+										        김혜진<small>감사위원</small>
+										      </th>
+										      <td class="center">2년</td>
+										      <td class="center">2028.03.23</td>
+										      <td class="bio">
+										        <p>서울대학교 경제학</p>
+										        <p>서울시립대세무전문대학원 조세전략</p>
+										        <p>現) 하나세무회계 대표</p>
+										      </td>
+										      <td class="note">
+										      	<p>회계전문가</p>
+										      </td>
+										    </tr>
+										    
+										    <tr>
+										      <th scope="row" class="name">
+										        손상영<small>감사위원</small>
+										      </th>
+										      <td class="center">2년</td>
+										      <td class="center">2028.03.23</td>
+										      <td class="bio">
+										        <p>서울대학교 지구환경시스템공학</p>
+										        <p>University of Southern California 토목환경공학 박사</p>
+										        <p>現) 고려대학교 건축사회환경 교수</p>
+										      </td>
+										      <td class="note"></td>
 										    </tr>
 										  </tbody>
 										</table>
@@ -447,6 +447,19 @@
 											      <td class="center">4</td>
 											      <td class="center">2025.06.05</td>
 											      <td class="left">업무감사 보고의 건</td>
+											    </tr>
+											    <tr>
+											      <td class="center">5</td>
+											      <td class="center">2025.08.21</td>
+											      <td class="left">
+											        1.외부감사인의 비감사용역 체결 보고의건<br>
+											        2.업무감사 보고의 건
+											      </td>
+											    </tr>
+											    <tr>
+											      <td class="center">6</td>
+											      <td class="center">2025.11.21</td>
+											      <td class="left">외부감사인의 비감사용역 체결 보고의건</td>
 											    </tr>
 											  </tbody>
 											</table>
@@ -543,7 +556,7 @@
 									      <th scope="row" class="name">
 									        곽준상<small>위원장</small>
 									      </th>
-									      <td class="center">2025-10-30</td>
+									      <td class="center">2026.03.24</td>
 									      <td class="bio">
 									        <p>고려대학교 대학원 재료금속공학</p>
 									        <p>現) (주)채널에이 사외이사</p>
@@ -552,24 +565,23 @@
 									
 									    <tr>
 									      <th scope="row" class="name">
-									        박영봉<small>위원</small>
+										김혜진<small>위원</small>
 									      </th>
-									      <td class="center">2025-10-30</td>
+									      <td class="center">2026.03.24</td>
 									      <td class="bio">
-									        <p>성균관대학교 경제학과</p>
-									        <p>現) 대원 회계와 세무 대표 공인회계사</p>
+									        <p>서울대학교 경제학</p>
+									        <p>現) 하나세무회계 대표</p>
 									      </td>
 									    </tr>
 									
 									    <tr>
 									      <th scope="row" class="name">
-									        이상진<small>위원</small>
+									        손상영<small>위원</small>
 									      </th>
-									      <td class="center">2025-10-30</td>
+									      <td class="center">2026.03.24</td>
 									      <td class="bio">
-									        <p>이화여자대학교 국제사무학과</p>
-									        <p>고려대학교 경영대 박사</p>
-									        <p>現) 한미사이언스(주) 기타비상무이사</p>
+									        <p>University of Southern California 토목환경공학 박사</p>
+									        <p>現) 고려대학교 건축사회환경 교수</p>
 									      </td>
 									    </tr>
 									  </tbody>
@@ -580,8 +592,40 @@
 									</section>
 									<section class="audit-head">
 									  <h3>사외이사후보추천위원회 개최내역</h3>
-									  <p>-</p>
+									  <p></p>
 									</section>
+									<table class="tbl-audit" aria-label="사외이사 후보추천위원회 개최내역">
+									  <colgroup>
+									    <col style="width:20%">
+									    <col style="width:20%">
+									    <col style="width:60%">
+									  </colgroup>
+									  <thead>
+									    <tr>
+									      <th scope="col">회차</th>
+									      <th scope="col">개최일자</th>
+									      <th scope="col">의안내용</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td class="center">1</td>
+									      <td class="center">2025.10.30</td>
+									      <td>
+									        <p>1. 사외이사 후보 추천위원회 위원장 선임의 건</p>
+									      </td>
+									    </tr>
+									
+									    <tr>
+									      <td class="center">2</td>
+									      <td class="center">2025.12.23</td>
+									      <td>
+									          1. 사외이사 후보자 심사의 건<br>
+										      2. 사외이사 후보자 확정의 건
+									      </td>
+									    </tr>
+									  </tbody>
+									</table>
 								</div>
 							</div>
 						</div>
