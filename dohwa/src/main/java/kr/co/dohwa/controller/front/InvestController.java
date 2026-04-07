@@ -154,7 +154,7 @@ public class InvestController extends BaseController {
 		DateTimeFormatter format2 = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일");
 		DateTimeFormatter format3 = DateTimeFormatter.ofPattern("MMM/dd/yyyy", Locale.ENGLISH);
 		
-		String baseDate1 = "2024-12-31 00:00:00";
+		String baseDate1 = "2025-12-31 00:00:00";
 		String baseDate2 = !shcpList.isEmpty() && 0 < shcpList.size() ? shcpList.get(0).getStdDate() + " 00:00:00" : ""; 
 		String convetDate1 = "";
 		String convetDate2 = "";

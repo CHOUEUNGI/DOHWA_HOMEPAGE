@@ -167,7 +167,7 @@
 													<span class="lb"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.030" text="당기순이익" /></span>
 													<em class="number"><!-- PC은 페이지 하단, 모바일은 common_mo.js에서 수정 -->
 														<c:if test="${'ko' eq _lang}">
-															<span class="ani" id="proceeds_ko">301</span>
+															<span class="ani" id="proceeds_ko">63</span>
 														</c:if>
 														<c:if test="${'en' eq _lang}">
 															<span class="ani" id="proceeds">19.9</span>
@@ -207,6 +207,12 @@
 														<!-- s: 20200814 마크업 수정-->
 														<ul class="award-list" style="overflow:scroll; width:656px; height:361px; overflow-x:hidden;">
 														<!-- 수상현황 스크롤 추가 20201208 -->
+															<li class="award-item">
+																<span class="date">2025.09.12</span>
+																<p class="desc">
+																	<button class="e-slide-li" type="button"><span class="txt"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.063" text="은탑 산업훈장 - 대한민국 일자리 창출에 기여하여 국가발전에 기여" /></span></button>
+																</p>
+															</li>
 															<li class="award-item">
 																<span class="date">2025.04.29</span>
 																<p class="desc">
@@ -278,9 +284,10 @@
 															<div class="swiper-container award-container">
 																<div class="swiper-wrapper">
 																	<!-- s: 20200814 이미지 추가-->
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide112.png" alt="2025.09.12 은탑 산업훈장 - 대한민국 일자리 창출에 기여하여 국가발전에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide111.png" alt="2025.04.29 동탑 산업훈장 - 해외건설 및 수주실적 확대에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide110.png" alt="2020.11.02 금탑 산업훈장 – 해외건설플랜트산업 진흥을 통하여 국토교통업무에 기여" /></div>
-																	<div class="swiper-slide"><img src="/images/pc/img_award_slide01.jpg" alt="2018.10.18 금탑 산업훈장 – 건설기술진흥을 통하여 국가산업 발전에 기여" /></div>
+																	<div class="swiper-slide"><img src="/images/pc/img_award_slide01.jpg"  alt="2018.10.18 금탑 산업훈장 – 건설기술진흥을 통하여 국가산업 발전에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide102.jpg" alt="2016.03.25 금탑 산업훈장 – 건설기술진흥을 통하여 국가산업 발전에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide106.jpg" alt="2010.03.03 표창장 – 용수공급사업에 전력하여 산업발전에 기여" /></div>
 																	<div class="swiper-slide"><img src="/images/pc/img_award_slide107.jpg" alt="2008.12.12 표창장 – 건설신기술 개발을 통하여 국가발전에 기여" /></div>
@@ -634,9 +641,9 @@
 				};
 
 				new CountUp("capital_ko", 0, 6985 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
-				new CountUp("proceeds_ko", 0, 301 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+				new CountUp("proceeds_ko", 0, 63 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
 				new CountUp("capital", 0, 461 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
-				new CountUp("proceeds", 0,19.9 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
+				new CountUp("proceeds", 0,4.2 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
 
 				$(".ani.creditNum span").css("opacity", "0");
 

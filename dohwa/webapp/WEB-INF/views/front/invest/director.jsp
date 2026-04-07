@@ -284,10 +284,10 @@
 													    <td class="tac">손영일</td>
 													    <td class="tac">남</td>
 													    <td class="tac">대표이사/사장</td>
-													    <td class="tac">부</td>
+													    <td class="tac">여</td>
 													    <td class="tac">3년</td>
 													    <td class="tac">2029.03.23</td>
-													    <td class="tac">경영지원</td>
+													    <td class="tac">지원부문</td>
 													    <td class="tal">연세대학교 토목공학<br>現 (주)도화엔지니어링 사장</td>
 													  </tr>
 													  <tr>
@@ -304,17 +304,17 @@
 													    <td class="tac">김용구</td>
 													    <td class="tac">남</td>
 													    <td class="tac">사내이사/사장</td>
-													    <td class="tac">부</td>
+													    <td class="tac">여</td>
 													    <td class="tac">3년</td>
 													    <td class="tac">2029.03.23</td>
-													    <td class="tac">지원부문</td>
+													    <td class="tac">에너지부문</td>
 													    <td class="tal">인하대학교 대학원 토질 및 기초공학<br>現 (주)도화엔지니어링 사장</td>
 													  </tr>
 													  <tr>
 													    <td class="tac">정수동</td>
 													    <td class="tac">남</td>
 													    <td class="tac">사내이사/사장</td>
-													    <td class="tac">부</td>
+													    <td class="tac">여</td>
 													    <td class="tac">3년</td>
 													    <td class="tac">2029.03.23</td>
 													    <td class="tac">교통부문</td>

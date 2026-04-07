@@ -318,7 +318,7 @@
 										  <tbody>
 										    <tr>
 										      <th scope="row" class="name">
-										        이상진<small>감사위원</small>
+										        이상진<small>감사위원장</small>
 										      </th>
 										      <td class="center">2년</td>
 										      <td class="center">2028.03.23</td>

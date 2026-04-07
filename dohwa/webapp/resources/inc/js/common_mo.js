@@ -880,9 +880,9 @@ var overviewUiController = function(){
         }
 
         new CountUp("capital_ko", 0, 6985 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
-		new CountUp("proceeds_ko", 0, 301 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
+		new CountUp("proceeds_ko", 0, 63 /*최종 값*/, 0 /*소수점 자리*/, 0.8 /*애니메이션 시간*/, options).start();
 		new CountUp("capital", 0, 461 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
-		new CountUp("proceeds", 0,19.9 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
+		new CountUp("proceeds", 0, 4.2 /*최종 값*/, 1 /*소수점 자리*/, 0.8 /*애니메이션 시간*/,".", options).start();
 
         $('.ani.creditNum span').css('opacity','0');
 

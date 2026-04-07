@@ -191,6 +191,20 @@
 												<div class="swiper-container award-container">
 													<div class="swiper-wrapper">
 														<div class="swiper-slide">
+															<img src="/images/pc/img_award_slide112.png" alt="<spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.063" text="금탑 산업훈장 – 해외건설플랜트산업 진흥을 통하여 국토교통업무에 기여" />" />
+															<div class="award-item">
+																<span class="date">2025.09.12</span>
+																<p class="desc"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.059" text="은탑 산업훈장 - 대한민국 일자리 창출에 기여하여 국가발전에 기여" /></p>
+															</div>
+														</div>
+														<div class="swiper-slide">
+															<img src="/images/pc/img_award_slide111.png" alt="<spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.062" text="동탑 산업훈장 - 해외건설 및 수주실적 확대에 기여" />" />
+															<div class="award-item">
+																<span class="date">2025.04.29</span>
+																<p class="desc"><spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.059" text="금탑 산업훈장 – 해외건설플랜트산업 진흥을 통하여 국토교통업무에 기여" /></p>
+															</div>
+														</div>
+														<div class="swiper-slide">
 															<img src="/images/pc/img_award_slide110.png" alt="<spring:message code="FRONT.COMMON.MENU.ABOUTUS.001.001.059" text="금탑 산업훈장 – 해외건설플랜트산업 진흥을 통하여 국토교통업무에 기여" />" />
 															<div class="award-item">
 																<span class="date">2020.11.02</span>
